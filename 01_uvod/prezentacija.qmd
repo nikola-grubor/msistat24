@@ -1,0 +1,374 @@
+---
+title: "Uvod u Statistiku"
+date: last-modified
+author: "Dr Nikola Grubor"
+institute: "Institut za Medicinsku Statistiku i Informatiku"
+logo: "slike/logo.png"
+lang: sr-Latn
+
+format:
+  revealjs:
+    slide-number: true
+    show-slide-number: speaker
+    theme: [default, custom.scss]
+
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+
+## Čime se bavi statistika u medicini?
+
+- Naučnim metodom
+- Otkrivanje veličine efekta terapije (lek, intervancija)
+- Predviđanje rizika (npr. od tromboze)
+- Medicinskim odlučivanjem (preciznost medicinskih testova)
+
+## Efekat terapije pritiska
+
+![](slike/sprint.png){fig-align="center"}
+Na osnovu čega je [preporuka]{.yellow} postavljena? Da li ona ima [smisla]{.yellow}? 
+
+::: {.notes}
+Among patients at high risk for cardiovascular events but without diabetes, targeting a systolic blood pressure of less than 120 mm Hg, as compared with less than 140 mm Hg, resulted in lower rates of fatal and nonfatal major cardiovascular events and death from any cause, although significantly higher rates of some adverse events were observed in the intensive-treatment group.
+:::
+
+## Predviđanje rizika
+
+![](slike/stroke.png){fig-align="center"}
+
+Da li je za najveći deo rizika hemoragičnog moždanog udara odgovoran [pulsni pritisak]{.yellow} ili [sistolni pritisak]{.yellow}?
+
+## Koliko je ultrazvuk bolji u otkrivanju žučnog kamenja od CT-a?
+
+::: columns
+::: {.column width="50%"}
+![](slike/stone.png)
+:::
+
+::: {.column width="50%"}
+![](slike/stone_ct.png)
+:::
+:::
+
+## Laboratorijske vrednosti
+
+::: columns
+::: {.column width="50%"}
+Da li *ovaj* pacijent sa *ovom* laboratorijskom vrednošću ima rizik od bolesti koji zahteva dodatnu istragu?
+:::
+::: {.column width="50%"}
+![](slike/kks.jpg)
+:::
+:::
+
+## Kurs {.smaller}
+
+- Lekcija ($\gt$ 50% $\rightarrow$ otvara kviz)
+- $\text{Bodovi} = \text{lekcija} + \text{kviz (vremenski ograničen)} + \text{kolokvijum} + \text{ispit}$
+- Ispit (praktični i teorijski deo; u učionici na kompijuterima)
+
+## Struktura kursa
+
+<!-- FIX THIS TABLE SIZE -->
+
+```{css}
+#| echo: false
+
+.reveal table {
+  font-size: 55%;
+}
+```
+
+```{r}
+library(glue)
+library(tidyverse)
+library(tinytable)
+
+teme <- c(
+  "Uvod u medicinsku statistiku", "Sređivanje podataka",
+  "Statističko opisivanje podataka", "Verovatnoća i raspodele verovatnoća",
+  "Populacija i uzorak", "Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama",
+  "Testiranje hipoteza o učestalostima", "Testiranje hipoteza o rangovima", "Korelacija",
+  "Regresija / Kolokvijum", "Podaci, informacije i znanje", "Zdravstveni informacioni sistem",
+  "Mere dijagnostičke tačnosti", "Medicinsko odlučivanje", "Bioinformatika"
+)
+
+kurs <- tibble(Nedelja = 1:15, Tema = teme)
+tt(kurs)
+```
+
+## Kritično stanje nauke u medicini {.smaller}
+
+::: columns
+::: {.column width="40%"}
+![Richard Horton, M.D., Lancet Editor-in-Chief](slike/horton.jpg)
+:::
+
+::: {.column width="60%"}
+
+> “The case against science is straightforward: [much of the scientific literature, perhaps half, may simply be untrue]{.yellow}. Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.”
+
+:::
+:::
+
+## {.center}
+
+::: r-fit-text
+Statistika je nauka o odlučivanju
+
+u uslovima [nesigurnosti]{.yellow}
+:::
+
+## Osnovni pojmovi {.center}
+
+```{mermaid}
+%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
+%%| fig-align: center
+flowchart LR
+  A[Osnovni skup] --> B[Uzorak]
+  B --> C[Jedinica posmatranja]
+  C --> D[Varijable]
+  D --> E[Merenje]
+  E <--> TT["Tačnost\nPreciznost\nPouzdanost\nValjanost"]
+  TT <--> F
+  E <--> TP["Tip podataka"]
+  TP <--> F
+  E --> F[Podaci]
+  F --> G[Analiza]
+  G --> H[Zaključak]
+  H -->|generalizacija|A
+
+```
+
+## Istraživačko pitanje {.center}
+
+:::: columns
+
+::: {.column width="50%"}
+Definisanje istraživačkog pitanja (engl. *estimand*) je nešto što je najviše zaboravlja kad se osmišlja rad.
+:::
+
+::: {.column width="50%"}
+```{mermaid}
+%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
+%%| fig-align: center
+
+flowchart TD
+  I[Istraživačko pitanje] -.-> A
+  A[Osnovni skup] --> B[Uzorak]
+  B --> C[Jedinica posmatranja]
+  C --> D[Varijable]
+```
+:::
+::::
+
+::: {.notes}
+Estimand je tačna mera koju želimo na naučimo (rizik, učestalnost, prosek, prosečni kauzalni efekat terapije). Pretstavlja jos precizniju definiciju istraživačkog pitanja.
+:::
+
+## Primer: istraživačko pitanje {.center}
+
+:::: {.columns style='display: flex !important; height: 90%;'}
+::: {.column width="50%" style='display: flex; justify-content: center; align-items: end;'}
+```{mermaid}
+%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
+%%| fig-align: center
+
+flowchart TD
+  I[Istraživačko pitanje] --> A
+  A[Osnovni skup] --> B[Uzorak]
+  B --> C[Jedinica posmatranja]
+  C --> D[Varijable]
+```
+:::
+
+::: {.column width="50%" .fragment}
+```{mermaid}
+%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
+%%| fig-align: center
+
+flowchart TD
+  I["Da li je stepen degeneracije\nlumbosakruma na radiografiji\npovezan sa bolom?"] --> A
+  A[Pacijenti sa lumboishialgijom] --> B[n pacijenata]
+  B --> C[Pacijent]
+  C --> D["Stepen degeneracije, bol"]
+```
+:::
+::::
+
+## Prva baza podataka
+
+```{r}
+library(medicaldata)
+data(scurvy)
+
+scurvy %>%
+  head(12) %>%
+  select(1:2, 4:5, fit_for_duty_d6) %>%
+  tt(
+    notes = "Beleške: Skraćena baza originalnih podataka prikupljenih od strane Džejms Linda; d6, na dan 6.",
+    theme = "striped"
+  )
+```
+
+
+## Tipovi podataka
+
+[Podaci]{.blue} se sastoje od varijabli. Gde varijabla predstavlja [meru]{.yellow} neke pojave.
+
+- Kvalitativni (opisuju pojavu)
+- Kvantitativni (dodeljuju numeričku vrednost)
+
+::: {.callout-important}
+"Koja je vaša omiljena hrana?", na šta su odgovori: grožđe, čokolada, karbonara, pica i mango. Ovi podaci nisu numerički; ali im često dodeljujemo brojeve (1 = grožđe, 2 = čokolada, itd.), međutim u ovom slučaju brojeve koristimo kao oznake, ne kao prave vrednosti.
+:::
+
+## Kvantitativni podaci
+
+```{r}
+question <- tribble(
+  ~`Koji vam je omiljeni predmet?`, ~`Broj učenika`,
+  "Patologija", 105,
+  "Statistika", 20,
+  "Patofiza", 4
+)
+tt(question)
+```
+
+::: {.callout-note}
+Primetiti da su odgovori studenata kvalitativni, ali smo ih sumiranjem pretvorili u kvantitativne.
+:::
+
+## Tipovi brojeva
+
+- Binarni brojevi (Da/Ne; 1/0; `TRUE`/`FALSE`)
+- Celi ($\mathbb Z$) brojevi ("Koliko se slažete na skali od 1 do 7?")
+- Realni ($\mathbb R$) brojevi (najčešći, $3.12...$, $9.81...$)
+
+## Diskontinuirana (diskretna) i kontinuirana merenja {.smaller}
+
+- **Diskontinuirano** (diskretno) merenje (podatak) je ono koje je [kvalitativno]{.yellow} ili se može izraziti preko [celog broja]{.yellow}
+
+> Broj porođaja: 3, nema nikakvog smisla pričati o 3.5 porođaja!
+
+- **Kontinuirano** merenje je ono koje se izražava pomoću [realnog broja]{.yellow}
+
+> Kada merimo težinu u $kg$ obično zaokružimo, međutim u ovom slučaju ima smisla pričati o *preciznijim* merenjima ($70 \; \text{kg}$, $70.3467 \; \text{kg}$).
+
+::: {.notes}
+The most important takeaway from this is that some kinds of statistics don’t make sense on some kinds of data. Zip code basically serves as a label for a different region. For this reason, it wouldn’t make sense to talk about the average zip code, for example.
+:::
+
+## Merne skale (1)
+
+Varijable moraju da imaju barem dve vrednosti (inače bi bile konstante), ali vrednosti varijable mogu na različite načine da se odnose jedna sa drugom:
+
+- Identitet: Svaka vrednost je jedinstvena.
+- Veličina (magnituda): Neke vrednosti su veće od drugih.
+- Jednaki intervali: Razlika između 1 i 2 je iste veličine kao 19 i 20.
+- Apsolutna nula: Skala ima nulu koja znači nešto (Kelvin vs. Celsius)
+
+## Merne skale (2)
+
+- Nominalna skala (identitet; 1 - Dijabetes, 2 - Hipertenzija)
+- Ordinalna skala (identitet i veličina; 1 - Primarno obrazovanje, 2 - Srednja škola)
+- Intervalna skala (identitet, veličina, i jednaki intervali; Celsius, Fahrenheit)
+- Ratio skala (sve + apsolutna nula; Kelvin, visina, težina)
+
+```{r}
+scales <- tribble(
+  ~`Skala`, ~`Jednako/nije jednako`, ~`>/<`, ~`+/-`, ~`Množenje/deljenje`,
+  "Nominalna", "OK", "", "", "",
+  "Ordinalna", "OK", "OK", "", "",
+  "Intervalna", "OK", "OK", "OK", "",
+  "Ratio", "OK", "OK", "OK", "OK"
+)
+tt(scales,
+   caption = "Dozvoljene operacije u odnosu na skalu")
+```
+
+
+::: {.notes}
+These constraints imply certain kinds of statistics. Statistics that simply count values (mode), can be calculated on any of the variable types. Statistics based on ordering or ranking of values (median), require that the value at least be on an ordinal scale. Finally, statistics that involve adding up values (such as the average, or mean), require that the variables be at least on an interval scale.
+:::
+
+## Ko zna zna (podatak)?
+
+::: columns
+
+::: {.column width="50%"}
+- ABO
+- Bol (NRS 0-10 skala)
+- M/Ž
+- Stadijum (I-IV)
+- TA (mmHg)
+- Srčana fr (otk/min)
+- Starost
+:::
+
+::: {.column width="50%" .incremental}
+- Nominalni
+- Ordinalni
+- Nominalni (binarni)
+- Ordinalni
+- Numerički (kont.)
+- Numerički (diskretni)\*
+- Numerički (kont.)
+:::
+
+:::
+
+## Šta ćemo sa vremenom?
+
+![](slike/vreme.png){fig-align="center"}
+
+## Principi sređene baze (tidydata)
+
+![](slike/tidy-1.png)
+
+## Kako se pravi baza u Excel-u
+
+Zadatak?
+
+# Česte greške u pravljenju baza
+
+## Granularni podaci (razdvajanje)
+
+![](slike/tidy-17.png)
+
+## Granularni podaci (spajanje)
+
+![](slike/tidy-18.png)
+
+## Ponovljenje kolone (neprepoznate varijable)
+
+![](slike/tidy-8.png)
+
+## Ponovljena merenja (lakše upisivanje)
+
+![](slike/tidy-9.png)
+
+## Zadatak: vremesnke serije {.variant-one}
+
+::: nonincremental
+
+[Napravi]{.yellow} bazu kako bi:
+
+- Pratili pacijente da saznamo ko je imao recidiv posle operacije?
+- Upisali CRP meren serijski u intervalu: 1h, 12h, 24h?
+
+:::
+
+## Podaci koji nedostaju {.larger}
+
+```{r}
+treatment <- tribble(
+  ~pacijent, ~intervencija, ~ishod,
+  "Petar Petrovic", 1, 7,
+  NA, 2, 10,
+  NA, 3, NA,
+  "Katarina Katic", 1, 4
+)
+tt(treatment)
+```
+
