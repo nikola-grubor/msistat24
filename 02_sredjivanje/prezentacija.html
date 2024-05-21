@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Dr Nikola Grubor">
-  <meta name="dcterms.date" content="2024-05-20">
-  <title>Uvod u Statistiku</title>
+  <meta name="dcterms.date" content="2024-05-21">
+  <title>Sređivanje podataka</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -321,16 +321,13 @@
       margin-right: 0; 
     }
   </style>
-  <script src="prezentacija_files/libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="prezentacija_files/libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="prezentacija_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Uvod u Statistiku</h1>
+  <h1 class="title">Sređivanje podataka</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -343,22 +340,53 @@ Dr Nikola Grubor
     </div>
 </div>
 
-  <p class="date">2024-05-20</p>
+  <p class="date">2024-05-21</p>
 </section>
-<section id="čime-se-bavi-statistika-u-medicini" class="slide level2">
-<h2>Čime se bavi statistika u medicini?</h2>
+<section id="section" class="slide level2 center">
+<h2></h2>
+<div class="r-fit-text">
+<p>Grupisanje je proces <span class="yellow">organizovanja</span> (klasifikovanja) podataka.</p>
+</div>
+</section>
+<section id="apsolutna-i-relativna-učestalost" class="slide level2 center">
+<h2>Apsolutna i relativna učestalost</h2>
+<div class="r-fit-text">
+<p><span class="math inline">\(f_{abs} = \frac{\#n}{\text{interval}}\)</span></p>
+<p><span class="math inline">\(f_{rel} = \frac{f_{abs}}{\text{Ukupan broj podataka}} \%\)</span></p>
+</div>
+</section>
+<section id="apsolutni-jeleni-i-relativne-ajkule" class="slide level2">
+<h2>Apsolutni jeleni i relativne ajkule</h2>
 <ul>
-<li>Naučnim metodom</li>
-<li>Otkrivanje veličine efekta terapije (lek, intervancija)</li>
-<li>Predviđanje rizika (npr. od tromboze)</li>
-<li>Medicinskim odlučivanjem (preciznost medicinskih testova)</li>
+<li>Relativni brojevi mogu prenaglasiti rizik (bitnost) neke pojave
+<ul>
+<li>Dobri za plašenje drugih, publikacije</li>
+<li>Loši za javno zdravlje, naučni progres</li>
+<li>Ali potrebni za kauzalno tumačenje</li>
+</ul></li>
 </ul>
-</section>
-<section id="efekat-terapije-pritiska" class="slide level2">
-<h2>Efekat terapije pritiska</h2>
-<p><img data-src="slike/sprint.png" class="quarto-figure quarto-figure-center"> Na osnovu čega je <span class="yellow">preporuka</span> postavljena? Da li ona ima <span class="yellow">smisla</span>?</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slike/deer2.png" width="255"></p>
+<figcaption>Apsolutni jelen</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slike/shark.png" width="400"></p>
+<figcaption>Relativna ajkula</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <aside class="notes">
-<p>Among patients at high risk for cardiovascular events but without diabetes, targeting a systolic blood pressure of less than 120 mm Hg, as compared with less than 140 mm Hg, resulted in lower rates of fatal and nonfatal major cardiovascular events and death from any cause, although significantly higher rates of some adverse events were observed in the intensive-treatment group.</p>
+<p>Retke bolesti mogu da imaju rizike od 300% (OR 3.00), ali ako niko u populaciji ne dobije tu bolest onda to nije od javnozdravstvenog znacaja.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -371,37 +399,126 @@ Dr Nikola Grubor
           display:block!important;
       }</style></aside>
 </section>
-<section id="predviđanje-rizika" class="slide level2">
-<h2>Predviđanje rizika</h2>
+<section id="section-1" class="slide level2 center">
+<h2></h2>
 
-<img data-src="slike/stroke.png" class="quarto-figure quarto-figure-center r-stretch"><p>Da li je za najveći deo rizika hemoragičnog moždanog udara odgovoran <span class="yellow">pulsni pritisak</span> ili <span class="yellow">sistolni pritisak</span>?</p>
-</section>
-<section id="koliko-je-ultrazvuk-bolji-u-otkrivanju-žučnog-kamenja-od-ct-a" class="slide level2">
-<h2>Koliko je ultrazvuk bolji u otkrivanju žučnog kamenja od CT-a?</h2>
+<img data-src="slike/deadlychart.jpeg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="komunikacija-rizika" class="slide level2 smaller">
+<h2>Komunikacija rizika</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="slike/stone.png"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="slike/stone_ct.png"></p>
-</div>
-</div>
-</section>
-<section id="laboratorijske-vrednosti" class="slide level2">
-<h2>Laboratorijske vrednosti</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Da li <em>ovaj</em> pacijent sa <em>ovom</em> laboratorijskom vrednošću ima rizik od bolesti koji zahteva dodatnu istragu?</p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="slike/kks.jpg"></p>
-</div>
-</div>
-</section>
-<section id="kurs" class="slide level2 smaller">
-<h2>Kurs</h2>
+<div class="column">
+<p>Mnogi ljudi <span class="yellow">mešaju</span> relativni i apsolutni <span class="yellow">rizik</span></p>
+<p>Primer:</p>
 <ul>
-<li>Lekcija (<span class="math inline">\(\gt\)</span> 50% <span class="math inline">\(\rightarrow\)</span> otvara kviz)</li>
-<li><span class="math inline">\(\text{Bodovi} = \text{lekcija} + \text{kviz (vremenski ograničen)} + \text{kolokvijum} + \text{ispit}\)</span></li>
-<li>Ispit (praktični i teorijski deo; u učionici na kompijuterima)</li>
+<li>1/10,000 žena ima trombozu</li>
+<li>3/10,000 žena koje uzimaju kontraceptivne pilule ima trombozu</li>
+</ul>
+<p><span class="math inline">\(RR = \frac{3/10,000}{1/10,000} = 3.00\)</span></p>
+<ul>
+<li><span class="math inline">\(\uparrow\)</span> 200% u trombozama!</li>
+<li>Promena verovatnoće je samo 0.0002 (2 žene u 10,000)</li>
+<li>Trudnoća povećava verovatnoću tromboze mnogo više (DVT)</li>
+</ul>
+</div><div class="column">
+<p><img data-src="slike/pills.png"></p>
+</div>
+</div>
+<aside class="notes">
+<p>Tromboza je retka u opstoj populaciji, ALI su mnogo češći na pilulu. Ima kauzalnih razloga za to. Cost/benefit je težak. Zbog članka mnogo žena prestalo pije KP i dobilo tromboze zbog trudnoće!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tabelarno-prikazivanje-podataka" class="slide level2">
+<h2>Tabelarno prikazivanje podataka</h2>
+</section>
+<section id="base-rate-fallacy-1" class="slide level2">
+<h2>Base-rate fallacy (1)</h2>
+
+<img data-src="slike/base1.png" class="r-stretch"></section>
+<section id="base-rate-fallacy-2" class="slide level2">
+<h2>Base-rate fallacy (2)</h2>
+
+<img data-src="slike/base2.png" class="r-stretch"></section>
+<section id="relativni-rizik-u-praksi" class="slide level2">
+<h2>Relativni rizik u praksi</h2>
+<p><em>animacija smanjejna relativnog rizika</em></p>
+<p><em>objasnjenje kako se povezuju base-rate (base rizik) i relativni benefit</em></p>
+</section>
+<section id="grafičko-prikazivanje-podataka" class="slide level2">
+<h2>Grafičko prikazivanje podataka</h2>
+</section>
+<section id="pie-chart" class="slide level2">
+<h2>Pie chart</h2>
+</section>
+<section id="good-chart-examples" class="slide level2">
+<h2>Good chart examples</h2>
+</section>
+<section id="bad-chart-examples" class="slide level2">
+<h2>Bad chart examples</h2>
+</section>
+<section id="prikazivanje-nominalnih-podataka" class="slide level2">
+<h2>Prikazivanje nominalnih podataka</h2>
+<p><em>Grupišu se po <span class="yellow">kategorijama</span></em></p>
+</section>
+<section id="bar-chart" class="slide level2">
+<h2>Bar chart</h2>
+</section>
+<section id="bad-bar-chart" class="slide level2">
+<h2>Bad Bar chart</h2>
+</section>
+<section id="pie-chart-1" class="slide level2">
+<h2>Pie chart</h2>
+</section>
+<section id="prikazivanje-ordinalnih-podataka" class="slide level2">
+<h2>Prikazivanje ordinalnih podataka</h2>
+<p><em>Grupišu se po <span class="yellow">kategorijama</span></em></p>
+</section>
+<section id="prikazivanje-diskontinuiranih-podataka" class="slide level2">
+<h2>Prikazivanje diskontinuiranih podataka</h2>
+<p><em>Grupišu se po <span class="yellow">kategorijama</span></em></p>
+</section>
+<section id="frequency-table" class="slide level2">
+<h2>Frequency table</h2>
+</section>
+<section id="frequency-bar-chart" class="slide level2">
+<h2>Frequency bar chart</h2>
+</section>
+<section id="bad-frequency-bar-chart" class="slide level2">
+<h2>Bad Frequency bar chart</h2>
+</section>
+<section id="histogram-explanation" class="slide level2">
+<h2>Histogram explanation</h2>
+</section>
+<section id="prikazivanje-kontinuiranih-podataka" class="slide level2">
+<h2>Prikazivanje kontinuiranih podataka</h2>
+<p><em>Grupišu se po <span class="yellow">kategorijama</span></em></p>
+</section>
+<section id="histogram" class="slide level2">
+<h2>Histogram</h2>
+</section>
+<section id="bad-histogram" class="slide level2">
+<h2>Bad Histogram</h2>
+</section>
+<section id="frequency-polygon" class="slide level2">
+<h2>Frequency polygon</h2>
+</section>
+<section id="more-examples" class="slide level2">
+<h2>More examples</h2>
+</section>
+<section id="zadatak" class="slide level2">
+<h2>Zadatak</h2>
+<ul>
+<li>Napraviti tablele</li>
+<li>Zadaci na bazi sa kursa</li>
 </ul>
 </section>
 <section id="struktura-kursa" class="slide level2">
@@ -421,9 +538,9 @@ Dr Nikola Grubor
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_r179vznel5gfmbzbdvbd</title>
+    <title>tinytable_zsykohbdw1tub334k90n</title>
     <style>
-.table td.tinytable_css_lxsnhac2b8462qnnhnkj, .table th.tinytable_css_lxsnhac2b8462qnnhnkj {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_vgz2wl48q3hwopsaw26g, .table th.tinytable_css_vgz2wl48q3hwopsaw26g {    border-bottom: solid 0.1em #d3d8dc; }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -441,7 +558,7 @@ Dr Nikola Grubor
 
   
     <div class="container">
-      <table class="table table-borderless" id="tinytable_r179vznel5gfmbzbdvbd" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_zsykohbdw1tub334k90n" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -516,12 +633,12 @@ Dr Nikola Grubor
     </div>
 
     <script>
-      function styleCell_tinytable_hveax420sn9sw7uiu4ns(i, j, css_id) {
-        var table = document.getElementById("tinytable_r179vznel5gfmbzbdvbd");
+      function styleCell_tinytable_4geab9iujyw8oqw3l5mf(i, j, css_id) {
+        var table = document.getElementById("tinytable_zsykohbdw1tub334k90n");
         table.rows[i].cells[j].classList.add(css_id);
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_r179vznel5gfmbzbdvbd');
+        var table = document.getElementById('tinytable_zsykohbdw1tub334k90n');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -529,8 +646,8 @@ Dr Nikola Grubor
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_tinytable_hveax420sn9sw7uiu4ns(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_r179vznel5gfmbzbdvbd");
+      function spanCell_tinytable_4geab9iujyw8oqw3l5mf(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_zsykohbdw1tub334k90n");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -557,909 +674,14 @@ Dr Nikola Grubor
         targetCell.colSpan = colspan;
       }
 
-window.addEventListener('load', function () { styleCell_tinytable_hveax420sn9sw7uiu4ns(0, 0, 'tinytable_css_lxsnhac2b8462qnnhnkj') })
-window.addEventListener('load', function () { styleCell_tinytable_hveax420sn9sw7uiu4ns(0, 1, 'tinytable_css_lxsnhac2b8462qnnhnkj') })
+window.addEventListener('load', function () { styleCell_tinytable_4geab9iujyw8oqw3l5mf(0, 0, 'tinytable_css_vgz2wl48q3hwopsaw26g') })
+window.addEventListener('load', function () { styleCell_tinytable_4geab9iujyw8oqw3l5mf(0, 1, 'tinytable_css_vgz2wl48q3hwopsaw26g') })
     </script>
 
   
 
 
 </div>
-</div>
-</section>
-<section id="kritično-stanje-nauke-u-medicini" class="slide level2 smaller">
-<h2>Kritično stanje nauke u medicini</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="slike/horton.jpg"></p>
-<figcaption>Richard Horton, M.D., Lancet Editor-in-Chief</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:60%;">
-<blockquote>
-<p>“The case against science is straightforward: <span class="yellow">much of the scientific literature, perhaps half, may simply be untrue</span>. Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.”</p>
-</blockquote>
-</div>
-</div>
-</section>
-<section id="section" class="slide level2 center">
-<h2></h2>
-<div class="r-fit-text">
-<p>Statistika je nauka o odlučivanju</p>
-<p>u uslovima <span class="yellow">nesigurnosti</span></p>
-</div>
-</section>
-<section id="osnovni-pojmovi" class="slide level2 center">
-<h2>Osnovni pojmovi</h2>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
-%%| fig-align: center
-flowchart LR
-  A[Osnovni skup] --&gt; B[Uzorak]
-  B --&gt; C[Jedinica posmatranja]
-  C --&gt; D[Varijable]
-  D --&gt; E[Merenje]
-  E &lt;--&gt; TT["Tačnost\nPreciznost\nPouzdanost\nValjanost"]
-  TT &lt;--&gt; F
-  E &lt;--&gt; TP["Tip podataka"]
-  TP &lt;--&gt; F
-  E --&gt; F[Podaci]
-  F --&gt; G[Analiza]
-  G --&gt; H[Zaključak]
-  H --&gt;|generalizacija|A
-
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="istraživačko-pitanje" class="slide level2 center">
-<h2>Istraživačko pitanje</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Definisanje istraživačkog pitanja (engl. <em>estimand</em>) je nešto što je najviše zaboravlja kad se osmišlja rad.</p>
-</div><div class="column" style="width:50%;">
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
-%%| fig-align: center
-
-flowchart TD
-  I[Istraživačko pitanje] -.-&gt; A
-  A[Osnovni skup] --&gt; B[Uzorak]
-  B --&gt; C[Jedinica posmatranja]
-  C --&gt; D[Varijable]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Estimand je tačna mera koju želimo na naučimo (rizik, učestalnost, prosek, prosečni kauzalni efekat terapije). Pretstavlja jos precizniju definiciju istraživačkog pitanja.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="primer-istraživačko-pitanje" class="slide level2 center">
-<h2>Primer: istraživačko pitanje</h2>
-<div class="columns" style="display: flex !important; height: 90%;">
-<div class="column" style="display: flex; justify-content: center; align-items: end;">
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
-%%| fig-align: center
-
-flowchart TD
-  I[Istraživačko pitanje] --&gt; A
-  A[Osnovni skup] --&gt; B[Uzorak]
-  B --&gt; C[Jedinica posmatranja]
-  C --&gt; D[Varijable]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</div><div class="column fragment" style="width:50%;">
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
-%%| fig-align: center
-
-flowchart TD
-  I["Da li je stepen degeneracije\nlumbosakruma na radiografiji\npovezan sa bolom?"] --&gt; A
-  A[Pacijenti sa lumboishialgijom] --&gt; B[n pacijenata]
-  B --&gt; C[Pacijent]
-  C --&gt; D["Stepen degeneracije, bol"]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="prva-baza-podataka" class="slide level2">
-<h2>Prva baza podataka</h2>
-<div class="cell">
-<div class="cell-output-display">
- 
-
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_ejo8yh2ksyznss2mhcri</title>
-    <style>
-    </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-    </script>
-  
-
-  
-    <div class="container">
-      <table class="table table-striped" id="tinytable_ejo8yh2ksyznss2mhcri" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
-        
-              <tr>
-                <th scope="col">study_id</th>
-                <th scope="col">treatment</th>
-                <th scope="col">gum_rot_d6</th>
-                <th scope="col">skin_sores_d6</th>
-                <th scope="col">fit_for_duty_d6</th>
-              </tr>
-        </thead>
-        <tfoot><tr><td colspan="5">Beleške: Skraćena baza originalnih podataka prikupljenih od strane Džejms Linda; d6, na dan 6.</td></tr></tfoot>
-        <tbody>
-                <tr>
-                  <td>001</td>
-                  <td>cider               </td>
-                  <td>2_moderate</td>
-                  <td>2_moderate</td>
-                  <td>0_no </td>
-                </tr>
-                <tr>
-                  <td>002</td>
-                  <td>cider               </td>
-                  <td>2_moderate</td>
-                  <td>1_mild    </td>
-                  <td>0_no </td>
-                </tr>
-                <tr>
-                  <td>003</td>
-                  <td>dilute_sulfuric_acid</td>
-                  <td>1_mild    </td>
-                  <td>3_severe  </td>
-                  <td>0_no </td>
-                </tr>
-                <tr>
-                  <td>004</td>
-                  <td>dilute_sulfuric_acid</td>
-                  <td>2_moderate</td>
-                  <td>3_severe  </td>
-                  <td>0_no </td>
-                </tr>
-                <tr>
-                  <td>005</td>
-                  <td>vinegar             </td>
-                  <td>3_severe  </td>
-                  <td>3_severe  </td>
-                  <td>0_no </td>
-                </tr>
-                <tr>
-                  <td>006</td>
-                  <td>vinegar             </td>
-                  <td>3_severe  </td>
-                  <td>3_severe  </td>
-                  <td>0_no </td>
-                </tr>
-                <tr>
-                  <td>007</td>
-                  <td>sea_water           </td>
-                  <td>3_severe  </td>
-                  <td>3_severe  </td>
-                  <td>0_no </td>
-                </tr>
-                <tr>
-                  <td>008</td>
-                  <td>sea_water           </td>
-                  <td>3_severe  </td>
-                  <td>3_severe  </td>
-                  <td>0_no </td>
-                </tr>
-                <tr>
-                  <td>009</td>
-                  <td>citrus              </td>
-                  <td>1_mild    </td>
-                  <td>1_mild    </td>
-                  <td>0_no </td>
-                </tr>
-                <tr>
-                  <td>010</td>
-                  <td>citrus              </td>
-                  <td>0_none    </td>
-                  <td>0_none    </td>
-                  <td>1_yes</td>
-                </tr>
-                <tr>
-                  <td>011</td>
-                  <td>purgative_mixture   </td>
-                  <td>3_severe  </td>
-                  <td>3_severe  </td>
-                  <td>0_no </td>
-                </tr>
-                <tr>
-                  <td>012</td>
-                  <td>purgative_mixture   </td>
-                  <td>3_severe  </td>
-                  <td>3_severe  </td>
-                  <td>0_no </td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <script>
-      function styleCell_tinytable_d02et89xwxiimwx36ozh(i, j, css_id) {
-        var table = document.getElementById("tinytable_ejo8yh2ksyznss2mhcri");
-        table.rows[i].cells[j].classList.add(css_id);
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_ejo8yh2ksyznss2mhcri');
-        var newRow = table.insertRow(i);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_tinytable_d02et89xwxiimwx36ozh(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_ejo8yh2ksyznss2mhcri");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
-        for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
-            }
-          }
-        }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
-      }
-
-    </script>
-
-  
-
-
-</div>
-</div>
-</section>
-<section id="tipovi-podataka" class="slide level2">
-<h2>Tipovi podataka</h2>
-<p><span class="blue">Podaci</span> se sastoje od varijabli. Varijabla predstavlja <span class="yellow">meru</span> neke pojave.</p>
-<ul>
-<li>Kvalitativni (opisuju pojavu)</li>
-<li>Kvantitativni (dodeljuju numeričku vrednost)</li>
-</ul>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Bitno</strong></p>
-</div>
-<div class="callout-content">
-<p>“Koja je vaša omiljena hrana?”, na šta su odgovori: grožđe, čokolada, karbonara, pica i mango. Ovi podaci nisu numerički; ali im često dodeljujemo brojeve (1 = grožđe, 2 = čokolada, itd.), međutim u ovom slučaju brojeve koristimo kao oznake, ne kao prave vrednosti.</p>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Mera nije samo rec, ver pojam koji se odnosi na proces dodavanja vrednosti nekim opservacijama. Starost merimo vremenom, tezinu kilogramima, bol proizvoljnom skalom 0-10, antitela koncentracijom, rizik verovatnoćom, itd.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="kvantitativni-podaci" class="slide level2">
-<h2>Kvantitativni podaci</h2>
-<div class="cell">
-<div class="cell-output-display">
- 
-
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_ve0g3nyogiqtematjiuu</title>
-    <style>
-.table td.tinytable_css_hy6vsj74yuwfpsltiuen, .table th.tinytable_css_hy6vsj74yuwfpsltiuen {    border-bottom: solid 0.1em #d3d8dc; }
-    </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-    </script>
-  
-
-  
-    <div class="container">
-      <table class="table table-borderless" id="tinytable_ve0g3nyogiqtematjiuu" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
-        
-              <tr>
-                <th scope="col">Koji vam je omiljeni predmet?</th>
-                <th scope="col">Broj učenika</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td>Patologija</td>
-                  <td>105</td>
-                </tr>
-                <tr>
-                  <td>Statistika</td>
-                  <td> 20</td>
-                </tr>
-                <tr>
-                  <td>Patofiza  </td>
-                  <td>  4</td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <script>
-      function styleCell_tinytable_9i03wzpobkd2i4snlury(i, j, css_id) {
-        var table = document.getElementById("tinytable_ve0g3nyogiqtematjiuu");
-        table.rows[i].cells[j].classList.add(css_id);
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_ve0g3nyogiqtematjiuu');
-        var newRow = table.insertRow(i);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_tinytable_9i03wzpobkd2i4snlury(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_ve0g3nyogiqtematjiuu");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
-        for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
-            }
-          }
-        }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
-      }
-
-window.addEventListener('load', function () { styleCell_tinytable_9i03wzpobkd2i4snlury(0, 0, 'tinytable_css_hy6vsj74yuwfpsltiuen') })
-window.addEventListener('load', function () { styleCell_tinytable_9i03wzpobkd2i4snlury(0, 1, 'tinytable_css_hy6vsj74yuwfpsltiuen') })
-    </script>
-
-  
-
-
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Beleška</strong></p>
-</div>
-<div class="callout-content">
-<p>Primetiti da su odgovori studenata kvalitativni, ali smo ih sumiranjem pretvorili u kvantitativne.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="tipovi-brojeva" class="slide level2">
-<h2>Tipovi brojeva</h2>
-<ul>
-<li>Binarni brojevi (Da/Ne; 1/0; <code>TRUE</code>/<code>FALSE</code>)</li>
-<li>Celi (<span class="math inline">\(\mathbb Z\)</span>) brojevi (“Koliko se slažete na skali od 1 do 7?”)</li>
-<li>Realni (<span class="math inline">\(\mathbb R\)</span>) brojevi (najčešći, <span class="math inline">\(3.12...\)</span>, <span class="math inline">\(9.81...\)</span>)</li>
-</ul>
-</section>
-<section id="diskontinuirana-diskretna-i-kontinuirana-merenja" class="slide level2 smaller">
-<h2>Diskontinuirana (diskretna) i kontinuirana merenja</h2>
-<ul>
-<li><strong>Diskontinuirano</strong> (diskretno) merenje (podatak) je ono koje je <span class="yellow">kvalitativno</span> ili se može izraziti preko <span class="yellow">celog broja</span></li>
-</ul>
-<blockquote>
-<p>Broj porođaja: 3, nema nikakvog smisla pričati o 3.5 porođaja!</p>
-</blockquote>
-<ul>
-<li><strong>Kontinuirano</strong> merenje je ono koje se izražava pomoću <span class="yellow">realnog broja</span></li>
-</ul>
-<blockquote>
-<p>Kada merimo težinu u <span class="math inline">\(kg\)</span> obično zaokružujemo, ali ima smisla pričati o <em>preciznijim</em> merenjima (<span class="math inline">\(70 \; \text{kg}\)</span>, <span class="math inline">\(70.3467 \; \text{kg}\)</span>).</p>
-</blockquote>
-<aside class="notes">
-<p>The most important takeaway from this is that some kinds of statistics don’t make sense on some kinds of data. Zip code basically serves as a label for a different region. For this reason, it wouldn’t make sense to talk about the average zip code, for example.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="merne-skale-1" class="slide level2">
-<h2>Merne skale (1)</h2>
-<p><span class="blue">Varijable</span> moraju da imaju <span class="yellow">barem dve vrednosti</span> (inače bi bile konstante).</p>
-<p><span class="blue">Vrednosti</span> varijable imaju <span class="yellow">različite odnose</span>:</p>
-<ul>
-<li>Identitet: Svaka vrednost je jedinstvena.</li>
-<li>Veličina (magnituda): Neke vrednosti su veće od drugih.</li>
-<li>Jednaki intervali: Razlika između 1 i 2 je iste veličine kao 19 i 20.</li>
-<li>Apsolutna nula: Skala ima nulu koja znači nešto.</li>
-</ul>
-</section>
-<section id="merne-skale-2" class="slide level2">
-<h2>Merne skale (2)</h2>
-<ul>
-<li>Nominalna skala (identitet; 1 - Dijabetes, 2 - Hipertenzija)</li>
-<li>Ordinalna skala (identitet i veličina; 1 - Primarno obrazovanje, 2 - Srednja škola)</li>
-<li>Intervalna skala (identitet, veličina, i jednaki intervali; Celsius, Fahrenheit)</li>
-<li>Ratio skala (sve + apsolutna nula; Kelvin, visina, težina)</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
- 
-
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_l6x14x6nrvty9vl4srb9</title>
-    <style>
-.table td.tinytable_css_nwcvmousy9ofjv4pm4b8, .table th.tinytable_css_nwcvmousy9ofjv4pm4b8 {    border-bottom: solid 0.1em #d3d8dc; }
-    </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-    </script>
-  
-
-  
-    <div class="container">
-      <table class="table table-borderless" id="tinytable_l6x14x6nrvty9vl4srb9" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
-        </thead><caption>Dozvoljene operacije u odnosu na skalu</caption>
-              <tbody><tr>
-                <th scope="col">Skala</th>
-                <th scope="col">Jednako/nije jednako</th>
-                <th scope="col">&gt;/&lt;</th>
-                <th scope="col">+/-</th>
-                <th scope="col">Množenje/deljenje</th>
-              </tr>
-        
-        
-        </tbody><tbody>
-                <tr>
-                  <td>Nominalna </td>
-                  <td>OK</td>
-                  <td>  </td>
-                  <td>  </td>
-                  <td>  </td>
-                </tr>
-                <tr>
-                  <td>Ordinalna </td>
-                  <td>OK</td>
-                  <td>OK</td>
-                  <td>  </td>
-                  <td>  </td>
-                </tr>
-                <tr>
-                  <td>Intervalna</td>
-                  <td>OK</td>
-                  <td>OK</td>
-                  <td>OK</td>
-                  <td>  </td>
-                </tr>
-                <tr>
-                  <td>Ratio     </td>
-                  <td>OK</td>
-                  <td>OK</td>
-                  <td>OK</td>
-                  <td>OK</td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <script>
-      function styleCell_tinytable_47u9ezsixyujbexsqvdc(i, j, css_id) {
-        var table = document.getElementById("tinytable_l6x14x6nrvty9vl4srb9");
-        table.rows[i].cells[j].classList.add(css_id);
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_l6x14x6nrvty9vl4srb9');
-        var newRow = table.insertRow(i);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_tinytable_47u9ezsixyujbexsqvdc(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_l6x14x6nrvty9vl4srb9");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
-        for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
-            }
-          }
-        }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
-      }
-
-window.addEventListener('load', function () { styleCell_tinytable_47u9ezsixyujbexsqvdc(0, 0, 'tinytable_css_nwcvmousy9ofjv4pm4b8') })
-window.addEventListener('load', function () { styleCell_tinytable_47u9ezsixyujbexsqvdc(0, 1, 'tinytable_css_nwcvmousy9ofjv4pm4b8') })
-window.addEventListener('load', function () { styleCell_tinytable_47u9ezsixyujbexsqvdc(0, 2, 'tinytable_css_nwcvmousy9ofjv4pm4b8') })
-window.addEventListener('load', function () { styleCell_tinytable_47u9ezsixyujbexsqvdc(0, 3, 'tinytable_css_nwcvmousy9ofjv4pm4b8') })
-window.addEventListener('load', function () { styleCell_tinytable_47u9ezsixyujbexsqvdc(0, 4, 'tinytable_css_nwcvmousy9ofjv4pm4b8') })
-    </script>
-
-  
-
-
-</div>
-</div>
-<aside class="notes">
-<p>These constraints imply certain kinds of statistics. Statistics that simply count values (mode), can be calculated on any of the variable types. Statistics based on ordering or ranking of values (median), require that the value at least be on an ordinal scale. Finally, statistics that involve adding up values (such as the average, or mean), require that the variables be at least on an interval scale.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="ko-zna-zna-podatak" class="slide level2">
-<h2>Ko zna zna (podatak)?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>ABO</li>
-<li>Bol (NRS 0-10 skala)</li>
-<li>M/Ž</li>
-<li>Stadijum (I-IV)</li>
-<li>TA (mmHg)</li>
-<li>Srčana fr (otk/min)</li>
-<li>Starost</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Nominalni</li>
-<li class="fragment">Ordinalni</li>
-<li class="fragment">Nominalni (binarni)</li>
-<li class="fragment">Ordinalni</li>
-<li class="fragment">Numerički (kont.)</li>
-<li class="fragment">Numerički (diskretni)*</li>
-<li class="fragment">Numerički (kont.)</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="šta-ćemo-sa-vremenom" class="slide level2">
-<h2>Šta ćemo sa vremenom?</h2>
-
-<img data-src="slike/vreme.png" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
-<p>Uvek je bolje tretirati vreme kao kontinuirano.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="principi-sređene-baze-tidydata" class="slide level2">
-<h2>Principi sređene baze (tidydata)</h2>
-
-<img data-src="slike/tidy-1.png" class="r-stretch"></section>
-<section id="uh" class="slide level2">
-<h2>uh…</h2>
-
-<img data-src="slike/bazahaos.png" class="r-stretch"></section>
-<section id="kako-se-pravi-baza-u-excel-u" class="slide level2">
-<h2>Kako se pravi baza u Excel-u</h2>
-<p>Zadatak?</p>
-</section>
-<section>
-<section id="česte-greške-u-pravljenju-baza" class="title-slide slide level1 center">
-<h1>Česte greške u pravljenju baza</h1>
-
-</section>
-<section id="granularni-podaci-razdvajanje" class="slide level2">
-<h2>Granularni podaci (razdvajanje)</h2>
-
-<img data-src="slike/tidy-17.png" class="r-stretch"></section>
-<section id="granularni-podaci-spajanje" class="slide level2">
-<h2>Granularni podaci (spajanje)</h2>
-
-<img data-src="slike/tidy-18.png" class="r-stretch"></section>
-<section id="ponovljenje-kolone-neprepoznate-varijable" class="slide level2">
-<h2>Ponovljenje kolone (neprepoznate varijable)</h2>
-
-<img data-src="slike/tidy-8.png" class="r-stretch"></section>
-<section id="ponovljena-merenja-lakše-upisivanje" class="slide level2">
-<h2>Ponovljena merenja (lakše upisivanje)</h2>
-
-<img data-src="slike/tidy-9.png" class="r-stretch"></section>
-<section id="zadatak-vremesnke-serije" class="slide level2 variant-one smaller">
-<h2>Zadatak: vremesnke serije</h2>
-<div>
-<p><span class="yellow">Napravi</span> bazu kako bi:</p>
-<ul>
-<li>Poredili vrednosti sistolnog pritiska između dijabetičara i zdravih ljudi?</li>
-<li>Pratili pacijente da saznamo ko je imao recidiv posle operacije?</li>
-<li>Upisali CRP meren serijski u intervalu: 1h, 12h, 24h?</li>
-</ul>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Teško (opcionalno)</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Merili vreme do tromboze između pacijenata koje lečimo agresivno i konzervativno.</li>
-<li>Merili vreme do tromboze ako pratimo vrednosti d-Dimera serijski 3 dana za redom.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="podaci-koji-nedostaju" class="slide level2 larger">
-<h2>Podaci koji nedostaju</h2>
-<div class="cell">
-<div class="cell-output-display">
- 
-
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_e6eru9n9evcitk8i9bm7</title>
-    <style>
-.table td.tinytable_css_zj3eypuqdk66vn27ram1, .table th.tinytable_css_zj3eypuqdk66vn27ram1 {    border-bottom: solid 0.1em #d3d8dc; }
-    </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-    </script>
-  
-
-  
-    <div class="container">
-      <table class="table table-borderless" id="tinytable_e6eru9n9evcitk8i9bm7" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
-        
-              <tr>
-                <th scope="col">pacijent</th>
-                <th scope="col">intervencija</th>
-                <th scope="col">ishod</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td>Petar Petrovic</td>
-                  <td>1</td>
-                  <td> 7</td>
-                </tr>
-                <tr>
-                  <td>NA            </td>
-                  <td>2</td>
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <td>NA            </td>
-                  <td>3</td>
-                  <td>NA</td>
-                </tr>
-                <tr>
-                  <td>Katarina Katic</td>
-                  <td>1</td>
-                  <td> 4</td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <script>
-      function styleCell_tinytable_uakd340qmhstccxq1ci6(i, j, css_id) {
-        var table = document.getElementById("tinytable_e6eru9n9evcitk8i9bm7");
-        table.rows[i].cells[j].classList.add(css_id);
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_e6eru9n9evcitk8i9bm7');
-        var newRow = table.insertRow(i);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_tinytable_uakd340qmhstccxq1ci6(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_e6eru9n9evcitk8i9bm7");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
-        for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
-            }
-          }
-        }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
-      }
-
-window.addEventListener('load', function () { styleCell_tinytable_uakd340qmhstccxq1ci6(0, 0, 'tinytable_css_zj3eypuqdk66vn27ram1') })
-window.addEventListener('load', function () { styleCell_tinytable_uakd340qmhstccxq1ci6(0, 1, 'tinytable_css_zj3eypuqdk66vn27ram1') })
-window.addEventListener('load', function () { styleCell_tinytable_uakd340qmhstccxq1ci6(0, 2, 'tinytable_css_zj3eypuqdk66vn27ram1') })
-    </script>
-
-  
-
-
-</div>
-</div>
-<div class="fragment">
-<ul>
-<li>Ostaviti prazno (moguće greške)</li>
-<li>Upisati NA</li>
-</ul>
 </div>
 <div class="quarto-auto-generated-content">
 <p><img src="slike/logo.png" class="slide-logo"></p>
@@ -1467,7 +689,7 @@ window.addEventListener('load', function () { styleCell_tinytable_uakd340qmhstcc
 
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

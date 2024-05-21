@@ -1,0 +1,178 @@
+---
+title: "Sređivanje podataka"
+date: last-modified
+author: "Dr Nikola Grubor"
+institute: "Institut za Medicinsku Statistiku i Informatiku"
+logo: "slike/logo.png"
+lang: sr-Latn
+
+format:
+  revealjs:
+    slide-number: true
+    show-slide-number: speaker
+    theme: [default, custom.scss]
+
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+```{r}
+library(glue)
+library(tidyverse)
+library(tinytable)
+```
+
+## {.center}
+
+::: r-fit-text
+Grupisanje je proces [organizovanja]{.yellow} (klasifikovanja) podataka.
+:::
+
+## Apsolutna i relativna učestalost {.center}
+
+::: r-fit-text
+
+$f_{abs} = \frac{\#n}{\text{interval}}$
+
+$f_{rel} = \frac{f_{abs}}{\text{Ukupan broj podataka}} \%$
+
+:::
+
+## Apsolutni jeleni i relativne ajkule
+
+- Relativni brojevi mogu prenaglasiti rizik (bitnost) neke pojave
+  - Dobri za plašenje drugih, publikacije
+  - Loši za javno zdravlje, naučni progres
+  - Ali potrebni za kauzalno tumačenje
+
+::: {layout-ncol=2}
+
+![Apsolutni jelen](slike/deer2.png){width=255}
+
+![Relativna ajkula](slike/shark.png){width=400}
+:::
+
+::: {.notes}
+Retke bolesti mogu da imaju rizike od 300% (OR 3.00), ali ako niko u populaciji ne dobije tu bolest onda to nije od javnozdravstvenog znacaja. 
+:::
+
+## {.center}
+
+![](slike/deadlychart.jpeg){fig-align="center"}
+
+## Komunikacija rizika {.smaller}
+
+:::: columns 
+
+::: {.column}
+Mnogi ljudi [mešaju]{.yellow} relativni i apsolutni [rizik]{.yellow}
+
+Primer:
+
+- 1/10,000 žena ima trombozu
+- 3/10,000 žena koje uzimaju kontraceptivne pilule ima trombozu
+
+$RR = \frac{3/10,000}{1/10,000} = 3.00$
+
+- $\uparrow$ 200% u trombozama!
+- Promena verovatnoće je samo 0.0002 (2 žene u 10,000)
+- Trudnoća povećava verovatnoću tromboze mnogo više (DVT)
+:::
+
+::: {.column}
+![](slike/pills.png)
+:::
+
+::::
+
+::: {.notes}
+Tromboza je retka u opstoj populaciji, ALI su mnogo češći na pilulu. Ima kauzalnih razloga za to. Cost/benefit je težak. Zbog članka mnogo žena prestalo pije KP i dobilo tromboze zbog trudnoće!
+:::
+
+## Tabelarno prikazivanje podataka
+
+## Base-rate fallacy (1)
+
+![](slike/base1.png)
+
+## Base-rate fallacy (2)
+
+![](slike/base2.png)
+
+## Relativni rizik u praksi
+
+*animacija smanjejna relativnog rizika*
+
+*objasnjenje kako se povezuju base-rate (base rizik) i relativni benefit*
+
+## Grafičko prikazivanje podataka
+
+## Pie chart
+
+## Good chart examples
+
+## Bad chart examples
+
+## Prikazivanje nominalnih podataka
+*Grupišu se po [kategorijama]{.yellow}*
+
+## Bar chart
+
+## Bad Bar chart
+
+## Pie chart
+
+## Prikazivanje ordinalnih podataka
+*Grupišu se po [kategorijama]{.yellow}*
+
+## Prikazivanje diskontinuiranih podataka
+*Grupišu se po [kategorijama]{.yellow}*
+
+## Frequency table
+
+## Frequency bar chart
+
+## Bad Frequency bar chart
+
+## Histogram explanation
+
+## Prikazivanje kontinuiranih podataka
+*Grupišu se po [kategorijama]{.yellow}*
+
+## Histogram
+
+## Bad Histogram
+
+## Frequency polygon
+
+## More examples
+
+## Zadatak
+
+- Napraviti tablele
+- Zadaci na bazi sa kursa
+
+## Struktura kursa
+
+<!-- FIX THIS TABLE SIZE -->
+
+```{css}
+#| echo: false
+
+.reveal table {
+  font-size: 55%;
+}
+```
+
+```{r}
+teme <- c(
+  "Uvod u medicinsku statistiku", "Sređivanje podataka",
+  "Statističko opisivanje podataka", "Verovatnoća i raspodele verovatnoća",
+  "Populacija i uzorak", "Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama",
+  "Testiranje hipoteza o učestalostima", "Testiranje hipoteza o rangovima", "Korelacija",
+  "Regresija / Kolokvijum", "Podaci, informacije i znanje", "Zdravstveni informacioni sistem",
+  "Mere dijagnostičke tačnosti", "Medicinsko odlučivanje", "Bioinformatika"
+)
+
+kurs <- tibble(Nedelja = 1:15, Tema = teme)
+tt(kurs)
+```

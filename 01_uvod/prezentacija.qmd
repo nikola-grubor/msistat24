@@ -214,13 +214,17 @@ scurvy %>%
 
 ## Tipovi podataka
 
-[Podaci]{.blue} se sastoje od varijabli. Gde varijabla predstavlja [meru]{.yellow} neke pojave.
+[Podaci]{.blue} se sastoje od varijabli. Varijabla predstavlja [meru]{.yellow} neke pojave.
 
 - Kvalitativni (opisuju pojavu)
 - Kvantitativni (dodeljuju numeričku vrednost)
 
 ::: {.callout-important}
 "Koja je vaša omiljena hrana?", na šta su odgovori: grožđe, čokolada, karbonara, pica i mango. Ovi podaci nisu numerički; ali im često dodeljujemo brojeve (1 = grožđe, 2 = čokolada, itd.), međutim u ovom slučaju brojeve koristimo kao oznake, ne kao prave vrednosti.
+:::
+
+::: {.notes}
+Mera nije samo rec, ver pojam koji se odnosi na proces dodavanja vrednosti nekim opservacijama. Starost merimo vremenom, tezinu kilogramima, bol proizvoljnom skalom 0-10, antitela koncentracijom, rizik verovatnoćom, itd.
 :::
 
 ## Kvantitativni podaci
@@ -253,7 +257,7 @@ Primetiti da su odgovori studenata kvalitativni, ali smo ih sumiranjem pretvoril
 
 - **Kontinuirano** merenje je ono koje se izražava pomoću [realnog broja]{.yellow}
 
-> Kada merimo težinu u $kg$ obično zaokružimo, međutim u ovom slučaju ima smisla pričati o *preciznijim* merenjima ($70 \; \text{kg}$, $70.3467 \; \text{kg}$).
+> Kada merimo težinu u $kg$ obično zaokružujemo, ali ima smisla pričati o *preciznijim* merenjima ($70 \; \text{kg}$, $70.3467 \; \text{kg}$).
 
 ::: {.notes}
 The most important takeaway from this is that some kinds of statistics don’t make sense on some kinds of data. Zip code basically serves as a label for a different region. For this reason, it wouldn’t make sense to talk about the average zip code, for example.
@@ -261,12 +265,18 @@ The most important takeaway from this is that some kinds of statistics don’t m
 
 ## Merne skale (1)
 
-Varijable moraju da imaju barem dve vrednosti (inače bi bile konstante), ali vrednosti varijable mogu na različite načine da se odnose jedna sa drugom:
+[Varijable]{.blue} moraju da imaju [barem dve vrednosti]{.yellow} (inače bi bile konstante). 
+
+[Vrednosti]{.blue} varijable imaju [različite odnose]{.yellow}:
 
 - Identitet: Svaka vrednost je jedinstvena.
 - Veličina (magnituda): Neke vrednosti su veće od drugih.
 - Jednaki intervali: Razlika između 1 i 2 je iste veličine kao 19 i 20.
-- Apsolutna nula: Skala ima nulu koja znači nešto (Kelvin vs. Celsius)
+- Apsolutna nula: Skala ima nulu koja znači nešto.
+
+::: {.notes}
+Zasto su bitne? Govore nam koje simplifikacije imaju smisla.
+:::
 
 ## Merne skale (2)
 
@@ -287,9 +297,36 @@ tt(scales,
    caption = "Dozvoljene operacije u odnosu na skalu")
 ```
 
-
 ::: {.notes}
 These constraints imply certain kinds of statistics. Statistics that simply count values (mode), can be calculated on any of the variable types. Statistics based on ordering or ranking of values (median), require that the value at least be on an ordinal scale. Finally, statistics that involve adding up values (such as the average, or mean), require that the variables be at least on an interval scale.
+:::
+
+## Nominalni podaci
+
+- Jedinstvene vrednosti
+- Nemaju minimum ni maksimum
+- Nemaju red
+
+## Ordinalni podaci
+
+![](slike/bol.jpg)
+
+- Diskretni (celi brojevi)
+- Definisan minimum i maksimum
+- Definisan red
+- "Udaljenost" između kategorija je nepoznata
+
+::: {.notes}
+"Ponekad" je veće od "Nikad", ali koliko veće je ponekad od nikad? Koliko je 2 na skali bola veće od 1? Odgovor nije 1, nego neki subjektivna mera. Koliko neko voli ovaj čas, za 1-2 nije teško, ali 4-5 je teško.
+:::
+
+## Numerički podaci
+
+- Kontinuirani
+- Mogu biti proizvoljno precizni
+
+::: {.notes}
+Trombociti su prebrojivi, ali nekad se mere kontinuiranim merama kao npr. spektrometrijom. Vezbe iz biohemiije (kolorimetrija).
 :::
 
 ## Ko zna zna (podatak)?
@@ -322,9 +359,17 @@ These constraints imply certain kinds of statistics. Statistics that simply coun
 
 ![](slike/vreme.png){fig-align="center"}
 
+::: {.notes}
+Uvek je bolje tretirati vreme kao kontinuirano.
+:::
+
 ## Principi sređene baze (tidydata)
 
 ![](slike/tidy-1.png)
+
+## uh...
+
+![](slike/bazahaos.png)
 
 ## Kako se pravi baza u Excel-u
 
@@ -348,14 +393,22 @@ Zadatak?
 
 ![](slike/tidy-9.png)
 
-## Zadatak: vremesnke serije {.variant-one}
+## Zadatak: vremesnke serije {.variant-one .smaller}
 
 ::: nonincremental
 
 [Napravi]{.yellow} bazu kako bi:
 
+- Poredili vrednosti sistolnog pritiska između dijabetičara i zdravih ljudi?
+- Poredili vrednosti glukoze između istih pacijenata pre i posle terapije?
 - Pratili pacijente da saznamo ko je imao recidiv posle operacije?
 - Upisali CRP meren serijski u intervalu: 1h, 12h, 24h?
+
+::: {.callout-warning}
+## Teško (opcionalno)
+- Merili vreme do tromboze između pacijenata koje lečimo agresivno i konzervativno.
+- Merili vreme do tromboze ako pratimo vrednosti d-Dimera serijski 3 dana za redom. 
+:::
 
 :::
 
@@ -372,3 +425,7 @@ treatment <- tribble(
 tt(treatment)
 ```
 
+::: {.fragment}
+- Ostaviti prazno (moguće greške)
+- Upisati NA
+:::
