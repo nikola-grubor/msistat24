@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Dr Nikola Grubor">
-  <meta name="dcterms.date" content="2024-05-21">
+  <meta name="dcterms.date" content="2024-05-27">
   <title>Sređivanje podataka</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -321,6 +321,10 @@
       margin-right: 0; 
     }
   </style>
+  <script src="prezentacija_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+  <link href="prezentacija_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 </head>
 <body class="quarto-dark">
   <div class="reveal">
@@ -334,22 +338,24 @@
 <div class="quarto-title-author-name">
 Dr Nikola Grubor 
 </div>
-        <p class="quarto-title-affiliation">
-            Institut za Medicinsku Statistiku i Informatiku
-          </p>
-    </div>
+</div>
 </div>
 
-  <p class="date">2024-05-21</p>
+  <p class="date">2024-05-27</p>
 </section>
 <section id="section" class="slide level2 center">
 <h2></h2>
 <div class="r-fit-text">
-<p>Grupisanje je proces <span class="yellow">organizovanja</span> (klasifikovanja) podataka.</p>
+<p>Grupisanje je proces <span class="yellow">organizovanja</span> podataka.</p>
 </div>
 </section>
-<section id="apsolutna-i-relativna-učestalost" class="slide level2 center">
-<h2>Apsolutna i relativna učestalost</h2>
+<section>
+<section id="apsolutni-i-relativni-brojevi" class="title-slide slide level1 center">
+<h1>Apsolutni i relativni brojevi</h1>
+
+</section>
+<section id="formalna-definicija" class="slide level2 center">
+<h2>Formalna definicija</h2>
 <div class="r-fit-text">
 <p><span class="math inline">\(f_{abs} = \frac{\#n}{\text{interval}}\)</span></p>
 <p><span class="math inline">\(f_{rel} = \frac{f_{abs}}{\text{Ukupan broj podataka}} \%\)</span></p>
@@ -358,12 +364,10 @@ Dr Nikola Grubor
 <section id="apsolutni-jeleni-i-relativne-ajkule" class="slide level2">
 <h2>Apsolutni jeleni i relativne ajkule</h2>
 <ul>
-<li>Relativni brojevi mogu prenaglasiti rizik (bitnost) neke pojave
-<ul>
+<li>Relativni brojevi mogu prenaglasiti rizik (bitnost) neke pojave</li>
 <li>Dobri za plašenje drugih, publikacije</li>
 <li>Loši za javno zdravlje, naučni progres</li>
 <li>Ali potrebni za kauzalno tumačenje</li>
-</ul></li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -386,7 +390,7 @@ Dr Nikola Grubor
 </div>
 </div>
 <aside class="notes">
-<p>Retke bolesti mogu da imaju rizike od 300% (OR 3.00), ali ako niko u populaciji ne dobije tu bolest onda to nije od javnozdravstvenog znacaja.</p>
+<p>Retke bolesti mogu da imaju rizike od 300% (RR 3.00), ali ako niko u populaciji ne dobije tu bolest onda to nije od javnozdravstvenog znacaja.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -399,8 +403,8 @@ Dr Nikola Grubor
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-1" class="slide level2 center">
-<h2></h2>
+<section id="opasnost-zaviti-od-izloženosti" class="slide level2 center">
+<h2>Opasnost zaviti od izloženosti</h2>
 
 <img data-src="slike/deadlychart.jpeg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="komunikacija-rizika" class="slide level2 smaller">
@@ -437,37 +441,131 @@ Dr Nikola Grubor
           display:block!important;
       }</style></aside>
 </section>
-<section id="tabelarno-prikazivanje-podataka" class="slide level2">
-<h2>Tabelarno prikazivanje podataka</h2>
-</section>
-<section id="base-rate-fallacy-1" class="slide level2">
-<h2>Base-rate fallacy (1)</h2>
+<section id="tabelarno-prikazivanje-aps.-i-rel.-podataka" class="slide level2 center">
+<h2>Tabelarno prikazivanje aps. i rel. podataka</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table class="table" data-quarto-postprocess="true" style="NAborder-bottom: 0; font-size: 64px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Varijabla</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">N = 100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Navika</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Nepusac</td>
+<td style="text-align: center;">54 (54%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Pusač</td>
+<td style="text-align: center;">46 (46%)</td>
+</tr>
+</tbody><tfoot>
+<tr class="even">
+<td style="text-align: left; padding: 0;"><sup>1</sup> n (%)</td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
 
-<img data-src="slike/base1.png" class="r-stretch"></section>
-<section id="base-rate-fallacy-2" class="slide level2">
-<h2>Base-rate fallacy (2)</h2>
+</table>
 
-<img data-src="slike/base2.png" class="r-stretch"></section>
-<section id="relativni-rizik-u-praksi" class="slide level2">
-<h2>Relativni rizik u praksi</h2>
-<p><em>animacija smanjejna relativnog rizika</em></p>
-<p><em>objasnjenje kako se povezuju base-rate (base rizik) i relativni benefit</em></p>
+
+</div>
+</div>
+</div>
 </section>
-<section id="grafičko-prikazivanje-podataka" class="slide level2">
-<h2>Grafičko prikazivanje podataka</h2>
+<section id="grafičko-prikazivanje-relativnih-brojeva" class="slide level2 smaller">
+<h2>Grafičko prikazivanje relativnih brojeva</h2>
+
+<img data-src="slike/statins.gif" class="r-stretch quarto-figure-center"><p class="caption">Redukcija LDL-a u odnosu na vrstu statina.</p></section>
+<section id="statini" class="slide level2 smaller">
+<h2>Statini</h2>
+<p>Efikasnost (50-65 god):</p>
+<ul>
+<li>Mortalitet (<span class="math inline">\(RR = 0.86; ARD = -0.40\%; NNT = 250\)</span>)</li>
+<li>CVD (<span class="math inline">\(RR = 0.69; ARD, -0.43\%; NNT = 233\)</span>)</li>
+<li>CVI (<span class="math inline">\(RR = 0.71; ARD, -0.38\%; NNT = 236\)</span>)</li>
+<li>MI (<span class="math inline">\(RR = 0.64; ARD, -0.81\%; NNT = 123\)</span>)</li>
+</ul>
+
+<img data-src="slike/statin_jama.png" class="r-stretch"><aside class="notes">
+<p>Sta moze da bude problem sa NNT? Sta ako terapije nekog osteti? Ovo su proseci, varijabilitet je isto bitan.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="pie-chart" class="slide level2">
-<h2>Pie chart</h2>
+<section id="grafički-prikaz-redukcije-relativnog-rizika" class="slide level2">
+<h2>Grafički prikaz redukcije relativnog rizika</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="greška-osnovne-stope" class="slide level2">
+<h2>Greška osnovne stope</h2>
+<div class="r-stack">
+<p><img data-src="slike/base1.png"></p>
+<p><img data-src="slike/base2.png" class="fragment"></p>
+</div>
+</section>
+<section id="apsolutni-antibiotik-relativni-statin" class="slide level2">
+<h2>Apsolutni antibiotik, relativni statin</h2>
+<ul>
+<li>Apsolutni rizik je informativniji</li>
+<li>Relativni rizik je bitan kada umemo da procenimo osnovni rizik</li>
+<li>Vakcinacija (100% velike boginje)</li>
+<li>Antibiotici (primer…)</li>
+</ul>
+<aside class="notes">
+<p>Da li procedure/intervencije mogu da se mere ovako, smanjenjem rizika? Sta je zapravo rizik?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="dobri-i-loši-grafikoni" class="title-slide slide level1 center">
+<h1>Dobri i loši grafikoni</h1>
+
+</section>
+<section id="primer-grafikon-pisa-testiranja-1" class="slide level2">
+<h2>Primer: Grafikon PISA testiranja (1)</h2>
+
+<img data-src="slike/pisa_raw.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="primer-grafikon-pisa-testiranja-2" class="slide level2 smaller">
+<h2>Primer: Grafikon PISA testiranja (2)</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"><p><span class="math inline">\(Y\)</span> osa produžena do nule.</p>
 </section>
 <section id="good-chart-examples" class="slide level2">
 <h2>Good chart examples</h2>
 </section>
-<section id="bad-chart-examples" class="slide level2">
-<h2>Bad chart examples</h2>
-</section>
 <section id="prikazivanje-nominalnih-podataka" class="slide level2">
 <h2>Prikazivanje nominalnih podataka</h2>
 <p><em>Grupišu se po <span class="yellow">kategorijama</span></em></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 0 × 0</code></pre>
+</div>
+</div>
 </section>
 <section id="bar-chart" class="slide level2">
 <h2>Bar chart</h2>
@@ -475,7 +573,7 @@ Dr Nikola Grubor
 <section id="bad-bar-chart" class="slide level2">
 <h2>Bad Bar chart</h2>
 </section>
-<section id="pie-chart-1" class="slide level2">
+<section id="pie-chart" class="slide level2">
 <h2>Pie chart</h2>
 </section>
 <section id="prikazivanje-ordinalnih-podataka" class="slide level2">
@@ -495,12 +593,69 @@ Dr Nikola Grubor
 <section id="bad-frequency-bar-chart" class="slide level2">
 <h2>Bad Frequency bar chart</h2>
 </section>
-<section id="histogram-explanation" class="slide level2">
-<h2>Histogram explanation</h2>
+<section id="motivacija-za-histogram" class="slide level2">
+<h2>Motivacija za histogram</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="široki-intervali-nisu-korisni" class="slide level2">
+<h2>Široki intervali nisu korisni</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="uski-intervali-nisu-korisni" class="slide level2">
+<h2>Uski intervali nisu korisni</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="optimalan-broj-intervala-je-proizvoljna-stavka" class="slide level2">
+<h2>Optimalan broj intervala je proizvoljna stavka</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<section id="informacije-možemo-predstaviti-distribucijom" class="slide level2">
+<h2>Informacije možemo predstaviti distribucijom</h2>
+<div class="r-stack">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="prikazivanje-kontinuiranih-podataka" class="slide level2">
 <h2>Prikazivanje kontinuiranih podataka</h2>
 <p><em>Grupišu se po <span class="yellow">kategorijama</span></em></p>
+<ul>
+<li>Odrediti apsolutne i relativne učestalosti za <strong>starost</strong></li>
+<li>Grafički prikaz
+<ul>
+<li>histogram</li>
+<li>poligon frekvencija</li>
+</ul></li>
+</ul>
 </section>
 <section id="histogram" class="slide level2">
 <h2>Histogram</h2>
@@ -527,7 +682,7 @@ Dr Nikola Grubor
 <div class="cell">
 <style type="text/css">
 .reveal table {
-  font-size: 55%;
+font-size: 55%;
 }
 </style>
 </div>
@@ -538,9 +693,9 @@ Dr Nikola Grubor
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_zsykohbdw1tub334k90n</title>
+    <title>tinytable_qqorrceucalnbpjzrf1i</title>
     <style>
-.table td.tinytable_css_vgz2wl48q3hwopsaw26g, .table th.tinytable_css_vgz2wl48q3hwopsaw26g {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_ct46fip99qstmk1miicw, .table th.tinytable_css_ct46fip99qstmk1miicw {    border-bottom: solid 0.1em #d3d8dc; }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -558,7 +713,7 @@ Dr Nikola Grubor
 
   
     <div class="container">
-      <table class="table table-borderless" id="tinytable_zsykohbdw1tub334k90n" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_qqorrceucalnbpjzrf1i" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -633,12 +788,12 @@ Dr Nikola Grubor
     </div>
 
     <script>
-      function styleCell_tinytable_4geab9iujyw8oqw3l5mf(i, j, css_id) {
-        var table = document.getElementById("tinytable_zsykohbdw1tub334k90n");
+      function styleCell_tinytable_gyctuxg88lv10h6q6z4a(i, j, css_id) {
+        var table = document.getElementById("tinytable_qqorrceucalnbpjzrf1i");
         table.rows[i].cells[j].classList.add(css_id);
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_zsykohbdw1tub334k90n');
+        var table = document.getElementById('tinytable_qqorrceucalnbpjzrf1i');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -646,8 +801,8 @@ Dr Nikola Grubor
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_tinytable_4geab9iujyw8oqw3l5mf(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_zsykohbdw1tub334k90n");
+      function spanCell_tinytable_gyctuxg88lv10h6q6z4a(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_qqorrceucalnbpjzrf1i");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -674,8 +829,8 @@ Dr Nikola Grubor
         targetCell.colSpan = colspan;
       }
 
-window.addEventListener('load', function () { styleCell_tinytable_4geab9iujyw8oqw3l5mf(0, 0, 'tinytable_css_vgz2wl48q3hwopsaw26g') })
-window.addEventListener('load', function () { styleCell_tinytable_4geab9iujyw8oqw3l5mf(0, 1, 'tinytable_css_vgz2wl48q3hwopsaw26g') })
+window.addEventListener('load', function () { styleCell_tinytable_gyctuxg88lv10h6q6z4a(0, 0, 'tinytable_css_ct46fip99qstmk1miicw') })
+window.addEventListener('load', function () { styleCell_tinytable_gyctuxg88lv10h6q6z4a(0, 1, 'tinytable_css_ct46fip99qstmk1miicw') })
     </script>
 
   
@@ -689,7 +844,7 @@ window.addEventListener('load', function () { styleCell_tinytable_4geab9iujyw8oq
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

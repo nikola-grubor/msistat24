@@ -2,7 +2,7 @@
 title: "Uvod u Statistiku"
 date: last-modified
 author: "Dr Nikola Grubor"
-institute: "Institut za Medicinsku Statistiku i Informatiku"
+# institute: "Institut za Medicinsku Statistiku i Informatiku"
 logo: "slike/logo.png"
 lang: sr-Latn
 
@@ -15,6 +15,16 @@ format:
 revealjs-plugins:
   - revealjs-text-resizer
 ---
+
+```{r}
+library(glue)
+library(tidyverse)
+library(tinytable)
+
+theme_quarto <- function(x) format_tt(x, quarto = TRUE)
+options(tinytable_tt_theme = NULL)
+```
+
 
 ## Čime se bavi statistika u medicini?
 
@@ -80,10 +90,6 @@ Da li *ovaj* pacijent sa *ovom* laboratorijskom vrednošću ima rizik od bolesti
 ```
 
 ```{r}
-library(glue)
-library(tidyverse)
-library(tinytable)
-
 teme <- c(
   "Uvod u medicinsku statistiku", "Sređivanje podataka",
   "Statističko opisivanje podataka", "Verovatnoća i raspodele verovatnoća",
@@ -111,7 +117,7 @@ tt(kurs)
 :::
 :::
 
-## {.center}
+## Definicija {.center}
 
 ::: r-fit-text
 Statistika je nauka o odlučivanju
@@ -175,7 +181,7 @@ Estimand je tačna mera koju želimo na naučimo (rizik, učestalnost, prosek, p
 %%| fig-align: center
 
 flowchart TD
-  I[Istraživačko pitanje] --> A
+  I[Istraživačko pitanje] -.-> A
   A[Osnovni skup] --> B[Uzorak]
   B --> C[Jedinica posmatranja]
   C --> D[Varijable]
@@ -188,7 +194,7 @@ flowchart TD
 %%| fig-align: center
 
 flowchart TD
-  I["Da li je stepen degeneracije\nlumbosakruma na radiografiji\npovezan sa bolom?"] --> A
+  I["Da li je stepen degeneracije\nlumbosakruma na radiografiji\npovezan sa bolom?"] -.-> A
   A[Pacijenti sa lumboishialgijom] --> B[n pacijenata]
   B --> C[Pacijent]
   C --> D["Stepen degeneracije, bol"]
@@ -196,7 +202,7 @@ flowchart TD
 :::
 ::::
 
-## Prva baza podataka
+## Prva medicinska baza podataka
 
 ```{r}
 library(medicaldata)
@@ -212,7 +218,28 @@ scurvy %>%
 ```
 
 
-## Tipovi podataka
+## Merenje
+
+- Način merenja je jako bitan
+- Preciznost, pouzdanost, validnost, podaci koji nedostaju
+
+![Pikasov crtez psa.](slike/measurement.png){fig-align="center"}
+
+::: {.notes}
+Nama je ocigledan pas, ali kako izmeriti koliko je ovo pas? Treba nam neka skala. Primeri: koliko je teska neka bolest (DM, HTA, stadijum Ca), znanje (ocigledno losa mera), itd. Merenja mogu da budu i opasna: nekad smo merili lobanje (frenologija).
+:::
+
+## Odgovori pacijenata na merenje pritiska
+
+![](slike/bp.jpg){fig-align="center"}
+
+::: {.notes}
+SPRINT trial ima ozbilje kritike.
+
+In clinical practice, BP is often measured with little attention to quality control and may overestimate average SBP by as much as 10 to 15 mm Hg compared with values obtained using guideline recommended methods that have been employed in most landmark antihypertensive drug treatment trials.
+:::
+
+## Vrste podataka
 
 [Podaci]{.blue} se sastoje od varijabli. Varijabla predstavlja [meru]{.yellow} neke pojave.
 
@@ -227,7 +254,7 @@ scurvy %>%
 Mera nije samo rec, ver pojam koji se odnosi na proces dodavanja vrednosti nekim opservacijama. Starost merimo vremenom, tezinu kilogramima, bol proizvoljnom skalom 0-10, antitela koncentracijom, rizik verovatnoćom, itd.
 :::
 
-## Kvantitativni podaci
+## Kvalitativni podaci
 
 ```{r}
 question <- tribble(
@@ -236,7 +263,8 @@ question <- tribble(
   "Statistika", 20,
   "Patofiza", 4
 )
-tt(question)
+
+tt(question) %>% style_tt(j = 1:2, fontsize = 2)
 ```
 
 ::: {.callout-note}
@@ -278,7 +306,7 @@ The most important takeaway from this is that some kinds of statistics don’t m
 Zasto su bitne? Govore nam koje simplifikacije imaju smisla.
 :::
 
-## Merne skale (2)
+## Merne skale (2) {.smaller}
 
 - Nominalna skala (identitet; 1 - Dijabetes, 2 - Hipertenzija)
 - Ordinalna skala (identitet i veličina; 1 - Primarno obrazovanje, 2 - Srednja škola)
@@ -294,7 +322,8 @@ scales <- tribble(
   "Ratio", "OK", "OK", "OK", "OK"
 )
 tt(scales,
-   caption = "Dozvoljene operacije u odnosu na skalu")
+   caption = "Dozvoljene operacije u odnosu na skalu") %>% 
+style_tt(j = 1:5, fontsize = 2.2)
 ```
 
 ::: {.notes}
@@ -303,13 +332,15 @@ These constraints imply certain kinds of statistics. Statistics that simply coun
 
 ## Nominalni podaci
 
+![](slike/shells.jpg){fig-align="center"}
+
 - Jedinstvene vrednosti
 - Nemaju minimum ni maksimum
 - Nemaju red
 
 ## Ordinalni podaci
 
-![](slike/bol.jpg)
+![](slike/bol.jpg){fig-align="center"}
 
 - Diskretni (celi brojevi)
 - Definisan minimum i maksimum
@@ -322,14 +353,20 @@ These constraints imply certain kinds of statistics. Statistics that simply coun
 
 ## Numerički podaci
 
-- Kontinuirani
-- Mogu biti proizvoljno precizni
+![](slike/ruler.png){fig-align="center"}
+
+- Diskontinuirani su samo celi brojevi
+- Kontinuirani mogu biti proizvoljno precizni
+
+::: {.callout-warning}
+Ordinalni i diskontinuirani podaci mogu da liče. Razlikuje ih to što su brojevi kod ordinalnih podataka samo obeležja, ne prave vrednosti. Kontinuirani i diskontinuirani podaci mogu da liče ako se zaokruže (50kg, 60kg, 75kg), ali uvek imamo opciju da ih prikažemo preciznije.
+:::
 
 ::: {.notes}
 Trombociti su prebrojivi, ali nekad se mere kontinuiranim merama kao npr. spektrometrijom. Vezbe iz biohemiije (kolorimetrija).
 :::
 
-## Ko zna zna (podatak)?
+## Ko zna zna (tip podatka)?
 
 ::: columns
 
@@ -363,11 +400,11 @@ Trombociti su prebrojivi, ali nekad se mere kontinuiranim merama kao npr. spektr
 Uvek je bolje tretirati vreme kao kontinuirano.
 :::
 
-## Principi sređene baze (tidydata)
+## Principi uredne baze (tidydata) {.center}
 
 ![](slike/tidy-1.png)
 
-## uh...
+## uh... {.center}
 
 ![](slike/bazahaos.png)
 
@@ -420,12 +457,10 @@ treatment <- tribble(
   "Petar Petrovic", 1, 7,
   NA, 2, 10,
   NA, 3, NA,
-  "Katarina Katic", 1, 4
+  "Katarina Katarinovic", 1, 4
 )
-tt(treatment)
+tt(treatment) |> style_tt(j = 1:3, fontsize = 2)
 ```
 
-::: {.fragment}
 - Ostaviti prazno (moguće greške)
 - Upisati NA
-:::

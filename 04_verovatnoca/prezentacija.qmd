@@ -1,0 +1,177 @@
+---
+title: "Sređivanje podataka"
+date: last-modified
+author: "Dr Nikola Grubor"
+# institute: "Institut za Medicinsku Statistiku i Informatiku"
+logo: "slike/logo.png"
+lang: sr-Latn
+
+format:
+  revealjs:
+    slide-number: true
+    show-slide-number: speaker
+    theme: [default, custom.scss]
+
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+```{r}
+library(glue)
+library(here)
+library(tidyverse)
+library(tinytable)
+library(gtsummary)
+library(gganimate)
+```
+
+## de Méréov problem
+
+A famous example arose from a problem encountered by a French gambler who went by the name of Chevalier de Méré. de Méré played two different dice games: In the first he bet on the chance of at least one six on four rolls of a six-sided die, while in the second he bet on the chance of at least one double-six on 24 rolls of two dice. 
+
+## Verovatnoća kao alat za predstavljanje znanja
+
+## Šta su događaji?
+
+Deterministički
+
+Slučajni (stohastnični)
+
+## Mutation somatic vs germline
+
+## Definicija verovatnoće
+
+Verovatnoća je mera očekivanja nekog slučajnog događaja.
+
+## Primer monopol
+
+## Dice rolling
+
+## Podela verovatnoće
+
+Objektivna
+
+- Teorijska (matematička)
+- Empirijska (statistička)
+
+Subjektivna
+
+## Teorijska verovatnoća
+
+- Znamo je pre merenja
+- Svi mogući ishodi su jednako verovatni
+
+dice.png
+
+## Empirijska verovatnoća
+
+Empirijska verovatnoća se određuje posle posmatranog događaja.
+
+$$ p = \frac{\text{očekivano}}{\text{ukupno}} $$ 
+
+table.png
+
+## Subjektivna verovatnoć
+
+- Uverenje
+- Ekspertsko mišljenje
+
+dx.png
+
+## Osobine verovatnoće
+
+Aksiomi:
+
+- Nenegativnost [0, 1]
+- Normiranost (zbir = 1)
+- Aditivnost
+
+Dodatni termini:
+
+- Verovatnoća događaja ($p$)
+- Verovatnoća supronost događaja ($1-p = q$)
+- Komplementarnost ($p+q = 1$)
+
+## Isključivost
+
+Događaji su isključivi ako ne mogu da se dogode istovremeno.
+
+- Krvna grupa
+- Simptomi gripa
+- Medicinski znakovi
+- Dijagnoze
+
+## Zakoni verovatnoće: adicija (1)
+
+Adicija (sabiranje verovatnoća) isključivih događaja.
+
+## Zakoni verovatnoće: adicija (2)
+
+Adicija (sabiranje verovatnoća) isključivih događaja.
+
+## Zakoni verovatnoće: adicija (3)
+
+Adicija (sabiranje verovatnoća) **ne**isključivih događaja.
+
+## Zakoni verovatnoće: adicija (4)
+
+Adicija (sabiranje verovatnoća) **ne**isključivih događaja.
+
+## Verovatnoća zavisnih (uslovnih) događaja
+
+## Verovatnoća u dijagnostici
+
+## CENTOR Score
+
+## Teorijske raspodele verovatnoća
+
+Teorijske raspodele verovatnoća su specifični matematički [modeli]{.yellow}
+raspodela (distribucija) verovatnoća.
+
+- Binomna
+- Normalna
+
+## Metematički model
+
+airplane.png
+
+## Binomna raspodela
+
+## Zadatak
+
+::: r-fit-text
+
+Učestalost hipertenzije u populaciji starijih od 65 godina iznosi 42%.
+
+- Kolika je verovatnoća da u slučajnom uzorku veličine 7 osoba,
+izabranom iz te iste populacije, dve osobe imaju hipertenziju?
+
+:::
+
+## Galton board
+
+## Normalna raspodela
+
+## 68-95-99.7
+
+## Tablica verovatnoća
+
+## 
+
+::: r-fit-text
+
+U populaciji žena starosti između 25 i 50 godina vrednosti mokraćne kiseline u
+serumu su normalno raspoređene sa aritmetičkom sredinom 333 mmol/L i
+standardnom devijacijom 30 mmol/L.
+
+- Kolika je verovatnoća da slučajno izabrana osoba iz ove populacije ima
+vrednost mokraćne kiseline u serumu veću od 410 mmol/l?
+
+:::
+
+## Upper tail prob.
+
+## Lower tail prob.
+
+## Difference
+
+
