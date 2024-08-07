@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Dr Nikola Grubor">
-  <meta name="dcterms.date" content="2024-07-22">
+  <meta name="dcterms.date" content="2024-08-03">
   <title>Mere centralne tendencije</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -337,7 +337,7 @@ Dr Nikola Grubor
 </div>
 </div>
 
-  <p class="date">2024-07-22</p>
+  <p class="date">2024-08-03</p>
 </section>
 <section id="šta-je-model" class="slide level2">
 <h2>Šta je model?</h2>
@@ -353,7 +353,9 @@ Dr Nikola Grubor
 </section>
 <section id="osnovna-sturuktura-modela" class="slide level2">
 <h2>Osnovna sturuktura modela</h2>
-<p><span id="eq-def-model"><span class="math display">\[ \text{podaci} = \text{model} + \text{greška}  \qquad(1)\]</span></span> <span id="eq-def-model-approx"><span class="math display">\[  \widehat{\text{podaci}}_i = \text{model}_i  \qquad(2)\]</span></span> <span id="eq-def-error"><span class="math display">\[ \text{greška}_i = \text{podaci}_i - \widehat{\text{podaci}}  \qquad(3)\]</span></span></p>
+<p><span id="eq-def-model"><span class="math display">\[ \text{podaci} = \text{model} + \text{greška}  \qquad(1)\]</span></span></p>
+<p>Preko modela možemo da dobijemo <span class="yellow">predviđanja</span>. <span id="eq-def-model-approx"><span class="math display">\[  \widehat{\text{podaci}}_i = \text{model}_i  \qquad(2)\]</span></span></p>
+<p><span class="yellow">Greška</span> modela je razlika između predviđanja modela i stvarnih podataka. <span id="eq-def-error"><span class="math display">\[ \text{greška}_i = \text{podaci}_i - \widehat{\text{podaci}}  \qquad(3)\]</span></span></p>
 <aside class="notes">
 <p>This expresses the idea that the data can be broken into two portions: one portion that is described by a statistical model, which expresses the values that we expect the data to take given our knowledge, and another portion that we refer to as the error that reflects the difference between the model’s predictions and the observed data.</p>
 <style type="text/css">
@@ -370,12 +372,31 @@ Dr Nikola Grubor
 </section>
 <section id="šta-je-najbolji-opis-podataka" class="slide level2">
 <h2>Šta je najbolji opis podataka</h2>
-<p>The question then becomes: how do we estimate the best values of the parameter(s) in the model?</p>
+<p>Pitanje je onda: kako da odredimo vrednost koja najbolje predstavlja podatke?</p>
+<div class="fragment">
+<ul>
+<li>Mod</li>
+<li>Medijana</li>
+<li>Aritmetička sredina</li>
+</ul>
+</div>
+<aside class="notes">
+<p>Kao kada biramo predsednika.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="mod-1" class="slide level2">
 <h2>Mod (1)</h2>
-<p>One very simple estimator that we might imagine is the mode, which is simply the most common value in the dataset.</p>
-<p>Mod (tipična vrednost) je najčešća vrednost.</p>
+<p>Najjednostavniji predstavnik podataka je najčešća vrednost, tzv. mod (tipična vrednost).</p>
 </section>
 <section id="mod-2" class="slide level2">
 <h2>Mod (2)</h2>
@@ -506,7 +527,7 @@ Dr Nikola Grubor
 <p><strong>Apsolutne</strong>:</p>
 <ul>
 <li>Interval (raspon) varijacije</li>
-<li>Kvantil, percentil, decil, kvartil</li>
+<li>Kvantil (percentil, decil, kvartil)</li>
 <li>Srednje apsolutno odstupanje</li>
 <li>Varijansa</li>
 <li>Standardna devijacija</li>
@@ -568,7 +589,10 @@ Dr Nikola Grubor
 </section>
 <section id="definicija-varijanse" class="slide level2">
 <h2>Definicija Varijanse</h2>
-<p><span class="math display">\[ var = \frac{\sum(x-\bar x)^2}{n - 1} \; \text{mmHg}^2 \]</span> ## Poenta varijanse</p>
+<p><span class="math display">\[ var = \frac{\sum(x-\bar x)^2}{n - 1} \; \text{mmHg}^2 \]</span></p>
+</section>
+<section id="poenta-varijanse" class="slide level2">
+<h2>Poenta varijanse</h2>
 </section>
 <section id="plot-showing-varience" class="slide level2">
 <h2>Plot showing varience</h2>

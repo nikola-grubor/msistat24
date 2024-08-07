@@ -40,7 +40,11 @@ As the statistician George Box famously said: “All models are wrong but some a
 ## Osnovna sturuktura modela
 
 $$ \text{podaci} = \text{model} + \text{greška} $$ {#eq-def-model}
+
+Preko modela možemo da dobijemo [predviđanja]{.yellow}.
 $$  \widehat{\text{podaci}}_i = \text{model}_i $$ {#eq-def-model-approx}
+
+[Greška]{.yellow} modela je razlika između predviđanja modela i stvarnih podataka.
 $$ \text{greška}_i = \text{podaci}_i - \widehat{\text{podaci}} $$ {#eq-def-error}
 
 ::: notes
@@ -49,13 +53,21 @@ This expresses the idea that the data can be broken into two portions: one porti
 
 ## Šta je najbolji opis podataka
 
-The question then becomes: how do we estimate the best values of the parameter(s) in the model?
+Pitanje je onda: kako da odredimo vrednost koja najbolje predstavlja podatke?
+
+::: {.fragment}
+- Mod
+- Medijana
+- Aritmetička sredina
+:::
+
+::: notes
+Kao kada biramo predsednika.
+:::
 
 ## Mod (1)
 
-One very simple estimator that we might imagine is the mode, which is simply the most common value in the dataset.
-
-Mod (tipična vrednost) je najčešća vrednost.
+Najjednostavniji predstavnik podataka je najčešća vrednost, tzv. mod (tipična vrednost).
 
 ## Mod (2)
 
@@ -77,8 +89,8 @@ ggplot(data = unimod, aes( x = x)) +
   theme(
    panel.grid.minor = element_blank(), 
    panel.grid.major = element_blank(),
-   plot.background = element_rect(fill = "#F7F8F9", colour = NA),
-   panel.background = element_rect(fill = "#F7F8F9", colour = NA),
+   plot.background = element_rect(fill = "#01364C", colour = NA),
+   panel.background = element_rect(fill = "#01364C", colour = NA)
  )
   
 ```
@@ -126,7 +138,7 @@ Fig. primer.
 $$ 8,6,3,14,12,7,6,4,9 $$ {#eq-median-unorded}
 $$ 3,4,6,6,7,8,9,12,14 $$ {#eq-median-ordered}
 
-Formula za medijanu:
+Formula za poziciju medijane:
 
 $$ me_p = \frac{n+1}{2} = \frac{10}{2} = 5 \; (\text{pozicija})$$
 
@@ -211,8 +223,8 @@ quantile %>%
   theme(
    panel.grid.minor = element_blank(), 
    panel.grid.major = element_blank(),
-   plot.background = element_rect(fill = "#F7F8F9", colour = NA),
-   panel.background = element_rect(fill = "#F7F8F9", colour = NA),
+   plot.background = element_rect(fill = "#01364C", colour = NA),
+   panel.background = element_rect(fill = "#01364C", colour = NA),
  )
 ```
 
@@ -222,14 +234,15 @@ quantile <- tibble( x = 1:20 , y = 1)
 quantile %>% 
   ggplot(aes( x = x , y = y)) +
   geom_point(size = 8 , color = "#F4BA02") +
-  geom_vline(xintercept = 10, linewidth = 2, linetype = 2) +
-  annotate("text", label = "paste(bold(medijana), \", 50. percentil\")", x = 15, y = 1.5, parse = TRUE, size = 7) +
+  geom_vline(xintercept = 10, linewidth = 2, linetype = 2, color = "#F7F8F9") +
+  annotate("text", label = "paste(bold(medijana), \", 50. percentil\")", 
+           x = 15, y = 1.5, parse = TRUE, size = 7, color = "#F7F8F9") +
   theme_void() +
   theme(
    panel.grid.minor = element_blank(), 
    panel.grid.major = element_blank(),
-   plot.background = element_rect(fill = "#F7F8F9", colour = NA),
-   panel.background = element_rect(fill = "#F7F8F9", colour = NA),
+   plot.background = element_rect(fill = "#01364C", colour = NA),
+   panel.background = element_rect(fill = "#01364C", colour = NA),
  ) +
   ylim(0, 2)
 ```
@@ -241,15 +254,16 @@ quantile <- tibble( x = 1:20 , y = 1)
 quantile %>% 
   ggplot(aes( x = x , y = y)) +
   geom_point(size = 8 , color = "#F4BA02") +
-  annotate("segment", x = 1.5:19.5, y = 0.8, yend = 1.2, size = 1.5, linetype = 2) +
+  annotate("segment", x = 1.5:19.5, y = 0.8, yend = 1.2, size = 1.5, 
+           linetype = 2, color = "#F7F8F9") +
   labs(title = "Percentili") +
   theme_void() +
   theme(
    panel.grid.minor = element_blank(), 
    panel.grid.major = element_blank(),
-   plot.background = element_rect(fill = "#F7F8F9", colour = NA),
-   panel.background = element_rect(fill = "#F7F8F9", colour = NA),
-   plot.title = element_text(hjust = 0.5)
+   plot.background = element_rect(fill = "#01364C", colour = NA),
+   panel.background = element_rect(fill = "#01364C", colour = NA),
+   plot.title = element_text(hjust = 0.5, color = "#F7F8F9", size = 30)
  ) +
   ylim(0, 2)
 ```

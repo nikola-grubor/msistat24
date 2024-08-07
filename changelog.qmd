@@ -1,0 +1,17 @@
+---
+title: "changelog"
+---
+
+## 01_uvod
+- dodaj zadatak za vezbanje
+
+## 02_sredjivanje
+- dodaj grafikone
+
+## 03_centralne_mere
+-?
+
+## 04_verovatnoća
+- samo nacrt je napravljen
+
+## 05_
