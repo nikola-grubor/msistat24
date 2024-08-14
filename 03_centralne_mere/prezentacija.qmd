@@ -35,7 +35,7 @@ It can also be useful to think of a statistical model as a theory of how the obs
 
 ## Modeli nisu tačni
 
-As the statistician George Box famously said: “All models are wrong but some are useful.”
+> As the statistician George Box famously said: “All models are wrong but some are useful.”
 
 ## Osnovna sturuktura modela
 
@@ -317,4 +317,20 @@ Koliko je *standardnih devijacija* podatak udaljen od artmetičke sredine?
 $$ z = \frac{x_i - \bar x}{sd} $$
 
 ## Zadaci
+
+## Struktura kursa
+
+```{r}
+teme <- c(
+  "Uvod u medicinsku statistiku", "Sređivanje podataka",
+  "Statističko opisivanje podataka", "Verovatnoća i raspodele verovatnoća",
+  "Populacija i uzorak", "Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama",
+  "Testiranje hipoteza o učestalostima", "Testiranje hipoteza o rangovima", "Korelacija",
+  "Regresija / Kolokvijum", "Podaci, informacije i znanje", "Zdravstveni informacioni sistem",
+  "Mere dijagnostičke tačnosti", "Medicinsko odlučivanje", "Bioinformatika"
+)
+
+kurs <- tibble(Nedelja = 1:15, Tema = teme)
+tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
+```
 

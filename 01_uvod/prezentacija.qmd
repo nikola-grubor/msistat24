@@ -79,16 +79,6 @@ Da li *ovaj* pacijent sa *ovom* laboratorijskom vrednošću ima rizik od bolesti
 
 ## Struktura kursa
 
-<!-- FIX THIS TABLE SIZE -->
-
-```{css}
-#| echo: false
-
-.reveal table {
-  font-size: 55%;
-}
-```
-
 ```{r}
 teme <- c(
   "Uvod u medicinsku statistiku", "Sređivanje podataka",
@@ -100,7 +90,7 @@ teme <- c(
 )
 
 kurs <- tibble(Nedelja = 1:15, Tema = teme)
-tt(kurs)
+tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
 ```
 
 ## Kritično stanje nauke u medicini {.smaller}
@@ -214,7 +204,7 @@ scurvy %>%
   tt(
     notes = "Beleške: Skraćena baza originalnih podataka prikupljenih od strane Džejms Linda; d6, na dan 6.",
     theme = "striped"
-  )
+  ) |> style_tt(j = 1:5, fontsize = 0.55)
 ```
 
 

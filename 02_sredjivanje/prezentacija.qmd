@@ -21,7 +21,6 @@ library(here)
 library(tidyverse)
 library(tinytable)
 library(gtsummary)
-library(gganimate)
 ```
 
 ## {.center}
@@ -196,7 +195,7 @@ tribble(
 
 ## Kako smanjenje 1 mmHg pritiska utiče na kardiovaskularni rizik?
 
-![](slike/image10.jpg)
+![](slike/image10.jpg){fig-align="center"}
 
 ## Greška osnovne stope
 
@@ -352,7 +351,7 @@ tibble(
 
 ![](slike/badpie.png)
 
-## Stubičasti dijagram uvek bolji
+## Stubičasti dijagram je uvek bolji
 
 ![](slike/religionbar.png)
 
@@ -377,6 +376,7 @@ tibble(
 ## Tabela učestalosti
 
 ```{r}
+#| tbl-cap: "Grupisanje bronhitisa po diskretnim vrednostima."
 set.seed(123)
 N <- 30
 tibble(
@@ -418,8 +418,6 @@ tibble(
        x = "Broj respiratornih infekcija (%)")
 ```
 
-## Bad Frequency bar chart
-
 ## Kako prikazati numeričke podatke?
 
 ```{r}
@@ -445,6 +443,7 @@ tibble(
   labs(y = "Pacijent",
        x = "Krvni prisitak [mmHg]")
 ```
+
 ## Široki intervali nisu korisni
 
 ```{r}
@@ -532,6 +531,8 @@ tibble(
 :::: {.r-stack}
 
 ```{r}
+#| fig-width: 10
+#| fig-height: 6
 set.seed(123)
 N <- 1000
 tibble(
@@ -558,6 +559,8 @@ tibble(
 ::: {.fragment}
 
 ```{r}
+#| fig-width: 10
+#| fig-height: 6
 set.seed(123)
 N <- 1000
 tibble(
@@ -590,6 +593,8 @@ tibble(
 ::: {.fragment}
 
 ```{r}
+#| fig-width: 10
+#| fig-height: 6
 set.seed(123)
 N <- 1000
 tibble(
@@ -676,24 +681,12 @@ tibble(
 
 ![](slike/bodytemp.png)
 
-## More examples
-
 ## Zadatak
 
 - Napraviti tablele
 - Zadaci na bazi sa kursa
 
 ## Struktura kursa
-
-<!-- FIX THIS TABLE SIZE -->
-
-```{css}
-#| echo: false
-
-.reveal table {
-font-size: 55%;
-}
-```
 
 ```{r}
 teme <- c(
@@ -706,5 +699,5 @@ teme <- c(
 )
 
 kurs <- tibble(Nedelja = 1:15, Tema = teme)
-tt(kurs)
+tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
 ```

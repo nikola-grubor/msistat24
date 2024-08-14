@@ -6,12 +6,13 @@ title: "changelog"
 - dodaj zadatak za vezbanje
 
 ## 02_sredjivanje
-- dodaj grafikone
+- dodaj zadatak
+- mozda grafikone
 
 ## 03_centralne_mere
--?
+- dodati
 
 ## 04_verovatnoća
 - samo nacrt je napravljen
 
-## 05_
+## 05_uzorak
