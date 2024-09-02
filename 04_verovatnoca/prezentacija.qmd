@@ -25,17 +25,45 @@ library(gtsummary)
 
 ## de Méréov problem
 
-A famous example arose from a problem encountered by a French gambler who went by the name of Chevalier de Méré. de Méré played two different dice games: In the first he bet on the chance of at least one six on four rolls of a six-sided die, while in the second he bet on the chance of at least one double-six on 24 rolls of two dice. 
+:::: columns
 
-## Aristotel da/ne
+::: {.column}
+![Pierre de Fermat](slike/fermat.jpg){width=90%}
+:::
 
-## Dutch book i racionalnost
+::: {.column}
+![Blaise Pascal](slike/pascal.jpg){width=90%}
+:::
 
-## Verovatnoća kao alat za predstavljanje znanja
+::::
 
-## Šta su događaji?
+## Potreba za teorijom verovatnoće
 
-Događaji su...
+:::: columns
+
+::: {.column}
+Verovatnoća kao produžetak Aristotelove logike.
+
+Dobijamo mogućnost da pričamo o (ne)sigurnosti ubeđenja.
+:::
+
+::: {.column}
+![](slike/jaynes.jpg){width=70%}
+:::
+
+::::
+
+## Šta je verovatnoća
+
+**Eksperiment** je aktivnost koja proizvodi ishod (biramo novi put da testiramo da li je brži od starog).
+
+**Prostor ishoda** je skup svih mogućih ishoda eksperimenta.
+
+**Događaj** je podskup prostora ishoda.
+
+## Kako delimo događaje?
+
+Događaj je skup mogućih ishoda, a može biti:
 
 - Deterministički
 
@@ -43,27 +71,67 @@ Nedostatak vitamina C $\rightarrow$ Skorbut
 
 - Slučajni (stohastnični)
 
-Skup elementarnih ishoda $\omega$ je...
+Prostor elementarnih ishoda $\omega$ je skup svih mogućih ishoda.
 
 $\omega = \{A, B\, O, AB\}$
 
 $\omega = \{\text{zdrav}, \text{bolestan}\}$
 
-## Mutation somatic vs germline
+## Somatske ili germinativne mutacije
+
+![](slike/events.png)
 
 ## Definicija verovatnoće {.center}
 
 ::: {.r-fit-text}
-Verovatnoća je mera očekivanja 
+Verovatnoća je [mera očekivanja]{.yellow} 
 
 nekog slučajnog događaja.
 :::
 
-## Primer monopol
+## Očekivanje je generalizacija aritmetičke sredine
 
-## Dice rolling
+![](slike/catan.png){fig-align="center"}
 
-## Podela verovatnoće
+## Zakon velikih brojeva
+
+```{r}
+
+set.seed(123)
+
+throws <- 100
+experiment <- sample(1:6, size = throws, replace = TRUE)
+runningavg <- cumsum(experiment) / 1:length(experiment)
+
+tibble(x = 1:length(runningavg),
+       y = runningavg) %>%
+  ggplot(aes(x = x,y = y)) +
+  geom_point(color = "#F7F8F9") +
+  geom_hline(yintercept = 3.5, colour = "#F4BA02", 
+             size = 1, 
+             linetype = "dashed") +
+ ggdist::theme_ggdist(base_size=15) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_blank(),
+    plot.background = element_rect(fill = "#01364C", colour = NA),
+    panel.background = element_rect(fill = "#01364C", colour = NA),
+    panel.border = element_rect(
+      fill = NA,
+      color = "#01364C",
+      linewidth = 0.5,
+      linetype = "solid"
+    ),
+    axis.title = element_text(color = "#F7F8F9"),
+    axis.text = element_text(color = "#F7F8F9")
+  ) +
+  ylim(1,6) + 
+  labs(y = "Aritmetička sredina (očekivanje)",
+       x = "Događaj")
+```
+
+
+## Kako određujemo verovatnoću?
 
 Objektivna
 
@@ -77,11 +145,11 @@ Subjektivna
 - Znamo je pre merenja
 - Svi mogući ishodi su jednako verovatni
 
-dice.png
+![](slike/classical.png){fig-align="center"}
 
 ## Empirijska verovatnoća
 
-Empirijska verovatnoća se određuje posle posmatranog događaja.
+Empirijska verovatnoća se određuje (brojanjem) posle posmatranog događaja.
 
 :::: columns
 
@@ -90,7 +158,17 @@ $$ p = \frac{\text{očekivano}}{\text{ukupno}} $$
 :::
 
 ::: {.column}
-table.png
+
+```{r}
+tribble(
+  ~"Krvna grupa", ~"Relativna učestalnost",
+  "O", "45%",
+  "А", "39%",
+  "B", "12%",
+  "AB", "4%"
+) %>% tt(.) %>% style_tt(fontsize = 1)
+```
+
 :::
 
 ::::
@@ -102,10 +180,55 @@ table.png
 ::: {.column}
 - Uverenje
 - Ekspertsko mišljenje
+
+```{r}
+#| fig-width: 6
+#| fig-height: 5
+
+ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+  stat_function(fun = dnorm, args = list(0.2, 0.1), color = "#F7F8F9", linewidth = 1) +
+  stat_function(fun = dnorm, args = list(0.8, 0.07), color = "#F7F8F9", linewidth = 1) +
+  geom_area(stat = "function", fun = dnorm, args = list(0.2, 0.1), fill = "grey", alpha = 0.7) +
+  geom_area(stat = "function", fun = dnorm, args = list(0.8, 0.07), fill = "#F4BA02", alpha = 0.7) +
+  geom_segment(x = 0.4, y = 1.5, xend = 0.65, yend = 1.5, size = 2,
+               color = "#F7F8F9",
+               lineend = "round", 
+               linejoin = "mitre",
+               arrow = arrow(length = unit(0.4, "cm"))) +
+  annotate("text", x = 0.525, y = 1.8, label = "dokazi", color = "#F7F8F9") +
+  annotate("text", x = 0.2, y = 1.8, label = "apriorna", fontface = "bold.italic", color = "#F7F8F9") +
+  annotate("text", x = 0.8, y = 1.8, label = "aposteriorna", fontface = "bold.italic", color = "#F7F8F9") +
+  coord_cartesian(ylim = c(0.01, 8), expand = FALSE) +
+  theme_void() +
+  scale_x_continuous(name = "Verovatnoća") +
+  scale_y_continuous(name = "Učestalost") +
+  xlim(-0.15,1.1) +
+  theme(
+    plot.background = element_rect(fill = "#01364C", colour = NA),
+    panel.background = element_rect(fill = "#01364C", colour = NA),
+    panel.border = element_rect(
+      fill = NA,
+      color = "#01364C",
+      linewidth = 0.5,
+      linetype = "solid"))
+```
+
+
 :::
 
 ::: {.column}
-dx.png
+
+```{mermaid}
+
+flowchart TD
+  S(Simptom) --> A("Apriorna Verovatnoća")
+  Z(Znak) --> A
+  P(Prevlenca) --> A
+  A --> T{"Dijagnostički test"}
+  T --> AP("Aposteriorna Verovatnoća")
+
+```
+
 :::
 
 ::::
@@ -158,7 +281,19 @@ Adicija (sabiranje verovatnoća) [neisključivih]{.blue} događaja.
 
 :::
 
+## Zakoni verovatnoće: multiplikacija
+
+Multiplikacija [isključivih]{.blue} događaja.
+
+![](slike/prob7.png){fig-align="center"}
+
+$$ P(A \cap B) = P(A) \times P(B) $$
+
 ## Verovatnoća zavisnih (uslovnih) događaja
+
+![](slike/prob7.png){fig-align="center"}
+
+$$ P(A \cap B) = P(A) \times P(B|A) = P(B) \times P(A|B) $$
 
 ## Verovatnoća u dijagnostici
 
@@ -174,12 +309,95 @@ raspodela (distribucija) verovatnoća.
 
 ## Metematički model
 
-airplane.png
+:::: columns
+
+::: {.column}
+![Matematički model](slike/plane1.jpg)
+:::
+
+::: {.column}
+![Stvarnost](slike/plane2.jpg)
+:::
+
+::::
+
+## Bernulijev eksperiment
+
+:::: columns
+
+::: {.column}
+{{< lipsum 1 >}}
+:::
+
+::: {.column}
+![](slike/bern.png)
+:::
+
+::::
 
 ## Binomna raspodela
 
-Atom svih raspodela verovatnoce.
-Bernuli proces -> Binomna raspodela -> Normalna.
+:::: columns
+
+::: {.column}
+
+Uslovi:
+
+- Isključivi događaji
+- Konstantna verovatnoća
+- Nezavisni
+
+:::
+
+::: {.column}
+
+Binomna verovatnoća je data:
+
+$$ P(X = x) = \frac{n!}{x!(n-x)!}p^{x}q^{n-x} $$
+
+:::
+
+::::
+
+```{r}
+#| fig-width: 10
+#| fig-height: 3
+#| fig-align: "center"
+data.frame(heads = 0:10, prob = dbinom(x = 0:10, size = 10, prob = 0.5)) %>%
+  mutate(Heads = ifelse(heads == 2, "2", "ostalo")) %>%
+ggplot(aes(x = factor(heads), y = prob, fill = Heads)) +
+  geom_col() +
+  geom_text(
+    aes(label = round(prob,2), y = prob + 0.01),
+    position = position_dodge(0.9),
+    color = "#F7F8F9",
+    size = 3,
+    vjust = 0
+  ) +
+  ggdist::theme_ggdist(base_size=15) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_blank(),
+    legend.title = element_text(color = "#F7F8F9"),
+    legend.text = element_text(color = "#F7F8F9"),
+    legend.background = element_rect(fill = "#01364C", colour = NA),
+    plot.background = element_rect(fill = "#01364C", colour = NA),
+    panel.background = element_rect(fill = "#01364C", colour = NA),
+    panel.border = element_rect(
+      fill = NA,
+      color = "#01364C",
+      linewidth = 0.5,
+      linetype = "solid"
+    ),
+    axis.title = element_text(color = "#F7F8F9"),
+    axis.text = element_text(color = "#F7F8F9")
+  ) +
+  scale_fill_manual(values = c("2" = "tomato", "ostalo" = "#F4BA02")) +
+  labs(x = "Uspeh (x)",
+       y = "Verovatnoća",
+       fill = "Broj uspeha") 
+```
+
 
 ## Zadatak
 
@@ -196,6 +414,41 @@ izabranom iz te iste populacije, [dve]{.yellow} osobe imaju hipertenziju?
 ## Galton board
 
 ## Normalna raspodela
+
+```{r}
+ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
+  annotate("segment", x = 0, y = 0, yend = 0.4,
+           color = "#F4BA02", linewidth = 1, linetype = 2,) +
+  annotate("segment", x = 0.02, y = 0.2, xend = 1.1,
+           color = "#F4BA02", linewidth = 1, linetype = 1,
+           arrow = arrow(length=unit(0.30,"cm"), ends="both", type = "open")) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1),
+                color = "#F4BA02", linewidth = 2) + 
+  annotate("text", x = 0.55, y = 0.225, label = c("sd"), color = "#F7F8F9",
+           size = 6) +
+  annotate("text", x = 1.8, y = 0.225, label = c("tačka\ninfleksije"), color = "#F7F8F9",
+           size = 6) +
+  ylab("") +
+  scale_y_continuous(breaks = NULL) +
+  ggdist::theme_ggdist(base_size=15) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_blank(),
+    legend.title = element_text(color = "#F7F8F9"),
+    legend.text = element_text(color = "#F7F8F9"),
+    legend.background = element_rect(fill = "#01364C", colour = NA),
+    plot.background = element_rect(fill = "#01364C", colour = NA),
+    panel.background = element_rect(fill = "#01364C", colour = NA),
+    panel.border = element_rect(
+      fill = NA,
+      color = "#01364C",
+      linewidth = 0.5,
+      linetype = "solid"
+    ),
+    axis.title = element_text(color = "#F7F8F9"),
+    axis.text = element_text(color = "#F7F8F9")
+  )
+```
 
 ## Standardna normalna reaspodela
 
@@ -222,17 +475,72 @@ F dist. (dist of ratio of two variances)
 
 ## 68-95-99.7
 
+```{r}
+ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
+  annotate("segment", x = 1, y = 0, yend = 0.3,
+           color = "#F4BA02", linewidth = 1, linetype = 2) +
+  annotate("segment", x = -1, y = 0, yend = 0.3,
+           color = "#F4BA02", linewidth = 1, linetype = 2) +
+  annotate("segment", x = 2, y = 0, yend = 0.4,
+           color = "#F4BA02", linewidth = 1, linetype = 2) +
+  annotate("segment", x = -2, y = 0, yend = 0.4,
+           color = "#F4BA02", linewidth = 1, linetype = 2) +
+  annotate("segment", x = 3, y = 0, yend = 0.5,
+           color = "#F4BA02", linewidth = 1, linetype = 2) +
+  annotate("segment", x = -3, y = 0, yend = 0.5,
+           color = "#F4BA02", linewidth = 1, linetype = 2) +
+  annotate("segment", x = -1, y = 0.5, xend = 1,
+           color = "#F4BA02", linewidth = 1, linetype = 1,
+           arrow = arrow(length=unit(0.30,"cm"), ends="both", type = "open")) +
+  annotate("segment", x = -2, y = 0.6, xend = 2,
+           color = "#F4BA02", linewidth = 1, linetype = 1,
+           arrow = arrow(length=unit(0.30,"cm"), ends="both", type = "open")) +
+  annotate("segment", x = -3, y = 0.7, xend = 3,
+           color = "#F4BA02", linewidth = 1, linetype = 1,
+           arrow = arrow(length=unit(0.30,"cm"), ends="both", type = "open")) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1),
+                color = "#F4BA02", linewidth = 2) + 
+  annotate("text", x = 0, y = 0.55, label = c("68%"), color = "#F7F8F9",
+           size = 6) +
+  annotate("text", x = 0, y = 0.65, label = c("95%"), color = "#F7F8F9",
+           size = 6) +
+  annotate("text", x = 0, y = 0.75, label = c("99.7%"), color = "#F7F8F9",
+           size = 6) +
+  ylab("") +
+  scale_y_continuous(breaks = NULL) +
+  ggdist::theme_ggdist(base_size=15) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_blank(),
+    legend.title = element_text(color = "#F7F8F9"),
+    legend.text = element_text(color = "#F7F8F9"),
+    legend.background = element_rect(fill = "#01364C", colour = NA),
+    plot.background = element_rect(fill = "#01364C", colour = NA),
+    panel.background = element_rect(fill = "#01364C", colour = NA),
+    panel.border = element_rect(
+      fill = NA,
+      color = "#01364C",
+      linewidth = 0.5,
+      linetype = "solid"
+    ),
+    axis.title = element_text(color = "#F7F8F9"),
+    axis.text = element_text(color = "#F7F8F9")
+  ) +
+  scale_x_continuous(breaks = scales::pretty_breaks(),
+                     labels = scales::label_percent(suffix = " sd", scale = 1))
+```
+
 ## Tablica verovatnoća
 
 ## 
 
-::: r-fit-text
+::: {.r-fit-text}
 
 U populaciji žena starosti između 25 i 50 godina vrednosti mokraćne kiseline u
 serumu su normalno raspoređene sa aritmetičkom sredinom 333 mmol/L i
 standardnom devijacijom 30 mmol/L.
 
-- Kolika je verovatnoća da slučajno izabrana osoba iz ove populacije ima
+Kolika je verovatnoća da slučajno izabrana osoba iz ove populacije ima
 vrednost mokraćne kiseline u serumu veću od 410 mmol/l?
 
 :::
