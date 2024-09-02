@@ -8,11 +8,11 @@
 <link href="prezentacija_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="prezentacija_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="prezentacija_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.553">
+  <meta name="generator" content="quarto-1.5.56">
 
   <meta name="author" content="Dr Nikola Grubor">
-  <meta name="dcterms.date" content="2024-05-25">
-  <title>Sređivanje podataka</title>
+  <meta name="dcterms.date" content="2024-09-02">
+  <title>Kratak uvod u verovatnoću</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -321,17 +321,13 @@
       margin-right: 0; 
     }
   </style>
-  <script src="prezentacija_files/libs/kePrint-0.0.1/kePrint.js"></script>
-
-  <link href="prezentacija_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
 </head>
 <body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Sređivanje podataka</h1>
+  <h1 class="title">Kratak uvod u verovatnoću</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -341,510 +337,246 @@ Dr Nikola Grubor
 </div>
 </div>
 
-  <p class="date">2024-05-25</p>
+  <p class="date">2024-09-02</p>
 </section>
-<section id="section" class="slide level2 center">
-<h2></h2>
-<div class="r-fit-text">
-<p>Grupisanje je proces <span class="yellow">organizovanja</span> podataka.</p>
-</div>
+<section id="de-méréov-problem" class="slide level2">
+<h2>de Méréov problem</h2>
+<p>A famous example arose from a problem encountered by a French gambler who went by the name of Chevalier de Méré. de Méré played two different dice games: In the first he bet on the chance of at least one six on four rolls of a six-sided die, while in the second he bet on the chance of at least one double-six on 24 rolls of two dice.</p>
 </section>
-<section>
-<section id="apsolutni-i-relativni-brojevi" class="title-slide slide level1 center">
-<h1>Apsolutni i relativni brojevi</h1>
-
+<section id="aristotel-dane" class="slide level2">
+<h2>Aristotel da/ne</h2>
 </section>
-<section id="formalna-definicija" class="slide level2 center">
-<h2>Formalna definicija</h2>
-<div class="r-fit-text">
-<p><span class="math inline">\(f_{abs} = \frac{\#n}{\text{interval}}\)</span></p>
-<p><span class="math inline">\(f_{rel} = \frac{f_{abs}}{\text{Ukupan broj podataka}} \%\)</span></p>
-</div>
+<section id="dutch-book-i-racionalnost" class="slide level2">
+<h2>Dutch book i racionalnost</h2>
 </section>
-<section id="apsolutni-jeleni-i-relativne-ajkule" class="slide level2">
-<h2>Apsolutni jeleni i relativne ajkule</h2>
+<section id="verovatnoća-kao-alat-za-predstavljanje-znanja" class="slide level2">
+<h2>Verovatnoća kao alat za predstavljanje znanja</h2>
+</section>
+<section id="šta-su-događaji" class="slide level2">
+<h2>Šta su događaji?</h2>
+<p>Događaji su…</p>
 <ul>
-<li>Relativni brojevi mogu prenaglasiti rizik (bitnost) neke pojave</li>
-<li>Dobri za plašenje drugih, publikacije</li>
-<li>Loši za javno zdravlje, naučni progres</li>
-<li>Ali potrebni za kauzalno tumačenje</li>
+<li>Deterministički</li>
 </ul>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="slike/deer2.png" width="255"></p>
-<figcaption>Apsolutni jelen</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="slike/shark.png" width="400"></p>
-<figcaption>Relativna ajkula</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Retke bolesti mogu da imaju rizike od 300% (RR 3.00), ali ako niko u populaciji ne dobije tu bolest onda to nije od javnozdravstvenog znacaja.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>Nedostatak vitamina C <span class="math inline">\(\rightarrow\)</span> Skorbut</p>
+<ul>
+<li>Slučajni (stohastnični)</li>
+</ul>
+<p>Skup elementarnih ishoda <span class="math inline">\(\omega\)</span> je…</p>
+<p><span class="math inline">\(\omega = \{A, B\, O, AB\}\)</span></p>
+<p><span class="math inline">\(\omega = \{\text{zdrav}, \text{bolestan}\}\)</span></p>
 </section>
-<section id="opasnost-zaviti-od-izloženosti" class="slide level2 center">
-<h2>Opasnost zaviti od izloženosti</h2>
-
-<img data-src="slike/deadlychart.jpeg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="komunikacija-rizika" class="slide level2 smaller">
-<h2>Komunikacija rizika</h2>
+<section id="mutation-somatic-vs-germline" class="slide level2">
+<h2>Mutation somatic vs germline</h2>
+</section>
+<section id="definicija-verovatnoće" class="slide level2 center">
+<h2>Definicija verovatnoće</h2>
+<div class="r-fit-text">
+<p>Verovatnoća je mera očekivanja</p>
+<p>nekog slučajnog događaja.</p>
+</div>
+</section>
+<section id="primer-monopol" class="slide level2">
+<h2>Primer monopol</h2>
+</section>
+<section id="dice-rolling" class="slide level2">
+<h2>Dice rolling</h2>
+</section>
+<section id="podela-verovatnoće" class="slide level2">
+<h2>Podela verovatnoće</h2>
+<p>Objektivna</p>
+<ul>
+<li>Teorijska (matematička)</li>
+<li>Empirijska (statistička)</li>
+</ul>
+<p>Subjektivna</p>
+</section>
+<section id="teorijska-verovatnoća" class="slide level2">
+<h2>Teorijska verovatnoća</h2>
+<ul>
+<li>Znamo je pre merenja</li>
+<li>Svi mogući ishodi su jednako verovatni</li>
+</ul>
+<p>dice.png</p>
+</section>
+<section id="empirijska-verovatnoća" class="slide level2">
+<h2>Empirijska verovatnoća</h2>
+<p>Empirijska verovatnoća se određuje posle posmatranog događaja.</p>
 <div class="columns">
 <div class="column">
-<p>Mnogi ljudi <span class="yellow">mešaju</span> relativni i apsolutni <span class="yellow">rizik</span></p>
-<p>Primer:</p>
+<p><span class="math display">\[ p = \frac{\text{očekivano}}{\text{ukupno}} \]</span></p>
+</div><div class="column">
+<p>table.png</p>
+</div></div>
+</section>
+<section id="subjektivna-verovatnoća" class="slide level2">
+<h2>Subjektivna verovatnoća</h2>
+<div class="columns">
+<div class="column">
 <ul>
-<li>1/10,000 žena ima trombozu</li>
-<li>3/10,000 žena koje uzimaju kontraceptivne pilule ima trombozu</li>
-</ul>
-<p><span class="math inline">\(RR = \frac{3/10,000}{1/10,000} = 3.00\)</span></p>
-<ul>
-<li><span class="math inline">\(\uparrow\)</span> 200% u trombozama!</li>
-<li>Promena verovatnoće je samo 0.0002 (2 žene u 10,000)</li>
-<li>Trudnoća povećava verovatnoću tromboze mnogo više (DVT)</li>
+<li>Uverenje</li>
+<li>Ekspertsko mišljenje</li>
 </ul>
 </div><div class="column">
-<p><img data-src="slike/pills.png"></p>
-</div>
-</div>
-<aside class="notes">
-<p>Tromboza je retka u opstoj populaciji, ALI su mnogo češći na pilulu. Ima kauzalnih razloga za to. Cost/benefit je težak. Zbog članka mnogo žena prestalo pije KP i dobilo tromboze zbog trudnoće!</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>dx.png</p>
+</div></div>
 </section>
-<section id="tabelarno-prikazivanje-aps.-i-rel.-podataka" class="slide level2 center">
-<h2>Tabelarno prikazivanje aps. i rel. podataka</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<table class="table" data-quarto-postprocess="true" style="NAborder-bottom: 0; font-size: 64px; margin-left: auto; margin-right: auto;">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Varijabla</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">N = 100</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Navika</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Nepusac</td>
-<td style="text-align: center;">46 (46%)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Pusač</td>
-<td style="text-align: center;">54 (54%)</td>
-</tr>
-</tbody><tfoot>
-<tr class="even">
-<td style="text-align: left; padding: 0;"><sup>1</sup> n (%)</td>
-<td style="text-align: center;"></td>
-</tr>
-</tfoot>
-
-</table>
-
-
-</div>
-</div>
-</div>
-</section>
-<section id="grafičko-prikazivanje-relativnih-brojeva" class="slide level2 smaller">
-<h2>Grafičko prikazivanje relativnih brojeva</h2>
-
-<img data-src="slike/statins.gif" class="r-stretch quarto-figure-center"><p class="caption">Redukcija LDL-a u odnosu na vrstu statina.</p></section>
-<section id="statini" class="slide level2 smaller">
-<h2>Statini</h2>
-<p>Efikasnost (50-65 god):</p>
+<section id="osobine-verovatnoće" class="slide level2">
+<h2>Osobine verovatnoće</h2>
+<p>Aksiomi:</p>
 <ul>
-<li>Mortalitet (<span class="math inline">\(RR = 0.86; ARD = -0.40\%; NNT = 250\)</span>)</li>
-<li>CVD (<span class="math inline">\(RR = 0.69; ARD, -0.43\%; NNT = 233\)</span>)</li>
-<li>CVI (<span class="math inline">\(RR = 0.71; ARD, -0.38\%; NNT = 236\)</span>)</li>
-<li>MI (<span class="math inline">\(RR = 0.64; ARD, -0.81\%; NNT = 123\)</span>)</li>
+<li>Nenegativnost [0, 1]</li>
+<li>Normiranost (zbir = 1)</li>
+<li>Aditivnost</li>
 </ul>
-
-<img data-src="slike/statin_jama.png" class="r-stretch"><aside class="notes">
-<p>Sta moze da bude problem sa NNT? Sta ako terapije nekog osteti? Ovo su proseci, varijabilitet je isto bitan.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>Dodatni termini:</p>
+<ul>
+<li>Verovatnoća događaja (<span class="math inline">\(p\)</span>)</li>
+<li>Verovatnoća supronost događaja (<span class="math inline">\(1-p = q\)</span>)</li>
+<li>Komplementarnost (<span class="math inline">\(p+q = 1\)</span>)</li>
+</ul>
 </section>
-<section id="grafički-prikaz-redukcije-relativnog-rizika" class="slide level2">
-<h2>Grafički prikaz redukcije relativnog rizika</h2>
-
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
-<section id="greška-osnovne-stope" class="slide level2">
-<h2>Greška osnovne stope</h2>
+<section id="isključivost" class="slide level2">
+<h2>Isključivost</h2>
+<p>Događaji su isključivi ako ne mogu da se dogode istovremeno.</p>
+<ul>
+<li>Krvna grupa</li>
+<li>Prisustvo simptoma gripa</li>
+<li>Prisustvo medicinskog znaka</li>
+<li>Dijagnoze</li>
+</ul>
+</section>
+<section id="zakoni-verovatnoće-adicija-1" class="slide level2">
+<h2>Zakoni verovatnoće: adicija (1)</h2>
+<p>Adicija (sabiranje verovatnoća) <span class="yellow">isključivih</span> događaja.</p>
 <div class="r-stack">
-<p><img data-src="slike/base1.png"></p>
-<p><img data-src="slike/base2.png" class="fragment"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slike/prob1.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
 </div>
-</section>
-<section id="apsolutni-antibiotik-relativni-statin" class="slide level2">
-<h2>Apsolutni antibiotik, relativni statin</h2>
-<ul>
-<li>Apsolutni rizik je informativniji</li>
-<li>Relativni rizik je bitan kada umemo da procenimo osnovni rizik</li>
-<li>Vakcinacija (100% velike boginje)</li>
-<li>Antibiotici (primer…)</li>
-</ul>
-<aside class="notes">
-<p>Da li procedure/intervencije mogu da se mere ovako, smanjenjem rizika? Sta je zapravo rizik?</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="dobri-i-loši-grafikoni" class="title-slide slide level1 center">
-<h1>Dobri i loši grafikoni</h1>
-
-</section>
-<section id="primer-grafikon-pisa-testiranja-1" class="slide level2">
-<h2>Primer: Grafikon PISA testiranja (1)</h2>
-
-<img data-src="slike/pisa_raw.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="primer-grafikon-pisa-testiranja-2" class="slide level2 smaller">
-<h2>Primer: Grafikon PISA testiranja (2)</h2>
-
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"><p><span class="math inline">\(Y\)</span> osa produžena do nule.</p>
-</section>
-<section id="good-chart-examples" class="slide level2">
-<h2>Good chart examples</h2>
-</section>
-<section id="prikazivanje-nominalnih-podataka" class="slide level2">
-<h2>Prikazivanje nominalnih podataka</h2>
-<p><em>Grupišu se po <span class="yellow">kategorijama</span></em></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 0 × 0</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slike/prob2.png" class="fragment quarto-figure quarto-figure-center"></p>
+</figure>
 </div>
 </div>
 </section>
-<section id="bar-chart" class="slide level2">
-<h2>Bar chart</h2>
-</section>
-<section id="bad-bar-chart" class="slide level2">
-<h2>Bad Bar chart</h2>
-</section>
-<section id="pie-chart" class="slide level2">
-<h2>Pie chart</h2>
-</section>
-<section id="prikazivanje-ordinalnih-podataka" class="slide level2">
-<h2>Prikazivanje ordinalnih podataka</h2>
-<p><em>Grupišu se po <span class="yellow">kategorijama</span></em></p>
-</section>
-<section id="prikazivanje-diskontinuiranih-podataka" class="slide level2">
-<h2>Prikazivanje diskontinuiranih podataka</h2>
-<p><em>Grupišu se po <span class="yellow">kategorijama</span></em></p>
-</section>
-<section id="frequency-table" class="slide level2">
-<h2>Frequency table</h2>
-</section>
-<section id="frequency-bar-chart" class="slide level2">
-<h2>Frequency bar chart</h2>
-</section>
-<section id="bad-frequency-bar-chart" class="slide level2">
-<h2>Bad Frequency bar chart</h2>
-</section>
-<section id="motivacija-za-histogram" class="slide level2">
-<h2>Motivacija za histogram</h2>
-
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
-<section id="široki-intervali-nisu-korisni" class="slide level2">
-<h2>Široki intervali nisu korisni</h2>
-
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
-<section id="uski-intervali-nisu-korisni" class="slide level2">
-<h2>Uski intervali nisu korisni</h2>
-
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
-<section id="optimalan-broj-intervala-je-proizvoljna-stavka" class="slide level2">
-<h2>Optimalan broj intervala je proizvoljna stavka</h2>
-
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
-<section id="informacije-možemo-predstaviti-distribucijom" class="slide level2">
-<h2>Informacije možemo predstaviti distribucijom</h2>
+<section id="zakoni-verovatnoće-adicija-2" class="slide level2">
+<h2>Zakoni verovatnoće: adicija (2)</h2>
+<p>Adicija (sabiranje verovatnoća) <span class="blue">neisključivih</span> događaja.</p>
 <div class="r-stack">
-<div class="cell">
-<div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+<p><img data-src="slike/prob3.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+<p><img data-src="slike/prob4.png" class="fragment quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+<p><img data-src="slike/prob5.png" class="fragment quarto-figure quarto-figure-center"></p>
 </figure>
-</div>
-</div>
-</div>
 </div>
 </div>
 </section>
-<section id="prikazivanje-kontinuiranih-podataka" class="slide level2">
-<h2>Prikazivanje kontinuiranih podataka</h2>
-<p><em>Grupišu se po <span class="yellow">kategorijama</span></em></p>
+<section id="verovatnoća-zavisnih-uslovnih-događaja" class="slide level2">
+<h2>Verovatnoća zavisnih (uslovnih) događaja</h2>
+</section>
+<section id="verovatnoća-u-dijagnostici" class="slide level2">
+<h2>Verovatnoća u dijagnostici</h2>
+</section>
+<section id="centor-score" class="slide level2">
+<h2>CENTOR Score</h2>
+</section>
+<section id="teorijske-raspodele-verovatnoća" class="slide level2">
+<h2>Teorijske raspodele verovatnoća</h2>
+<p>Teorijske raspodele verovatnoća su specifični matematički <span class="yellow">modeli</span> raspodela (distribucija) verovatnoća.</p>
 <ul>
-<li>Odrediti apsolutne i relativne učestalosti za <strong>starost</strong></li>
-<li>Grafički prikaz
-<ul>
-<li>histogram</li>
-<li>poligon frekvencija</li>
-</ul></li>
+<li>Binomna</li>
+<li>Normalna</li>
 </ul>
 </section>
-<section id="histogram" class="slide level2">
-<h2>Histogram</h2>
+<section id="metematički-model" class="slide level2">
+<h2>Metematički model</h2>
+<p>airplane.png</p>
 </section>
-<section id="bad-histogram" class="slide level2">
-<h2>Bad Histogram</h2>
-</section>
-<section id="frequency-polygon" class="slide level2">
-<h2>Frequency polygon</h2>
-</section>
-<section id="more-examples" class="slide level2">
-<h2>More examples</h2>
+<section id="binomna-raspodela" class="slide level2">
+<h2>Binomna raspodela</h2>
+<p>Atom svih raspodela verovatnoce. Bernuli proces -&gt; Binomna raspodela -&gt; Normalna.</p>
 </section>
 <section id="zadatak" class="slide level2">
 <h2>Zadatak</h2>
-<ul>
-<li>Napraviti tablele</li>
-<li>Zadaci na bazi sa kursa</li>
-</ul>
+<div class="r-fit-text">
+<p>Učestalost hipertenzije u populaciji starijih od 65 godina iznosi <span class="yellow">42%</span>.</p>
+<p>Kolika je verovatnoća da u slučajnom uzorku veličine <span class="yellow">7 osoba</span>,</p>
+<p>izabranom iz te iste populacije, <span class="yellow">dve</span> osobe imaju hipertenziju?</p>
+</div>
 </section>
-<section id="struktura-kursa" class="slide level2">
-<h2>Struktura kursa</h2>
-<!-- FIX THIS TABLE SIZE -->
-<div class="cell">
+<section id="galton-board" class="slide level2">
+<h2>Galton board</h2>
+</section>
+<section id="normalna-raspodela" class="slide level2">
+<h2>Normalna raspodela</h2>
+</section>
+<section id="standardna-normalna-reaspodela" class="slide level2">
+<h2>Standardna normalna reaspodela</h2>
+<p>Postoji samo zbog tablica verovatnoca. Z-tabela da ne bi postojalo beskonacno tabela za svaku mogucu normalnu distribuciju.</p>
+</section>
+<section id="t-distribucija" class="slide level2">
+<h2>t-distribucija</h2>
+<p>100 god stara. Varijabilitet populacije nespoznat, pa cemo uzeti iz uzorka, sto dodaje jos nesigurnosti. Za svaki stepen slobode (koliko informacija smo iskoristili da procenimo variabilitet) postoji posebna t-distribucija. t-dist se priblizava z-dist za beskonacno stepena slobode.</p>
+</section>
+<section id="hi-kvadratna-distribucija" class="slide level2">
+<h2>Hi-kvadratna distribucija</h2>
+<p>Uzorci iz Z-dist<sup>2</sup> (postaju pozitivni) i to postane hi-kvadrat. (sum of square deviations) / (pop. variance) -&gt; kako idu df inf hi postaje z. F dist. (dist of ratio of two variances)</p>
+<aside class="notes">
+<p>30 zakljucanih matematicara koji racuna verovatnocu.</p>
 <style type="text/css">
-.reveal table {
-font-size: 55%;
-}
-</style>
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section" class="slide level2">
+<h2>68-95-99.7</h2>
+</section>
+<section id="tablica-verovatnoća" class="slide level2">
+<h2>Tablica verovatnoća</h2>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p>U populaciji žena starosti između 25 i 50 godina vrednosti mokraćne kiseline u serumu su normalno raspoređene sa aritmetičkom sredinom 333 mmol/L i standardnom devijacijom 30 mmol/L.</p>
+<ul>
+<li>Kolika je verovatnoća da slučajno izabrana osoba iz ove populacije ima vrednost mokraćne kiseline u serumu veću od 410 mmol/l?</li>
+</ul>
 </div>
-<div class="cell">
-<div class="cell-output-display">
- 
-
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_gyctuxg88lv10h6q6z4a</title>
-    <style>
-.table td.tinytable_css_quarwvmkvev6do2mau27, .table th.tinytable_css_quarwvmkvev6do2mau27 {    border-bottom: solid 0.1em #d3d8dc; }
-    </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-    </script>
-  
-
-  
-    <div class="container">
-      <table class="table table-borderless" id="tinytable_gyctuxg88lv10h6q6z4a" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
-        
-              <tr>
-                <th scope="col">Nedelja</th>
-                <th scope="col">Tema</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td> 1</td>
-                  <td>Uvod u medicinsku statistiku                                           </td>
-                </tr>
-                <tr>
-                  <td> 2</td>
-                  <td>Sređivanje podataka                                                    </td>
-                </tr>
-                <tr>
-                  <td> 3</td>
-                  <td>Statističko opisivanje podataka                                        </td>
-                </tr>
-                <tr>
-                  <td> 4</td>
-                  <td>Verovatnoća i raspodele verovatnoća                                    </td>
-                </tr>
-                <tr>
-                  <td> 5</td>
-                  <td>Populacija i uzorak                                                    </td>
-                </tr>
-                <tr>
-                  <td> 6</td>
-                  <td>Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama</td>
-                </tr>
-                <tr>
-                  <td> 7</td>
-                  <td>Testiranje hipoteza o učestalostima                                    </td>
-                </tr>
-                <tr>
-                  <td> 8</td>
-                  <td>Testiranje hipoteza o rangovima                                        </td>
-                </tr>
-                <tr>
-                  <td> 9</td>
-                  <td>Korelacija                                                             </td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>Regresija / Kolokvijum                                                 </td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td>Podaci, informacije i znanje                                           </td>
-                </tr>
-                <tr>
-                  <td>12</td>
-                  <td>Zdravstveni informacioni sistem                                        </td>
-                </tr>
-                <tr>
-                  <td>13</td>
-                  <td>Mere dijagnostičke tačnosti                                            </td>
-                </tr>
-                <tr>
-                  <td>14</td>
-                  <td>Medicinsko odlučivanje                                                 </td>
-                </tr>
-                <tr>
-                  <td>15</td>
-                  <td>Bioinformatika                                                         </td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <script>
-      function styleCell_tinytable_w8a0xaodudjns96lvahb(i, j, css_id) {
-        var table = document.getElementById("tinytable_gyctuxg88lv10h6q6z4a");
-        table.rows[i].cells[j].classList.add(css_id);
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_gyctuxg88lv10h6q6z4a');
-        var newRow = table.insertRow(i);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_tinytable_w8a0xaodudjns96lvahb(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_gyctuxg88lv10h6q6z4a");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
-        for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
-            }
-          }
-        }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
-      }
-
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(0, 0, 'tinytable_css_quarwvmkvev6do2mau27') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(0, 1, 'tinytable_css_quarwvmkvev6do2mau27') })
-    </script>
-
-  
-
-
-</div>
-</div>
+</section>
+<section id="upper-tail-prob." class="slide level2">
+<h2>Upper tail prob.</h2>
+</section>
+<section id="lower-tail-prob." class="slide level2">
+<h2>Lower tail prob.</h2>
+</section>
+<section id="difference" class="slide level2">
+<h2>Difference</h2>
 <div class="quarto-auto-generated-content">
 <p><img src="slike/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -1057,80 +789,42 @@ window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns9
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1164,18 +858,7 @@ window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns9
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1207,7 +890,29 @@ window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns9
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1215,7 +920,7 @@ window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns9
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

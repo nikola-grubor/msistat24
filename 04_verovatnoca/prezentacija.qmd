@@ -1,5 +1,5 @@
 ---
-title: "Sređivanje podataka"
+title: "Kratak uvod u verovatnoću"
 date: last-modified
 author: "Dr Nikola Grubor"
 # institute: "Institut za Medicinsku Statistiku i Informatiku"
@@ -21,26 +21,43 @@ library(here)
 library(tidyverse)
 library(tinytable)
 library(gtsummary)
-library(gganimate)
 ```
 
 ## de Méréov problem
 
 A famous example arose from a problem encountered by a French gambler who went by the name of Chevalier de Méré. de Méré played two different dice games: In the first he bet on the chance of at least one six on four rolls of a six-sided die, while in the second he bet on the chance of at least one double-six on 24 rolls of two dice. 
 
+## Aristotel da/ne
+
+## Dutch book i racionalnost
+
 ## Verovatnoća kao alat za predstavljanje znanja
 
 ## Šta su događaji?
 
-Deterministički
+Događaji su...
 
-Slučajni (stohastnični)
+- Deterministički
+
+Nedostatak vitamina C $\rightarrow$ Skorbut
+
+- Slučajni (stohastnični)
+
+Skup elementarnih ishoda $\omega$ je...
+
+$\omega = \{A, B\, O, AB\}$
+
+$\omega = \{\text{zdrav}, \text{bolestan}\}$
 
 ## Mutation somatic vs germline
 
-## Definicija verovatnoće
+## Definicija verovatnoće {.center}
 
-Verovatnoća je mera očekivanja nekog slučajnog događaja.
+::: {.r-fit-text}
+Verovatnoća je mera očekivanja 
+
+nekog slučajnog događaja.
+:::
 
 ## Primer monopol
 
@@ -66,16 +83,32 @@ dice.png
 
 Empirijska verovatnoća se određuje posle posmatranog događaja.
 
+:::: columns
+
+::: {.column}
 $$ p = \frac{\text{očekivano}}{\text{ukupno}} $$ 
+:::
 
+::: {.column}
 table.png
+:::
 
-## Subjektivna verovatnoć
+::::
 
+## Subjektivna verovatnoća
+
+:::: columns
+
+::: {.column}
 - Uverenje
 - Ekspertsko mišljenje
+:::
 
+::: {.column}
 dx.png
+:::
+
+::::
 
 ## Osobine verovatnoće
 
@@ -96,25 +129,34 @@ Dodatni termini:
 Događaji su isključivi ako ne mogu da se dogode istovremeno.
 
 - Krvna grupa
-- Simptomi gripa
-- Medicinski znakovi
+- Prisustvo simptoma gripa
+- Prisustvo medicinskog znaka
 - Dijagnoze
 
 ## Zakoni verovatnoće: adicija (1)
 
-Adicija (sabiranje verovatnoća) isključivih događaja.
+Adicija (sabiranje verovatnoća) [isključivih]{.yellow} događaja.
+
+::: r-stack
+
+![](slike/prob1.png){fig-align="center"}
+
+![](slike/prob2.png){fig-align="center" .fragment}
+:::
 
 ## Zakoni verovatnoće: adicija (2)
 
-Adicija (sabiranje verovatnoća) isključivih događaja.
+Adicija (sabiranje verovatnoća) [neisključivih]{.blue} događaja.
 
-## Zakoni verovatnoće: adicija (3)
+::: r-stack
 
-Adicija (sabiranje verovatnoća) **ne**isključivih događaja.
+![](slike/prob3.png){fig-align="center"}
 
-## Zakoni verovatnoće: adicija (4)
+![](slike/prob4.png){fig-align="center" .fragment}
 
-Adicija (sabiranje verovatnoća) **ne**isključivih događaja.
+![](slike/prob5.png){fig-align="center" .fragment}
+
+:::
 
 ## Verovatnoća zavisnih (uslovnih) događaja
 
@@ -136,20 +178,47 @@ airplane.png
 
 ## Binomna raspodela
 
+Atom svih raspodela verovatnoce.
+Bernuli proces -> Binomna raspodela -> Normalna.
+
 ## Zadatak
 
-::: r-fit-text
+::: {.r-fit-text}
 
-Učestalost hipertenzije u populaciji starijih od 65 godina iznosi 42%.
+Učestalost hipertenzije u populaciji starijih od 65 godina iznosi [42%]{.yellow}. 
 
-- Kolika je verovatnoća da u slučajnom uzorku veličine 7 osoba,
-izabranom iz te iste populacije, dve osobe imaju hipertenziju?
+Kolika je verovatnoća da u slučajnom uzorku veličine [7 osoba]{.yellow}, 
+
+izabranom iz te iste populacije, [dve]{.yellow} osobe imaju hipertenziju?
 
 :::
 
 ## Galton board
 
 ## Normalna raspodela
+
+## Standardna normalna reaspodela
+
+Postoji samo zbog tablica verovatnoca. Z-tabela da ne bi postojalo beskonacno
+tabela za svaku mogucu normalnu distribuciju.
+
+## t-distribucija
+
+100 god stara.
+Varijabilitet populacije nespoznat, pa cemo uzeti iz uzorka, sto dodaje jos
+nesigurnosti.
+Za svaki stepen slobode (koliko informacija smo iskoristili da procenimo variabilitet) 
+postoji posebna t-distribucija. t-dist se priblizava z-dist za beskonacno stepena slobode.
+
+## Hi-kvadratna distribucija
+
+Uzorci iz Z-dist^2^ (postaju pozitivni) i to postane hi-kvadrat.
+(sum of square deviations) / (pop. variance) -> kako idu df inf hi postaje z.
+F dist. (dist of ratio of two variances)
+
+::: {.notes}
+30 zakljucanih matematicara koji racuna verovatnocu.
+:::
 
 ## 68-95-99.7
 

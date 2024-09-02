@@ -10,9 +10,9 @@ title: "changelog"
 - mozda grafikone
 
 ## 03_centralne_mere
-- dodati
+- dodati zadatak
 
 ## 04_verovatnoća
-- samo nacrt je napravljen
+- in progress
 
 ## 05_uzorak

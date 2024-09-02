@@ -349,7 +349,7 @@ tibble(
 
 ## Problemi sa kružnim dijagramima
 
-![](slike/badpie.png)
+![](slike/badpie.png){fig-align="center"}
 
 ## Stubičasti dijagram je uvek bolji
 
@@ -387,7 +387,7 @@ tibble(
   arrange(x) %>%
   mutate(`%` = round( n / sum(.$n) * 100) ) %>%
   rename( "Broj resp. infekcija" = x) %>% 
-  tt(.) |> style_tt(j = 1:3, fontsize = 2)
+  tt(.) |> style_tt(j = 1:3, fontsize = 1)
 ```
 
 ## Stubičasti dijagram
