@@ -6,25 +6,22 @@ author: "Dr Nikola Grubor"
 logo: "slike/logo.png"
 lang: sr-Latn
 
-format:
-  revealjs:
-    slide-number: true
-    show-slide-number: speaker
-    theme: [default, custom.scss]
-
-revealjs-plugins:
-  - revealjs-text-resizer
-  
-embed-resources: false
+# format:
+#   revealjs:
+#     slide-number: true
+#     show-slide-number: speaker
+#     theme: [default, custom.scss]
+# 
+# revealjs-plugins:
+#   - revealjs-text-resizer
 ---
 
 ```{r}
 library(glue)
+library(here)
 library(tidyverse)
 library(tinytable)
-
-theme_quarto <- function(x) format_tt(x, quarto = TRUE)
-options(tinytable_tt_theme = NULL)
+source(file = here("theme", "ggthemes.R"))
 ```
 
 
@@ -170,7 +167,9 @@ Estimand je tačna mera koju želimo na naučimo (rizik, učestalnost, prosek, p
 ## Primer: istraživačko pitanje {.center}
 
 :::: {.columns style='display: flex !important; height: 90%;'}
+
 ::: {.column width="50%" style='display: flex; justify-content: center; align-items: end;'}
+
 ```{mermaid}
 %%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
 %%| fig-align: center
@@ -196,6 +195,7 @@ flowchart TD
   C --> D["Stepen degeneracije, bol"]
 ```
 :::
+
 ::::
 
 ## Prva medicinska baza podataka
@@ -260,7 +260,7 @@ question <- tribble(
   "Patofiza", 4
 )
 
-tt(question) %>% style_tt(j = 1:2, fontsize = 2)
+tt(question) %>% style_tt(j = 1:2, fontsize = 1)
 ```
 
 ::: {.callout-note}
@@ -319,7 +319,7 @@ scales <- tribble(
 )
 tt(scales,
    caption = "Dozvoljene operacije u odnosu na skalu") %>% 
-style_tt(j = 1:5, fontsize = 2.2)
+style_tt(j = 1:5, fontsize = 1)
 ```
 
 ::: {.notes}

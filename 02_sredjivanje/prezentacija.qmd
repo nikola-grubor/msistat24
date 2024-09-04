@@ -6,14 +6,14 @@ author: "Dr Nikola Grubor"
 logo: "slike/logo.png"
 lang: sr-Latn
 
-format:
-  revealjs:
-    slide-number: true
-    show-slide-number: speaker
-    theme: [default, custom.scss]
-
-revealjs-plugins:
-  - revealjs-text-resizer
+# format:
+#   revealjs:
+#     slide-number: true
+#     show-slide-number: speaker
+#     theme: [default, custom.scss]
+# 
+# revealjs-plugins:
+#   - revealjs-text-resizer
 ---
 ```{r}
 library(glue)
@@ -21,6 +21,7 @@ library(here)
 library(tidyverse)
 library(tinytable)
 library(gtsummary)
+source(file = here("theme", "ggthemes.R"))
 ```
 
 ## {.center}
@@ -301,17 +302,7 @@ tibble(
   geom_bar(fill = "#F4BA02", color = "white", size = 1) +
   theme_void() +
   ggdist::theme_ggdist(base_size=15) +
-  theme(
-    axis.text.y = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    panel.border = element_rect(fill=NA,color="#01364C", linewidth=0.5, 
-                                    linetype="solid"),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  ) +
+  theme_blue() +
   labs(y = "Ukupan broj",
        x = "Pol")
 ```
@@ -337,14 +328,7 @@ tibble(
   geom_text(aes(y = ypos, label = x), color = "#01364C", size=6) +
   coord_polar("y", start = 0, direction = -1) +
   scale_fill_brewer(palette="RdYlGn") +
-  theme_void() +
-  theme(
-    plot.background = element_rect(fill = "#01364C"),
-    panel.background = element_rect(fill = "#01364C"),
-    panel.border = element_rect(fill=NA,color="#01364C", linewidth=0.5, 
-                                    linetype="solid"),
-    legend.position = "none"
-  )
+  theme_blue_void()
 ```
 
 ## Problemi sa kružnim dijagramima
@@ -395,27 +379,20 @@ tibble(
 ```{r}
 set.seed(123)
 N <- 30
-tibble(
-  id = 1:N,
-  x = sample(0:5, N, replace = TRUE, prob = c(0.1, 0.4, 0.2, 0.1, 0.1, 0.1))
-) %>% 
+tibble(id = 1:N, x = sample(
+  0:5,
+  N,
+  replace = TRUE,
+  prob = c(0.1, 0.4, 0.2, 0.1, 0.1, 0.1)
+)) %>%
   ggplot(aes(x = x)) +
-  geom_bar(fill = "#F4BA02", color = "white", size = 1) +
+  geom_bar(fill = "#F4BA02",
+           color = "white",
+           size = 1) +
   theme_void() +
-  ggdist::theme_ggdist(base_size=15) +
-  theme(
-    axis.text.y = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    panel.border = element_rect(fill=NA,color="#01364C", linewidth=0.5, 
-                                    linetype="solid"),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  ) +
-  labs(y = "Ukupan broj",
-       x = "Broj respiratornih infekcija (%)")
+  ggdist::theme_ggdist(base_size = 15) +
+  theme_blue() +
+  labs(y = "Ukupan broj", x = "Broj respiratornih infekcija (%)")
 ```
 
 ## Kako prikazati numeričke podatke?
@@ -431,15 +408,7 @@ tibble(
   geom_vline(xintercept = 124, color = "#F7F8F9", linewidth = 2) +
   geom_point(shape = 21, size = 10, fill = "#F4BA02", color = "#F7F8F9", stroke = 1) +
   ggdist::theme_ggdist(base_size=15) +
-  theme(
-    axis.text.y = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  ) +
+  theme_blue() +
   labs(y = "Pacijent",
        x = "Krvni prisitak [mmHg]")
 ```
@@ -458,15 +427,7 @@ tibble(
   # scale_x_continuous(breaks = seq(100, 180, by = 20)) + 
   theme_minimal() +
   ggdist::theme_ggdist(base_size=15) +
-  theme(
-    axis.text.y = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  ) +
+  theme_blue() +
   labs(y = "Broj",
        x = "Krvni prisitak [mmHg]")
 ```
@@ -485,15 +446,7 @@ tibble(
   scale_x_continuous(breaks = seq(100, 140, by = 1)) + 
   theme_minimal() +
   ggdist::theme_ggdist(base_size=15) +
-  theme(
-    axis.text.y = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  ) +
+  theme_blue() +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
   labs(y = "Ukupan broj",
        x = "Krvni prisitak [mmHg]")
@@ -513,15 +466,7 @@ tibble(
   scale_x_continuous(breaks = seq(100, 140, by = 5)) + 
   theme_minimal() +
   ggdist::theme_ggdist(base_size=15) +
-  theme(
-    axis.text.y = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  ) +
+  theme_blue() +
   labs(y = "Ukupan broj",
        x = "Krvni prisitak [mmHg]")
 ```
@@ -540,18 +485,11 @@ tibble(
   TA = rnorm(N, mean = 120, sd = 10)
 ) %>% 
   ggplot(aes(x = TA)) +
-  geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "#F4BA02", color = "white", size = 1) +
+  geom_histogram(aes(y = after_stat(density)), 
+                 bins = 30, fill = "#F4BA02", color = "white", size = 1) +
   theme_void() +
   ggdist::theme_ggdist(base_size=15) +
-  theme(
-    axis.text.y = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  ) +
+  theme_blue() +
   labs(y = "Pacijent",
        x = "Krvni prisitak [mmHg]")
 ```
@@ -572,15 +510,7 @@ tibble(
   stat_function(fun = dnorm, args = list(mean = 120, sd = 10), color = "#F7F8F9", size = 1.5) +
   theme_void() +
   ggdist::theme_ggdist(base_size=15) +
-  theme(
-    axis.text.y = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  ) +
+  theme_blue() +
   labs(y = "Pacijent",
        x = "Krvni prisitak [mmHg]")
   
@@ -615,15 +545,7 @@ tibble(
   annotate("text", label = "Manje\nverovatno", x = 145, y = 0.015, size = 7, color = "tomato") +
   theme_void() +
   ggdist::theme_ggdist(base_size=15) +
-  theme(
-    axis.text.y = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  ) +
+  theme_blue() +
   labs(y = "Pacijent",
        x = "Krvni prisitak [mmHg]")
   
@@ -663,15 +585,7 @@ tibble(
   scale_x_continuous(breaks = seq(100, 140, by = 5)) + 
   theme_minimal() +
   ggdist::theme_ggdist(base_size=15) +
-  theme(
-    axis.text.y = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  ) +
+  theme_blue() +
   labs(y = "Ukupan broj",
        x = "Krvni prisitak [mmHg]")
 ```

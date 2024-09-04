@@ -6,14 +6,14 @@ author: "Dr Nikola Grubor"
 logo: "slike/logo.png"
 lang: sr-Latn
 
-format:
-  revealjs:
-    slide-number: true
-    show-slide-number: speaker
-    theme: [default, custom.scss]
-
-revealjs-plugins:
-  - revealjs-text-resizer
+# format:
+#   revealjs:
+#     slide-number: true
+#     show-slide-number: speaker
+#     theme: [default, custom.scss]
+# 
+# revealjs-plugins:
+#   - revealjs-text-resizer
 ---
 ```{r}
 library(glue)
@@ -21,6 +21,7 @@ library(here)
 library(tidyverse)
 library(tinytable)
 library(gtsummary)
+source(file = here("theme", "ggthemes.R"))
 ```
 
 ## de Méréov problem
@@ -89,9 +90,25 @@ Verovatnoća je [mera očekivanja]{.yellow}
 nekog slučajnog događaja.
 :::
 
-## Očekivanje je generalizacija aritmetičke sredine
+## Očekivanje je opštije od aritmetičke sredine
+
+:::: columns
+
+::: {.column}
 
 ![](slike/catan.png){fig-align="center"}
+:::
+
+::: {.column}
+
+::: {.callout-note}
+Očekivanja su svuda u medicini: preživljavanje, vreme do oporavka nakon uzimanja leka,
+lab. testovi (markeri, biohem. parametri, eGFR), itd.
+:::
+
+:::
+
+::::
 
 ## Zakon velikih brojeva
 
@@ -103,31 +120,19 @@ throws <- 100
 experiment <- sample(1:6, size = throws, replace = TRUE)
 runningavg <- cumsum(experiment) / 1:length(experiment)
 
-tibble(x = 1:length(runningavg),
-       y = runningavg) %>%
-  ggplot(aes(x = x,y = y)) +
+tibble(x = 1:length(runningavg), y = runningavg) %>%
+  ggplot(aes(x = x, y = y)) +
   geom_point(color = "#F7F8F9") +
-  geom_hline(yintercept = 3.5, colour = "#F4BA02", 
-             size = 1, 
-             linetype = "dashed") +
- ggdist::theme_ggdist(base_size=15) +
-  theme(
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    panel.border = element_rect(
-      fill = NA,
-      color = "#01364C",
-      linewidth = 0.5,
-      linetype = "solid"
-    ),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
+  geom_hline(
+    yintercept = 3.5,
+    colour = "#F4BA02",
+    linewidth = 1,
+    linetype = "dashed"
   ) +
-  ylim(1,6) + 
-  labs(y = "Aritmetička sredina (očekivanje)",
-       x = "Događaj")
+  ggdist::theme_ggdist(base_size = 15) +
+  theme_blue() +
+  ylim(1, 6) +
+  labs(y = "Aritmetička sredina (očekivanje)", x = "Događaj")
 ```
 
 
@@ -186,31 +191,69 @@ tribble(
 #| fig-height: 5
 
 ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
-  stat_function(fun = dnorm, args = list(0.2, 0.1), color = "#F7F8F9", linewidth = 1) +
-  stat_function(fun = dnorm, args = list(0.8, 0.07), color = "#F7F8F9", linewidth = 1) +
-  geom_area(stat = "function", fun = dnorm, args = list(0.2, 0.1), fill = "grey", alpha = 0.7) +
-  geom_area(stat = "function", fun = dnorm, args = list(0.8, 0.07), fill = "#F4BA02", alpha = 0.7) +
-  geom_segment(x = 0.4, y = 1.5, xend = 0.65, yend = 1.5, size = 2,
-               color = "#F7F8F9",
-               lineend = "round", 
-               linejoin = "mitre",
-               arrow = arrow(length = unit(0.4, "cm"))) +
-  annotate("text", x = 0.525, y = 1.8, label = "dokazi", color = "#F7F8F9") +
-  annotate("text", x = 0.2, y = 1.8, label = "apriorna", fontface = "bold.italic", color = "#F7F8F9") +
-  annotate("text", x = 0.8, y = 1.8, label = "aposteriorna", fontface = "bold.italic", color = "#F7F8F9") +
+  stat_function(
+    fun = dnorm,
+    args = list(0.2, 0.1),
+    color = "#F7F8F9",
+    linewidth = 1
+  ) +
+  stat_function(
+    fun = dnorm,
+    args = list(0.8, 0.07),
+    color = "#F7F8F9",
+    linewidth = 1
+  ) +
+  geom_area(
+    stat = "function",
+    fun = dnorm,
+    args = list(0.2, 0.1),
+    fill = "grey",
+    alpha = 0.7
+  ) +
+  geom_area(
+    stat = "function",
+    fun = dnorm,
+    args = list(0.8, 0.07),
+    fill = "#F4BA02",
+    alpha = 0.7
+  ) +
+  geom_segment(
+    x = 0.4,
+    y = 1.5,
+    xend = 0.65,
+    yend = 1.5,
+    size = 2,
+    color = "#F7F8F9",
+    lineend = "round",
+    linejoin = "mitre",
+    arrow = arrow(length = unit(0.4, "cm"))
+  ) +
+  annotate(
+    "text",
+    x = 0.525,
+    y = 1.8,
+    label = "dokazi",
+    color = "#F7F8F9"
+  ) +
+  annotate(
+    "text",
+    x = 0.2,
+    y = 1.8,
+    label = "apriorna",
+    fontface = "bold.italic",
+    color = "#F7F8F9"
+  ) +
+  annotate(
+    "text",
+    x = 0.8,
+    y = 1.8,
+    label = "aposteriorna",
+    fontface = "bold.italic",
+    color = "#F7F8F9"
+  ) +
   coord_cartesian(ylim = c(0.01, 8), expand = FALSE) +
-  theme_void() +
-  scale_x_continuous(name = "Verovatnoća") +
-  scale_y_continuous(name = "Učestalost") +
-  xlim(-0.15,1.1) +
-  theme(
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    panel.border = element_rect(
-      fill = NA,
-      color = "#01364C",
-      linewidth = 0.5,
-      linetype = "solid"))
+  theme_blue_void() +
+  xlim(-0.15, 1.1)
 ```
 
 
@@ -326,7 +369,25 @@ raspodela (distribucija) verovatnoća.
 :::: columns
 
 ::: {.column}
-{{< lipsum 1 >}}
+
+- Model procesa bacanja novčića.
+- Osnovna gradivna jedinica za distribucije.
+
+Novčić bačen jednom:
+
+```{r}
+#| echo: true
+rbinom(n = 1, size = 1, prob = 0.5)
+```
+
+Novčić bačen 10 puta:
+
+```{r}
+#| echo: true
+rbinom(10, 1, 0.5)
+```
+
+
 :::
 
 ::: {.column}
@@ -375,23 +436,7 @@ ggplot(aes(x = factor(heads), y = prob, fill = Heads)) +
     vjust = 0
   ) +
   ggdist::theme_ggdist(base_size=15) +
-  theme(
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    legend.title = element_text(color = "#F7F8F9"),
-    legend.text = element_text(color = "#F7F8F9"),
-    legend.background = element_rect(fill = "#01364C", colour = NA),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    panel.border = element_rect(
-      fill = NA,
-      color = "#01364C",
-      linewidth = 0.5,
-      linetype = "solid"
-    ),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  ) +
+  theme_blue() +
   scale_fill_manual(values = c("2" = "tomato", "ostalo" = "#F4BA02")) +
   labs(x = "Uspeh (x)",
        y = "Verovatnoća",
@@ -399,7 +444,7 @@ ggplot(aes(x = factor(heads), y = prob, fill = Heads)) +
 ```
 
 
-## Zadatak
+## Zadatak 1
 
 ::: {.r-fit-text}
 
@@ -411,7 +456,23 @@ izabranom iz te iste populacije, [dve]{.yellow} osobe imaju hipertenziju?
 
 :::
 
-## Galton board
+## Zašto je normalna distribucija česta?
+
+:::: columns
+
+::: {.column}
+
+Pozato je da je...
+
+:::
+
+::: {.column}
+
+![](slike/galton.gif)
+
+:::
+
+::::
 
 ## Normalna raspodela
 
@@ -426,51 +487,67 @@ ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
                 color = "#F4BA02", linewidth = 2) + 
   annotate("text", x = 0.55, y = 0.225, label = c("sd"), color = "#F7F8F9",
            size = 6) +
+  annotate("text", x = 0, y = 0.45, label = c("aritmetička sredina"), color = "#F7F8F9",
+           size = 6) +
   annotate("text", x = 1.8, y = 0.225, label = c("tačka\ninfleksije"), color = "#F7F8F9",
            size = 6) +
   ylab("") +
   scale_y_continuous(breaks = NULL) +
   ggdist::theme_ggdist(base_size=15) +
-  theme(
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    legend.title = element_text(color = "#F7F8F9"),
-    legend.text = element_text(color = "#F7F8F9"),
-    legend.background = element_rect(fill = "#01364C", colour = NA),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    panel.border = element_rect(
-      fill = NA,
-      color = "#01364C",
-      linewidth = 0.5,
-      linetype = "solid"
-    ),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  )
+  theme_blue()
 ```
 
 ## Standardna normalna reaspodela
 
-Postoji samo zbog tablica verovatnoca. Z-tabela da ne bi postojalo beskonacno
-tabela za svaku mogucu normalnu distribuciju.
+Normalna raspodela gde je $\bar x = 0$ i $sd = 1$. Dobija se formulom: 
 
-## t-distribucija
+$$ z_i = \frac{x_i - \mu}{\sigma} $$
 
-100 god stara.
-Varijabilitet populacije nespoznat, pa cemo uzeti iz uzorka, sto dodaje jos
-nesigurnosti.
-Za svaki stepen slobode (koliko informacija smo iskoristili da procenimo variabilitet) 
-postoji posebna t-distribucija. t-dist se priblizava z-dist za beskonacno stepena slobode.
+Nekada bila bitna zbog tablica verovatnoca. 
+
+::: {.notes}
+Inace bi morali da napravimo beskonacno tablica verovatnoca;
+za svaku mogucu normalnu distribuciju.
+:::
+
+## Studentova t-distribucija
+
+```{r}
+ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1),
+                color = "#F4BA02", linewidth = 2) + 
+  stat_function(fun = dt, n = 101, args = list(df = 1),
+                color = "tomato", linewidth = 2) + 
+  ylab("") +
+  scale_y_continuous(breaks = NULL) +
+  ggdist::theme_ggdist(base_size=15) +
+  theme_blue()
+```
+::: {.notes}
+100 god stara.Varijabilitet populacije nespoznat, pa cemo uzeti iz uzorka, sto dodaje jos
+nesigurnosti. Za svaki stepen slobode (koliko informacija smo iskoristili da procenimo variabilitet) postoji posebna t-distribucija. t-dist se priblizava z-dist za beskonacno stepena slobode.
+:::
 
 ## Hi-kvadratna distribucija
 
+```{r}
+ggplot(data = data.frame(x = c(0, 10)), aes(x)) +
+  stat_function(fun = dchisq, n = 101, args = list(df = 3),
+                color = "#F4BA02", linewidth = 2) + 
+  stat_function(fun = dchisq, n = 101, args = list(df = 4),
+                color = "#F4DA02", linewidth = 2) + 
+  stat_function(fun = dchisq, n = 101, args = list(df = 5),
+                color = "#F4FA02", linewidth = 2) + 
+  ylab("") +
+  scale_y_continuous(breaks = NULL) +
+  ggdist::theme_ggdist(base_size=15) +
+  theme_blue()
+```
+
+::: {.notes}
 Uzorci iz Z-dist^2^ (postaju pozitivni) i to postane hi-kvadrat.
 (sum of square deviations) / (pop. variance) -> kako idu df inf hi postaje z.
 F dist. (dist of ratio of two variances)
-
-::: {.notes}
-30 zakljucanih matematicara koji racuna verovatnocu.
 :::
 
 ## 68-95-99.7
@@ -509,39 +586,36 @@ ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
   ylab("") +
   scale_y_continuous(breaks = NULL) +
   ggdist::theme_ggdist(base_size=15) +
-  theme(
-    panel.grid.minor = element_blank(),
-    panel.grid.major = element_blank(),
-    legend.title = element_text(color = "#F7F8F9"),
-    legend.text = element_text(color = "#F7F8F9"),
-    legend.background = element_rect(fill = "#01364C", colour = NA),
-    plot.background = element_rect(fill = "#01364C", colour = NA),
-    panel.background = element_rect(fill = "#01364C", colour = NA),
-    panel.border = element_rect(
-      fill = NA,
-      color = "#01364C",
-      linewidth = 0.5,
-      linetype = "solid"
-    ),
-    axis.title = element_text(color = "#F7F8F9"),
-    axis.text = element_text(color = "#F7F8F9")
-  ) +
+  theme_blue() +
   scale_x_continuous(breaks = scales::pretty_breaks(),
                      labels = scales::label_percent(suffix = " sd", scale = 1))
 ```
 
 ## Tablica verovatnoća
 
-## 
+![](slike/table.png){fig-align="center"}
+
+::: {.notes}
+30 "zakljucanih" ljudskih kalkulatora koji racunaju verovatnocu.
+:::
+
+## Zadatak 2
 
 ::: {.r-fit-text}
 
 U populaciji žena starosti između 25 i 50 godina vrednosti mokraćne kiseline u
-serumu su normalno raspoređene sa aritmetičkom sredinom 333 mmol/L i
-standardnom devijacijom 30 mmol/L.
+
+serumu su normalno raspoređene sa [aritmetičkom sredinom 333]{.yellow} mmol/L i
+
+[standardnom devijacijom 30]{.yellow} mmol/L.
+
+:::
+
+::: {.r-fit-text}
 
 Kolika je verovatnoća da slučajno izabrana osoba iz ove populacije ima
-vrednost mokraćne kiseline u serumu veću od 410 mmol/l?
+
+vrednost mokraćne kiseline u serumu [veću od 410]{.yellow} mmol/l?
 
 :::
 

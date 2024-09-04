@@ -6,14 +6,14 @@ author: "Dr Nikola Grubor"
 logo: "slike/logo.png"
 lang: sr-Latn
 
-format:
-  revealjs:
-    slide-number: true
-    show-slide-number: speaker
-    theme: [default, custom.scss]
-
-revealjs-plugins:
-  - revealjs-text-resizer
+# format:
+#   revealjs:
+#     slide-number: true
+#     show-slide-number: speaker
+#     theme: [default, custom.scss]
+# 
+# revealjs-plugins:
+#   - revealjs-text-resizer
 ---
 
 ```{r}
@@ -23,6 +23,7 @@ library(tidyverse)
 library(tinytable)
 library(gtsummary)
 library(gganimate)
+source(file = here("theme", "ggthemes.R"))
 ```
 
 ## Šta je model?
@@ -85,13 +86,7 @@ bimod <- bimod %>% add_row(x = rnorm(n = N, mean = 5, sd = 1))
 ggplot(data = unimod, aes( x = x)) +
   geom_histogram(fill = "tomato", color = "#F7F8F9") +
   geom_histogram(data = bimod, aes( x = x), fill = "#F4BA02", color = "#F7F8F9") +
-  theme_void() +
-  theme(
-   panel.grid.minor = element_blank(), 
-   panel.grid.major = element_blank(),
-   plot.background = element_rect(fill = "#01364C", colour = NA),
-   panel.background = element_rect(fill = "#01364C", colour = NA)
- )
+  theme_blue_void()
   
 ```
 
@@ -219,13 +214,7 @@ quantile <- tibble( x = 1:20 , y = 1)
 quantile %>% 
   ggplot(aes( x = x , y = y)) +
   geom_point(size = 8 , color = "#F4BA02") +
-  theme_void() +
-  theme(
-   panel.grid.minor = element_blank(), 
-   panel.grid.major = element_blank(),
-   plot.background = element_rect(fill = "#01364C", colour = NA),
-   panel.background = element_rect(fill = "#01364C", colour = NA),
- )
+  theme_blue_void()
 ```
 
 ::: {.fragment}
@@ -237,13 +226,7 @@ quantile %>%
   geom_vline(xintercept = 10, linewidth = 2, linetype = 2, color = "#F7F8F9") +
   annotate("text", label = "paste(bold(medijana), \", 50. percentil\")", 
            x = 15, y = 1.5, parse = TRUE, size = 7, color = "#F7F8F9") +
-  theme_void() +
-  theme(
-   panel.grid.minor = element_blank(), 
-   panel.grid.major = element_blank(),
-   plot.background = element_rect(fill = "#01364C", colour = NA),
-   panel.background = element_rect(fill = "#01364C", colour = NA),
- ) +
+  theme_blue_void() +
   ylim(0, 2)
 ```
 :::
@@ -257,14 +240,7 @@ quantile %>%
   annotate("segment", x = 1.5:19.5, y = 0.8, yend = 1.2, size = 1.5, 
            linetype = 2, color = "#F7F8F9") +
   labs(title = "Percentili") +
-  theme_void() +
-  theme(
-   panel.grid.minor = element_blank(), 
-   panel.grid.major = element_blank(),
-   plot.background = element_rect(fill = "#01364C", colour = NA),
-   panel.background = element_rect(fill = "#01364C", colour = NA),
-   plot.title = element_text(hjust = 0.5, color = "#F7F8F9", size = 30)
- ) +
+  theme_blue_void() +
   ylim(0, 2)
 ```
 :::
