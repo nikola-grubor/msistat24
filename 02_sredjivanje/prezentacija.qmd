@@ -548,8 +548,6 @@ tibble(
   theme_blue() +
   labs(y = "Pacijent",
        x = "Krvni prisitak [mmHg]")
-  
-
 ```
 
 :::

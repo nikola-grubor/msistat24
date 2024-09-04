@@ -90,6 +90,11 @@ Verovatnoća je [mera očekivanja]{.yellow}
 nekog slučajnog događaja.
 :::
 
+::: {.notes}
+Slučajan događaj = rezultat procesa koji ne znamo kako radi. Mera, proces kojim
+dodajem broj nečemu (metar i razdaljina, znanje i ocene).
+:::
+
 ## Očekivanje je opštije od aritmetičke sredine
 
 :::: columns
@@ -109,6 +114,11 @@ lab. testovi (markeri, biohem. parametri, eGFR), itd.
 :::
 
 ::::
+
+::: {.notes}
+Očekivana vrednost ne mora da bude najčešća (mod), i ne poklapa se sa svakodnevnom upotrebom.
+Ne mora ni da bude vrednost koja može da se desi 3.5 na kockici od 6 strana.
+:::
 
 ## Zakon velikih brojeva
 
@@ -340,8 +350,25 @@ $$ P(A \cap B) = P(A) \times P(B|A) = P(B) \times P(A|B) $$
 
 ## Verovatnoća u dijagnostici
 
-## CENTOR Score
+![](slike/scenario.png){fig-align="center"}
 
+## CENTOR Skor
+
+:::: columns
+
+::: {.column width="40%"}
+
+- Doprinos svakog simptoma/znaka verovatnoći strep. infekcije
+- Rezultat je pre-test verovatnoca
+
+:::
+
+::: {.column width="60%"}
+
+![](slike/centor.png){fig-align="center"}
+:::
+
+::::
 ## Teorijske raspodele verovatnoća
 
 Teorijske raspodele verovatnoća su specifični matematički [modeli]{.yellow}
@@ -462,7 +489,8 @@ izabranom iz te iste populacije, [dve]{.yellow} osobe imaju hipertenziju?
 
 ::: {.column}
 
-Pozato je da je...
+- Normlana distrubucija nastaje sabiranjem (ili množenjem) rezultata mnogo sitnijih procesa.
+- Na primer, greške u merenju, varijacije rasta, i brzina molekula su procesi u kojima se javlja.
 
 :::
 
@@ -473,6 +501,15 @@ Pozato je da je...
 :::
 
 ::::
+
+::: {.notes}
+Poređaj 1000 svojih najbližih prijatelja na sredinu fudbalskog terena. Svako ima
+novčić u ruci. Kad padne glava ide se korak napred, a kad padne pismo korak
+nazad. Nakon 16 bacanja izmeri udaljenost od pocetne linije. Da li možes da 
+znas proporciju ljudi koja stoji na liniji? A 5 metara od linije? I ako ne znamo
+gde će pojedinačna osoba završiti, možemo znati koje će udaljenosti biti
+najčešće.
+:::
 
 ## Normalna raspodela
 
@@ -508,6 +545,14 @@ Nekada bila bitna zbog tablica verovatnoca.
 ::: {.notes}
 Inace bi morali da napravimo beskonacno tablica verovatnoca;
 za svaku mogucu normalnu distribuciju.
+:::
+
+## Tablica verovatnoća
+
+![](slike/table.png){fig-align="center"}
+
+::: {.notes}
+30 "zakljucanih" ljudskih kalkulatora koji racunaju verovatnocu.
 :::
 
 ## Studentova t-distribucija
@@ -591,14 +636,6 @@ ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
                      labels = scales::label_percent(suffix = " sd", scale = 1))
 ```
 
-## Tablica verovatnoća
-
-![](slike/table.png){fig-align="center"}
-
-::: {.notes}
-30 "zakljucanih" ljudskih kalkulatora koji racunaju verovatnocu.
-:::
-
 ## Zadatak 2
 
 ::: {.r-fit-text}
@@ -619,10 +656,89 @@ vrednost mokraćne kiseline u serumu [veću od 410]{.yellow} mmol/l?
 
 :::
 
-## Upper tail prob.
+## Računanje verovatnoće: normalna raspodela
 
-## Lower tail prob.
+:::: {.r-stack}
 
-## Difference
+```{r}
+set.seed(123)
 
+N <- 1000
+mkis <- tibble(
+  id = 1:N,
+  TA = rnorm(N, mean = 333, sd = 30)
+)
 
+mkis %>% 
+  ggplot(aes(x = TA)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "#F4BA02", size = 1) +
+  ggdist::theme_ggdist(base_size=15) +
+  theme_blue() +
+  labs(y = "Verovatnoca",
+       x = "Mokraćna kiselina [mmol/L]")
+```
+
+::: {.fragment}
+
+```{r}
+
+mkis %>% 
+  ggplot(aes(x = TA)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "#F4BA02", size = 1) +
+  stat_function(fun = dnorm, args = list(mean = 333, sd = 30), color = "#F7F8F9", size = 1.5) +
+  ggdist::theme_ggdist(base_size=15) +
+  theme_blue() +
+  labs(y = "Verovatnoca",
+       x = "Mokraćna kiselina [mmol/L]")
+```
+
+:::
+
+::: {.fragment}
+
+```{r}
+
+mkis %>% 
+  ggplot(aes(x = TA)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "#F4BA02", size = 1) +
+  stat_function(fun = dnorm, args = list(mean = 333, sd = 30),
+                xlim = c(333-30,333+30),
+                geom = "area", alpha = 3/4, fill = "dodgerblue") +
+  stat_function(fun = dnorm, args = list(mean = 333, sd = 30),
+                xlim = c(333+2*30, 333+3*30),
+                geom = "area", alpha = 3/4, fill = "tomato") +
+  stat_function(fun = dnorm, args = list(mean = 333, sd = 30), color = "#F7F8F9", size = 1.5) +
+  
+  annotate("text", label = "Više verovatno", x = 270, y = 0.010, size = 7, color = "dodgerblue") +
+  annotate("text", label = "Manje\nverovatno", x = 410, y = 0.005, size = 7, color = "tomato") +
+  ggdist::theme_ggdist(base_size=15) +
+  theme_blue() +
+  labs(y = "Verovatnoca",
+       x = "Mokraćna kiselina [mmol/L]")
+```
+
+:::
+
+::: {.fragment}
+
+```{r}
+
+mkis %>% 
+  ggplot(aes(x = TA)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "#F4BA02", size = 1) +
+  stat_function(fun = dnorm, args = list(mean = 333, sd = 30),
+                xlim = c(410, 333+3*30),
+                geom = "area", alpha = 3/4, fill = "tomato") +
+  stat_function(fun = dnorm, args = list(mean = 333, sd = 30), 
+                color = "#F7F8F9", size = 1.5) +
+  annotate("text", label = "Više od 410", x = 420, y = 0.0025, 
+           size = 7, color = "tomato") +
+  ggdist::theme_ggdist(base_size=15) +
+  theme_blue() +
+  labs(y = "Verovatnoca",
+       x = "Mokraćna kiselina [mmol/L]")
+```
+
+:::
+
+::::
