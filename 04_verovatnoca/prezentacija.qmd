@@ -742,3 +742,19 @@ mkis %>%
 :::
 
 ::::
+
+## Struktura kursa
+
+```{r}
+teme <- c(
+  "Uvod u medicinsku statistiku", "Sređivanje podataka",
+  "Statističko opisivanje podataka", "Verovatnoća i raspodele verovatnoća",
+  "Populacija i uzorak", "Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama",
+  "Testiranje hipoteza o učestalostima", "Testiranje hipoteza o rangovima", "Korelacija",
+  "Regresija / Kolokvijum", "Podaci, informacije i znanje", "Zdravstveni informacioni sistem",
+  "Mere dijagnostičke tačnosti", "Medicinsko odlučivanje", "Bioinformatika"
+)
+
+kurs <- tibble(Nedelja = 1:15, Tema = teme)
+tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
+```

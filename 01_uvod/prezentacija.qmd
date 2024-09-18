@@ -106,6 +106,24 @@ tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
 :::
 :::
 
+## Koliko često se replikuju rezultati?
+
+::: {.r-stack}
+
+![](slike/rep1.png)
+
+![](slike/replication.png){.fragment}
+:::
+
+## 2000. se zahteva preregistracija
+
+::: {.r-stack}
+
+![](slike/prereg1.png){width=60% fig-align="center"}
+
+![](slike/prereg.png){.fragment width=60% fig-align="center"}
+:::
+
 ## Definicija {.center}
 
 ::: r-fit-text

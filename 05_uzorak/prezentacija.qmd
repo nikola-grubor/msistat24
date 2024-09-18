@@ -1,19 +1,10 @@
 ---
-title: "Sređivanje podataka"
+title: "Populacija i uzorak"
 date: last-modified
 author: "Dr Nikola Grubor"
 # institute: "Institut za Medicinsku Statistiku i Informatiku"
 logo: "slike/logo.png"
 lang: sr-Latn
-
-format:
-  revealjs:
-    slide-number: true
-    show-slide-number: speaker
-    theme: [default, custom.scss]
-
-revealjs-plugins:
-  - revealjs-text-resizer
 ---
 ```{r}
 library(glue)
@@ -21,465 +12,346 @@ library(here)
 library(tidyverse)
 library(tinytable)
 library(gtsummary)
-library(gganimate)
+source(file = here("theme", "ggthemes.R"))
 ```
 
-## {.center}
+## Zašto uzorkujemo
 
-::: r-fit-text
-Grupisanje je proces [organizovanja]{.yellow} podataka.
-:::
-
-# Apsolutni i relativni brojevi
-
-## Formalna definicija {.center}
-
-::: r-fit-text
-
-$f_{abs} = \frac{\#n}{\text{interval}}$
-
-$f_{rel} = \frac{f_{abs}}{\text{Ukupan broj podataka}} \%$
-
-:::
-
-## Apsolutni jeleni i relativne ajkule
-
-- Relativni brojevi mogu prenaglasiti rizik (bitnost) neke pojave
-- Dobri za plašenje drugih, publikacije
-- Loši za javno zdravlje, naučni progres
-- Ali potrebni za kauzalno tumačenje
-
-::: {layout-ncol=2}
-
-![Apsolutni jelen](slike/deer2.png){width=255}
-
-![Relativna ajkula](slike/shark.png){width=400}
-:::
-
-::: {.notes}
-Retke bolesti mogu da imaju rizike od 300% (RR 3.00), ali ako niko u populaciji ne dobije tu bolest onda to nije od javnozdravstvenog znacaja. 
-:::
-
-## Opasnost zaviti od izloženosti {.center}
-
-![](slike/deadlychart.jpeg){fig-align="center"}
-
-## Komunikacija rizika {.smaller}
-
-:::: columns 
+:::: columns
 
 ::: {.column}
-Mnogi ljudi [mešaju]{.yellow} relativni i apsolutni [rizik]{.yellow}
 
-Primer:
+- Ograničenja: vreme i novac.
+- Kako da zaključimo ispravno, a da nismo videli svaki primer onoga što nas interesuje?
 
-- 1/10,000 žena ima trombozu
-- 3/10,000 žena koje uzimaju kontraceptivne pilule ima trombozu
-
-$RR = \frac{3/10,000}{1/10,000} = 3.00$
-
-- $\uparrow$ 200% u trombozama!
-- Promena verovatnoće je samo 0.0002 (2 žene u 10,000)
-- Trudnoća povećava verovatnoću tromboze mnogo više (DVT)
 :::
 
 ::: {.column}
-![](slike/pills.png)
+
+```{mermaid}
+%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
+
+flowchart TD
+  A[Ciljna populacija] --> B["Uzoračka populacija"]
+  B --> C[Uzorak]
+  C --"Zaključak"--> A
+```
+
 :::
 
 ::::
 
-::: {.notes}
-Tromboza je retka u opstoj populaciji, ALI su mnogo češći na pilulu. Ima kauzalnih razloga za to. Cost/benefit je težak. Zbog članka mnogo žena prestalo pije KP i dobilo tromboze zbog trudnoće!
-:::
+## Urgentno lečenje septičnog šoka
 
-## Tabelarno prikazivanje aps. i rel. podataka {.center}
+Sepsa ima ogroman mortalitet. Kako da je lečimo?
 
-```{r}
-N <- 100
-freq_dat <- tibble(
-  Navika = sample(c("Pusač", "Nepusac"), N, replace = T)
-)
+![](slike/sepsis.png)
 
-tbl_summary(freq_dat) %>%
-  modify_header(label = "Varijabla") %>%
-  as_kable_extra(booktabs = TRUE) %>%
-  kableExtra::kable_styling(font_size = 64)
-```
+Kako da odgovorimo na ovo pitanje?
 
-## Grafičko prikazivanje relativnih brojeva {.smaller}
+## Osnovni termini
 
-![Redukcija LDL-a u odnosu na vrstu statina.](slike/statins.gif){fig-align="center"}
+- Populacija (skup svih istovrsnih elemenata)
+    + Ciljna populacija (skup elemenata za koji generalizujemo)
+- Uzoracka populacija (populacija koja je dostupna)
+- Uzorak (podskup osnovnog skupa (populacije) izabran na osnovu kriterijuma)
 
-## Statini {.smaller}
-
-Efikasnost (50-65 god):
-
-- Mortalitet ($RR = 0.86; ARD = -0.40\%; NNT = 250$)
-- CVD ($RR = 0.69; ARD, -0.43\%; NNT = 233$)
-- CVI ($RR = 0.71; ARD, -0.38\%; NNT = 236$)
-- MI ($RR = 0.64; ARD, -0.81\%; NNT = 123$)
-
-![](slike/statin_jama.png)
-
-::: {.notes}
-Sta moze da bude problem sa NNT? Sta ako terapije nekog osteti? Ovo su proseci, varijabilitet je isto bitan.
-:::
-
-## Grafički prikaz redukcije relativnog rizika
-
-```{r}
-#| eval: false
-(tribble(
-  ~Ime, ~Rizik, ~time,
-  "Marko", 5, 1,
-  "Marko", 5 - (5 * 0), 2,
-  "Radoljub", 20, 1,
-  "Radoljub", 20 - (20 * 0), 2
-) %>%
-  ggplot(aes(x = Ime, y = Rizik, group = time)) +
-  geom_col(fill = "tomato", position = "dodge", color = "white") +
-  theme_minimal() +
-  ylim(0, 30)) %>% 
-  ggsave(filename = here("02_sredjivanje/slike", "risk1.png", bg = "white"))
-
-  
-(tribble(
-  ~Ime, ~Rizik, ~time,
-  "Marko", 5, 1,
-  "Marko", 5 - (5 * 0.2), 2,
-  "Radoljub", 20, 1,
-  "Radoljub", 20 - (20 * 0.2), 2
-) %>%
-  ggplot(aes(x = Ime, y = Rizik, group = time)) +
-  geom_col(fill = "tomato", position = "dodge", color = "white") +
-  theme_minimal() +
-  ylim(0, 30)) %>% 
-  ggsave(filename = here("02_sredjivanje", "slike", "risk2.png", bg = "white"))
-  
-  
-(tribble(
-  ~Ime, ~Rizik, ~time,
-  "Marko", 5, 1,
-  "Marko", 5 - (5 * 0.2), 2,
-  "Radoljub", 20, 1,
-  "Radoljub", 20 - (20 * 0.2), 2
-) %>%
-  ggplot(aes(x = Ime, y = Rizik, group = time)) +
-  geom_col(fill = "tomato", position = "dodge", color = "white") +
-  geom_hline(yintercept = 20 - (20 * 0.2), linetype = 2) +
-  geom_hline(yintercept = 20, linetype = 2) +
-  annotate(geom="text", x=1.25, y=18, label="RR = 0.8",
-              color="red", size = 5) +
-  theme_minimal() +
-  ylim(0, 30)) %>% 
-  ggsave(filename = here("02_sredjivanje", "slike", "risk3.png", bg = "white"))
-```
-
-```{r}
-tribble(
-  ~Ime, ~Rizik, ~time,
-  "Marko", 5, 1,
-  "Marko", 5 - (5 * 0.2), 2,
-  "Radoljub", 20, 1,
-  "Radoljub", 20 - (20 * 0.2), 2
-) %>%
-  ggplot(aes(x = Ime, y = Rizik, group = time)) +
-  geom_col(fill = "tomato", position = "dodge", color = "white") +
-  geom_hline(yintercept = 20 - (20 * 0.2), linetype = 2) +
-  geom_hline(yintercept = 20, linetype = 2) +
-  annotate(geom="text", x=1.25, y=18, label="RR = 0.8",
-              color="red", size = 5) +
-  theme_minimal() +
-  ylim(0, 30)
-```
-
-
-## Greška osnovne stope
+## Istraživačko pitanje vs. ciljna grupa
 
 ::: {.r-stack}
 
-![](slike/base1.png)
+![](slike/uzorak1.png)
 
-![](slike/base2.png){.fragment}
+![](slike/uzorak2.png){.fragment}
+
+![](slike/uzorak3.png){.fragment}
+
+![](slike/uzorak4.png){.fragment}
 
 :::
-
-## Apsolutni antibiotik, relativni statin
-
-- Apsolutni rizik je informativniji
-- Relativni rizik je bitan kada umemo da procenimo osnovni rizik
-- Vakcinacija (100% velike boginje)
-- Antibiotici (primer...)
 
 ::: {.notes}
-Da li procedure/intervencije mogu da se mere ovako, smanjenjem rizika? Sta je zapravo rizik? 
+Populacija iz koje se uzima uzorak mozda nije istao kao populacija o kojoj se zele informacije. Cesto postoji veliko, ali ne potpuno preklapanje izmedju ove dve grupe ybog problema sa okvirom.
 :::
 
-# Dobri i loši grafikoni
+## Kako se dostupna populacija razlikuje?
 
-## Primer: Grafikon PISA testiranja (1)
+![](slike/sample.png){fig-align="center"}
 
-![](slike/pisa_raw.png){fig-align="center"}
+## Pogrešna slika realnosti
 
-## Primer: Grafikon PISA testiranja (2) {.smaller}
+:::: columns
 
-```{r}
-tribble(
-  ~Year,	~Score, ~Subject,
-2003,502.335, "math",
-2006,501.269, "math",
-2009,502.0305, "math",
-2012,498.9848, "math",
-2015,495.4822, "math",
-2018,496.3959, "math",
-2021,480.1015, "math",
-2000,499.5939, "reading",
-2002,497.4619, "reading",
-2006,495.6345, "reading",
-2008.6667,499.7462, "reading",
-2011,501.4213, "reading",
-2015,497.4619, "reading",
-2017,493.0457, "reading",
-2021,482.0812, "reading",
-2005,502.9442, "science",
-2008,506.1421, "science",
-2011,504.9239, "science",
-2014,497.3096, "science",
-2017,493.5025, "science",
-2021,491.3706, "science"
-) %>% 
-  mutate(Score = round(Score)) %>% 
-  ggplot(aes(x = Year, y = Score)) +
-  geom_point() +
-  geom_line() +
-  theme_bw() +
-  facet_wrap(~Subject) +
-  ylim(0,520)
-```
-$Y$ osa produžena do nule.
+::: {.column width=70%}
 
-## Good chart examples
+![](slike/sample.png){width=60% fig-align="center"}
 
-
-
-## Prikazivanje nominalnih podataka
-*Grupišu se po [kategorijama]{.yellow}*
-
-```{r}
-tibble(
-  
-)
-```
-
-
-## Bar chart
-
-## Bad Bar chart
-
-## Pie chart
-
-## Prikazivanje ordinalnih podataka
-*Grupišu se po [kategorijama]{.yellow}*
-
-## Prikazivanje diskontinuiranih podataka
-*Grupišu se po [kategorijama]{.yellow}*
-
-## Frequency table
-
-## Frequency bar chart
-
-## Bad Frequency bar chart
-
-## Motivacija za histogram
-
-```{r}
-set.seed(123)
-N <- 20
-tibble(
-  id = rep(1, N),
-  TA = rnorm(N, mean = 120, sd = 10)
-) %>% 
-  ggplot(aes(x = TA, y = id)) +
-  geom_point(shape = 21, size = 10, fill = "#F4BA02", color = "black", stroke = 1) +
-  geom_vline(xintercept = 124) +
-  theme_minimal() +
-  theme(axis.text.y=element_blank()) +
-  labs(y = "Pacijent",
-       x = "Krvni prisitak [mmHg]")
-```
-## Široki intervali nisu korisni
-
-```{r}
-set.seed(123)
-N <- 20
-tibble(
-  id = 1:N,
-  TA = rnorm(N, mean = 120, sd = 10)
-) %>% 
-  ggplot(aes(x = TA)) +
-  geom_histogram(bins = 2, fill = "#F4BA02", color = "white", size = 2) +
-  theme_minimal() +
-  labs(y = "Broj",
-       x = "Krvni prisitak [mmHg]")
-```
-## Uski intervali nisu korisni
-
-```{r}
-set.seed(123)
-N <- 20
-tibble(
-  id = 1:N,
-  TA = rnorm(N, mean = 120, sd = 10)
-) %>% 
-  ggplot(aes(x = TA)) +
-  geom_histogram(bins = 20, fill = "#F4BA02", color = "white", size = 2) +
-  theme_minimal() +
-  labs(y = "Broj",
-       x = "Krvni prisitak [mmHg]")
-```
-
-## Optimalan broj intervala je proizvoljna stavka
-
-```{r}
-set.seed(123)
-N <- 20
-tibble(
-  id = 1:N,
-  TA = rnorm(N, mean = 120, sd = 10)
-) %>% 
-  ggplot(aes(x = TA)) +
-  geom_histogram(bins = 7, fill = "#F4BA02", color = "white", size = 2) +
-  theme_minimal() +
-  labs(y = "Broj",
-       x = "Krvni prisitak [mmHg]")
-```
-## Informacije možemo predstaviti distribucijom
-
-:::: {.r-stack}
-
-
-```{r}
-set.seed(123)
-N <- 1000
-tibble(
-  id = 1:N,
-  TA = rnorm(N, mean = 120, sd = 10)
-) %>% 
-  ggplot(aes(x = TA)) +
-  geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "#F4BA02", color = "white", size = 1) +
-  # stat_function(fun = dnorm, args = list(mean = 120, sd = 10),
-  #               xlim = c(110,130),
-  #               geom = "area", alpha = 3/4, fill = "dodgerblue") +
-  # stat_function(fun = dnorm, args = list(mean = 120, sd = 10),
-  #               xlim = c(140, 150),
-  #               geom = "area", alpha = 3/4, fill = "tomato") +
-  # stat_function(fun = dnorm, args = list(mean = 120, sd = 10), color = "black", size = 1.5) +
-  # 
-  # annotate("text", label = "Više verovatno", x = 135, y = 0.04, size = 7, color = "dodgerblue") +
-  # annotate("text", label = "Manje\nverovatno", x = 145, y = 0.015, size = 7, color = "tomato") +
-  theme_void() +
-  labs(y = "Pacijent",
-       x = "Krvni prisitak [mmHg]")
-  
-
-```
-
-::: {.fragment}
-
-```{r}
-set.seed(123)
-N <- 1000
-tibble(
-  id = 1:N,
-  TA = rnorm(N, mean = 120, sd = 10)
-) %>% 
-  ggplot(aes(x = TA)) +
-  geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "#F4BA02", color = "white", size = 1) +
-  # stat_function(fun = dnorm, args = list(mean = 120, sd = 10),
-  #               xlim = c(110,130),
-  #               geom = "area", alpha = 3/4, fill = "dodgerblue") +
-  # stat_function(fun = dnorm, args = list(mean = 120, sd = 10),
-  #               xlim = c(140, 150),
-  #               geom = "area", alpha = 3/4, fill = "tomato") +
-  stat_function(fun = dnorm, args = list(mean = 120, sd = 10), color = "black", size = 1.5) +
-
-  # annotate("text", label = "Više verovatno", x = 135, y = 0.04, size = 7, color = "dodgerblue") +
-  # annotate("text", label = "Manje\nverovatno", x = 145, y = 0.015, size = 7, color = "tomato") +
-  theme_void() +
-  labs(y = "Pacijent",
-       x = "Krvni prisitak [mmHg]")
-  
-
-```
+- Izbor jedinica posmatranja mora biti nezavisan od posmatranog obeležja.
+- Verovatnoća odabira jedinica posmatranja mora biti unapred poznata.
 
 :::
 
+::: {.column width=30%}
 
-::: {.fragment}
-
-```{r}
-set.seed(123)
-N <- 1000
-tibble(
-  id = 1:N,
-  TA = rnorm(N, mean = 120, sd = 10)
-) %>% 
-  ggplot(aes(x = TA)) +
-  geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "#F4BA02", color = "white", size = 1) +
-  stat_function(fun = dnorm, args = list(mean = 120, sd = 10),
-                xlim = c(110,130),
-                geom = "area", alpha = 3/4, fill = "dodgerblue") +
-  stat_function(fun = dnorm, args = list(mean = 120, sd = 10),
-                xlim = c(140, 150),
-                geom = "area", alpha = 3/4, fill = "tomato") +
-  stat_function(fun = dnorm, args = list(mean = 120, sd = 10), color = "black", size = 1.5) +
-  
-  annotate("text", label = "Više verovatno", x = 135, y = 0.04, size = 7, color = "dodgerblue") +
-  annotate("text", label = "Manje\nverovatno", x = 145, y = 0.015, size = 7, color = "tomato") +
-  theme_void() +
-  labs(y = "Pacijent",
-       x = "Krvni prisitak [mmHg]")
-  
-
-```
+![Pristrasan pogled.](slike/fish2.png){fig-align="center"}
 
 :::
 
 ::::
 
-## Prikazivanje kontinuiranih podataka
-*Grupišu se po [kategorijama]{.yellow}*
+## Pristrastnost
 
-- Odrediti apsolutne i relativne učestalosti za **starost**
-- Grafički prikaz
-  - histogram
-  - poligon frekvencija
+Kada metod pokazuje netačnu, iskrivljenu sliku realnosti.
 
-## Histogram
+::: {.notes}
+Nije isto sto i preciznost. Npr. kada smo namerno nejasni na odgovaranju jer ne znamo tacan odgovor, pa deluje kao da mozda znamo. Medjutim kad nas ispitivac natera da budemo precizniji
+postane sve jasno.
+:::
 
-## Bad Histogram
+## Žašto randomizujemo?
 
-## Frequency polygon
+::: {.r-stack}
 
-## More examples
+![](slike/rand_eg1.png)
 
-## Zadatak
+![](slike/rand_eg2.png){.fragment}
 
-- Napraviti tablele
-- Zadaci na bazi sa kursa
+:::
+
+## Uzorkovanje
+
+- Slučajni
+    + Tačno znamo verovatnoću da neko bude izabran
+
+- Neslučajni
+    + Može biti pristrasan
+
+## Slučajni uzorci
+
+- Prost
+- Sistematski
+- Stratifikovani
+- Klaster
+
+## Prost slučajan uzorak
+
+![](slike/simple_random.png)
+
+## Sistematski slučajan uzorak
+
+![](slike/systematic_sample.png)
+
+## Klaster slučajan uzorak
+
+![](slike/cluster.png)
+
+## Stratifikovan slučajan uzorak
+
+![](slike/stratified.png)
+
+## Neslučajni uzorci
+
+- Prigodan
+    + Pacijenti na odeljenju
+- Kvota
+    + Kategorije → već određena kvota se ispunjava
+- Namerni
+    + Pilot studija (inovacije)
+    
+## Problemi neslučajnih uzoraka
+
+- Postoji selekciona pristrasnost
+- Upitna valjanost generalizacije
+
+## Terminologija (i notacija)
+
+```{r}
+tribble(
+  ~"", ~"Populacija (parametar)", ~"Uzorak (statistika)",
+  "Aritmetička sredina", "$\\mu$", "$\\bar x$",
+  "Varijansa", "$\\sigma^2$", "$sd^2$",
+  "Standardna devijacija", "$\\sigma$", "$sd$",
+  "Proporcija", "$\\pi$", "$p$"
+) %>% 
+  tt() %>% style_tt(fontsize = 1)
+  
+```
+
+## Vežba
+
+Iz baze ["Sistolni pritisak.xlsx"]{.yellow} odrediti [prost i sistematski uzorak]{.yellow} veličine 10.
+
+Prost:
+
+```{r}
+#| echo: true
+
+sample(1:99, 10, replace = F)
+```
+Sistematski:
+
+```{r}
+#| echo: true
+
+sample(1:99, 1, replace = F)
+```
+
+1. Odrediti početnu jedinicu
+    + Korak $k = \frac{99}{10} \approx 10$
+    + Izabrati svaku 10-tu jedinicu
+
+## Greška uzorkovanja
+
+Regardless of how representative our sample is, it’s likely that the statistic that we compute from the sample is going to differ at least slightly from the population parameter. We refer to this as sampling error. If we take multiple samples, the value of our statistical estimate will also vary from sample to sample; we refer to this distribution of our statistic across samples as the sampling distribution.
+
+## Standardna greška aritmetičke sredine
+
+```{r}
+set.seed(123)
+n <- 5000
+
+pop <- tibble(
+  Visina = rnorm(n = n, mean = 168, sd = 10)
+  )
+
+sample_mean <- tibble(Visina = replicate(100, mean(sample(pop$Visina, 50))))
+
+pop %>%
+  ggplot(aes(x = Visina , y = after_stat(ndensity))) +
+  geom_histogram(fill = "#F7F8F9", alpha = 0.3,
+                 bins = 100) +
+  geom_histogram(data = sample_mean, aes( x = Visina ),
+               fill = "#F4BA02", color = "black",
+               bins = 100) +
+  geom_vline(xintercept = 168, color = "black", linewidth = 1.2, linetype = 1) +
+  annotate("text", label = "Arit. sredina", x = 176, y = 1, color = "#F4BA02",
+           size = 5) +
+  ggdist::theme_ggdist(base_size = 15) +
+  theme_blue() +
+  labs(x = "Visina (cm)",
+       y = "standardizovana gustina")
+```
+
+##
+
+$$ SE_{\bar x} = \frac{sd}{\sqrt{n}} $$
+
+## Centralna granična teorema
+
+The Central Limit Theorem tells us that as sample sizes get larger, the sampling 
+distribution of the mean will become normally distributed, even if the data 
+within each sample are not normally distributed.
+
+::: {.notes}
+The Central Limit Theorem is important for statistics because it allows us to 
+safely assume that the sampling distribution of the mean will be normal in most 
+cases. This means that we can take advantage of statistical techniques that assume 
+a normal distribution
+:::
+
+## Primer CLT
+
+```{r}
+#| layout-ncol: 2
+#| fig-asp: 1
+
+set.seed(123)
+n <- 1e4
+
+pop <- tibble(
+  Alkohol = rbinom(n = n, size = 7, prob = 1/7)
+  )
+
+sample_mean <- tibble(Alkohol = replicate(1e4, mean(sample(pop$Alkohol, 50))))
+
+pop %>%
+  ggplot(aes(x = Alkohol , y = after_stat(count))) +
+  geom_histogram(fill = "#F7F8F9",
+                 bins = 30) +
+  ggdist::theme_ggdist(base_size = 30) +
+  theme_blue() +
+  labs(x = "Alkohol (dana nedeljno)",
+       y = "broj ljudi")
+
+sample_mean %>%
+  ggplot(aes(x = Alkohol)) +
+  geom_histogram(aes( y = after_stat(density) ), fill = "#F4BA02",  
+                      color = "black", bins = 50) +
+  stat_function(fun = dnorm, args = list(mean = mean(sample_mean$Alkohol), 
+                                         sd = sd(sample_mean$Alkohol)), 
+                color = "white", linewidth = 2) +
+  ggdist::theme_ggdist(base_size = 30) +
+  theme_blue() +
+  labs(x = "Prosečno alkohola (dana nedeljno)",
+       y = "standardizovana gustina")
+```
+
+## Ciljna grupa throwback
+
+Kako da saznam nesto o grupi pacijenata
+
+## Ocenjivanje populacionih parametara na osnovu uzorka
+
+$$ CI = \bar x \pm t \times SE $$
+
+$$ SE = \frac{sd}{\sqrt{n}} $$
+
+Interval poverenja.png
+
+## Definicija {.center}
+
+::: {.r-fit-text}
+
+Od svih 95% intervala poverenja, 95%
+
+njih sadrži pravu populacionu vrednost.
+
+:::
+
+## 95% vs. 99% {.center}
+
+::: {.r-fit-text}
+
+99% interval je sigurniji (ima manji
+
+rizik greške) ali je širi od 95%.
+
+:::
+
+## CI
+
+ci.png
+
+## Zadatak 1
+
+::: {.r-fit-text}
+
+Koristeći bazu podataka [Sistolna TA.xlsx]{.yellow} odrediti 
+
+[99% interval]{.yellow} poverenja [aritmetičke sredine]{.yellow} 
+
+sistolnog arterijskog pritiska ispitanika sa 
+
+akutnim koronarnim sindromom.
+
+:::
+
+
+## Zadatak 2
+
+::: {.r-fit-text}
+
+Na uzorku od [500 učenika]{.yellow} u jednoj opštini nađena je
+
+anemija kod [25 učenika]{.yellow}. Odrediti [95% interval]{.yellow}
+
+poverenja [proporcije]{.yellow} učenika sa anemijom u toj
+
+opštini.
+
+:::
 
 ## Struktura kursa
-
-<!-- FIX THIS TABLE SIZE -->
-
-```{css}
-#| echo: false
-
-.reveal table {
-font-size: 55%;
-}
-```
 
 ```{r}
 teme <- c(
@@ -492,5 +364,5 @@ teme <- c(
 )
 
 kurs <- tibble(Nedelja = 1:15, Tema = teme)
-tt(kurs)
+tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
 ```
