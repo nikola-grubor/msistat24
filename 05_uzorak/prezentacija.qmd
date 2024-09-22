@@ -30,6 +30,7 @@ source(file = here("theme", "ggthemes.R"))
 
 ```{mermaid}
 %%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
+%%| fig-width: 10
 
 flowchart TD
   A[Ciljna populacija] --> B["Uzoračka populacija"]
@@ -120,11 +121,14 @@ postane sve jasno.
 
 ## Uzorkovanje
 
-- Slučajni
-    + Tačno znamo verovatnoću da neko bude izabran
+Uzorački okvir
+  : test.
+
+Slučajni uzorak
+  : Tačno znamo verovatnoću da neko bude izabran
 
 - Neslučajni
-    + Može biti pristrasan
+  : Može biti pristrasan
 
 ## Slučajni uzorci
 
@@ -135,19 +139,33 @@ postane sve jasno.
 
 ## Prost slučajan uzorak
 
-![](slike/simple_random.png)
+Najjednostavniji oblik uzorkovanja. Bira se $n$ jedinica iz *izmešane* populacije (npr. uzorak krvi).
+
+![](slike/simple_random.png){fig-align="center"}
+
+::: {.notes}
+
+:::
 
 ## Sistematski slučajan uzorak
 
-![](slike/systematic_sample.png)
+Koristi se kao zamena za prost slučajan uzorak kada nemamo spisak jedinica ili je spisak nasumičnog redosleda.
+
+![](slike/systematic_sample.png){fig-align="center"}
+
+::: {.notes}
+Ako su jedinice nekako poređane, uzorak će se ponašati kao prost slučajan ukoliko način na koji su poređani (pozicija) nema veze sa ispitivanom karakteristikom ali ne ako je lista ciklicna ili prati neku formu. Sistematski uzorak je forma klaster uzorka. I dalje ima okvir: svaki 10ti čovek koji izađe iz aviona je reprezentativan za ljude u avionu, dok svaki 10ti student koji udje u biblioteku nije.
+:::
 
 ## Klaster slučajan uzorak
 
 ![](slike/cluster.png)
 
-## Stratifikovan slučajan uzorak
+## Stratifikovan slučajan uzorak {.smaller}
 
-![](slike/stratified.png)
+Populacija se deli na stratume od interesa. Jedinice (birane prostim slučajnim uzorkovanjem) unutar stratuma su međusobno sličnije.
+
+![](slike/stratified.png){fig-align="center"}
 
 ## Neslučajni uzorci
 
