@@ -296,7 +296,34 @@ $$ CI = \bar x \pm t \times SE $$
 
 $$ SE = \frac{sd}{\sqrt{n}} $$
 
-Interval poverenja.png
+## Ponovljena istraživanja
+
+```{r}
+n_rep <- 100
+mu <- 6
+sigma <- 4
+
+tibble(
+  sim_id = 1:n_rep,
+  est = rnorm(n_rep, mu, sigma),
+  conf_67_low = est - 0.674*sigma,
+  conf_67_high = est + 0.674*sigma,
+  conf_low = est - 1.960*sigma,
+  conf_high = est + 1.960*sigma
+) %>% 
+  ggplot(aes(y = est, x = sim_id)) +
+  geom_hline(yintercept = mu, color = "#F7F8F9") +
+  geom_point(color = "#F4BA02") +
+  geom_pointrange(aes(ymin = conf_low, ymax = conf_high), color = "#F4BA02") +
+  geom_pointrange(aes(ymin = conf_67_low, ymax = conf_67_high),
+                  linewidth = 1.1, color = "#F4BA02") +
+  theme_blue() +
+  labs(
+    y = "Ocena, 50%, i 95% interval poverenja",
+    x = "Simulacija"
+  )
+```
+
 
 ## Definicija {.center}
 
@@ -318,7 +345,7 @@ rizik greške) ali je širi od 95%.
 
 :::
 
-## CI
+## Inverval poverenja
 
 ci.png
 
