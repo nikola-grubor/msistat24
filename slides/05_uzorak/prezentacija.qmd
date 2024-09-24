@@ -1,0 +1,413 @@
+---
+title: "Populacija i uzorak"
+date: last-modified
+author: "Dr Nikola Grubor"
+# institute: "Institut za Medicinsku Statistiku i Informatiku"
+logo: "slike/logo.png"
+lang: sr-Latn
+---
+```{r}
+library(glue)
+library(here)
+library(tidyverse)
+library(tinytable)
+library(gtsummary)
+source(file = here("slides", "theme", "ggthemes.R"))
+```
+
+## Zašto uzorkujemo
+
+:::: columns
+
+::: {.column}
+
+- Ograničenja: vreme i novac.
+- Kako da zaključimo ispravno, a da nismo videli svaki primer onoga što nas interesuje?
+
+:::
+
+::: {.column}
+
+```{mermaid}
+%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
+%%| fig-width: 10
+
+flowchart TD
+  A[Ciljna populacija] --> B["Uzoračka populacija"]
+  B --> C[Uzorak]
+  C --"Zaključak"--> A
+```
+
+:::
+
+::::
+
+## Urgentno lečenje septičnog šoka
+
+Sepsa ima ogroman mortalitet. Kako da je lečimo?
+
+![](slike/sepsis.png)
+
+Kako da odgovorimo na ovo pitanje?
+
+## Osnovni termini
+
+- Populacija (skup svih istovrsnih elemenata)
+    + Ciljna populacija (skup elemenata za koji generalizujemo)
+- Uzoracka populacija (populacija koja je dostupna)
+- Uzorak (podskup osnovnog skupa (populacije) izabran na osnovu kriterijuma)
+
+## Istraživačko pitanje vs. ciljna grupa
+
+::: {.r-stack}
+
+![](slike/uzorak1.png)
+
+![](slike/uzorak2.png){.fragment}
+
+![](slike/uzorak3.png){.fragment}
+
+![](slike/uzorak4.png){.fragment}
+
+:::
+
+::: {.notes}
+Populacija iz koje se uzima uzorak mozda nije istao kao populacija o kojoj se zele informacije. Cesto postoji veliko, ali ne potpuno preklapanje izmedju ove dve grupe ybog problema sa okvirom.
+:::
+
+## Kako se dostupna populacija razlikuje?
+
+![](slike/sample.png){fig-align="center"}
+
+## Pogrešna slika realnosti
+
+:::: columns
+
+::: {.column width=70%}
+
+![](slike/sample.png){width=60% fig-align="center"}
+
+- Izbor jedinica posmatranja mora biti nezavisan od posmatranog obeležja.
+- Verovatnoća odabira jedinica posmatranja mora biti unapred poznata.
+
+:::
+
+::: {.column width=30%}
+
+![Pristrasan pogled.](slike/fish2.png){fig-align="center"}
+
+:::
+
+::::
+
+## Pristrastnost
+
+Kada metod pokazuje netačnu, iskrivljenu sliku realnosti.
+
+::: {.notes}
+Nije isto sto i preciznost. Npr. kada smo namerno nejasni na odgovaranju jer ne znamo tacan odgovor, pa deluje kao da mozda znamo. Medjutim kad nas ispitivac natera da budemo precizniji
+postane sve jasno.
+:::
+
+## Žašto randomizujemo?
+
+::: {.r-stack}
+
+![](slike/rand_eg1.png)
+
+![](slike/rand_eg2.png){.fragment}
+
+:::
+
+## Uzorkovanje
+
+Uzorački okvir
+  : test.
+
+Slučajni uzorak
+  : Tačno znamo verovatnoću da neko bude izabran
+
+- Neslučajni
+  : Može biti pristrasan
+
+## Slučajni uzorci
+
+- Prost
+- Sistematski
+- Stratifikovani
+- Klaster
+
+## Prost slučajan uzorak
+
+Najjednostavniji oblik uzorkovanja. Bira se $n$ jedinica iz *izmešane* populacije (npr. uzorak krvi).
+
+![](slike/simple_random.png){fig-align="center"}
+
+::: {.notes}
+
+:::
+
+## Sistematski slučajan uzorak
+
+Koristi se kao zamena za prost slučajan uzorak kada nemamo spisak jedinica ili je spisak nasumičnog redosleda.
+
+![](slike/systematic_sample.png){fig-align="center"}
+
+::: {.notes}
+Ako su jedinice nekako poređane, uzorak će se ponašati kao prost slučajan ukoliko način na koji su poređani (pozicija) nema veze sa ispitivanom karakteristikom ali ne ako je lista ciklicna ili prati neku formu. Sistematski uzorak je forma klaster uzorka. I dalje ima okvir: svaki 10ti čovek koji izađe iz aviona je reprezentativan za ljude u avionu, dok svaki 10ti student koji udje u biblioteku nije.
+:::
+
+## Klaster slučajan uzorak
+
+![](slike/cluster.png)
+
+## Stratifikovan slučajan uzorak {.smaller}
+
+Populacija se deli na stratume od interesa. Jedinice (birane prostim slučajnim uzorkovanjem) unutar stratuma su međusobno sličnije.
+
+![](slike/stratified.png){fig-align="center"}
+
+## Neslučajni uzorci
+
+- Prigodan
+    + Pacijenti na odeljenju
+- Kvota
+    + Kategorije → već određena kvota se ispunjava
+- Namerni
+    + Pilot studija (inovacije)
+    
+## Problemi neslučajnih uzoraka
+
+- Postoji selekciona pristrasnost
+- Upitna valjanost generalizacije
+
+## Terminologija (i notacija)
+
+```{r}
+tribble(
+  ~"", ~"Populacija (parametar)", ~"Uzorak (statistika)",
+  "Aritmetička sredina", "$\\mu$", "$\\bar x$",
+  "Varijansa", "$\\sigma^2$", "$sd^2$",
+  "Standardna devijacija", "$\\sigma$", "$sd$",
+  "Proporcija", "$\\pi$", "$p$"
+) %>% 
+  tt() %>% style_tt(fontsize = 1)
+  
+```
+
+## Vežba
+
+Iz baze ["Sistolni pritisak.xlsx"]{.yellow} odrediti [prost i sistematski uzorak]{.yellow} veličine 10.
+
+Prost:
+
+```{r}
+#| echo: true
+
+sample(1:99, 10, replace = F)
+```
+Sistematski:
+
+```{r}
+#| echo: true
+
+sample(1:99, 1, replace = F)
+```
+
+1. Odrediti početnu jedinicu
+    + Korak $k = \frac{99}{10} \approx 10$
+    + Izabrati svaku 10-tu jedinicu
+
+## Greška uzorkovanja
+
+Regardless of how representative our sample is, it’s likely that the statistic that we compute from the sample is going to differ at least slightly from the population parameter. We refer to this as sampling error. If we take multiple samples, the value of our statistical estimate will also vary from sample to sample; we refer to this distribution of our statistic across samples as the sampling distribution.
+
+## Standardna greška aritmetičke sredine
+
+```{r}
+set.seed(123)
+n <- 5000
+
+pop <- tibble(
+  Visina = rnorm(n = n, mean = 168, sd = 10)
+  )
+
+sample_mean <- tibble(Visina = replicate(100, mean(sample(pop$Visina, 50))))
+
+pop %>%
+  ggplot(aes(x = Visina , y = after_stat(ndensity))) +
+  geom_histogram(fill = "#F7F8F9", alpha = 0.3,
+                 bins = 100) +
+  geom_histogram(data = sample_mean, aes( x = Visina ),
+               fill = "#F4BA02", color = "black",
+               bins = 100) +
+  geom_vline(xintercept = 168, color = "black", linewidth = 1.2, linetype = 1) +
+  annotate("text", label = "Arit. sredina", x = 176, y = 1, color = "#F4BA02",
+           size = 5) +
+  ggdist::theme_ggdist(base_size = 15) +
+  theme_blue() +
+  labs(x = "Visina (cm)",
+       y = "standardizovana gustina")
+```
+
+##
+
+$$ SE_{\bar x} = \frac{sd}{\sqrt{n}} $$
+
+## Centralna granična teorema
+
+The Central Limit Theorem tells us that as sample sizes get larger, the sampling 
+distribution of the mean will become normally distributed, even if the data 
+within each sample are not normally distributed.
+
+::: {.notes}
+The Central Limit Theorem is important for statistics because it allows us to 
+safely assume that the sampling distribution of the mean will be normal in most 
+cases. This means that we can take advantage of statistical techniques that assume 
+a normal distribution
+:::
+
+## Primer CLT
+
+```{r}
+#| layout-ncol: 2
+#| fig-asp: 1
+
+set.seed(123)
+n <- 1e4
+
+pop <- tibble(
+  Alkohol = rbinom(n = n, size = 7, prob = 1/7)
+  )
+
+sample_mean <- tibble(Alkohol = replicate(1e4, mean(sample(pop$Alkohol, 50))))
+
+pop %>%
+  ggplot(aes(x = Alkohol , y = after_stat(count))) +
+  geom_histogram(fill = "#F7F8F9",
+                 bins = 30) +
+  ggdist::theme_ggdist(base_size = 30) +
+  theme_blue() +
+  labs(x = "Alkohol (dana nedeljno)",
+       y = "broj ljudi")
+
+sample_mean %>%
+  ggplot(aes(x = Alkohol)) +
+  geom_histogram(aes( y = after_stat(density) ), fill = "#F4BA02",  
+                      color = "black", bins = 50) +
+  stat_function(fun = dnorm, args = list(mean = mean(sample_mean$Alkohol), 
+                                         sd = sd(sample_mean$Alkohol)), 
+                color = "white", linewidth = 2) +
+  ggdist::theme_ggdist(base_size = 30) +
+  theme_blue() +
+  labs(x = "Prosečno alkohola (dana nedeljno)",
+       y = "standardizovana gustina")
+```
+
+## Ciljna grupa throwback
+
+Kako da saznam nesto o grupi pacijenata
+
+## Ocenjivanje populacionih parametara na osnovu uzorka
+
+$$ CI = \bar x \pm t \times SE $$
+
+$$ SE = \frac{sd}{\sqrt{n}} $$
+
+## Ponovljena istraživanja
+
+```{r}
+n_rep <- 100
+mu <- 6
+sigma <- 4
+
+tibble(
+  sim_id = 1:n_rep,
+  est = rnorm(n_rep, mu, sigma),
+  conf_67_low = est - 0.674*sigma,
+  conf_67_high = est + 0.674*sigma,
+  conf_low = est - 1.960*sigma,
+  conf_high = est + 1.960*sigma
+) %>% 
+  ggplot(aes(y = est, x = sim_id)) +
+  geom_hline(yintercept = mu, color = "#F7F8F9") +
+  geom_point(color = "#F4BA02") +
+  geom_pointrange(aes(ymin = conf_low, ymax = conf_high), color = "#F4BA02") +
+  geom_pointrange(aes(ymin = conf_67_low, ymax = conf_67_high),
+                  linewidth = 1.1, color = "#F4BA02") +
+  theme_blue() +
+  labs(
+    y = "Ocena, 50%, i 95% interval poverenja",
+    x = "Simulacija"
+  )
+```
+
+
+## Definicija {.center}
+
+::: {.r-fit-text}
+
+Od svih 95% intervala poverenja, 95%
+
+njih sadrži pravu populacionu vrednost.
+
+:::
+
+## 95% vs. 99% {.center}
+
+::: {.r-fit-text}
+
+99% interval je sigurniji (ima manji
+
+rizik greške) ali je širi od 95%.
+
+:::
+
+## Inverval poverenja
+
+ci.png
+
+## Zadatak 1
+
+::: {.r-fit-text}
+
+Koristeći bazu podataka [Sistolna TA.xlsx]{.yellow} odrediti 
+
+[99% interval]{.yellow} poverenja [aritmetičke sredine]{.yellow} 
+
+sistolnog arterijskog pritiska ispitanika sa 
+
+akutnim koronarnim sindromom.
+
+:::
+
+
+## Zadatak 2
+
+::: {.r-fit-text}
+
+Na uzorku od [500 učenika]{.yellow} u jednoj opštini nađena je
+
+anemija kod [25 učenika]{.yellow}. Odrediti [95% interval]{.yellow}
+
+poverenja [proporcije]{.yellow} učenika sa anemijom u toj
+
+opštini.
+
+:::
+
+## Struktura kursa
+
+```{r}
+teme <- c(
+  "Uvod u medicinsku statistiku", "Sređivanje podataka",
+  "Statističko opisivanje podataka", "Verovatnoća i raspodele verovatnoća",
+  "Populacija i uzorak", "Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama",
+  "Testiranje hipoteza o učestalostima", "Testiranje hipoteza o rangovima", "Korelacija",
+  "Regresija / Kolokvijum", "Podaci, informacije i znanje", "Zdravstveni informacioni sistem",
+  "Mere dijagnostičke tačnosti", "Medicinsko odlučivanje", "Bioinformatika"
+)
+
+kurs <- tibble(Nedelja = 1:15, Tema = teme)
+tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
+```

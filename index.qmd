@@ -1,0 +1,56 @@
+---
+anchor-sections: false
+section-divs: false
+---
+
+::: {.grid}
+
+::: {.g-col-6}
+
+\
+
+# Osnovni kurs medicinske statistike i informatike 
+
+:::
+
+::: {.g-col-6}
+
+![](MSI.png){width="40%" fig-align="right"}
+:::
+
+:::
+
+Dobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu [instituta](http://statistika.mfub.bg.ac.rs/). Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.
+
+
+### Lista prezentacija
+
+```{r}
+#| echo: false
+
+dat <- data.frame(
+  Nedelja = 1:1,
+  Tema = c(
+    "[Uvod u medicinsku statistiku](slides/01_uvod/prezentacija.qmd)"
+    # "[Sređivanje podataka](slides/02_sredjivanje/prezentacija.qmd)",
+    # "[Statističko opisivanje podataka](slides/03_centralne_mere/prezentacija.qmd)",
+    # "[Verovatnoća i raspodele verovatnoća](slides/04_verovatnoca/prezentacija.qmd)",
+    # "[Populacija i uzorak](slides/05_uzorak/prezentacija.qmd)",
+    # "[Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama]()",
+    # "[Testiranje hipoteza o učestalostima]()",
+    # "[Testiranje hipoteza o rangovima]()",
+    # "[Korelacija]()",
+    # "[Regresija / Kolokvijum]()",
+    # "[Podaci, informacije i znanje]()",
+    # "[Zdravstveni informacioni sistem]()",
+    # "[Mere dijagnostičke tačnosti]()",
+    # "[Medicinsko odlučivanje]()",
+    # "[Bioinformatika]()"
+  ),
+  check.names = FALSE
+)
+
+tinytable::tt(dat) |> 
+  tinytable::style_tt(j = 1:2, fontsize = 1) |> 
+  tinytable::format_tt(markdown = TRUE)
+```

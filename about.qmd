@@ -1,0 +1,22 @@
+---
+title: "Dr Nikola N. Grubor"
+subtitle: "Saradnik u nastavi, specijalizant radiologije, doktorant"
+about:
+  template: solana
+  image-shape: rounded
+  links:
+    # - icon: twitter
+    #   text: twitter
+    #   href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com/nikola-grubor
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/herr-grubor/
+    - icon: envelope
+      text: Email
+      href: "mailto: nikola.n.grubor@med.bg.ac.rs"
+---
+
+Ja sam specijalizant radiologije, saradnik u nastavi na katedri medicinske statistike i informatike Medicinskog fakulteta u Beogradu, i doktorant na modulu Bioinformatika. Cilj mi je da medicinsku nauku učinim pristupačnijom javnosti i da pomognem istraživačima da odgovore na zanimljiva pitanja. Ukoliko imate neka pitanja e-mejl je najbolji način da me kontaktirate.

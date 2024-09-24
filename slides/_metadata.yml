@@ -1,0 +1,9 @@
+format:
+    revealjs:
+        slide-number: true
+        show-slide-number: speaker
+        theme: [default, theme/custom.scss]
+        embed-resources: false
+
+revealjs-plugins:
+  - revealjs-text-resizer

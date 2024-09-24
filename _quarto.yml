@@ -1,12 +1,17 @@
 project:
-  output-dir: _output
+  type: website
+  render:
+    - "*.qmd"
+  output-dir: docs
   
-format:
-  revealjs: 
-    slide-number: true
-    show-slide-number: speaker
-    theme: [default, theme/custom.scss]
-    embed-resources: false
-
-revealjs-plugins:
-  - revealjs-text-resizer
+website:
+  title: "Medicinska statistika i informatika"
+  page-navigation: true
+  navbar:
+    background: light
+    foreground: dark
+    right:
+      - text: "O meni"
+        href: about.qmd
+  page-footer:
+    center: "&copy; 2024, Nikola Grubor"
