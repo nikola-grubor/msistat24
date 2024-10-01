@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Dr Nikola Grubor">
-  <meta name="dcterms.date" content="2024-09-24">
+  <meta name="dcterms.date" content="2024-09-28">
   <title>Medicinska statistika i informatika - Mere centralne tendencije</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -337,7 +337,704 @@ Dr Nikola Grubor
 </div>
 </div>
 
-  <p class="date">2024-09-24</p>
+  <p class="date">2024-09-28</p>
+</section>
+<section>
+<section id="relativni-brojevi" class="title-slide slide level1 center">
+<h1>Relativni brojevi</h1>
+
+</section>
+<section id="koeficijenti-strukture" class="slide level2">
+<h2>Koeficijenti strukture</h2>
+<div class="cell">
+<div class="cell-output-display">
+ 
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinytable_hllkbfhv21ayu9j8ocba</title>
+    <style>
+.table td.tinytable_css_u3frsdf9u6ekaglclyzl, .table th.tinytable_css_u3frsdf9u6ekaglclyzl {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_znt37oqunuvuf9n49odw, .table th.tinytable_css_znt37oqunuvuf9n49odw {    font-size: 1em; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+  
+
+  
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_hllkbfhv21ayu9j8ocba" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col">Jedinica</th>
+                <th scope="col">BolnicaA</th>
+                <th scope="col">BolnicaB</th>
+                <th scope="col">Ukupno</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>Interno      </td>
+                  <td> 70</td>
+                  <td> 80</td>
+                  <td>150</td>
+                </tr>
+                <tr>
+                  <td>Ginekološko  </td>
+                  <td> 40</td>
+                  <td>140</td>
+                  <td>180</td>
+                </tr>
+                <tr>
+                  <td>Hirurško     </td>
+                  <td> 80</td>
+                  <td>100</td>
+                  <td>180</td>
+                </tr>
+                <tr>
+                  <td>Pedijatrijsko</td>
+                  <td> 50</td>
+                  <td>160</td>
+                  <td>210</td>
+                </tr>
+                <tr>
+                  <td>Ukupno       </td>
+                  <td>240</td>
+                  <td>480</td>
+                  <td>720</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function styleCell_tinytable_lw7sen4ub4t81r1e34sa(i, j, css_id) {
+        var table = document.getElementById("tinytable_hllkbfhv21ayu9j8ocba");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_hllkbfhv21ayu9j8ocba');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_tinytable_lw7sen4ub4t81r1e34sa(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_hllkbfhv21ayu9j8ocba");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(0, 0, 'tinytable_css_u3frsdf9u6ekaglclyzl') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(0, 1, 'tinytable_css_u3frsdf9u6ekaglclyzl') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(0, 2, 'tinytable_css_u3frsdf9u6ekaglclyzl') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(0, 3, 'tinytable_css_u3frsdf9u6ekaglclyzl') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(1, 0, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(2, 0, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(3, 0, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(4, 0, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(5, 0, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(1, 1, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(2, 1, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(3, 1, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(4, 1, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(5, 1, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(1, 2, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(2, 2, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(3, 2, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(4, 2, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(5, 2, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(1, 3, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(2, 3, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(3, 3, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(4, 3, 'tinytable_css_znt37oqunuvuf9n49odw') })
+window.addEventListener('load', function () { styleCell_tinytable_lw7sen4ub4t81r1e34sa(5, 3, 'tinytable_css_znt37oqunuvuf9n49odw') })
+    </script>
+
+  
+
+
+</div>
+</div>
+</section>
+<section id="struktura-postelja-na-odeljenjima" class="slide level2">
+<h2>Struktura postelja na odeljenjima?</h2>
+<div class="cell">
+<div class="cell-output-display">
+ 
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinytable_pqayf5e0asue7arnrptz</title>
+    <style>
+.table td.tinytable_css_4u03ni1ryj1zwo5b1hzx, .table th.tinytable_css_4u03ni1ryj1zwo5b1hzx {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_w1ve3v362mgnd6yhho8q, .table th.tinytable_css_w1ve3v362mgnd6yhho8q {    font-weight: bold; color: #F4BA02; }
+.table td.tinytable_css_lmvnhegckhpjie57ehrr, .table th.tinytable_css_lmvnhegckhpjie57ehrr {    font-size: 1em; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+  
+
+  
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_pqayf5e0asue7arnrptz" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col">Jedinica</th>
+                <th scope="col">BolnicaA</th>
+                <th scope="col">BolnicaB</th>
+                <th scope="col">Ukupno</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>Interno      </td>
+                  <td> 70</td>
+                  <td> 80</td>
+                  <td>150</td>
+                </tr>
+                <tr>
+                  <td>Ginekološko  </td>
+                  <td> 40</td>
+                  <td>140</td>
+                  <td>180</td>
+                </tr>
+                <tr>
+                  <td>Hirurško     </td>
+                  <td> 80</td>
+                  <td>100</td>
+                  <td>180</td>
+                </tr>
+                <tr>
+                  <td>Pedijatrijsko</td>
+                  <td> 50</td>
+                  <td>160</td>
+                  <td>210</td>
+                </tr>
+                <tr>
+                  <td>Ukupno       </td>
+                  <td>240</td>
+                  <td>480</td>
+                  <td>720</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function styleCell_tinytable_csxg1b3uy05uoe5uecbs(i, j, css_id) {
+        var table = document.getElementById("tinytable_pqayf5e0asue7arnrptz");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_pqayf5e0asue7arnrptz');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_tinytable_csxg1b3uy05uoe5uecbs(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_pqayf5e0asue7arnrptz");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(0, 0, 'tinytable_css_4u03ni1ryj1zwo5b1hzx') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(0, 1, 'tinytable_css_4u03ni1ryj1zwo5b1hzx') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(0, 2, 'tinytable_css_4u03ni1ryj1zwo5b1hzx') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(0, 3, 'tinytable_css_4u03ni1ryj1zwo5b1hzx') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(1, 1, 'tinytable_css_w1ve3v362mgnd6yhho8q') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(1, 3, 'tinytable_css_w1ve3v362mgnd6yhho8q') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(1, 0, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(2, 0, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(3, 0, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(4, 0, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(5, 0, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(1, 1, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(2, 1, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(3, 1, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(4, 1, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(5, 1, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(1, 2, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(2, 2, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(3, 2, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(4, 2, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(5, 2, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(1, 3, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(2, 3, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(3, 3, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(4, 3, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+window.addEventListener('load', function () { styleCell_tinytable_csxg1b3uy05uoe5uecbs(5, 3, 'tinytable_css_lmvnhegckhpjie57ehrr') })
+    </script>
+
+  
+
+
+</div>
+</div>
+<p><span class="math display">\[ \frac{70}{150} \times 100 = 47 \% \]</span></p>
+</section>
+<section id="struktura-odeljenja-u-bolnicama" class="slide level2">
+<h2>Struktura odeljenja u bolnicama?</h2>
+<div class="cell">
+<div class="cell-output-display">
+ 
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinytable_c5xtrko3n4qk7zm6iub9</title>
+    <style>
+.table td.tinytable_css_xn7apm8vnqewtyvt7mcy, .table th.tinytable_css_xn7apm8vnqewtyvt7mcy {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_z2zjcjvkc0yo4xvcutmx, .table th.tinytable_css_z2zjcjvkc0yo4xvcutmx {    font-weight: bold; color: #F4BA02; }
+.table td.tinytable_css_4464cj4ob6tixar42saw, .table th.tinytable_css_4464cj4ob6tixar42saw {    font-size: 1em; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+  
+
+  
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_c5xtrko3n4qk7zm6iub9" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col">Jedinica</th>
+                <th scope="col">BolnicaA</th>
+                <th scope="col">BolnicaB</th>
+                <th scope="col">Ukupno</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>Interno      </td>
+                  <td> 70</td>
+                  <td> 80</td>
+                  <td>150</td>
+                </tr>
+                <tr>
+                  <td>Ginekološko  </td>
+                  <td> 40</td>
+                  <td>140</td>
+                  <td>180</td>
+                </tr>
+                <tr>
+                  <td>Hirurško     </td>
+                  <td> 80</td>
+                  <td>100</td>
+                  <td>180</td>
+                </tr>
+                <tr>
+                  <td>Pedijatrijsko</td>
+                  <td> 50</td>
+                  <td>160</td>
+                  <td>210</td>
+                </tr>
+                <tr>
+                  <td>Ukupno       </td>
+                  <td>240</td>
+                  <td>480</td>
+                  <td>720</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function styleCell_tinytable_rdswx86gf7hrra5jhthw(i, j, css_id) {
+        var table = document.getElementById("tinytable_c5xtrko3n4qk7zm6iub9");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_c5xtrko3n4qk7zm6iub9');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_tinytable_rdswx86gf7hrra5jhthw(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_c5xtrko3n4qk7zm6iub9");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(0, 0, 'tinytable_css_xn7apm8vnqewtyvt7mcy') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(0, 1, 'tinytable_css_xn7apm8vnqewtyvt7mcy') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(0, 2, 'tinytable_css_xn7apm8vnqewtyvt7mcy') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(0, 3, 'tinytable_css_xn7apm8vnqewtyvt7mcy') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(1, 1, 'tinytable_css_z2zjcjvkc0yo4xvcutmx') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(5, 1, 'tinytable_css_z2zjcjvkc0yo4xvcutmx') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(1, 0, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(2, 0, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(3, 0, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(4, 0, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(5, 0, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(1, 1, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(2, 1, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(3, 1, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(4, 1, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(5, 1, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(1, 2, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(2, 2, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(3, 2, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(4, 2, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(5, 2, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(1, 3, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(2, 3, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(3, 3, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(4, 3, 'tinytable_css_4464cj4ob6tixar42saw') })
+window.addEventListener('load', function () { styleCell_tinytable_rdswx86gf7hrra5jhthw(5, 3, 'tinytable_css_4464cj4ob6tixar42saw') })
+    </script>
+
+  
+
+
+</div>
+</div>
+<p><span class="math display">\[ \frac{70}{240} \times 100 = 29 \% \]</span></p>
+</section>
+<section id="struktura-postelja-po-odeljenjima-i-bolnicama" class="slide level2">
+<h2>Struktura postelja po odeljenjima i bolnicama?</h2>
+<div class="cell">
+<div class="cell-output-display">
+ 
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinytable_vwuxeaia5vuph1wkazkd</title>
+    <style>
+.table td.tinytable_css_81lly7nhrlvl7168g3qh, .table th.tinytable_css_81lly7nhrlvl7168g3qh {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_a5n90d9w2tvdo95rw6xd, .table th.tinytable_css_a5n90d9w2tvdo95rw6xd {    font-weight: bold; color: #F4BA02; }
+.table td.tinytable_css_fm22wrz4rwrz2yxl68n9, .table th.tinytable_css_fm22wrz4rwrz2yxl68n9 {    font-weight: bold; color: #F4BA02; }
+.table td.tinytable_css_2bhrp80ojbrj5a3z1v64, .table th.tinytable_css_2bhrp80ojbrj5a3z1v64 {    font-size: 0.85em; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+  
+
+  
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_vwuxeaia5vuph1wkazkd" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col">Jedinica</th>
+                <th scope="col">BolnicaA</th>
+                <th scope="col">BolnicaB</th>
+                <th scope="col">Ukupno</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>Interno      </td>
+                  <td> 70</td>
+                  <td> 80</td>
+                  <td>150</td>
+                </tr>
+                <tr>
+                  <td>Ginekološko  </td>
+                  <td> 40</td>
+                  <td>140</td>
+                  <td>180</td>
+                </tr>
+                <tr>
+                  <td>Hirurško     </td>
+                  <td> 80</td>
+                  <td>100</td>
+                  <td>180</td>
+                </tr>
+                <tr>
+                  <td>Pedijatrijsko</td>
+                  <td> 50</td>
+                  <td>160</td>
+                  <td>210</td>
+                </tr>
+                <tr>
+                  <td>Ukupno       </td>
+                  <td>240</td>
+                  <td>480</td>
+                  <td>720</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function styleCell_tinytable_6dib52bkezsfrcyrq98s(i, j, css_id) {
+        var table = document.getElementById("tinytable_vwuxeaia5vuph1wkazkd");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_vwuxeaia5vuph1wkazkd');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_tinytable_6dib52bkezsfrcyrq98s(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_vwuxeaia5vuph1wkazkd");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(0, 0, 'tinytable_css_81lly7nhrlvl7168g3qh') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(0, 1, 'tinytable_css_81lly7nhrlvl7168g3qh') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(0, 2, 'tinytable_css_81lly7nhrlvl7168g3qh') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(0, 3, 'tinytable_css_81lly7nhrlvl7168g3qh') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(1, 1, 'tinytable_css_a5n90d9w2tvdo95rw6xd') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(5, 3, 'tinytable_css_fm22wrz4rwrz2yxl68n9') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(1, 0, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(2, 0, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(3, 0, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(4, 0, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(5, 0, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(1, 1, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(2, 1, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(3, 1, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(4, 1, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(5, 1, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(1, 2, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(2, 2, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(3, 2, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(4, 2, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(5, 2, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(1, 3, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(2, 3, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(3, 3, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(4, 3, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+window.addEventListener('load', function () { styleCell_tinytable_6dib52bkezsfrcyrq98s(5, 3, 'tinytable_css_2bhrp80ojbrj5a3z1v64') })
+    </script>
+
+  
+
+
+</div>
+</div>
+<p><span class="math display">\[ \frac{70}{720} \times 100 = 10 \% \]</span></p>
+</section>
+<section id="relativni-brojevi-za-vremenske-serije" class="slide level2">
+<h2>Relativni brojevi za vremenske serije</h2>
+<p>Indeksi dinamike</p>
+<ul>
+<li>Bazni</li>
+<li>Lančani</li>
+</ul>
+</section>
+<section id="praćenje-ldl-odgovora-na-statin-1" class="slide level2">
+<h2>Praćenje LDL odgovora na statin (1)</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section id="bazni-indeks-dinamike" class="slide level2">
+<h2>Bazni indeks dinamike</h2>
+<p><span class="math display">\[ \frac{3.64}{5.2} \times 100 = 70 \% \]</span> <span class="math display">\[ \frac{3.42}{5.2} \times 100 = 66 \% \]</span></p>
+<p><span class="math display">\[ \frac{3.3.70}{5.2} \times 100 = 71 \% \]</span></p>
+<p>Bazni indeks dinamike ima uvek <span class="yellow">istu osnovu</span>.</p>
+</section>
+<section id="praćenje-ldl-odgovora-na-statin-2" class="slide level2">
+<h2>Praćenje LDL odgovora na statin (2)</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="porvršina-infarktnog-polja-miokarda" class="slide level2">
+<h2>Porvršina infarktnog polja miokarda</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="lančani-indeks-dinamike" class="slide level2 smaller">
+<h2>Lančani indeks dinamike</h2>
+<p><span class="math display">\[ \frac{0.3}{0.3} \times 100 = 266 \% \]</span></p>
+<p><span class="math display">\[ \frac{0.3}{0.8} \times 100 = 37.5 \%, \; \text{u padu} \]</span></p>
+<p><span class="math display">\[ \frac{0.3}{0.3} \times 100 = 100 \%, \; \text{u stabilan} \]</span></p>
+<p><span class="math display">\[ \frac{0.7}{0.3} \times 100 = 233 \%, \; \text{u porastu} \]</span></p>
+<p>Lančani indeks dinamike ima uvek <span class="yellow">prethodnu osnovu</span>.</p>
+</section>
+<section id="statistički-koeficijenti" class="slide level2">
+<h2>Statistički koeficijenti</h2>
+<p><span class="math display">\[ \text{Natalitet} = \; N = \frac{R}{St} \times 1000 \]</span> <span class="math display">\[ \text{Mortalitet} = \; M = \frac{U}{St} \times 1000 \]</span></p>
+<p><span class="math display">\[ \text{Incidencija} = \; I = \frac{O_n}{St} \times 100,000 \]</span></p>
+<p><span class="math display">\[ \text{Prevalencija} = \; P = \frac{O_u}{St} \times 1,000,000 \]</span></p>
+</section></section>
+<section>
+<section id="mere-centralne-tendencije" class="title-slide slide level1 center">
+<h1>Mere centralne tendencije</h1>
+
+</section>
+<section id="problem" class="slide level2">
+<h2>Problem</h2>
+<div class="r-fit-text">
+<p>Prijateljica ti kaže da se porodila u terminu.</p>
+<p>Beba na porođaju ima <span class="yellow">2.91 kg</span>.</p>
+<p>Rečeno joj je da je ovo ispod proseka, i sad je zabrinuta.</p>
+<p>Da li je ovo <span class="yellow">neobično</span> nisko?</p>
+</div>
+</section>
+<section id="populacija-težina-neonatusa" class="slide level2">
+<h2>Populacija težina neonatusa</h2>
+<div class="r-stack">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="šta-je-model" class="slide level2">
 <h2>Šta je model?</h2>
@@ -356,8 +1053,10 @@ Dr Nikola Grubor
 <section id="osnovna-sturuktura-modela" class="slide level2">
 <h2>Osnovna sturuktura modela</h2>
 <p><span id="eq-def-model"><span class="math display">\[ \text{podaci} = \text{model} + \text{greška}  \qquad(1)\]</span></span></p>
-<p>Preko modela možemo da dobijemo <span class="yellow">predviđanja</span>. <span id="eq-def-model-approx"><span class="math display">\[  \widehat{\text{podaci}}_i = \text{model}_i  \qquad(2)\]</span></span></p>
-<p><span class="yellow">Greška</span> modela je razlika između predviđanja modela i stvarnih podataka. <span id="eq-def-error"><span class="math display">\[ \text{greška}_i = \text{podaci}_i - \widehat{\text{podaci}}  \qquad(3)\]</span></span></p>
+<p>Preko modela možemo da dobijemo <span class="yellow">predviđanja</span>.</p>
+<p><span id="eq-def-model-approx"><span class="math display">\[  \widehat{\text{podaci}}_i = \text{model}_i  \qquad(2)\]</span></span></p>
+<p><span class="yellow">Greška</span> modela je razlika između predviđanja modela i stvarnih podataka.</p>
+<p><span id="eq-def-error"><span class="math display">\[ \text{greška}_i = \text{podaci}_i - \widehat{\text{podaci}}  \qquad(3)\]</span></span></p>
 <aside class="notes">
 <p>This expresses the idea that the data can be broken into two portions: one portion that is described by a statistical model, which expresses the values that we expect the data to take given our knowledge, and another portion that we refer to as the error that reflects the difference between the model’s predictions and the observed data.</p>
 <style type="text/css">
@@ -396,44 +1095,410 @@ Dr Nikola Grubor
           display:block!important;
       }</style></aside>
 </section>
-<section id="mod-1" class="slide level2">
-<h2>Mod (1)</h2>
+<section id="mod" class="slide level2">
+<h2>Mod</h2>
 <p>Najjednostavniji predstavnik podataka je najčešća vrednost, tzv. mod (tipična vrednost).</p>
-</section>
-<section id="mod-2" class="slide level2">
-<h2>Mod (2)</h2>
 <p><span class="math display">\[ 1,2,2,4,4,4,7,8,9,11,11\]</span> <span class="math display">\[ mod = 4 \]</span></p>
 </section>
 <section id="unimodalna-i-bimodalna-raspodela" class="slide level2">
 <h2>Unimodalna i bimodalna raspodela</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="aritmetička-sredina" class="slide level2">
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="aritmetička-sredina" class="slide level2 smaller">
 <h2>Aritmetička sredina</h2>
-<p><span class="math display">\[ \bar x = \frac{\sum_{i=1}^{n}x_i}{n} = \frac{x_1 + x_2 + ... + x_n}{n} \]</span></p>
-<p>Placeholder.</p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Beleška</strong></p>
-</div>
-<div class="callout-content">
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p><span class="math display">\[ \bar x = \frac{\sum_{i=1}^{n}x_i}{n} = \frac{x_1 + x_2 + ... + x_n}{n} \]</span></p>
+<aside class="notes">
 <p>Ako koristimo aritmetičku sredinu kao opis podataka prosečna greska će biti nula, međutim svaka individualna procena će i dalje imati neku grešku!</p>
-</div>
-</div>
-</div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="aritmetička-sredina-za-grupisane-podatke" class="slide level2">
+<section id="aritmetička-sredina-za-grupisane-podatke" class="slide level2 smaller">
 <h2>Aritmetička sredina za grupisane podatke</h2>
+<div class="cell">
+<div class="cell-output-display">
+ 
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinytable_q45fnvkaziop86xci30t</title>
+    <style>
+.table td.tinytable_css_tofnaj2szlja7k1c57vz, .table th.tinytable_css_tofnaj2szlja7k1c57vz {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_k6pj5tusgjyow139w4o7, .table th.tinytable_css_k6pj5tusgjyow139w4o7 {    font-size: 0.9em; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+  
+
+  
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_q45fnvkaziop86xci30t" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col">Hemoglobin</th>
+                <th scope="col">n</th>
+                <th scope="col">arit. sred. intervala</th>
+                <th scope="col">rezultat</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>106-110</td>
+                  <td> 3</td>
+                  <td>108</td>
+                  <td> 324</td>
+                </tr>
+                <tr>
+                  <td>111-115</td>
+                  <td> 7</td>
+                  <td>113</td>
+                  <td> 791</td>
+                </tr>
+                <tr>
+                  <td>116-120</td>
+                  <td>11</td>
+                  <td>118</td>
+                  <td>1298</td>
+                </tr>
+                <tr>
+                  <td>121-125</td>
+                  <td>16</td>
+                  <td>123</td>
+                  <td>1968</td>
+                </tr>
+                <tr>
+                  <td>126-130</td>
+                  <td> 9</td>
+                  <td>128</td>
+                  <td>1152</td>
+                </tr>
+                <tr>
+                  <td>131-135</td>
+                  <td> 4</td>
+                  <td>133</td>
+                  <td> 532</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function styleCell_tinytable_olovomytbutydsv62mek(i, j, css_id) {
+        var table = document.getElementById("tinytable_q45fnvkaziop86xci30t");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_q45fnvkaziop86xci30t');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_tinytable_olovomytbutydsv62mek(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_q45fnvkaziop86xci30t");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(0, 0, 'tinytable_css_tofnaj2szlja7k1c57vz') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(0, 1, 'tinytable_css_tofnaj2szlja7k1c57vz') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(0, 2, 'tinytable_css_tofnaj2szlja7k1c57vz') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(0, 3, 'tinytable_css_tofnaj2szlja7k1c57vz') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(1, 0, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(2, 0, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(3, 0, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(4, 0, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(5, 0, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(6, 0, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(1, 1, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(2, 1, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(3, 1, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(4, 1, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(5, 1, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(6, 1, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(1, 2, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(2, 2, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(3, 2, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(4, 2, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(5, 2, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(6, 2, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(1, 3, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(2, 3, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(3, 3, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(4, 3, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(5, 3, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+window.addEventListener('load', function () { styleCell_tinytable_olovomytbutydsv62mek(6, 3, 'tinytable_css_k6pj5tusgjyow139w4o7') })
+    </script>
+
+  
+
+
+</div>
+<div class="cell-output-display">
+ 
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinytable_lt9f4zwfrbr1b5fei2ww</title>
+    <style>
+.table td.tinytable_css_az9nrhgj8a74s59p8a5v, .table th.tinytable_css_az9nrhgj8a74s59p8a5v {    border-bottom: solid 0.1em #d3d8dc; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+  
+
+  
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_lt9f4zwfrbr1b5fei2ww" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col">Ukupno n</th>
+                <th scope="col">Ukupno rezultat</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>50</td>
+                  <td>6065</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function styleCell_tinytable_8zxlrswibxkgbtyto2hv(i, j, css_id) {
+        var table = document.getElementById("tinytable_lt9f4zwfrbr1b5fei2ww");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_lt9f4zwfrbr1b5fei2ww');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_tinytable_8zxlrswibxkgbtyto2hv(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_lt9f4zwfrbr1b5fei2ww");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+
+window.addEventListener('load', function () { styleCell_tinytable_8zxlrswibxkgbtyto2hv(0, 0, 'tinytable_css_az9nrhgj8a74s59p8a5v') })
+window.addEventListener('load', function () { styleCell_tinytable_8zxlrswibxkgbtyto2hv(0, 1, 'tinytable_css_az9nrhgj8a74s59p8a5v') })
+    </script>
+
+  
+
+
+</div>
+</div>
+<p><span class="math display">\[ \bar x = \frac{6065}{50} = 121.3 \; \text{g/L}\]</span></p>
 </section>
-<section id="aritmetička-sredina-aritmetičkih-sredina" class="slide level2">
+<section id="aritmetička-sredina-aritmetičkih-sredina" class="slide level2 smaller">
 <h2>Aritmetička sredina aritmetičkih sredina</h2>
+<div class="cell">
+<div class="cell-output-display">
+ 
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinytable_86csjdf6zboqcj9tb76e</title>
+    <style>
+.table td.tinytable_css_imy5639g72dr58wix0rt, .table th.tinytable_css_imy5639g72dr58wix0rt {    border-bottom: solid 0.1em #d3d8dc; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+  
+
+  
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_86csjdf6zboqcj9tb76e" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col">Škola</th>
+                <th scope="col">Broj učenika</th>
+                <th scope="col">BMI</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>A</td>
+                  <td>255</td>
+                  <td>22.7</td>
+                </tr>
+                <tr>
+                  <td>B</td>
+                  <td>307</td>
+                  <td>19.4</td>
+                </tr>
+                <tr>
+                  <td>C</td>
+                  <td>511</td>
+                  <td>20.9</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function styleCell_tinytable_flswu7ntmvgpmpz7ez2w(i, j, css_id) {
+        var table = document.getElementById("tinytable_86csjdf6zboqcj9tb76e");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_86csjdf6zboqcj9tb76e');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_tinytable_flswu7ntmvgpmpz7ez2w(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_86csjdf6zboqcj9tb76e");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+
+window.addEventListener('load', function () { styleCell_tinytable_flswu7ntmvgpmpz7ez2w(0, 0, 'tinytable_css_imy5639g72dr58wix0rt') })
+window.addEventListener('load', function () { styleCell_tinytable_flswu7ntmvgpmpz7ez2w(0, 1, 'tinytable_css_imy5639g72dr58wix0rt') })
+window.addEventListener('load', function () { styleCell_tinytable_flswu7ntmvgpmpz7ez2w(0, 2, 'tinytable_css_imy5639g72dr58wix0rt') })
+    </script>
+
+  
+
+
+</div>
+</div>
+<p><span class="math display">\[ \bar x = \frac{\text{broj učenika}_{škola} \times \text{BMI}_{škola}}{\text{ukupno učenika}_{škola}} = \]</span></p>
+<p><span class="math display">\[ \frac{225 \times 22.7 + 307 \times 19.4 + 511 \times 20.9}{255 + 307 + 511} = 21.1 \]</span></p>
 </section>
-<section id="prednosti-i-mane" class="slide level2">
-<h2>Prednosti i mane</h2>
+<section id="prednosti-i-mane-aritmetičke-sredine" class="slide level2">
+<h2>Prednosti i mane aritmetičke sredine</h2>
+<ul>
+<li>Predstavlja sve vrednosti</li>
+<li>Jednostavna</li>
+<li>Ne može da se koristi sa kategorijalnim podacima</li>
+<li>Ekstremne vrednosti značajno utiču</li>
+</ul>
 </section>
 <section id="šta-je-dobar-model" class="slide level2">
 <h2>Šta je “dobar” model?</h2>
@@ -448,17 +1513,40 @@ Dr Nikola Grubor
 </section>
 <section id="da-li-model-može-biti-previše-dobar" class="slide level2">
 <h2>Da li model može biti previše “dobar”</h2>
-<p>Model uči specifičnosti uzorka (šum)</p>
+<p>Model uči specifičnosti uzorka (šum).</p>
 </section>
 <section id="ekstremne-vrednosti-snažno-utiču-na-artimetičku-sredinu" class="slide level2">
 <h2>Ekstremne vrednosti snažno utiču na artimetičku sredinu</h2>
-<p>Fig. primer.</p>
+<div class="r-stack">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="robustna-medijana" class="slide level2">
+<section id="robustna-medijana" class="slide level2 smaller">
 <h2>Robustna medijana</h2>
 <ul>
 <li>Manje osetljiva na ekstremne vrednosti (outlier)</li>
-<li></li>
+<li>Otkriva srednju poziciju</li>
+<li>Manje pogodna za analizu</li>
+<li>Ignoriše uticaj vrednosti</li>
 </ul>
 </section>
 <section id="računanje-medijane-1" class="slide level2">
@@ -483,24 +1571,12 @@ Dr Nikola Grubor
 <section id="računanje-medijane-2" class="slide level2">
 <h2>Računanje medijane (2)</h2>
 <p>Ako imamo <span class="yellow">neparanu</span> seriju podataka:</p>
-<p><span class="math display">\[1,4,8 \]</span> Za <span class="yellow">parnu</span> seriju podataka uzima se srednja vrednost između dve centralne vrednosti:</p>
-<p><span class="math display">\[ 1,4,8, 10 \\ me = \frac{4+8}{2} = 6\]</span></p>
-</section>
-<section id="zašto-uvek-ne-koristimo-medijanu" class="slide level2">
-<h2>Zašto uvek ne koristimo medijanu?</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Beleška</strong></p>
-</div>
-<div class="callout-content">
-<p>Zašto bismo onda ikad koristili aritmetičku sredinu? Aritmetička sredina varira manje od uzorka do uzroka od ostalih ocena (predstavnika) podataka. Na nama je da odlučimo da li je to vredno veće osetljivosti na ekstremne vrednosti.</p>
-</div>
-</div>
-</div>
+<p><span class="math display">\[ 1,4,8 \]</span> Za <span class="yellow">parnu</span> seriju podataka uzima se srednja vrednost između dve centralne vrednosti:</p>
+<p><span class="math display">\[ 1,4,8, 10 \]</span> <span class="math display">\[ me = \frac{4+8}{2} = 6 \]</span></p>
+<!-- ## Zašto uvek ne koristimo medijanu? -->
+<!-- ::: {.callout-note} -->
+<!-- Zašto bismo onda ikad koristili aritmetičku sredinu? Aritmetička sredina varira manje od uzorka do uzroka od ostalih ocena (predstavnika) podataka. Na nama je da odlučimo da li je to vredno veće osetljivosti na ekstremne vrednosti. -->
+<!-- ::: -->
 </section>
 <section id="iskošene-distribucije" class="slide level2">
 <h2>Iskošene distribucije</h2>
@@ -510,11 +1586,76 @@ Dr Nikola Grubor
 <h2>Prednost i mane mera centralne tendencije</h2>
 <p>Tabela pros and cons</p>
 </section>
+<section id="koliko-je-retka-težina-od-2.91-kg" class="slide level2">
+<h2>Koliko je retka težina od 2.91 kg?</h2>
+<div class="r-stack">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Perhaps the most crucial lesson from this example is that the dark-grey shaded area in Figure plays two roles: - It represents the proportion of this population of babies being low birth weight. - It is also the probability that a randomly chosen baby in 2013.</p>
+<p>So a population can be thought of as a physical group of individuals, but also as providing the probability distribution for a random observation. This dual interpretation will be fundamental when we come to more formal statistical inference.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
 <section>
 <section id="mere-varijabiliteta" class="title-slide slide level1 center">
 <h1>Mere varijabiliteta</h1>
 
 </section>
+<section id="mudrost-većine" class="slide level2">
+<h2>Mudrost većine</h2>
+<div class="columns">
+<div class="column">
+<p>915 ljudi je pokušalo da pogodi koliko ima slatkiša u tegli.</p>
+<p>Kako da okarakterišemo <span class="yellow">opseg</span> pogodaka?</p>
+</div><div class="column">
+<p><img data-src="slike/beans.png" style="width:75.0%"></p>
+</div>
+</div>
+</section>
+<section id="prikazivanje-varijabiliteta" class="slide level2">
+<h2>Prikazivanje varijabiliteta</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="definicija-mera-varijabiliteta" class="slide level2 center">
 <h2>Definicija mera varijabiliteta</h2>
 <div class="r-fit-text">
@@ -545,8 +1686,8 @@ Dr Nikola Grubor
 </section>
 <section id="inverval-varijacije" class="slide level2">
 <h2>Inverval varijacije</h2>
-<p>Koliko variraju vrednosti (npr. visine) od najmanje do najveće?</p>
-<p><span class="math display">\[ I = x_{max} - x_{min} = 190cm - 165cm = 25 cm \]</span></p>
+<p>Koliko variraju vrednosti od najmanje do najveće?</p>
+<p><span class="math display">\[ I = x_{max} - x_{min} = 31337 - 244 = 31093 \; \; \text{opseg pogodaka} \]</span></p>
 </section>
 <section id="kvantili" class="slide level2">
 <h2>Kvantili</h2>
@@ -556,7 +1697,7 @@ Dr Nikola Grubor
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -566,7 +1707,7 @@ Dr Nikola Grubor
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -577,7 +1718,7 @@ Dr Nikola Grubor
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -601,14 +1742,14 @@ Dr Nikola Grubor
 </section>
 <section id="definicija-standardne-devijacije" class="slide level2">
 <h2>Definicija standardne devijacije</h2>
-<p><span class="math display">\[ var = sd^\color{#F4BA02}2 = \frac{\sum(x-\bar x)^2}{n - 1} \; \text{mmHg}^\color{#F4BA02}2\]</span> <span class="math display">\[ sd = \sqrt{(\frac{\sum(x-\bar x)^2}{n - 1}) \; \text{mmHg}^\color{#F4BA02}2} \]</span></p>
+<p><span class="math display">\[ var = sd^{2} = \frac{\sum(x-\bar x)^2}{n - 1} \; \text{mmHg}^{2} \]</span> <span class="math display">\[ sd = \sqrt{(\frac{\sum(x-\bar x)^2}{n - 1}) \; \text{mmHg}^2} \]</span></p>
 <p>Definicija</p>
 <p>PLot showing sd</p>
 </section>
 <section id="koeficijent-varijacije" class="slide level2">
 <h2>Koeficijent varijacije</h2>
 <p>Je korisna mera kada se porede varijacije između dva uzorka.</p>
-<p><span class="math display">\[ CV = \frac{sd}{\bar x} \times \color{#F4BA02} {100\%} \]</span> <span class="math inline">\(\le 30\%\)</span> homogeni podaci.</p>
+<p><span class="math display">\[ CV = \frac{sd}{\bar x} \times {100\%} \]</span> <span class="math inline">\(\le 30\%\)</span> homogeni podaci.</p>
 <p><span class="math inline">\(\gt 30\%\)</span> heterogeni podaci.</p>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -644,6 +1785,16 @@ Dr Nikola Grubor
 </section>
 <section id="zadaci" class="slide level2">
 <h2>Zadaci</h2>
+<ol type="1">
+<li>Učitati bazu podataka: <span class="yellow">zadovoljstvo zdravstvenom zaštitom.xlsx</span></li>
+<li>Za varijablu <span class="yellow">starost</span> izračunati <span class="yellow">mere centralne tendencije</span>
+<ul>
+<li>Aritmetičku sredinu, standardnu devijaciju, koef. varijacije</li>
+<li>Mod</li>
+<li>Interval varijacije</li>
+</ul></li>
+<li>Izračunati <span class="yellow">mere centralne tendencije</span> za <span class="yellow">starost</span> grupisane <span class="yellow">po polu</span></li>
+</ol>
 </section>
 <section id="struktura-kursa" class="slide level2">
 <h2>Struktura kursa</h2>
@@ -654,10 +1805,10 @@ Dr Nikola Grubor
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_y1iy6d1debm65yfxphvt</title>
+    <title>tinytable_wbj6rwlmmmj928qag3ru</title>
     <style>
-.table td.tinytable_css_6llvon8vnzxbp0d1zd7q, .table th.tinytable_css_6llvon8vnzxbp0d1zd7q {    border-bottom: solid 0.1em #d3d8dc; }
-.table td.tinytable_css_418s0ejxilozrvpfc4ld, .table th.tinytable_css_418s0ejxilozrvpfc4ld {    font-size: 0.55em; }
+.table td.tinytable_css_wwtmgg3mmrfbv262ji3p, .table th.tinytable_css_wwtmgg3mmrfbv262ji3p {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_mkt5vyqdvjl3txhlyt27, .table th.tinytable_css_mkt5vyqdvjl3txhlyt27 {    font-size: 0.55em; }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -675,7 +1826,7 @@ Dr Nikola Grubor
 
   
     <div class="container">
-      <table class="table table-borderless" id="tinytable_y1iy6d1debm65yfxphvt" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_wbj6rwlmmmj928qag3ru" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -750,12 +1901,12 @@ Dr Nikola Grubor
     </div>
 
     <script>
-      function styleCell_tinytable_06mkpqv6gin4vdmvqap9(i, j, css_id) {
-        var table = document.getElementById("tinytable_y1iy6d1debm65yfxphvt");
+      function styleCell_tinytable_j4hquas06ycfrw73a96k(i, j, css_id) {
+        var table = document.getElementById("tinytable_wbj6rwlmmmj928qag3ru");
         table.rows[i].cells[j].classList.add(css_id);
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_y1iy6d1debm65yfxphvt');
+        var table = document.getElementById('tinytable_wbj6rwlmmmj928qag3ru');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -763,8 +1914,8 @@ Dr Nikola Grubor
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_tinytable_06mkpqv6gin4vdmvqap9(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_y1iy6d1debm65yfxphvt");
+      function spanCell_tinytable_j4hquas06ycfrw73a96k(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_wbj6rwlmmmj928qag3ru");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -791,40 +1942,40 @@ Dr Nikola Grubor
         targetCell.colSpan = colspan;
       }
 
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(0, 0, 'tinytable_css_6llvon8vnzxbp0d1zd7q') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(0, 1, 'tinytable_css_6llvon8vnzxbp0d1zd7q') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(0, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(0, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(1, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(1, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(2, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(2, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(3, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(3, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(4, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(4, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(5, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(5, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(6, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(6, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(7, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(7, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(8, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(8, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(9, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(9, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(10, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(10, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(11, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(11, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(12, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(12, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(13, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(13, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(14, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(14, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(15, 0, 'tinytable_css_418s0ejxilozrvpfc4ld') })
-window.addEventListener('load', function () { styleCell_tinytable_06mkpqv6gin4vdmvqap9(15, 1, 'tinytable_css_418s0ejxilozrvpfc4ld') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(0, 0, 'tinytable_css_wwtmgg3mmrfbv262ji3p') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(0, 1, 'tinytable_css_wwtmgg3mmrfbv262ji3p') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(0, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(0, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(1, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(1, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(2, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(2, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(3, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(3, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(4, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(4, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(5, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(5, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(6, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(6, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(7, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(7, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(8, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(8, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(9, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(9, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(10, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(10, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(11, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(11, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(12, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(12, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(13, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(13, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(14, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(14, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(15, 0, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
+window.addEventListener('load', function () { styleCell_tinytable_j4hquas06ycfrw73a96k(15, 1, 'tinytable_css_mkt5vyqdvjl3txhlyt27') })
     </script>
 
   

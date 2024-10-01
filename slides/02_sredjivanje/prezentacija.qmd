@@ -21,6 +21,7 @@ library(here)
 library(tidyverse)
 library(tinytable)
 library(gtsummary)
+library(patchwork)
 source(file = here("slides", "theme", "ggthemes.R"))
 ```
 
@@ -69,7 +70,8 @@ Retke bolesti mogu da imaju rizike od 300% (RR 3.00), ali ako niko u populaciji 
 :::: columns 
 
 ::: {.column}
-Mnogi ljudi [mešaju]{.yellow} relativni i apsolutni [rizik]{.yellow}
+
+Mnogi ljudi [mešaju]{.yellow} relativni i apsolutni [rizik]{.yellow}.
 
 Primer:
 
@@ -81,6 +83,7 @@ $RR = \frac{3/10,000}{1/10,000} = 3.00$
 - $\uparrow$ 200% u trombozama!
 - Promena verovatnoće je samo 0.0002 (2 žene u 10,000)
 - Trudnoća povećava verovatnoću tromboze mnogo više (DVT)
+
 :::
 
 ::: {.column}
@@ -123,7 +126,7 @@ Efikasnost (50-65 god):
 ![](slike/statin_jama.png)
 
 ::: {.notes}
-Sta moze da bude problem sa NNT? Sta ako terapije nekog osteti? Ovo su proseci, varijabilitet je isto bitan.
+Sta moze da bude problem sa NNT? Sta ako terapija nekog osteti? Ovo su proseci, varijabilitet je isto bitan.
 :::
 
 ## Grafički prikaz redukcije relativnog rizika
@@ -236,13 +239,66 @@ Da li procedure/intervencije mogu da se mere ovako, smanjenjem rizika? Sta je za
 
 ![](slike/challengerTemps.png)
 
-## Primer: Grafikon PISA testiranja (1)
+## Hirurški mortalitet
 
-![](slike/pisa_raw.png){fig-align="center"}
-
-## Primer: Grafikon PISA testiranja (2) {.smaller}
+::: {.r-stack}
 
 ```{r}
+#| fig-asp: 0.65
+
+transposition <- readxl::read_xlsx(path = here("slides", "02_sredjivanje", 
+                                               "data", "transposition.xlsx"),
+                                   sheet = 2)
+
+good_axis_fig <- 
+  ggplot(transposition, aes(x = survival, y = hospital)) +
+  geom_col(fill = "#F4BA02", color = "white") +
+  scale_x_continuous(labels = scales::label_percent(accuracy = 1)) +
+  labs(x = "Preživljavanje", y = "Bolnica") +
+  theme_blue()
+
+good_axis_fig
+
+```
+
+::: {.fragment}
+
+```{r}
+#| fig-asp: 0.65
+
+bad_axis_fig <- 
+  ggplot(transposition, aes(x = survival, y = hospital)) +
+  geom_col(fill = "#F4BA02", color = "white") +
+  coord_cartesian(xlim = c(0.90, 1)) +
+  scale_x_continuous(labels = scales::label_percent(accuracy = 1)) +
+  labs(x = "Preživljavanje", y = "Bolnica") +
+  theme_blue()
+
+bad_axis_fig
+```
+
+:::
+
+:::
+
+::: {.notes}
+1. Kako definisemo i merimo: dete, operaciju, kada je za smrt odgovorna hirurgija.
+2. < 16, bilo je vise operacije ali mereno sve kao jedan dogadjaj, smrt <30 dana usled hirurgije.
+3. Da li je smrt dobra mera kvaliteta operacije? Zašto?
+4. Kako mogu drugačije da se prikažu podaci i da drugačije deluju? (red prikazivanja, mortalitet/preživaljvanje), komunikacija rizika kao 1 u 100 dece itd.
+:::
+
+## Grafikon PISA testiranja
+
+::: {.r-stack}
+
+![](slike/pisa_raw.png){fig-align="center" width="80%"}
+
+::: {.fragment}
+
+```{r}
+#| fig-asp: 0.60
+
 tribble(
   ~Year,	~Score, ~Subject,
 2003,502.335, "math",
@@ -275,7 +331,10 @@ tribble(
   facet_wrap(~Subject) +
   ylim(0,520)
 ```
-$Y$ osa produžena do nule.
+
+:::
+
+:::
 
 ## Prikazivanje nominalnih podataka
 *Grupišu se po [kategorijama]{.yellow}*

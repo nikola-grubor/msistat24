@@ -23,8 +23,239 @@ library(tidyverse)
 library(tinytable)
 library(gtsummary)
 library(gganimate)
+library(patchwork)
 source(file = here("slides", "theme", "ggthemes.R"))
 ```
+
+# Relativni brojevi
+
+## Koeficijenti strukture
+
+```{r}
+kreveti <- tribble(
+  ~Jedinica, ~BolnicaA, ~BolnicaB,
+  "Interno", 70, 80,
+  "Ginekološko", 40, 140,
+  "Hirurško", 80, 100,
+  "Pedijatrijsko", 50, 160) %>% 
+  mutate(Ukupno = BolnicaA + BolnicaB) %>%
+  add_row(tibble(Jedinica = "Ukupno", BolnicaA = sum(.$BolnicaA), 
+                 BolnicaB = sum(.$BolnicaB),
+                 Ukupno = sum(.$Ukupno)))
+
+tt(kreveti) %>%
+  style_tt(fontsize = 1)
+```
+
+
+
+## Struktura postelja na odeljenjima?
+
+```{r}
+  
+tt(kreveti) %>% 
+  style_tt(i = 1, j = c(2, 4), color = "#F4BA02", bold = TRUE) %>%
+  style_tt(fontsize = 1)
+```
+
+$$ \frac{70}{150} \times 100 = 47 \% $$ 
+
+## Struktura odeljenja u bolnicama?
+
+```{r}
+tt(kreveti) %>% 
+  style_tt(i = c(1, 5), j = 2, color = "#F4BA02", bold = TRUE) %>%
+  style_tt(fontsize = 1)
+```
+
+$$ \frac{70}{240} \times 100 = 29 \% $$ 
+
+## Struktura postelja po odeljenjima i bolnicama?
+
+```{r}
+tt(kreveti) %>% 
+  style_tt(i = c(1), j = c(2), color = "#F4BA02", bold = TRUE) %>%
+  style_tt(i = c(5), j = c(4), color = "#F4BA02", bold = TRUE) %>%
+  style_tt(fontsize = 0.85)
+```
+
+$$ \frac{70}{720} \times 100 = 10 \% $$ 
+
+## Relativni brojevi za vremenske serije
+
+Indeksi dinamike
+
+- Bazni
+- Lančani
+
+## Praćenje LDL odgovora na statin (1)
+
+```{r}
+lipid <- tribble(
+  ~ID, ~Mesec, ~LDL,
+  1, 1, 5.2,
+  1, 2, 5.6,
+  1, 6, 5.4,
+  1, 12, 5.1,
+  2, 1, 5.2,
+  2, 2, 3.64,
+  2, 6, 3.43,
+  2, 12, 3.7
+) %>%
+  group_by(ID) %>% 
+  mutate(BI = round( LDL / 5.2 * 100, 1 ),
+         BI = ifelse(BI == 100, NA, paste(BI, "%")))
+
+ggplot(lipid, aes( x = Mesec, y = LDL, group = ID, color = factor(ID))) +
+  geom_line(linewidth = 2) +
+  geom_point(size = 4) +
+  geom_hline(yintercept = 4.9, linetype = "dashed", color = "#F7F8F9") +
+  annotate("text", label = "Visoko rizičan", x = 11, y = 4.7, col = "#F7F8F9",
+           size = 5) +
+  ylim(0, 6) +
+  theme(panel.grid.major.y = element_line(),
+        legend.position = "none") +
+  theme_blue() +
+  labs(color = "Pacijent",
+       y = "LDL mmol/L")
+```
+
+## Bazni indeks dinamike
+
+$$ \frac{3.64}{5.2} \times 100 = 70 \% $$
+$$ \frac{3.42}{5.2} \times 100 = 66 \% $$
+
+$$ \frac{3.3.70}{5.2} \times 100 = 71 \% $$
+
+Bazni indeks dinamike ima uvek [istu osnovu]{.yellow}.
+
+## Praćenje LDL odgovora na statin (2)
+
+```{r}
+
+ggplot(lipid, aes( x = Mesec, y = LDL, group = ID, color = factor(ID))) +
+  geom_line(linewidth = 2) +
+  geom_point(size = 4) +
+  geom_hline(yintercept = 4.9, linetype = "dashed", color = "#F7F8F9") +
+  annotate("text", label = "Visoko rizičan", x = 11, y = 4.7, col = "#F7F8F9",
+           size = 4) +
+  ggrepel::geom_label_repel(aes(label = BI),
+                            box.padding = 0.35,
+                            point.padding = 0.5,
+                            segment.color = "#F7F8F9",
+                            seed = 123) +
+  ylim(0, 6) +
+  theme(panel.grid.major.y = element_line(),
+        legend.position = "none") +
+  theme_blue() +
+  labs(color = "Pacijent",
+       y = "LDL mmol/L")
+```
+
+## Porvršina infarktnog polja miokarda
+
+```{r}
+myocard <- tribble(
+  ~ID, ~Sati, ~trop,
+  1, 0, 0.3,
+  1, 24, 0.8,
+  1, 48, 0.3,
+  1, 72, 0.3,
+  1, 96, 0.7
+) %>%
+  mutate(LI = round( trop / lag(trop) * 100, 1 ),
+         LI = ifelse(Sati == 0, NA, paste(LI, "%")))
+
+ggplot(myocard, aes( x = Sati, y = trop)) +
+  geom_line(linewidth = 2, col = "#F4BA02") +
+  geom_point(size = 4, col = "#F4BA02") +
+  geom_hline(yintercept = 4.9, linetype = "dashed", color = "#F7F8F9") +
+  annotate("text", label = "Visoko rizičan", x = 11, y = 4.7, col = "#F7F8F9",
+           size = 4) +
+  ylim(0, 1) +
+  scale_x_continuous(breaks = c(0, 24, 48, 72, 96)) +
+  ggrepel::geom_label_repel(aes(label = LI),
+                            box.padding = 0.35,
+                            point.padding = 0.5,
+                            segment.color = "#F7F8F9",
+                            seed = 123) +
+  theme(panel.grid.major.y = element_line(),
+        legend.position = "none") +
+  theme_blue() +
+  labs(x = "Vreme (h)",
+       y = "cTnI umcg/L")
+```
+
+## Lančani indeks dinamike {.smaller}
+
+$$ \frac{0.3}{0.3} \times 100 = 266 \% $$
+
+$$ \frac{0.3}{0.8} \times 100 = 37.5 \%, \; \text{u padu} $$
+
+$$ \frac{0.3}{0.3} \times 100 = 100 \%, \; \text{u stabilan} $$
+
+$$ \frac{0.7}{0.3} \times 100 = 233 \%, \; \text{u porastu} $$
+
+Lančani indeks dinamike ima uvek [prethodnu osnovu]{.yellow}.
+
+## Statistički koeficijenti
+
+$$ \text{Natalitet} = \; N = \frac{R}{St} \times 1000 $$
+$$ \text{Mortalitet} = \; M = \frac{U}{St} \times 1000 $$
+
+$$ \text{Incidencija} = \; I = \frac{O_n}{St} \times 100,000 $$
+
+$$ \text{Prevalencija} = \; P = \frac{O_u}{St} \times 1,000,000 $$
+
+# Mere centralne tendencije
+
+## Problem
+
+::: {.r-fit-text}
+
+Prijateljica ti kaže da se porodila u terminu.
+
+Beba na porođaju ima [2.91 kg]{.yellow}. 
+
+Rečeno joj je da je ovo ispod proseka, i sad je zabrinuta.
+
+Da li je ovo [neobično]{.yellow} nisko?
+
+:::
+
+## Populacija težina neonatusa
+
+::: {.r-stack}
+
+```{r}
+bweight <- tibble( tezina = rnorm(1e6, 3480, 462) )
+
+ggplot(bweight, aes( x = tezina )) +
+  geom_histogram(binwidth = 500, color = "#F7F8F9", fill = "#F4BA02") +
+  scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
+  ggdist::theme_ggdist(base_size = 15) +
+  theme(axis.text.y = element_blank()) +
+  theme_blue() +
+  labs(x = "Težina u gramima", y = "")
+```
+
+::: {.fragment}
+
+```{r}
+ggplot(bweight, aes( x = tezina )) +
+  geom_histogram(binwidth = 500, color = "#F7F8F9", fill = "#F4BA02") +
+  geom_vline(xintercept = 2910, linetype = 2, col = "#F7F8F9",
+             linewidth = 1.5) +
+  scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
+  ggdist::theme_ggdist(base_size = 15) +
+  theme(axis.text.y = element_blank()) +
+  theme_blue() +
+  labs(x = "Težina u gramima", y = "")
+```
+
+:::
+
+:::
 
 ## Šta je model?
 
@@ -43,9 +274,11 @@ It can also be useful to think of a statistical model as a theory of how the obs
 $$ \text{podaci} = \text{model} + \text{greška} $$ {#eq-def-model}
 
 Preko modela možemo da dobijemo [predviđanja]{.yellow}.
+
 $$  \widehat{\text{podaci}}_i = \text{model}_i $$ {#eq-def-model-approx}
 
 [Greška]{.yellow} modela je razlika između predviđanja modela i stvarnih podataka.
+
 $$ \text{greška}_i = \text{podaci}_i - \widehat{\text{podaci}} $$ {#eq-def-error}
 
 ::: notes
@@ -66,11 +299,9 @@ Pitanje je onda: kako da odredimo vrednost koja najbolje predstavlja podatke?
 Kao kada biramo predsednika.
 :::
 
-## Mod (1)
+## Mod
 
 Najjednostavniji predstavnik podataka je najčešća vrednost, tzv. mod (tipična vrednost).
-
-## Mod (2)
 
 $$ 1,2,2,4,4,4,7,8,9,11,11$$
 $$ mod = 4 $$
@@ -80,8 +311,8 @@ $$ mod = 4 $$
 ```{r}
 N <- 1000
 unimod <- tibble( x = rnorm(n = N, mean = -8, sd = 1) )
-bimod <- tibble( x = rnorm(n = N, mean = 1, sd = 1))
-bimod <- bimod %>% add_row(x = rnorm(n = N, mean = 5, sd = 1))
+bimod <- tibble( x = c(rnorm(n = N, mean = 1, sd = 1), 
+                       rnorm(n = N, mean = 5, sd = 1)))
 
 ggplot(data = unimod, aes( x = x)) +
   geom_histogram(fill = "tomato", color = "#F7F8F9") +
@@ -90,21 +321,80 @@ ggplot(data = unimod, aes( x = x)) +
   
 ```
 
-## Aritmetička sredina
+## Aritmetička sredina {.smaller}
 
+```{r}
+#| fig-align: "center"
+
+ggplot(bweight, aes( x = tezina )) +
+  geom_histogram(binwidth = 500, color = "#F7F8F9", fill = "#F4BA02") +
+  geom_vline(xintercept = 2910, linetype = 2, col = "#F7F8F9",
+             linewidth = 1.5) +
+  geom_vline(xintercept = mean(bweight$tezina), linetype = 1, col = "tomato",
+             linewidth = 1.5) +
+  annotate("text", label = paste(round( mean(bweight$tezina) ), "g"),
+                                 x = 4200, y = 4e6, size = 6, col = "#F7F8F9") +
+  scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
+  ggdist::theme_ggdist(base_size = 15) +
+  theme(axis.text.y = element_blank()) +
+  theme_blue() +
+  labs(x = "Težina u gramima", y = "")
+```
 $$ \bar x = \frac{\sum_{i=1}^{n}x_i}{n} = \frac{x_1 + x_2 + ... + x_n}{n} $$ 
 
-Placeholder.
-
-::: {.callout-note}
+::: {.notes}
 Ako koristimo aritmetičku sredinu kao opis podataka prosečna greska će biti nula, međutim svaka individualna procena će i dalje imati neku grešku!
 :::
 
-## Aritmetička sredina za grupisane podatke
+## Aritmetička sredina za grupisane podatke {.smaller}
 
-## Aritmetička sredina aritmetičkih sredina
+```{r}
+set.seed(123)
 
-## Prednosti i mane
+hg <- tribble(
+  ~Hemoglobin, ~n, ~`arit. sred. intervala`,
+  "106-110", 3, 108,
+  "111-115", 7, 113,
+  "116-120", 11, 118,
+  "121-125", 16, 123,
+  "126-130", 9, 128,
+  "131-135", 4, 133
+) %>% 
+  mutate(rezultat = n * `arit. sred. intervala`)
+
+tt(hg) %>% style_tt(fontsize = 0.9)
+
+hg %>% 
+  summarise(`Ukupno n` = sum(n), `Ukupno rezultat` = sum(rezultat)) %>% 
+  tt()
+
+```
+
+$$ \bar x = \frac{6065}{50} = 121.3 \; \text{g/L}$$
+
+## Aritmetička sredina aritmetičkih sredina {.smaller}
+
+```{r}
+bmi_skole <- tribble(
+  ~`Škola`, ~`Broj učenika`, ~BMI,
+  "A", 255, 22.7,
+  "B", 307, 19.4,
+  "C", 511, 20.9)
+
+tt(bmi_skole)
+```
+
+$$ \bar x = \frac{\text{broj učenika}_{škola} \times \text{BMI}_{škola}}{\text{ukupno učenika}_{škola}} = $$ 
+
+$$ \frac{225 \times 22.7 + 307 \times 19.4 + 511 \times 20.9}{255 + 307 + 511} = 21.1 $$
+
+
+## Prednosti i mane aritmetičke sredine
+
+- Predstavlja sve vrednosti
+- Jednostavna
+- Ne može da se koristi sa kategorijalnim podacima
+- Ekstremne vrednosti značajno utiču
 
 ## Šta je "dobar" model?
 
@@ -117,16 +407,50 @@ Ove dve stavke mogu biti u konfliktu.
 
 ## Da li model može biti previše "dobar"
 
-Model uči specifičnosti uzorka (šum)
+Model uči specifičnosti uzorka (šum).
 
-## Ekstremne vrednosti snažno utiču na artimetičku sredinu 
+## Ekstremne vrednosti snažno utiču na artimetičku sredinu
 
-Fig. primer.
+::: {.r-stack}
 
-## Robustna medijana
+```{r}
+salary <- tibble(salary = c(rnorm(1000, 80000, 10000), rep(1e6, 10)))
+
+ggplot(salary, aes( x = salary)) +
+  geom_histogram(fill = "#F4BA02", col = "#F7F8F9", bins = 80) + 
+  scale_x_continuous(label = scales::label_currency(prefix = "", 
+                                                    suffix = " RSD")) +
+  annotate("text", label = "88,903 RSD\n(80,000 RSD)", x = 250000, y = 100,
+           size = 6, col = "#F7F8F9") +
+  # theme(axis.text.y = element_blank()) +
+  theme_blue() +
+  labs(x = "Neto zarada", y = "Broj")
+```
+::: {.fragment}
+
+```{r}
+
+ggplot(salary, aes( x = salary)) +
+  geom_histogram(fill = "#F4BA02", col = "#F7F8F9", bins = 80) + 
+  scale_x_continuous(label = scales::label_currency(prefix = "", 
+                                                    suffix = " RSD")) +
+  annotate("text", label = "Medijana = 79,765 RSD\n(80,000 RSD)", x = 350000, y = 100,
+           size = 6, col = "#F7F8F9") +
+  # theme(axis.text.y = element_blank()) +
+  theme_blue() +
+  labs(x = "Neto zarada", y = "Broj")
+```
+
+:::
+
+:::
+
+## Robustna medijana {.smaller}
 
 - Manje osetljiva na ekstremne vrednosti (outlier)
-- 
+- Otkriva srednju poziciju
+- Manje pogodna za analizu
+- Ignoriše uticaj vrednosti
 
 ## Računanje medijane (1)
 
@@ -145,16 +469,17 @@ Whereas the mean minimizes the sum of squared errors, the median minimizes a sli
 
 Ako imamo [neparanu]{.yellow} seriju podataka:
 
-$$1,4,8 $$
+$$ 1,4,8 $$
 Za [parnu]{.yellow} seriju podataka uzima se srednja vrednost između dve centralne vrednosti:
 
-$$ 1,4,8, 10 \\ me = \frac{4+8}{2} = 6$$
+$$ 1,4,8, 10 $$ 
+$$ me = \frac{4+8}{2} = 6 $$
 
-## Zašto uvek ne koristimo medijanu?
+<!-- ## Zašto uvek ne koristimo medijanu? -->
 
-::: {.callout-note}
-Zašto bismo onda ikad koristili aritmetičku sredinu? Aritmetička sredina varira manje od uzorka do uzroka od ostalih ocena (predstavnika) podataka. Na nama je da odlučimo da li je to vredno veće osetljivosti na ekstremne vrednosti.
-:::
+<!-- ::: {.callout-note} -->
+<!-- Zašto bismo onda ikad koristili aritmetičku sredinu? Aritmetička sredina varira manje od uzorka do uzroka od ostalih ocena (predstavnika) podataka. Na nama je da odlučimo da li je to vredno veće osetljivosti na ekstremne vrednosti. -->
+<!-- ::: -->
 
 ## Iskošene distribucije
 
@@ -164,7 +489,150 @@ Zašto bismo onda ikad koristili aritmetičku sredinu? Aritmetička sredina vari
 
 Tabela pros and cons
 
+## Koliko je retka težina od 2.91 kg?
+
+::: {.r-stack}
+
+```{r}
+#| fig-asp: 0.65
+
+
+ggplot(bweight, aes( x = tezina )) +
+  geom_histogram(binwidth = 500, color = "#F7F8F9", fill = "#F4BA02",
+                 aes(y = after_stat(density))) +
+  stat_function(fun = dnorm, 
+                args = list(mean = 3480, sd = 462), 
+                color = "#F7F8F9", size = 1.5,
+                xlim = c(3480-4*462, 3480+4*462)) +
+  geom_vline(xintercept = 2910, linetype = 2, col = "#F7F8F9",
+             linewidth = 1.5, alpha = 0.5) +
+  scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
+  ggdist::theme_ggdist(base_size = 15) +
+  theme(axis.text.y = element_blank()) +
+  theme_blue() +
+  labs(x = "Težina u gramima", y = "")
+```
+::: {.fragment}
+
+```{r}
+#| fig-asp: 0.65
+
+
+ggplot(bweight, aes( x = tezina )) +
+  geom_histogram(binwidth = 500, color = NA, fill = NA,
+                 aes(y = after_stat(density))) +
+  stat_function(fun = dnorm, 
+                args = list(mean = 3480, sd = 462), 
+                color = "#F7F8F9", size = 1.5,
+                xlim = c(3480-4*462, 3480+4*462)) +
+  geom_vline(xintercept = 2910, linetype = 2, col = "#F7F8F9",
+             linewidth = 1.5, alpha = 0.5) +
+  scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
+  ggdist::theme_ggdist(base_size = 15) +
+  theme(axis.text.y = element_blank()) +
+  theme_blue() +
+  labs(x = "Težina u gramima", y = "")
+```
+:::
+
+::: {.fragment}
+
+```{r}
+#| fig-asp: 0.65
+
+labels <- c("1%", "5%", "25%", "50%", "75%", "95%", "99%")
+quintiles <- quantile(bweight$tezina, probs = c(0.01, 0.05, 0.25, 0.5, 0.75, 0.95, 0.99))
+y_quintiles <- dnorm(quintiles, mean = 3480, sd = 462)
+
+ggplot(bweight, aes( x = tezina )) +
+  geom_histogram(binwidth = 500, color = NA, fill = NA,
+                 aes(y = after_stat(density))) +
+  geom_vline(xintercept = 2910, linetype = 2, col = "#F7F8F9",
+             linewidth = 1.5, alpha = 0.5) +
+  annotate("segment", 
+           x = quintiles, 
+           xend = quintiles,
+           y = 0, yend = y_quintiles, size = 1, linetype = 1, color = "#F7F8F9") +
+  annotate("text", label = labels, col = "#F7F8F9",
+           x = quintiles, y = y_quintiles + 0.00016,
+           hjust = +0.4) +
+  stat_function(fun = dnorm, 
+                args = list(mean = 3480, sd = 462), 
+                color = "#F7F8F9", size = 1.5,
+                xlim = c(3480-4*462, 3480+4*462)) +
+  scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
+  ggdist::theme_ggdist(base_size = 15) +
+  theme(axis.text.y = element_blank()) +
+  theme_blue() +
+  labs(x = "Težina u gramima", y = "")
+```
+
+:::
+
+:::
+
+::: {.notes}
+Perhaps the most crucial lesson from this example is that the dark-grey shaded area in Figure plays two roles:
+- It represents the proportion of this population of babies being low birth weight.
+- It is also the probability that a randomly chosen baby in 2013.
+
+So a population can be thought of as a physical group of individuals, but also as providing the probability distribution for a random observation. This dual interpretation will be fundamental when we come to more formal statistical inference.
+:::
+
 # Mere varijabiliteta
+
+## Mudrost većine
+
+:::: columns
+
+::: {.column}
+915 ljudi je pokušalo da pogodi koliko ima slatkiša u tegli.
+
+Kako da okarakterišemo [opseg]{.yellow} pogodaka?
+
+:::
+
+::: {.column}
+![](slike/beans.png){width="75%"}
+:::
+
+::::
+
+## Prikazivanje varijabiliteta
+
+```{r}
+#| fig-asp: 0.65
+#| fig-align: "center"
+
+bean <- read.csv(file = here::here("slides", "03_centralne_mere", "data", "bean.csv")) %>% 
+  rename( guess = X219)
+
+fig_3 <- bean %>% 
+  ggplot(aes( x = guess )) +
+  geom_histogram(fill = "orange", col = "black") +
+  theme_minimal() +
+  theme(axis.text.y = element_blank(),
+        axis.title.y = element_blank()) +
+  labs(x = "Procenjen broj slatkiša")
+
+fig_2 <- bean %>% 
+  ggplot(aes( x = guess )) +
+  geom_boxplot(fill = "orange") +
+  theme_minimal() +
+  theme(axis.text = element_blank(),
+        axis.title = element_blank())
+
+fig_1 <- bean %>%
+  ggplot(aes( x = guess )) +
+  geom_dotplot(binwidth = 200, stackdir = "center",
+               fill = "orange") +
+  theme_minimal() +
+  theme(axis.text = element_blank(),
+        axis.title = element_blank())
+
+fig_1 / fig_2 / fig_3 + plot_annotation(tag_levels = 'A')
+```
+
 
 ## Definicija mera varijabiliteta {.center}
 
@@ -199,9 +667,11 @@ vrednosti skupa podataka oko srednje vrednosti.
 
 ## Inverval varijacije
 
-Koliko variraju vrednosti (npr. visine) od najmanje do najveće?
+Koliko variraju vrednosti od najmanje do najveće?
 
-$$ I = x_{max} - x_{min} = 190cm - 165cm = 25 cm $$
+$$ I = x_{max} - x_{min} = 31337 - 244 = 31093 \; \; \text{opseg pogodaka} $$
+
+
 
 ## Kvantili
 
@@ -218,6 +688,7 @@ quantile %>%
 ```
 
 ::: {.fragment}
+
 ```{r}
 quantile <- tibble( x = 1:20 , y = 1)
 quantile %>% 
@@ -229,9 +700,11 @@ quantile %>%
   theme_blue_void() +
   ylim(0, 2)
 ```
+
 :::
 
 ::: {.fragment}
+
 ```{r}
 quantile <- tibble( x = 1:20 , y = 1)
 quantile %>% 
@@ -239,10 +712,12 @@ quantile %>%
   geom_point(size = 8 , color = "#F4BA02") +
   annotate("segment", x = 1.5:19.5, y = 0.8, yend = 1.2, size = 1.5, 
            linetype = 2, color = "#F7F8F9") +
-  labs(title = "Percentili") +
+  annotate("text", label = "Percentili", 
+           x = 15, y = 1.5, parse = TRUE, size = 7, color = "#F7F8F9") +
   theme_blue_void() +
   ylim(0, 2)
 ```
+
 :::
 
 ::::
@@ -262,8 +737,8 @@ $$ var = \frac{\sum(x-\bar x)^2}{n - 1} \; \text{mmHg}^2 $$
 
 ## Definicija standardne devijacije
 
-$$ var = sd^\color{#F4BA02}2 = \frac{\sum(x-\bar x)^2}{n - 1} \; \text{mmHg}^\color{#F4BA02}2$$
-$$ sd = \sqrt{(\frac{\sum(x-\bar x)^2}{n - 1}) \; \text{mmHg}^\color{#F4BA02}2} $$
+$$ var = sd^{2} = \frac{\sum(x-\bar x)^2}{n - 1} \; \text{mmHg}^{2} $$
+$$ sd = \sqrt{(\frac{\sum(x-\bar x)^2}{n - 1}) \; \text{mmHg}^2} $$
 
 Definicija
 
@@ -273,7 +748,7 @@ PLot showing sd
 
 Je korisna mera kada se porede varijacije između dva uzorka.
 
-$$ CV = \frac{sd}{\bar x} \times \color{#F4BA02} {100\%} $$
+$$ CV = \frac{sd}{\bar x} \times {100\%} $$
 $\le 30\%$ homogeni podaci.
 
 $\gt 30\%$ heterogeni podaci.
@@ -293,6 +768,13 @@ Koliko je *standardnih devijacija* podatak udaljen od artmetičke sredine?
 $$ z = \frac{x_i - \bar x}{sd} $$
 
 ## Zadaci
+
+1. Učitati bazu podataka: [zadovoljstvo zdravstvenom zaštitom.xlsx]{.yellow}
+2. Za varijablu [starost]{.yellow} izračunati [mere centralne tendencije]{.yellow}
+    + Aritmetičku sredinu, standardnu devijaciju, koef. varijacije
+    + Mod
+    + Interval varijacije
+3. Izračunati [mere centralne tendencije]{.yellow} za [starost]{.yellow} grupisane [po polu]{.yellow}
 
 ## Struktura kursa
 

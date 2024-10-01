@@ -106,6 +106,10 @@ tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
 :::
 :::
 
+::: {.center-h}
+[1,693,059 publikacija]{.yellow} na PubMed-u u 2023. god!
+:::
+
 ## Koliko često se replikuju rezultati?
 
 ::: {.r-stack}
@@ -216,6 +220,32 @@ flowchart TD
 
 ::::
 
+## {#lind-id data-menu-title="Bolest koju je Lind istraživao" .center}
+
+::: {layout-ncol=2} 
+
+![](slike/gum.png)
+
+![](slike/petechiae.png)
+
+:::
+
+::: {.notes}
+The gingival swelling and dusky color just above two of the teeth indicate hemorrhage into the gums of this patient with poor dentition. The gingival abnormalities of scurvy occur only in the presence of teeth, which presumably provide portals of entry for microbes into the gums. One hypothesis suggests that vitamin C deficiency impairs neutrophil-mediated killing of bacteria, leading to chronic gingivitis, which is then complicated by bleeding from the fragile vessels characteristic of scurvy.
+
+In this example, the perifollicular hyperkeratotic papules are quite prominent, with surrounding hemorrhage. These lesions have been misinterpreted as "palpable purpura," leading to the mistaken clinical diagnosis of vasculitis.
+:::
+
+## James Lindovo istraživanje {.center}
+
+::: {layout-ncol=2}
+
+![James Lind (1716-1794)](slike/lind.jpg)
+
+![HMS Salisbury (1747)](slike/lind_navy.png)
+
+:::
+
 ## Prva medicinska baza podataka
 
 ```{r}
@@ -230,7 +260,6 @@ scurvy %>%
     theme = "striped"
   ) |> style_tt(j = 1:5, fontsize = 0.55)
 ```
-
 
 ## Merenje
 
@@ -414,6 +443,10 @@ Trombociti su prebrojivi, ali nekad se mere kontinuiranim merama kao npr. spektr
 Uvek je bolje tretirati vreme kao kontinuirano (mada zavisi od pitanja, individualni efekti vs. trend).
 :::
 
+## Excel se koristi za unos podataka {.center}
+
+![](slike/excel.png)
+
 ## Principi uredne baze (tidydata) {.center}
 
 ![](slike/tidy-1.png)
@@ -422,9 +455,22 @@ Uvek je bolje tretirati vreme kao kontinuirano (mada zavisi od pitanja, individu
 
 ![](slike/bazahaos.png)
 
-## Kako se pravi baza u Excel-u
+## Učitavanje gotove baze u EZR
 
-Zadatak?
+Zadatak:
+
+- Učitati [zadovoljstvo zdravstvenom zaštitom.xlsx]{.yellow} u EZR
+- Učitati [KVS.xlsx]{.yellow} bez da se izgubi prethodna baza
+
+::: {.callout-important}
+Izabrati [Sheet1]{.yellow} (obično se tu nalaze podaci) pri učitavanju baze. Pritiskom na [View]{.yellow} proveriti da je ispravna baza učitana!
+:::
+
+Šta je šifrarnik i čemu služi?
+
+::: {.notes}
+Istraživačka baza podataka praćena je šifarnikom koji sadrži informacije o nazivu i redosledu varijabli, opisu varijabli, mernim jedinicama, i skali merenja (nominalni, ordinalni, numerički). Osim toga u šifarniku su, za kategorijalne varijable, date informacije o broju kategorija i kodovima tih kategorija.
+:::
 
 # Česte greške u pravljenju baza
 
@@ -444,7 +490,7 @@ Zadatak?
 
 ![](slike/tidy-9.png)
 
-## Zadatak: vremesnke serije {.variant-one .smaller}
+## Zadatak: različite baze {.variant-one .smaller}
 
 ::: nonincremental
 
@@ -452,16 +498,68 @@ Zadatak?
 
 - Poredili vrednosti sistolnog pritiska između dijabetičara i zdravih ljudi?
 - Poredili vrednosti glukoze između istih pacijenata pre i posle terapije?
-- Pratili pacijente da saznamo ko je imao recidiv posle operacije?
 - Upisali CRP meren serijski u intervalu: 1h, 12h, 24h?
 
 ::: {.callout-warning}
 ## Teško (opcionalno)
+- Pratili pacijente da saznamo ko je imao recidiv posle operacije?
 - Merili vreme do tromboze između pacijenata koje lečimo agresivno i konzervativno.
 - Merili vreme do tromboze ako pratimo vrednosti d-Dimera serijski 3 dana za redom. 
 :::
 
 :::
+
+## Rešenje: dijabetičari i zdravi ljudi
+
+```{r}
+tribble(
+  ~Gluk, ~Grupa,
+  7.2, "DM",
+  5.1, "Zdrav",
+  5.9, "Zdrav",
+  4.7, "Zdrav",
+  11.1, "DM"
+) %>% tt() %>% style_tt(fontsize = 1)
+```
+
+## Rešenje: pre i posle
+
+```{r}
+tribble(
+  ~gluk_pre, ~gluk_posle,
+  7.2, 6.1,
+  5.1, 5.1,
+  5.9, 5.5,
+  4.7, 5.9,
+  11.1, 7.1
+) %>% tt() %>% style_tt(fontsize = 1)
+```
+
+## Rešenje: serija merenja {.smaller}
+
+Varijanta 1:
+
+```{r}
+tribble(
+  ~ID, ~CRP, ~Vreme,
+  1, 0.62, "1h",
+  1, 0.51, "12h", 
+  1, 0.56, "24h",
+  2, 0.43, "1h",
+  2, 0.42, "12h"
+) %>% tt() %>% style_tt(fontsize = 0.8)
+```
+
+Varijanta 2:
+
+```{r}
+tribble(
+  ~ID, ~CRP_1h, ~CRP_12h, ~CRP_24h,
+  1, 0.70, 0.67, 0.54,
+  2, 0.66, 0.41, 0.59,
+  3, 0.76, 0.49, 0.53
+) %>% tt() %>% style_tt(fontsize = 0.9)
+```
 
 ## Podaci koji nedostaju {.larger}
 

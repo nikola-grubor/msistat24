@@ -708,7 +708,6 @@ mkis %>%
                 xlim = c(333+2*30, 333+3*30),
                 geom = "area", alpha = 3/4, fill = "tomato") +
   stat_function(fun = dnorm, args = list(mean = 333, sd = 30), color = "#F7F8F9", size = 1.5) +
-  
   annotate("text", label = "Više verovatno", x = 270, y = 0.010, size = 7, color = "dodgerblue") +
   annotate("text", label = "Manje\nverovatno", x = 410, y = 0.005, size = 7, color = "tomato") +
   ggdist::theme_ggdist(base_size=15) +

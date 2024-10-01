@@ -130,14 +130,14 @@
     "href": "slides/05_uzorak/prezentacija.html#terminologija-i-notacija",
     "title": "Populacija i uzorak",
     "section": "Terminologija (i notacija)",
-    "text": "Terminologija (i notacija)\n\n\n \n\n  \n    \n    \n    tinytable_6w4z3mo5urgdguopbaq9\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                \n                Populacija (parametar)\n                Uzorak (statistika)\n              \n        \n        \n        \n                \n                  Aritmetička sredina  \n                  $\\mu$     \n                  $\\bar x$\n                \n                \n                  Varijansa            \n                  $\\sigma^2$\n                  $sd^2$   \n                \n                \n                  Standardna devijacija\n                  $\\sigma$  \n                  $sd$     \n                \n                \n                  Proporcija           \n                  $\\pi$     \n                  $p$"
+    "text": "Terminologija (i notacija)\n\n\n \n\n  \n    \n    \n    tinytable_4fyphpkyff3kpkjwht2k\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                \n                Populacija (parametar)\n                Uzorak (statistika)\n              \n        \n        \n        \n                \n                  Aritmetička sredina  \n                  $\\mu$     \n                  $\\bar x$\n                \n                \n                  Varijansa            \n                  $\\sigma^2$\n                  $sd^2$   \n                \n                \n                  Standardna devijacija\n                  $\\sigma$  \n                  $sd$     \n                \n                \n                  Proporcija           \n                  $\\pi$     \n                  $p$"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#vežba",
     "href": "slides/05_uzorak/prezentacija.html#vežba",
     "title": "Populacija i uzorak",
     "section": "Vežba",
-    "text": "Vežba\nIz baze “Sistolni pritisak.xlsx” odrediti prost i sistematski uzorak veličine 10.\nProst:\n\nsample(1:99, 10, replace = F)\n\n [1] 86 97 12  1 52 90 55 99 89 29\n\n\nSistematski:\n\nsample(1:99, 1, replace = F)\n\n[1] 48\n\n\n\nOdrediti početnu jedinicu\n\nKorak \\(k = \\frac{99}{10} \\approx 10\\)\nIzabrati svaku 10-tu jedinicu"
+    "text": "Vežba\nIz baze “Sistolni pritisak.xlsx” odrediti prost i sistematski uzorak veličine 10.\nProst:\n\nsample(1:99, 10, replace = F)\n\n [1] 14 54 99 80 56 84  9 58 22 75\n\n\nSistematski:\n\nsample(1:99, 1, replace = F)\n\n[1] 16\n\n\n\nOdrediti početnu jedinicu\n\nKorak \\(k = \\frac{99}{10} \\approx 10\\)\nIzabrati svaku 10-tu jedinicu"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#greška-uzorkovanja",
@@ -238,6 +238,97 @@
     "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_c8r1qujjrzpe0grpvobn\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
   },
   {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#koeficijenti-strukture",
+    "href": "slides/03_centralne_mere/prezentacija.html#koeficijenti-strukture",
+    "title": "Mere centralne tendencije",
+    "section": "Koeficijenti strukture",
+    "text": "Koeficijenti strukture\n\n\n \n\n  \n    \n    \n    tinytable_hllkbfhv21ayu9j8ocba\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Jedinica\n                BolnicaA\n                BolnicaB\n                Ukupno\n              \n        \n        \n        \n                \n                  Interno      \n                   70\n                   80\n                  150\n                \n                \n                  Ginekološko  \n                   40\n                  140\n                  180\n                \n                \n                  Hirurško     \n                   80\n                  100\n                  180\n                \n                \n                  Pedijatrijsko\n                   50\n                  160\n                  210\n                \n                \n                  Ukupno       \n                  240\n                  480\n                  720"
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#struktura-postelja-na-odeljenjima",
+    "href": "slides/03_centralne_mere/prezentacija.html#struktura-postelja-na-odeljenjima",
+    "title": "Mere centralne tendencije",
+    "section": "Struktura postelja na odeljenjima?",
+    "text": "Struktura postelja na odeljenjima?\n\n\n \n\n  \n    \n    \n    tinytable_pqayf5e0asue7arnrptz\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Jedinica\n                BolnicaA\n                BolnicaB\n                Ukupno\n              \n        \n        \n        \n                \n                  Interno      \n                   70\n                   80\n                  150\n                \n                \n                  Ginekološko  \n                   40\n                  140\n                  180\n                \n                \n                  Hirurško     \n                   80\n                  100\n                  180\n                \n                \n                  Pedijatrijsko\n                   50\n                  160\n                  210\n                \n                \n                  Ukupno       \n                  240\n                  480\n                  720\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\\[ \\frac{70}{150} \\times 100 = 47 \\% \\]"
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#struktura-odeljenja-u-bolnicama",
+    "href": "slides/03_centralne_mere/prezentacija.html#struktura-odeljenja-u-bolnicama",
+    "title": "Mere centralne tendencije",
+    "section": "Struktura odeljenja u bolnicama?",
+    "text": "Struktura odeljenja u bolnicama?\n\n\n \n\n  \n    \n    \n    tinytable_c5xtrko3n4qk7zm6iub9\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Jedinica\n                BolnicaA\n                BolnicaB\n                Ukupno\n              \n        \n        \n        \n                \n                  Interno      \n                   70\n                   80\n                  150\n                \n                \n                  Ginekološko  \n                   40\n                  140\n                  180\n                \n                \n                  Hirurško     \n                   80\n                  100\n                  180\n                \n                \n                  Pedijatrijsko\n                   50\n                  160\n                  210\n                \n                \n                  Ukupno       \n                  240\n                  480\n                  720\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\\[ \\frac{70}{240} \\times 100 = 29 \\% \\]"
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#struktura-postelja-po-odeljenjima-i-bolnicama",
+    "href": "slides/03_centralne_mere/prezentacija.html#struktura-postelja-po-odeljenjima-i-bolnicama",
+    "title": "Mere centralne tendencije",
+    "section": "Struktura postelja po odeljenjima i bolnicama?",
+    "text": "Struktura postelja po odeljenjima i bolnicama?\n\n\n \n\n  \n    \n    \n    tinytable_vwuxeaia5vuph1wkazkd\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Jedinica\n                BolnicaA\n                BolnicaB\n                Ukupno\n              \n        \n        \n        \n                \n                  Interno      \n                   70\n                   80\n                  150\n                \n                \n                  Ginekološko  \n                   40\n                  140\n                  180\n                \n                \n                  Hirurško     \n                   80\n                  100\n                  180\n                \n                \n                  Pedijatrijsko\n                   50\n                  160\n                  210\n                \n                \n                  Ukupno       \n                  240\n                  480\n                  720\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\\[ \\frac{70}{720} \\times 100 = 10 \\% \\]"
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#relativni-brojevi-za-vremenske-serije",
+    "href": "slides/03_centralne_mere/prezentacija.html#relativni-brojevi-za-vremenske-serije",
+    "title": "Mere centralne tendencije",
+    "section": "Relativni brojevi za vremenske serije",
+    "text": "Relativni brojevi za vremenske serije\nIndeksi dinamike\n\nBazni\nLančani"
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#praćenje-ldl-odgovora-na-statin-1",
+    "href": "slides/03_centralne_mere/prezentacija.html#praćenje-ldl-odgovora-na-statin-1",
+    "title": "Mere centralne tendencije",
+    "section": "Praćenje LDL odgovora na statin (1)",
+    "text": "Praćenje LDL odgovora na statin (1)"
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#bazni-indeks-dinamike",
+    "href": "slides/03_centralne_mere/prezentacija.html#bazni-indeks-dinamike",
+    "title": "Mere centralne tendencije",
+    "section": "Bazni indeks dinamike",
+    "text": "Bazni indeks dinamike\n\\[ \\frac{3.64}{5.2} \\times 100 = 70 \\% \\] \\[ \\frac{3.42}{5.2} \\times 100 = 66 \\% \\]\n\\[ \\frac{3.3.70}{5.2} \\times 100 = 71 \\% \\]\nBazni indeks dinamike ima uvek istu osnovu."
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#praćenje-ldl-odgovora-na-statin-2",
+    "href": "slides/03_centralne_mere/prezentacija.html#praćenje-ldl-odgovora-na-statin-2",
+    "title": "Mere centralne tendencije",
+    "section": "Praćenje LDL odgovora na statin (2)",
+    "text": "Praćenje LDL odgovora na statin (2)"
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#porvršina-infarktnog-polja-miokarda",
+    "href": "slides/03_centralne_mere/prezentacija.html#porvršina-infarktnog-polja-miokarda",
+    "title": "Mere centralne tendencije",
+    "section": "Porvršina infarktnog polja miokarda",
+    "text": "Porvršina infarktnog polja miokarda"
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#lančani-indeks-dinamike",
+    "href": "slides/03_centralne_mere/prezentacija.html#lančani-indeks-dinamike",
+    "title": "Mere centralne tendencije",
+    "section": "Lančani indeks dinamike",
+    "text": "Lančani indeks dinamike\n\\[ \\frac{0.3}{0.3} \\times 100 = 266 \\% \\]\n\\[ \\frac{0.3}{0.8} \\times 100 = 37.5 \\%, \\; \\text{u padu} \\]\n\\[ \\frac{0.3}{0.3} \\times 100 = 100 \\%, \\; \\text{u stabilan} \\]\n\\[ \\frac{0.7}{0.3} \\times 100 = 233 \\%, \\; \\text{u porastu} \\]\nLančani indeks dinamike ima uvek prethodnu osnovu."
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#statistički-koeficijenti",
+    "href": "slides/03_centralne_mere/prezentacija.html#statistički-koeficijenti",
+    "title": "Mere centralne tendencije",
+    "section": "Statistički koeficijenti",
+    "text": "Statistički koeficijenti\n\\[ \\text{Natalitet} = \\; N = \\frac{R}{St} \\times 1000 \\] \\[ \\text{Mortalitet} = \\; M = \\frac{U}{St} \\times 1000 \\]\n\\[ \\text{Incidencija} = \\; I = \\frac{O_n}{St} \\times 100,000 \\]\n\\[ \\text{Prevalencija} = \\; P = \\frac{O_u}{St} \\times 1,000,000 \\]"
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#problem",
+    "href": "slides/03_centralne_mere/prezentacija.html#problem",
+    "title": "Mere centralne tendencije",
+    "section": "Problem",
+    "text": "Problem\n\nPrijateljica ti kaže da se porodila u terminu.\nBeba na porođaju ima 2.91 kg.\nRečeno joj je da je ovo ispod proseka, i sad je zabrinuta.\nDa li je ovo neobično nisko?"
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#populacija-težina-neonatusa",
+    "href": "slides/03_centralne_mere/prezentacija.html#populacija-težina-neonatusa",
+    "title": "Mere centralne tendencije",
+    "section": "Populacija težina neonatusa",
+    "text": "Populacija težina neonatusa"
+  },
+  {
     "objectID": "slides/03_centralne_mere/prezentacija.html#šta-je-model",
     "href": "slides/03_centralne_mere/prezentacija.html#šta-je-model",
     "title": "Mere centralne tendencije",
@@ -263,7 +354,7 @@
     "href": "slides/03_centralne_mere/prezentacija.html#osnovna-sturuktura-modela",
     "title": "Mere centralne tendencije",
     "section": "Osnovna sturuktura modela",
-    "text": "Osnovna sturuktura modela\n\\[ \\text{podaci} = \\text{model} + \\text{greška}  \\qquad(1)\\]\nPreko modela možemo da dobijemo predviđanja. \\[  \\widehat{\\text{podaci}}_i = \\text{model}_i  \\qquad(2)\\]\nGreška modela je razlika između predviđanja modela i stvarnih podataka. \\[ \\text{greška}_i = \\text{podaci}_i - \\widehat{\\text{podaci}}  \\qquad(3)\\]\n\nThis expresses the idea that the data can be broken into two portions: one portion that is described by a statistical model, which expresses the values that we expect the data to take given our knowledge, and another portion that we refer to as the error that reflects the difference between the model’s predictions and the observed data."
+    "text": "Osnovna sturuktura modela\n\\[ \\text{podaci} = \\text{model} + \\text{greška}  \\qquad(1)\\]\nPreko modela možemo da dobijemo predviđanja.\n\\[  \\widehat{\\text{podaci}}_i = \\text{model}_i  \\qquad(2)\\]\nGreška modela je razlika između predviđanja modela i stvarnih podataka.\n\\[ \\text{greška}_i = \\text{podaci}_i - \\widehat{\\text{podaci}}  \\qquad(3)\\]\n\nThis expresses the idea that the data can be broken into two portions: one portion that is described by a statistical model, which expresses the values that we expect the data to take given our knowledge, and another portion that we refer to as the error that reflects the difference between the model’s predictions and the observed data."
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#šta-je-najbolji-opis-podataka",
@@ -273,18 +364,11 @@
     "text": "Šta je najbolji opis podataka\nPitanje je onda: kako da odredimo vrednost koja najbolje predstavlja podatke?\n\n\nMod\nMedijana\nAritmetička sredina\n\n\n\nKao kada biramo predsednika."
   },
   {
-    "objectID": "slides/03_centralne_mere/prezentacija.html#mod-1",
-    "href": "slides/03_centralne_mere/prezentacija.html#mod-1",
+    "objectID": "slides/03_centralne_mere/prezentacija.html#mod",
+    "href": "slides/03_centralne_mere/prezentacija.html#mod",
     "title": "Mere centralne tendencije",
-    "section": "Mod (1)",
-    "text": "Mod (1)\nNajjednostavniji predstavnik podataka je najčešća vrednost, tzv. mod (tipična vrednost)."
-  },
-  {
-    "objectID": "slides/03_centralne_mere/prezentacija.html#mod-2",
-    "href": "slides/03_centralne_mere/prezentacija.html#mod-2",
-    "title": "Mere centralne tendencije",
-    "section": "Mod (2)",
-    "text": "Mod (2)\n\\[ 1,2,2,4,4,4,7,8,9,11,11\\] \\[ mod = 4 \\]"
+    "section": "Mod",
+    "text": "Mod\nNajjednostavniji predstavnik podataka je najčešća vrednost, tzv. mod (tipična vrednost).\n\\[ 1,2,2,4,4,4,7,8,9,11,11\\] \\[ mod = 4 \\]"
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#unimodalna-i-bimodalna-raspodela",
@@ -298,28 +382,28 @@
     "href": "slides/03_centralne_mere/prezentacija.html#aritmetička-sredina",
     "title": "Mere centralne tendencije",
     "section": "Aritmetička sredina",
-    "text": "Aritmetička sredina\n\\[ \\bar x = \\frac{\\sum_{i=1}^{n}x_i}{n} = \\frac{x_1 + x_2 + ... + x_n}{n} \\]\nPlaceholder.\n\n\n\n\n\n\nBeleška\n\n\nAko koristimo aritmetičku sredinu kao opis podataka prosečna greska će biti nula, međutim svaka individualna procena će i dalje imati neku grešku!"
+    "text": "Aritmetička sredina\n\n\\[ \\bar x = \\frac{\\sum_{i=1}^{n}x_i}{n} = \\frac{x_1 + x_2 + ... + x_n}{n} \\]\n\nAko koristimo aritmetičku sredinu kao opis podataka prosečna greska će biti nula, međutim svaka individualna procena će i dalje imati neku grešku!"
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#aritmetička-sredina-za-grupisane-podatke",
     "href": "slides/03_centralne_mere/prezentacija.html#aritmetička-sredina-za-grupisane-podatke",
     "title": "Mere centralne tendencije",
     "section": "Aritmetička sredina za grupisane podatke",
-    "text": "Aritmetička sredina za grupisane podatke"
+    "text": "Aritmetička sredina za grupisane podatke\n\n\n \n\n  \n    \n    \n    tinytable_q45fnvkaziop86xci30t\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Hemoglobin\n                n\n                arit. sred. intervala\n                rezultat\n              \n        \n        \n        \n                \n                  106-110\n                   3\n                  108\n                   324\n                \n                \n                  111-115\n                   7\n                  113\n                   791\n                \n                \n                  116-120\n                  11\n                  118\n                  1298\n                \n                \n                  121-125\n                  16\n                  123\n                  1968\n                \n                \n                  126-130\n                   9\n                  128\n                  1152\n                \n                \n                  131-135\n                   4\n                  133\n                   532\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n \n\n  \n    \n    \n    tinytable_lt9f4zwfrbr1b5fei2ww\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Ukupno n\n                Ukupno rezultat\n              \n        \n        \n        \n                \n                  50\n                  6065\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\\[ \\bar x = \\frac{6065}{50} = 121.3 \\; \\text{g/L}\\]"
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#aritmetička-sredina-aritmetičkih-sredina",
     "href": "slides/03_centralne_mere/prezentacija.html#aritmetička-sredina-aritmetičkih-sredina",
     "title": "Mere centralne tendencije",
     "section": "Aritmetička sredina aritmetičkih sredina",
-    "text": "Aritmetička sredina aritmetičkih sredina"
+    "text": "Aritmetička sredina aritmetičkih sredina\n\n\n \n\n  \n    \n    \n    tinytable_86csjdf6zboqcj9tb76e\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Škola\n                Broj učenika\n                BMI\n              \n        \n        \n        \n                \n                  A\n                  255\n                  22.7\n                \n                \n                  B\n                  307\n                  19.4\n                \n                \n                  C\n                  511\n                  20.9\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\\[ \\bar x = \\frac{\\text{broj učenika}_{škola} \\times \\text{BMI}_{škola}}{\\text{ukupno učenika}_{škola}} = \\]\n\\[ \\frac{225 \\times 22.7 + 307 \\times 19.4 + 511 \\times 20.9}{255 + 307 + 511} = 21.1 \\]"
   },
   {
-    "objectID": "slides/03_centralne_mere/prezentacija.html#prednosti-i-mane",
-    "href": "slides/03_centralne_mere/prezentacija.html#prednosti-i-mane",
+    "objectID": "slides/03_centralne_mere/prezentacija.html#prednosti-i-mane-aritmetičke-sredine",
+    "href": "slides/03_centralne_mere/prezentacija.html#prednosti-i-mane-aritmetičke-sredine",
     "title": "Mere centralne tendencije",
-    "section": "Prednosti i mane",
-    "text": "Prednosti i mane"
+    "section": "Prednosti i mane aritmetičke sredine",
+    "text": "Prednosti i mane aritmetičke sredine\n\nPredstavlja sve vrednosti\nJednostavna\nNe može da se koristi sa kategorijalnim podacima\nEkstremne vrednosti značajno utiču"
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#šta-je-dobar-model",
@@ -340,21 +424,21 @@
     "href": "slides/03_centralne_mere/prezentacija.html#da-li-model-može-biti-previše-dobar",
     "title": "Mere centralne tendencije",
     "section": "Da li model može biti previše “dobar”",
-    "text": "Da li model može biti previše “dobar”\nModel uči specifičnosti uzorka (šum)"
+    "text": "Da li model može biti previše “dobar”\nModel uči specifičnosti uzorka (šum)."
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#ekstremne-vrednosti-snažno-utiču-na-artimetičku-sredinu",
     "href": "slides/03_centralne_mere/prezentacija.html#ekstremne-vrednosti-snažno-utiču-na-artimetičku-sredinu",
     "title": "Mere centralne tendencije",
     "section": "Ekstremne vrednosti snažno utiču na artimetičku sredinu",
-    "text": "Ekstremne vrednosti snažno utiču na artimetičku sredinu\nFig. primer."
+    "text": "Ekstremne vrednosti snažno utiču na artimetičku sredinu"
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#robustna-medijana",
     "href": "slides/03_centralne_mere/prezentacija.html#robustna-medijana",
     "title": "Mere centralne tendencije",
     "section": "Robustna medijana",
-    "text": "Robustna medijana\n\nManje osetljiva na ekstremne vrednosti (outlier)"
+    "text": "Robustna medijana\n\nManje osetljiva na ekstremne vrednosti (outlier)\nOtkriva srednju poziciju\nManje pogodna za analizu\nIgnoriše uticaj vrednosti"
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#računanje-medijane-1",
@@ -368,14 +452,7 @@
     "href": "slides/03_centralne_mere/prezentacija.html#računanje-medijane-2",
     "title": "Mere centralne tendencije",
     "section": "Računanje medijane (2)",
-    "text": "Računanje medijane (2)\nAko imamo neparanu seriju podataka:\n\\[1,4,8 \\] Za parnu seriju podataka uzima se srednja vrednost između dve centralne vrednosti:\n\\[ 1,4,8, 10 \\\\ me = \\frac{4+8}{2} = 6\\]"
-  },
-  {
-    "objectID": "slides/03_centralne_mere/prezentacija.html#zašto-uvek-ne-koristimo-medijanu",
-    "href": "slides/03_centralne_mere/prezentacija.html#zašto-uvek-ne-koristimo-medijanu",
-    "title": "Mere centralne tendencije",
-    "section": "Zašto uvek ne koristimo medijanu?",
-    "text": "Zašto uvek ne koristimo medijanu?\n\n\n\n\n\n\nBeleška\n\n\nZašto bismo onda ikad koristili aritmetičku sredinu? Aritmetička sredina varira manje od uzorka do uzroka od ostalih ocena (predstavnika) podataka. Na nama je da odlučimo da li je to vredno veće osetljivosti na ekstremne vrednosti."
+    "text": "Računanje medijane (2)\nAko imamo neparanu seriju podataka:\n\\[ 1,4,8 \\] Za parnu seriju podataka uzima se srednja vrednost između dve centralne vrednosti:\n\\[ 1,4,8, 10 \\] \\[ me = \\frac{4+8}{2} = 6 \\]"
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#iskošene-distribucije",
@@ -390,6 +467,27 @@
     "title": "Mere centralne tendencije",
     "section": "Prednost i mane mera centralne tendencije",
     "text": "Prednost i mane mera centralne tendencije\nTabela pros and cons"
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#koliko-je-retka-težina-od-2.91-kg",
+    "href": "slides/03_centralne_mere/prezentacija.html#koliko-je-retka-težina-od-2.91-kg",
+    "title": "Mere centralne tendencije",
+    "section": "Koliko je retka težina od 2.91 kg?",
+    "text": "Koliko je retka težina od 2.91 kg?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPerhaps the most crucial lesson from this example is that the dark-grey shaded area in Figure plays two roles: - It represents the proportion of this population of babies being low birth weight. - It is also the probability that a randomly chosen baby in 2013.\nSo a population can be thought of as a physical group of individuals, but also as providing the probability distribution for a random observation. This dual interpretation will be fundamental when we come to more formal statistical inference."
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#mudrost-većine",
+    "href": "slides/03_centralne_mere/prezentacija.html#mudrost-većine",
+    "title": "Mere centralne tendencije",
+    "section": "Mudrost većine",
+    "text": "Mudrost većine\n\n\n915 ljudi je pokušalo da pogodi koliko ima slatkiša u tegli.\nKako da okarakterišemo opseg pogodaka?"
+  },
+  {
+    "objectID": "slides/03_centralne_mere/prezentacija.html#prikazivanje-varijabiliteta",
+    "href": "slides/03_centralne_mere/prezentacija.html#prikazivanje-varijabiliteta",
+    "title": "Mere centralne tendencije",
+    "section": "Prikazivanje varijabiliteta",
+    "text": "Prikazivanje varijabiliteta"
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#definicija-mera-varijabiliteta",
@@ -410,7 +508,7 @@
     "href": "slides/03_centralne_mere/prezentacija.html#inverval-varijacije",
     "title": "Mere centralne tendencije",
     "section": "Inverval varijacije",
-    "text": "Inverval varijacije\nKoliko variraju vrednosti (npr. visine) od najmanje do najveće?\n\\[ I = x_{max} - x_{min} = 190cm - 165cm = 25 cm \\]"
+    "text": "Inverval varijacije\nKoliko variraju vrednosti od najmanje do najveće?\n\\[ I = x_{max} - x_{min} = 31337 - 244 = 31093 \\; \\; \\text{opseg pogodaka} \\]"
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#kvantili",
@@ -452,14 +550,14 @@
     "href": "slides/03_centralne_mere/prezentacija.html#definicija-standardne-devijacije",
     "title": "Mere centralne tendencije",
     "section": "Definicija standardne devijacije",
-    "text": "Definicija standardne devijacije\n\\[ var = sd^\\color{#F4BA02}2 = \\frac{\\sum(x-\\bar x)^2}{n - 1} \\; \\text{mmHg}^\\color{#F4BA02}2\\] \\[ sd = \\sqrt{(\\frac{\\sum(x-\\bar x)^2}{n - 1}) \\; \\text{mmHg}^\\color{#F4BA02}2} \\]\nDefinicija\nPLot showing sd"
+    "text": "Definicija standardne devijacije\n\\[ var = sd^{2} = \\frac{\\sum(x-\\bar x)^2}{n - 1} \\; \\text{mmHg}^{2} \\] \\[ sd = \\sqrt{(\\frac{\\sum(x-\\bar x)^2}{n - 1}) \\; \\text{mmHg}^2} \\]\nDefinicija\nPLot showing sd"
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#koeficijent-varijacije",
     "href": "slides/03_centralne_mere/prezentacija.html#koeficijent-varijacije",
     "title": "Mere centralne tendencije",
     "section": "Koeficijent varijacije",
-    "text": "Koeficijent varijacije\nJe korisna mera kada se porede varijacije između dva uzorka.\n\\[ CV = \\frac{sd}{\\bar x} \\times \\color{#F4BA02} {100\\%} \\] \\(\\le 30\\%\\) homogeni podaci.\n\\(\\gt 30\\%\\) heterogeni podaci.\n\n\n\n\n\n\nBitno\n\n\nKoeficijent varijacije se izražava u procentima!\n\n\n\n\nThe coefficient of variation should be computed only for data measured on scales that have a meaningful zero (ratio scale) and hence allow relative comparison of two measurements (i.e., division of one measurement by the other). The coefficient of variation may not have any meaning for data on an interval scale."
+    "text": "Koeficijent varijacije\nJe korisna mera kada se porede varijacije između dva uzorka.\n\\[ CV = \\frac{sd}{\\bar x} \\times {100\\%} \\] \\(\\le 30\\%\\) homogeni podaci.\n\\(\\gt 30\\%\\) heterogeni podaci.\n\n\n\n\n\n\nBitno\n\n\nKoeficijent varijacije se izražava u procentima!\n\n\n\n\nThe coefficient of variation should be computed only for data measured on scales that have a meaningful zero (ratio scale) and hence allow relative comparison of two measurements (i.e., division of one measurement by the other). The coefficient of variation may not have any meaning for data on an interval scale."
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#z-vrednost",
@@ -473,14 +571,14 @@
     "href": "slides/03_centralne_mere/prezentacija.html#zadaci",
     "title": "Mere centralne tendencije",
     "section": "Zadaci",
-    "text": "Zadaci"
+    "text": "Zadaci\n\nUčitati bazu podataka: zadovoljstvo zdravstvenom zaštitom.xlsx\nZa varijablu starost izračunati mere centralne tendencije\n\nAritmetičku sredinu, standardnu devijaciju, koef. varijacije\nMod\nInterval varijacije\n\nIzračunati mere centralne tendencije za starost grupisane po polu"
   },
   {
     "objectID": "slides/03_centralne_mere/prezentacija.html#struktura-kursa",
     "href": "slides/03_centralne_mere/prezentacija.html#struktura-kursa",
     "title": "Mere centralne tendencije",
     "section": "Struktura kursa",
-    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_y1iy6d1debm65yfxphvt\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
+    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_wbj6rwlmmmj928qag3ru\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
   },
   {
     "objectID": "slides/01_uvod/prezentacija.html#čime-se-bavi-statistika-u-medicini",
@@ -529,14 +627,14 @@
     "href": "slides/01_uvod/prezentacija.html#struktura-kursa",
     "title": "Uvod u Statistiku",
     "section": "Struktura kursa",
-    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_gixleczwmi8zcne7wgcw\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
+    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_dy8bv9rfyei71d2tqbgr\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
   },
   {
     "objectID": "slides/01_uvod/prezentacija.html#kritično-stanje-nauke-u-medicini",
     "href": "slides/01_uvod/prezentacija.html#kritično-stanje-nauke-u-medicini",
     "title": "Uvod u Statistiku",
     "section": "Kritično stanje nauke u medicini",
-    "text": "Kritično stanje nauke u medicini\n\n\n\n\n\nRichard Horton, M.D., Lancet Editor-in-Chief\n\n\n\n\n“The case against science is straightforward: much of the scientific literature, perhaps half, may simply be untrue. Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.”"
+    "text": "Kritično stanje nauke u medicini\n\n\n\n\n\nRichard Horton, M.D., Lancet Editor-in-Chief\n\n\n\n\n“The case against science is straightforward: much of the scientific literature, perhaps half, may simply be untrue. Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.”\n\n\n\n\n1,693,059 publikacija na PubMed-u u 2023. god!"
   },
   {
     "objectID": "slides/01_uvod/prezentacija.html#koliko-često-se-replikuju-rezultati",
@@ -581,11 +679,25 @@
     "text": "Primer: istraživačko pitanje\n\n\n\n\n\n\n\n%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%\n%%| fig-align: center\n%%| fig-width: 8\n\nflowchart TD\n  I[Istraživačko pitanje] -.-&gt; A\n  A[Osnovni skup] --&gt; B[Uzorak]\n  B --&gt; C[Jedinica posmatranja]\n  C --&gt; D[Varijable]\n\n\n\n\n\n\n\n\n\n\n\n\n%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%\n%%| fig-align: center\n\nflowchart TD\n  I[\"Da li je stepen degeneracije\\nlumbosakruma na radiografiji\\npovezan sa bolom?\"] -.-&gt; A\n  A[Pacijenti sa lumboishialgijom] --&gt; B[n pacijenata]\n  B --&gt; C[Pacijent]\n  C --&gt; D[\"Stepen degeneracije, bol\"]"
   },
   {
+    "objectID": "slides/01_uvod/prezentacija.html#lind-id",
+    "href": "slides/01_uvod/prezentacija.html#lind-id",
+    "title": "Uvod u Statistiku",
+    "section": "",
+    "text": "The gingival swelling and dusky color just above two of the teeth indicate hemorrhage into the gums of this patient with poor dentition. The gingival abnormalities of scurvy occur only in the presence of teeth, which presumably provide portals of entry for microbes into the gums. One hypothesis suggests that vitamin C deficiency impairs neutrophil-mediated killing of bacteria, leading to chronic gingivitis, which is then complicated by bleeding from the fragile vessels characteristic of scurvy.\nIn this example, the perifollicular hyperkeratotic papules are quite prominent, with surrounding hemorrhage. These lesions have been misinterpreted as “palpable purpura,” leading to the mistaken clinical diagnosis of vasculitis."
+  },
+  {
+    "objectID": "slides/01_uvod/prezentacija.html#james-lindovo-istraživanje",
+    "href": "slides/01_uvod/prezentacija.html#james-lindovo-istraživanje",
+    "title": "Uvod u Statistiku",
+    "section": "James Lindovo istraživanje",
+    "text": "James Lindovo istraživanje\n\n\n\n\n\n\nJames Lind (1716-1794)\n\n\n\n\n\n\n\nHMS Salisbury (1747)"
+  },
+  {
     "objectID": "slides/01_uvod/prezentacija.html#prva-medicinska-baza-podataka",
     "href": "slides/01_uvod/prezentacija.html#prva-medicinska-baza-podataka",
     "title": "Uvod u Statistiku",
     "section": "Prva medicinska baza podataka",
-    "text": "Prva medicinska baza podataka\n\n\n \n\n  \n    \n    \n    tinytable_8kw4h820dbk8duudfj6t\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                study_id\n                treatment\n                gum_rot_d6\n                skin_sores_d6\n                fit_for_duty_d6\n              \n        \n        Beleške: Skraćena baza originalnih podataka prikupljenih od strane Džejms Linda; d6, na dan 6.\n        \n                \n                  001\n                  cider               \n                  2_moderate\n                  2_moderate\n                  0_no \n                \n                \n                  002\n                  cider               \n                  2_moderate\n                  1_mild    \n                  0_no \n                \n                \n                  003\n                  dilute_sulfuric_acid\n                  1_mild    \n                  3_severe  \n                  0_no \n                \n                \n                  004\n                  dilute_sulfuric_acid\n                  2_moderate\n                  3_severe  \n                  0_no \n                \n                \n                  005\n                  vinegar             \n                  3_severe  \n                  3_severe  \n                  0_no \n                \n                \n                  006\n                  vinegar             \n                  3_severe  \n                  3_severe  \n                  0_no \n                \n                \n                  007\n                  sea_water           \n                  3_severe  \n                  3_severe  \n                  0_no \n                \n                \n                  008\n                  sea_water           \n                  3_severe  \n                  3_severe  \n                  0_no \n                \n                \n                  009\n                  citrus              \n                  1_mild    \n                  1_mild    \n                  0_no \n                \n                \n                  010\n                  citrus              \n                  0_none    \n                  0_none    \n                  1_yes\n                \n                \n                  011\n                  purgative_mixture   \n                  3_severe  \n                  3_severe  \n                  0_no \n                \n                \n                  012\n                  purgative_mixture   \n                  3_severe  \n                  3_severe  \n                  0_no"
+    "text": "Prva medicinska baza podataka\n\n\n \n\n  \n    \n    \n    tinytable_34cogick26884v61w7f9\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                study_id\n                treatment\n                gum_rot_d6\n                skin_sores_d6\n                fit_for_duty_d6\n              \n        \n        Beleške: Skraćena baza originalnih podataka prikupljenih od strane Džejms Linda; d6, na dan 6.\n        \n                \n                  001\n                  cider               \n                  2_moderate\n                  2_moderate\n                  0_no \n                \n                \n                  002\n                  cider               \n                  2_moderate\n                  1_mild    \n                  0_no \n                \n                \n                  003\n                  dilute_sulfuric_acid\n                  1_mild    \n                  3_severe  \n                  0_no \n                \n                \n                  004\n                  dilute_sulfuric_acid\n                  2_moderate\n                  3_severe  \n                  0_no \n                \n                \n                  005\n                  vinegar             \n                  3_severe  \n                  3_severe  \n                  0_no \n                \n                \n                  006\n                  vinegar             \n                  3_severe  \n                  3_severe  \n                  0_no \n                \n                \n                  007\n                  sea_water           \n                  3_severe  \n                  3_severe  \n                  0_no \n                \n                \n                  008\n                  sea_water           \n                  3_severe  \n                  3_severe  \n                  0_no \n                \n                \n                  009\n                  citrus              \n                  1_mild    \n                  1_mild    \n                  0_no \n                \n                \n                  010\n                  citrus              \n                  0_none    \n                  0_none    \n                  1_yes\n                \n                \n                  011\n                  purgative_mixture   \n                  3_severe  \n                  3_severe  \n                  0_no \n                \n                \n                  012\n                  purgative_mixture   \n                  3_severe  \n                  3_severe  \n                  0_no"
   },
   {
     "objectID": "slides/01_uvod/prezentacija.html#merenje",
@@ -613,7 +725,7 @@
     "href": "slides/01_uvod/prezentacija.html#kvalitativni-podaci",
     "title": "Uvod u Statistiku",
     "section": "Kvalitativni podaci",
-    "text": "Kvalitativni podaci\n\n\n \n\n  \n    \n    \n    tinytable_4x43v3c5dvpn3bj27wgk\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Koji vam je omiljeni predmet?\n                Broj učenika\n              \n        \n        \n        \n                \n                  Patologija\n                  105\n                \n                \n                  Statistika\n                   20\n                \n                \n                  Patofiza  \n                    4\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\n\n\n\n\n\nBeleška\n\n\nPrimetiti da su odgovori studenata kvalitativni, ali smo ih sumiranjem pretvorili u kvantitativne."
+    "text": "Kvalitativni podaci\n\n\n \n\n  \n    \n    \n    tinytable_hy2f8p4fck3co7aioehg\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Koji vam je omiljeni predmet?\n                Broj učenika\n              \n        \n        \n        \n                \n                  Patologija\n                  105\n                \n                \n                  Statistika\n                   20\n                \n                \n                  Patofiza  \n                    4\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\n\n\n\n\n\nBeleška\n\n\nPrimetiti da su odgovori studenata kvalitativni, ali smo ih sumiranjem pretvorili u kvantitativne."
   },
   {
     "objectID": "slides/01_uvod/prezentacija.html#tipovi-brojeva",
@@ -641,7 +753,7 @@
     "href": "slides/01_uvod/prezentacija.html#merne-skale-2",
     "title": "Uvod u Statistiku",
     "section": "Merne skale (2)",
-    "text": "Merne skale (2)\n\nNominalna skala (identitet; 1 - Dijabetes, 2 - Hipertenzija)\nOrdinalna skala (identitet i veličina; 1 - Primarno obrazovanje, 2 - Srednja škola)\nIntervalna skala (identitet, veličina, i jednaki intervali; Celsius, Fahrenheit)\nRatio skala (sve + apsolutna nula; Kelvin, visina, težina)\n\n\n\n \n\n  \n    \n    \n    tinytable_jxh7dlfaqd9ogdteti6d\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        Dozvoljene operacije u odnosu na skalu\n              \n                Skala\n                Jednako/nije jednako\n                &gt;/&lt;\n                +/-\n                Množenje/deljenje\n              \n        \n        \n        \n                \n                  Nominalna \n                  OK\n                    \n                    \n                    \n                \n                \n                  Ordinalna \n                  OK\n                  OK\n                    \n                    \n                \n                \n                  Intervalna\n                  OK\n                  OK\n                  OK\n                    \n                \n                \n                  Ratio     \n                  OK\n                  OK\n                  OK\n                  OK\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\nThese constraints imply certain kinds of statistics. Statistics that simply count values (mode), can be calculated on any of the variable types. Statistics based on ordering or ranking of values (median), require that the value at least be on an ordinal scale. Finally, statistics that involve adding up values (such as the average, or mean), require that the variables be at least on an interval scale."
+    "text": "Merne skale (2)\n\nNominalna skala (identitet; 1 - Dijabetes, 2 - Hipertenzija)\nOrdinalna skala (identitet i veličina; 1 - Primarno obrazovanje, 2 - Srednja škola)\nIntervalna skala (identitet, veličina, i jednaki intervali; Celsius, Fahrenheit)\nRatio skala (sve + apsolutna nula; Kelvin, visina, težina)\n\n\n\n \n\n  \n    \n    \n    tinytable_jnk96y70t0ltno6l40pz\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        Dozvoljene operacije u odnosu na skalu\n              \n                Skala\n                Jednako/nije jednako\n                &gt;/&lt;\n                +/-\n                Množenje/deljenje\n              \n        \n        \n        \n                \n                  Nominalna \n                  OK\n                    \n                    \n                    \n                \n                \n                  Ordinalna \n                  OK\n                  OK\n                    \n                    \n                \n                \n                  Intervalna\n                  OK\n                  OK\n                  OK\n                    \n                \n                \n                  Ratio     \n                  OK\n                  OK\n                  OK\n                  OK\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\nThese constraints imply certain kinds of statistics. Statistics that simply count values (mode), can be calculated on any of the variable types. Statistics based on ordering or ranking of values (median), require that the value at least be on an ordinal scale. Finally, statistics that involve adding up values (such as the average, or mean), require that the variables be at least on an interval scale."
   },
   {
     "objectID": "slides/01_uvod/prezentacija.html#nominalni-podaci",
@@ -679,6 +791,13 @@
     "text": "Šta ćemo sa vremenom?\n\n\nUvek je bolje tretirati vreme kao kontinuirano (mada zavisi od pitanja, individualni efekti vs. trend)."
   },
   {
+    "objectID": "slides/01_uvod/prezentacija.html#excel-se-koristi-za-unos-podataka",
+    "href": "slides/01_uvod/prezentacija.html#excel-se-koristi-za-unos-podataka",
+    "title": "Uvod u Statistiku",
+    "section": "Excel se koristi za unos podataka",
+    "text": "Excel se koristi za unos podataka"
+  },
+  {
     "objectID": "slides/01_uvod/prezentacija.html#principi-uredne-baze-tidydata",
     "href": "slides/01_uvod/prezentacija.html#principi-uredne-baze-tidydata",
     "title": "Uvod u Statistiku",
@@ -693,11 +812,11 @@
     "text": "uh…"
   },
   {
-    "objectID": "slides/01_uvod/prezentacija.html#kako-se-pravi-baza-u-excel-u",
-    "href": "slides/01_uvod/prezentacija.html#kako-se-pravi-baza-u-excel-u",
+    "objectID": "slides/01_uvod/prezentacija.html#učitavanje-gotove-baze-u-ezr",
+    "href": "slides/01_uvod/prezentacija.html#učitavanje-gotove-baze-u-ezr",
     "title": "Uvod u Statistiku",
-    "section": "Kako se pravi baza u Excel-u",
-    "text": "Kako se pravi baza u Excel-u\nZadatak?"
+    "section": "Učitavanje gotove baze u EZR",
+    "text": "Učitavanje gotove baze u EZR\nZadatak:\n\nUčitati zadovoljstvo zdravstvenom zaštitom.xlsx u EZR\nUčitati KVS.xlsx bez da se izgubi prethodna baza\n\n\n\n\n\n\n\nBitno\n\n\nIzabrati Sheet1 (obično se tu nalaze podaci) pri učitavanju baze. Pritiskom na View proveriti da je ispravna baza učitana!\n\n\n\nŠta je šifrarnik i čemu služi?\n\nIstraživačka baza podataka praćena je šifarnikom koji sadrži informacije o nazivu i redosledu varijabli, opisu varijabli, mernim jedinicama, i skali merenja (nominalni, ordinalni, numerički). Osim toga u šifarniku su, za kategorijalne varijable, date informacije o broju kategorija i kodovima tih kategorija."
   },
   {
     "objectID": "slides/01_uvod/prezentacija.html#granularni-podaci-razdvajanje",
@@ -728,18 +847,39 @@
     "text": "Ponovljena merenja (lakše upisivanje)"
   },
   {
-    "objectID": "slides/01_uvod/prezentacija.html#zadatak-vremesnke-serije",
-    "href": "slides/01_uvod/prezentacija.html#zadatak-vremesnke-serije",
+    "objectID": "slides/01_uvod/prezentacija.html#zadatak-različite-baze",
+    "href": "slides/01_uvod/prezentacija.html#zadatak-različite-baze",
     "title": "Uvod u Statistiku",
-    "section": "Zadatak: vremesnke serije",
-    "text": "Zadatak: vremesnke serije\n\nNapravi bazu kako bi:\n\nPoredili vrednosti sistolnog pritiska između dijabetičara i zdravih ljudi?\nPoredili vrednosti glukoze između istih pacijenata pre i posle terapije?\nPratili pacijente da saznamo ko je imao recidiv posle operacije?\nUpisali CRP meren serijski u intervalu: 1h, 12h, 24h?\n\n\n\n\n\n\n\nTeško (opcionalno)\n\n\n\nMerili vreme do tromboze između pacijenata koje lečimo agresivno i konzervativno.\nMerili vreme do tromboze ako pratimo vrednosti d-Dimera serijski 3 dana za redom."
+    "section": "Zadatak: različite baze",
+    "text": "Zadatak: različite baze\n\nNapravi bazu kako bi:\n\nPoredili vrednosti sistolnog pritiska između dijabetičara i zdravih ljudi?\nPoredili vrednosti glukoze između istih pacijenata pre i posle terapije?\nUpisali CRP meren serijski u intervalu: 1h, 12h, 24h?\n\n\n\n\n\n\n\nTeško (opcionalno)\n\n\n\nPratili pacijente da saznamo ko je imao recidiv posle operacije?\nMerili vreme do tromboze između pacijenata koje lečimo agresivno i konzervativno.\nMerili vreme do tromboze ako pratimo vrednosti d-Dimera serijski 3 dana za redom."
+  },
+  {
+    "objectID": "slides/01_uvod/prezentacija.html#rešenje-dijabetičari-i-zdravi-ljudi",
+    "href": "slides/01_uvod/prezentacija.html#rešenje-dijabetičari-i-zdravi-ljudi",
+    "title": "Uvod u Statistiku",
+    "section": "Rešenje: dijabetičari i zdravi ljudi",
+    "text": "Rešenje: dijabetičari i zdravi ljudi\n\n\n \n\n  \n    \n    \n    tinytable_w6msbq17nfykl7msobnm\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Gluk\n                Grupa\n              \n        \n        \n        \n                \n                   7.2\n                  DM   \n                \n                \n                   5.1\n                  Zdrav\n                \n                \n                   5.9\n                  Zdrav\n                \n                \n                   4.7\n                  Zdrav\n                \n                \n                  11.1\n                  DM"
+  },
+  {
+    "objectID": "slides/01_uvod/prezentacija.html#rešenje-pre-i-posle",
+    "href": "slides/01_uvod/prezentacija.html#rešenje-pre-i-posle",
+    "title": "Uvod u Statistiku",
+    "section": "Rešenje: pre i posle",
+    "text": "Rešenje: pre i posle\n\n\n \n\n  \n    \n    \n    tinytable_wklpky4id5ne1cr5mlwp\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                gluk_pre\n                gluk_posle\n              \n        \n        \n        \n                \n                   7.2\n                  6.1\n                \n                \n                   5.1\n                  5.1\n                \n                \n                   5.9\n                  5.5\n                \n                \n                   4.7\n                  5.9\n                \n                \n                  11.1\n                  7.1"
+  },
+  {
+    "objectID": "slides/01_uvod/prezentacija.html#rešenje-serija-merenja",
+    "href": "slides/01_uvod/prezentacija.html#rešenje-serija-merenja",
+    "title": "Uvod u Statistiku",
+    "section": "Rešenje: serija merenja",
+    "text": "Rešenje: serija merenja\nVarijanta 1:\n\n\n \n\n  \n    \n    \n    tinytable_qqm1uxuaxpc23wxrwnft\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                ID\n                CRP\n                Vreme\n              \n        \n        \n        \n                \n                  1\n                  0.62\n                  1h \n                \n                \n                  1\n                  0.51\n                  12h\n                \n                \n                  1\n                  0.56\n                  24h\n                \n                \n                  2\n                  0.43\n                  1h \n                \n                \n                  2\n                  0.42\n                  12h\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\nVarijanta 2:\n\n\n \n\n  \n    \n    \n    tinytable_bzidhmixeeu0lybrqttw\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                ID\n                CRP_1h\n                CRP_12h\n                CRP_24h\n              \n        \n        \n        \n                \n                  1\n                  0.70\n                  0.67\n                  0.54\n                \n                \n                  2\n                  0.66\n                  0.41\n                  0.59\n                \n                \n                  3\n                  0.76\n                  0.49\n                  0.53"
   },
   {
     "objectID": "slides/01_uvod/prezentacija.html#podaci-koji-nedostaju",
     "href": "slides/01_uvod/prezentacija.html#podaci-koji-nedostaju",
     "title": "Uvod u Statistiku",
     "section": "Podaci koji nedostaju",
-    "text": "Podaci koji nedostaju\n\n\n \n\n  \n    \n    \n    tinytable_wrr4vw9dndlnae5ju3i6\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                pacijent\n                intervencija\n                ishod\n              \n        \n        \n        \n                \n                  Petar Petrovic      \n                  1\n                   7\n                \n                \n                  NA                  \n                  2\n                  10\n                \n                \n                  NA                  \n                  3\n                  NA\n                \n                \n                  Katarina Katarinovic\n                  1\n                   4\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\nOstaviti prazno (moguće greške)\nUpisati NA"
+    "text": "Podaci koji nedostaju\n\n\n \n\n  \n    \n    \n    tinytable_1rmwc0wujwrblumtzkoi\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                pacijent\n                intervencija\n                ishod\n              \n        \n        \n        \n                \n                  Petar Petrovic      \n                  1\n                   7\n                \n                \n                  NA                  \n                  2\n                  10\n                \n                \n                  NA                  \n                  3\n                  NA\n                \n                \n                  Katarina Katarinovic\n                  1\n                   4\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\nOstaviti prazno (moguće greške)\nUpisati NA"
   },
   {
     "objectID": "about.html",
@@ -753,7 +893,7 @@
     "href": "index.html",
     "title": "Osnovni kurs medicinske statistike i informatike",
     "section": "",
-    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_ng94mp0hz8l7te6l9shi\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku"
+    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_7l5wobhawyv633665uh5\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku"
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#section",
@@ -788,14 +928,14 @@
     "href": "slides/02_sredjivanje/prezentacija.html#komunikacija-rizika",
     "title": "Sređivanje podataka",
     "section": "Komunikacija rizika",
-    "text": "Komunikacija rizika\n\n\nMnogi ljudi mešaju relativni i apsolutni rizik\nPrimer:\n\n1/10,000 žena ima trombozu\n3/10,000 žena koje uzimaju kontraceptivne pilule ima trombozu\n\n\\(RR = \\frac{3/10,000}{1/10,000} = 3.00\\)\n\n\\(\\uparrow\\) 200% u trombozama!\nPromena verovatnoće je samo 0.0002 (2 žene u 10,000)\nTrudnoća povećava verovatnoću tromboze mnogo više (DVT)\n\n\n\n\n\n\nTromboza je retka u opstoj populaciji, ALI su mnogo češći na pilulu. Ima kauzalnih razloga za to. Cost/benefit je težak. Zbog članka mnogo žena prestalo pije KP i dobilo tromboze zbog trudnoće!"
+    "text": "Komunikacija rizika\n\n\nMnogi ljudi mešaju relativni i apsolutni rizik.\nPrimer:\n\n1/10,000 žena ima trombozu\n3/10,000 žena koje uzimaju kontraceptivne pilule ima trombozu\n\n\\(RR = \\frac{3/10,000}{1/10,000} = 3.00\\)\n\n\\(\\uparrow\\) 200% u trombozama!\nPromena verovatnoće je samo 0.0002 (2 žene u 10,000)\nTrudnoća povećava verovatnoću tromboze mnogo više (DVT)\n\n\n\n\n\n\nTromboza je retka u opstoj populaciji, ALI su mnogo češći na pilulu. Ima kauzalnih razloga za to. Cost/benefit je težak. Zbog članka mnogo žena prestalo pije KP i dobilo tromboze zbog trudnoće!"
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#tabelarno-prikazivanje-aps.-i-rel.-podataka",
     "href": "slides/02_sredjivanje/prezentacija.html#tabelarno-prikazivanje-aps.-i-rel.-podataka",
     "title": "Sređivanje podataka",
     "section": "Tabelarno prikazivanje aps. i rel. podataka",
-    "text": "Tabelarno prikazivanje aps. i rel. podataka\n\n\n\n\n\n\nVarijabla\nN = 100\n\n\n\n\nNavika\n\n\n\nNepusac\n50 (50%)\n\n\nPusač\n50 (50%)\n\n\n\n1 n (%)"
+    "text": "Tabelarno prikazivanje aps. i rel. podataka\n\n\n\n\n\n\nVarijabla\nN = 100\n\n\n\n\nNavika\n\n\n\nNepusac\n49 (49%)\n\n\nPusač\n51 (51%)\n\n\n\n1 n (%)"
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#grafičko-prikazivanje-relativnih-brojeva",
@@ -809,7 +949,7 @@
     "href": "slides/02_sredjivanje/prezentacija.html#statini",
     "title": "Sređivanje podataka",
     "section": "Statini",
-    "text": "Statini\nEfikasnost (50-65 god):\n\nMortalitet (\\(RR = 0.86; ARD = -0.40\\%; NNT = 250\\))\nCVD (\\(RR = 0.69; ARD, -0.43\\%; NNT = 233\\))\nCVI (\\(RR = 0.71; ARD, -0.38\\%; NNT = 236\\))\nMI (\\(RR = 0.64; ARD, -0.81\\%; NNT = 123\\))\n\n\n\nSta moze da bude problem sa NNT? Sta ako terapije nekog osteti? Ovo su proseci, varijabilitet je isto bitan."
+    "text": "Statini\nEfikasnost (50-65 god):\n\nMortalitet (\\(RR = 0.86; ARD = -0.40\\%; NNT = 250\\))\nCVD (\\(RR = 0.69; ARD, -0.43\\%; NNT = 233\\))\nCVI (\\(RR = 0.71; ARD, -0.38\\%; NNT = 236\\))\nMI (\\(RR = 0.64; ARD, -0.81\\%; NNT = 123\\))\n\n\n\nSta moze da bude problem sa NNT? Sta ako terapija nekog osteti? Ovo su proseci, varijabilitet je isto bitan."
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#grafički-prikaz-redukcije-relativnog-rizika",
@@ -847,18 +987,18 @@
     "text": "Vizualizacije su bitne u komunikaciji"
   },
   {
-    "objectID": "slides/02_sredjivanje/prezentacija.html#primer-grafikon-pisa-testiranja-1",
-    "href": "slides/02_sredjivanje/prezentacija.html#primer-grafikon-pisa-testiranja-1",
+    "objectID": "slides/02_sredjivanje/prezentacija.html#hirurški-mortalitet",
+    "href": "slides/02_sredjivanje/prezentacija.html#hirurški-mortalitet",
     "title": "Sređivanje podataka",
-    "section": "Primer: Grafikon PISA testiranja (1)",
-    "text": "Primer: Grafikon PISA testiranja (1)"
+    "section": "Hirurški mortalitet",
+    "text": "Hirurški mortalitet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKako definisemo i merimo: dete, operaciju, kada je za smrt odgovorna hirurgija.\n&lt; 16, bilo je vise operacije ali mereno sve kao jedan dogadjaj, smrt &lt;30 dana usled hirurgije.\nDa li je smrt dobra mera kvaliteta operacije? Zašto?\nKako mogu drugačije da se prikažu podaci i da drugačije deluju? (red prikazivanja, mortalitet/preživaljvanje), komunikacija rizika kao 1 u 100 dece itd."
   },
   {
-    "objectID": "slides/02_sredjivanje/prezentacija.html#primer-grafikon-pisa-testiranja-2",
-    "href": "slides/02_sredjivanje/prezentacija.html#primer-grafikon-pisa-testiranja-2",
+    "objectID": "slides/02_sredjivanje/prezentacija.html#grafikon-pisa-testiranja",
+    "href": "slides/02_sredjivanje/prezentacija.html#grafikon-pisa-testiranja",
     "title": "Sređivanje podataka",
-    "section": "Primer: Grafikon PISA testiranja (2)",
-    "text": "Primer: Grafikon PISA testiranja (2)\n\n\\(Y\\) osa produžena do nule."
+    "section": "Grafikon PISA testiranja",
+    "text": "Grafikon PISA testiranja"
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#prikazivanje-nominalnih-podataka",
@@ -1257,6 +1397,6 @@
     "href": "slides/06_hipoteze/prezentacija.html#struktura-kursa",
     "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
     "section": "Struktura kursa",
-    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_br1eeyt2siy2nlbqrc8n\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
+    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_h7xyn2dr0ny7ks90siao\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
   }
 ]
