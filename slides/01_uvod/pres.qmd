@@ -1,10 +1,9 @@
 ---
-title: "Uvod u Statistiku"
+title: "Introduction to Statistics"
 date: last-modified
 author: "Dr Nikola Grubor"
 # institute: "Institut za Medicinsku Statistiku i Informatiku"
 logo: "slike/logo.png"
-lang: sr-Latn
 
   # format:
 #   revealjs:
@@ -25,29 +24,29 @@ source(file = here("slides", "theme", "ggthemes.R"))
 ```
 
 
-## Čime se bavi statistika u medicini?
+## What is statistics for?
 
-- Naučnim metodom
-- Otkrivanje veličine efekta terapije (lek, intervancija)
-- Predviđanje rizika (npr. od tromboze)
-- Medicinskim odlučivanjem (preciznost medicinskih testova)
+- Applied scientific method
+- Discovery of treatment effect (drug, intervention)
+- Predicting risk (e.g., thrombosis)
+- Medical decision making (diagnostic test accuracy)
 
-## Efekat terapije pritiska
+## Hypertension treatment effect
 
 ![](slike/sprint.png){fig-align="center"}
-Na osnovu čega je [preporuka]{.yellow} postavljena? Da li ona ima [smisla]{.yellow}? 
+What is the [recommendation]{.yellow} based on? Does it make [sense]{.yellow}?
 
 ::: {.notes}
 Among patients at high risk for cardiovascular events but without diabetes, targeting a systolic blood pressure of less than 120 mm Hg, as compared with less than 140 mm Hg, resulted in lower rates of fatal and nonfatal major cardiovascular events and death from any cause, although significantly higher rates of some adverse events were observed in the intensive-treatment group.
 :::
 
-## Predviđanje rizika
+## Risk prediction
 
 ![](slike/stroke.png){fig-align="center"}
 
-Da li je za najveći deo rizika hemoragičnog moždanog udara odgovoran [pulsni pritisak]{.yellow} ili [sistolni pritisak]{.yellow}?
+Is [pulse pressure]{.yellow} or [systolic pressure]{.yellow} responsible for most of the risk of hemorrhagic stroke?
 
-## Koliko je ultrazvuk bolji u otkrivanju žučnog kamenja od CT-a?
+## How much better is ultrasound at detecting gallstones than CT?
 
 ::: columns
 ::: {.column width="50%"}
@@ -59,40 +58,40 @@ Da li je za najveći deo rizika hemoragičnog moždanog udara odgovoran [pulsni 
 :::
 :::
 
-## Laboratorijske vrednosti
+## Laboratory values
 
 ::: columns
 ::: {.column width="50%"}
-Da li *ovaj* pacijent sa *ovom* laboratorijskom vrednošću ima rizik od bolesti koji zahteva dodatnu istragu?
+Does *this* patient with *this* lab value have a disease risk that requires further investigation?
 :::
 ::: {.column width="50%"}
 ![](slike/kks.jpg)
 :::
 :::
 
-## Kurs {.smaller}
+## Course {.smaller}
 
-- Lekcija ($\gt$ 50% $\rightarrow$ otvara kviz)
-- $\text{Bodovi} = \text{lekcija} + \text{kviz (vremenski ograničen)} + \text{kolokvijum} + \text{ispit}$
-- Ispit (praktični i teorijski deo; u učionici na kompijuterima)
+- Lesson ($\gt$ 50% $\rightarrow$ opens quiz)
+- $\text{Points} = \text{lesson} + \text{quiz (time limited)} + \text{colloquium} + \text{exam}$
+- Exam (practical and theoretical part; computer-based assessment in the classroom)
 
-## Struktura kursa
+## Course structure
 
 ```{r}
 teme <- c(
-  "Uvod u medicinsku statistiku", "Sređivanje podataka",
-  "Statističko opisivanje podataka", "Verovatnoća i raspodele verovatnoća",
-  "Populacija i uzorak", "Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama",
-  "Testiranje hipoteza o učestalostima", "Testiranje hipoteza o rangovima", "Korelacija",
-  "Regresija / Kolokvijum", "Podaci, informacije i znanje", "Zdravstveni informacioni sistem",
-  "Mere dijagnostičke tačnosti", "Medicinsko odlučivanje", "Bioinformatika"
+  "Introduction to Medical Statistics", "Data Sorting",
+  "Statistical description of data", "Probability and probability distributions",
+  "Population and Sample", "Testing Hypotheses About Population Means and Proportions",
+  "Frequency Hypothesis Testing", "Rank Hypothesis Testing", "Correlation",
+  "Regression / Colloquium", "Data, information and knowledge", "Health information system",
+  "Diagnostic accuracy measures", "Medical decision-making", "Bioinformatics"
 )
 
 kurs <- tibble(Nedelja = 1:15, Tema = teme)
 tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
 ```
 
-## Kritično stanje nauke u medicini {.smaller}
+## Critical state of science in medicine {.smaller}
 
 ::: columns
 ::: {.column width="40%"}
@@ -107,10 +106,10 @@ tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
 :::
 
 ::: {.center-h}
-[1,693,059 publikacija]{.yellow} na PubMed-u u 2023. god!
+[1,693,059 publications]{.yellow} on PubMed in 2023!
 :::
 
-## Koliko često se replikuju rezultati?
+## How often do results replicate?
 
 ::: {.r-stack}
 
@@ -119,7 +118,7 @@ tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
 ![](slike/replication.png){.fragment}
 :::
 
-## 2000. se zahteva preregistracija
+## After 2000 the FDA requires preregistration
 
 ::: {.r-stack}
 
@@ -128,15 +127,15 @@ tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
 ![](slike/prereg.png){.fragment width=60% fig-align="center"}
 :::
 
-## Definicija {.center}
+## Definition {.center}
 
 ::: r-fit-text
-Statistika je nauka o odlučivanju
+Statistics is the science of decision making
 
-u uslovima [nesigurnosti]{.yellow}
+in conditions of [uncertainty]{.yellow}
 :::
 
-## Osnovni pojmovi {.center}
+## Basic terms {.center}
 
 ```{mermaid}
 %%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
@@ -144,27 +143,27 @@ u uslovima [nesigurnosti]{.yellow}
 %%| fig-height: 10
 
 flowchart LR
-  A[Osnovni skup] --> B[Uzorak]
-  B --> C[Jedinica posmatranja]
-  C --> D[Varijable]
-  D --> E[Merenje]
-  E <--> TT["Tačnost\nPreciznost\nPouzdanost\nValjanost"]
+  A[Base Set] --> B[Sample]
+  B --> C[Unit of observation]
+  C --> D[Variables]
+  D --> E[Measurement]
+  E <--> TT["Accuracy\nPrecision\nReliability\nValidity"]
   TT <--> F
-  E <--> TP["Tip podataka"]
+  E <--> TP["Data Type"]
   TP <--> F
-  E --> F[Podaci]
-  F --> G[Analiza]
-  G --> H[Zaključak]
-  H -->|generalizacija|A
+  E --> F[Data]
+  F --> G[Analysis]
+  G --> H[Conclusion]
+  H -->|generalization|A
 
 ```
 
-## Istraživačko pitanje {.center}
+## The research question {.center}
 
 :::: columns
 
 ::: {.column width="50%"}
-Definisanje istraživačkog pitanja (engl. *estimand*) je nešto što je najviše zaboravlja kad se osmišlja rad.
+Defining the research question (*estimand*) is something that is mostly forgotten when designing a study.
 :::
 
 ::: {.column width="50%"}
@@ -174,10 +173,10 @@ Definisanje istraživačkog pitanja (engl. *estimand*) je nešto što je najviš
 %%| fig-width: 4
 
 flowchart TD
-  I[Istraživačko pitanje] -.-> A
-  A[Osnovni skup] --> B[Uzorak]
-  B --> C[Jedinica posmatranja]
-  C --> D[Varijable]
+  I[Reseach question] -.-> A
+  A[Basic set] --> B[Sample]
+  B --> C[Unit of observation]
+  C --> D[Variable]
 ```
 :::
 ::::
@@ -186,7 +185,7 @@ flowchart TD
 Estimand je tačna mera koju želimo na naučimo (rizik, učestalnost, prosek, prosečni kauzalni efekat terapije). Pretstavlja jos precizniju definiciju istraživačkog pitanja.
 :::
 
-## Primer: istraživačko pitanje {.center}
+## Example: research question {.center}
 
 :::: {.columns style='display: flex !important; height: 90%;'}
 
@@ -198,27 +197,24 @@ Estimand je tačna mera koju želimo na naučimo (rizik, učestalnost, prosek, p
 %%| fig-width: 8
 
 flowchart TD
-  I[Istraživačko pitanje] -.-> A
-  A[Osnovni skup] --> B[Uzorak]
-  B --> C[Jedinica posmatranja]
-  C --> D[Varijable]
+  I[Reseach question] -.-> A
+  A[Basic set] --> B[Sample]
+  B --> C[Unit of observation]
+  C --> D[Variable]
 ```
-
 :::
 
 ::: {.column .fragment}
-
 ```{mermaid}
 %%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
 %%| fig-align: center
 
 flowchart TD
-  I["Da li je stepen degeneracije\nlumbosakruma na radiografiji\npovezan sa bolom?"] -.-> A
-  A[Pacijenti sa lumboishialgijom] --> B[n pacijenata]
-  B --> C[Pacijent]
-  C --> D["Stepen degeneracije, bol"]
+  I["Is the degree of degeneration\nof the lumbosacrum on X-ray\nassociated with pain?"] -.-> A
+  A[Patients with lumboischialgia] --> B[n patients]
+  B --> C[Patient]
+  C --> D["Degree of degeneration, pain"]
 ```
-
 :::
 
 ::::
@@ -239,7 +235,7 @@ The gingival swelling and dusky color just above two of the teeth indicate hemor
 In this example, the perifollicular hyperkeratotic papules are quite prominent, with surrounding hemorrhage. These lesions have been misinterpreted as "palpable purpura," leading to the mistaken clinical diagnosis of vasculitis.
 :::
 
-## James Lindovo istraživanje {.center}
+## James Lind's research {.center}
 
 ::: {layout-ncol=2}
 
@@ -249,7 +245,7 @@ In this example, the perifollicular hyperkeratotic papules are quite prominent, 
 
 :::
 
-## Prva medicinska baza podataka
+## The first medical database
 
 ```{r}
 library(medicaldata)
@@ -259,23 +255,23 @@ scurvy %>%
   head(12) %>%
   select(1:2, 4:5, fit_for_duty_d6) %>%
   tt(
-    notes = "Beleške: Skraćena baza originalnih podataka prikupljenih od strane Džejms Linda; d6, na dan 6.",
+    notes = "Notes: Abridged database of original data collected by James Lind; d6, on day 6.",
     theme = "striped"
   ) |> style_tt(j = 1:5, fontsize = 0.55)
 ```
 
-## Merenje
+## Measurement
 
-- Način merenja je jako bitan
-- Preciznost, pouzdanost, validnost, podaci koji nedostaju
+- The method of measurement is very important
+- Accuracy, reliability, validity, missing data
 
-![Pikasov crtez psa.](slike/measurement.png){fig-align="center"}
+![Picasso's drawing of a dog.](slike/measurement.png){fig-align="center"}
 
 ::: {.notes}
 Nama je ocigledan pas, ali kako izmeriti koliko je ovo pas? Treba nam neka skala. Primeri: koliko je teska neka bolest (DM, HTA, stadijum Ca), znanje (ocigledno losa mera), itd. Merenja mogu da budu i opasna: nekad smo merili lobanje (frenologija).
 :::
 
-## Odgovori pacijenata na merenje pritiska
+## Patient responses to blood pressure measurement
 
 ![](slike/bp.jpg){fig-align="center"}
 
@@ -287,13 +283,13 @@ In clinical practice, BP is often measured with little attention to quality cont
 
 ## Vrste podataka
 
-[Podaci]{.blue} se sastoje od varijabli. Varijabla predstavlja [meru]{.yellow} neke pojave.
+[Data]{.blue} consists of variables. Variables represent a [measure]{.yellow} of some phenomenon.
 
-- Kvalitativni (opisuju pojavu)
-- Kvantitativni (dodeljuju numeričku vrednost)
+- Qualitative (describe the phenomenon)
+- Quantitative (assign a numerical value)
 
 ::: {.callout-important}
-"Koja je vaša omiljena hrana?", na šta su odgovori: grožđe, čokolada, karbonara, pica i mango. Ovi podaci nisu numerički; ali im često dodeljujemo brojeve (1 = grožđe, 2 = čokolada, itd.), međutim u ovom slučaju brojeve koristimo kao oznake, ne kao prave vrednosti.
+"What is your favorite food?", to which the answers are: grapes, chocolate, carbonara, pizza and mango. This data is not numerical; but we often assign it numbers (1 = grapes, 2 = chocolate, etc.), however in this case the numbers serve as labels, not real values.
 :::
 
 ::: {.notes}
@@ -304,71 +300,71 @@ Mera nije samo rec, ver pojam koji se odnosi na proces dodavanja vrednosti nekim
 
 ```{r}
 question <- tribble(
-  ~`Koji vam je omiljeni predmet?`, ~`Broj učenika`,
-  "Patologija", 105,
-  "Statistika", 20,
-  "Patofiza", 4
+  ~`What is your favorite subject?`, ~`Number of students`,
+  "Pathology", 105,
+  "Statistics", 20,
+  "Pathophysiology", 4
 )
 
 tt(question) %>% style_tt(j = 1:2, fontsize = 1)
 ```
 
 ::: {.callout-note}
-Primetiti da su odgovori studenata kvalitativni, ali smo ih sumiranjem pretvorili u kvantitativne.
+The students' answers are qualitative, but they can be turned quantitative by summarizing.
 :::
 
-## Tipovi brojeva
+## Types of numbers
 
-- Binarni brojevi (Da/Ne; 1/0; `TRUE`/`FALSE`)
-- Celi ($\mathbb Z$) brojevi ("Koliko se slažete na skali od 1 do 7?")
-- Realni ($\mathbb R$) brojevi (najčešći, $3.12...$, $9.81...$)
+- Binary numbers (Yes/No; 1/0; `TRUE`/`FALSE`)
+- Integers ($\mathbb Z$) ("Agreement on a scale of 1 to 7?")
+- Reals ($\mathbb R$) (most common, $3.12...$, $9.81...$)
 
-## Diskontinuirana (diskretna) i kontinuirana merenja {.smaller}
+## Discontinuous (discrete) and continuous measurements {.smaller}
 
-- **Diskontinuirano** (diskretno) merenje (podatak) je ono koje je [kvalitativno]{.yellow} ili se može izraziti preko [celog broja]{.yellow}
+- **Discontinuous** (discrete) measurements (data) are [qualitative]{.yellow} or can be expressed with [integers]{.yellow}.
 
-> Broj porođaja: 3, nema nikakvog smisla pričati o 3.5 porođaja!
+> Number of births: 3, no sense in talking about 3.5 births!
 
-- **Kontinuirano** merenje je ono koje se izražava pomoću [realnog broja]{.yellow}
+- **Continuous** measurements are expressed by [real numbers]{.yellow}
 
-> Kada merimo težinu u $kg$ obično zaokružujemo, ali ima smisla pričati o *preciznijim* merenjima ($70 \; \text{kg}$, $70.3467 \; \text{kg}$).
+> When we measure weight in $kg$ we usually round up, but it makes sense to talk about *more precise* measurements ($70 \; \text{kg}$, $70.3467 \; \text{kg}$).
 
 ::: {.notes}
 The most important takeaway from this is that some kinds of statistics don’t make sense on some kinds of data. Zip code basically serves as a label for a different region. For this reason, it wouldn’t make sense to talk about the average zip code, for example.
 :::
 
-## Merne skale (1)
+## Measurement scales (1)
 
-[Varijable]{.blue} moraju da imaju [barem dve vrednosti]{.yellow} (inače bi bile konstante). 
+[Variables]{.blue} must have [at least two values]{.yellow} (otherwise they would be constants). 
 
-[Vrednosti]{.blue} varijable imaju [različite odnose]{.yellow}:
+Variable [values]{.blue} have [different relationships]{.yellow}:
 
-- Identitet: Svaka vrednost je jedinstvena.
-- Veličina (magnituda): Neke vrednosti su veće od drugih.
-- Jednaki intervali: Razlika između 1 i 2 je iste veličine kao 19 i 20.
-- Apsolutna nula: Skala ima nulu koja znači nešto.
+- Identity: Each value is unique.
+- Size (magnitude): Some values are larger than others.
+- Equal intervals: The difference between 1 and 2 is the same size as between 19 and 20.
+- Absolute zero: The scale has a zero that is meaningful.
 
 ::: {.notes}
 Zasto su bitne? Govore nam koje simplifikacije imaju smisla.
 :::
 
-## Merne skale (2) {.smaller}
+## Measurement scales (2) {.smaller}
 
-- Nominalna skala (identitet; 1 - Dijabetes, 2 - Hipertenzija)
-- Ordinalna skala (identitet i veličina; 1 - Primarno obrazovanje, 2 - Srednja škola)
-- Intervalna skala (identitet, veličina, i jednaki intervali; Celsius, Fahrenheit)
-- Ratio skala (sve + apsolutna nula; Kelvin, visina, težina)
+- Nominal scale (identity; 1 - Diabetes, 2 - Hypertension)
+- Ordinal scale (identity and size; 1 - Primary education, 2 - Secondary school)
+- Interval scale (identity, magnitude, and equal intervals; Celsius, Fahrenheit)
+- Ratio scale (all + absolute zero; Kelvin, height, weight)
 
 ```{r}
 scales <- tribble(
-  ~`Skala`, ~`Jednako/nije jednako`, ~`>/<`, ~`+/-`, ~`Množenje/deljenje`,
-  "Nominalna", "OK", "", "", "",
-  "Ordinalna", "OK", "OK", "", "",
-  "Intervalna", "OK", "OK", "OK", "",
+  ~`Scale`, ~`Equal/Not Equal`, ~`>/<`, ~`+/-`, ~`Multiplication/Division`,
+  "Nominal", "OK", "", "", "",
+  "Ordinal", "OK", "OK", "", "",
+  "Interval", "OK", "OK", "OK", "",
   "Ratio", "OK", "OK", "OK", "OK"
 )
 tt(scales,
-   caption = "Dozvoljene operacije u odnosu na skalu") %>% 
+   caption = "Allowed operations based on the scale") %>% 
 style_tt(j = 1:5, fontsize = 1)
 ```
 
@@ -376,69 +372,69 @@ style_tt(j = 1:5, fontsize = 1)
 These constraints imply certain kinds of statistics. Statistics that simply count values (mode), can be calculated on any of the variable types. Statistics based on ordering or ranking of values (median), require that the value at least be on an ordinal scale. Finally, statistics that involve adding up values (such as the average, or mean), require that the variables be at least on an interval scale.
 :::
 
-## Nominalni podaci
+## Nominal data
 
 ![](slike/shells.jpg){fig-align="center"}
 
-- Jedinstvene vrednosti
-- Nemaju minimum ni maksimum
-- Nemaju red
+- Unique values
+- They have no minimum or maximum
+- No natural ordering
 
-## Ordinalni podaci
+## Ordinal data
 
 ![](slike/bol.jpg){fig-align="center"}
 
-- Diskretni (celi brojevi)
-- Definisan minimum i maksimum
-- Definisan red
-- "Udaljenost" između kategorija je nepoznata
+- Discrete (integers)
+- Defined minimum and maximum
+- Defined order
+- The "distance" between the categories is unknown
 
 ::: {.notes}
 "Ponekad" je veće od "Nikad", ali koliko veće je ponekad od nikad? Koliko je 2 na skali bola veće od 1? Odgovor nije 1, nego neki subjektivna mera. Koliko neko voli ovaj čas, za 1-2 nije teško, ali 4-5 je teško.
 :::
 
-## Numerički podaci
+## Numerical data
 
 ![](slike/ruler.png){fig-align="center"}
 
-- Diskontinuirani su samo celi brojevi
-- Kontinuirani mogu biti proizvoljno precizni
+- Whole numbers are discontinuous
+- Continuous data can be arbitrarily precise
 
 ::: {.callout-warning}
-Ordinalni i diskontinuirani podaci mogu da liče. Razlikuje ih to što su brojevi kod ordinalnih podataka samo obeležja, ne prave vrednosti. Kontinuirani i diskontinuirani podaci mogu da liče ako se zaokruže (50kg, 60kg, 75kg), ali uvek imamo opciju da ih prikažemo preciznije.
+Ordinal and discontinuous data can look similar. The difference between them is that the numbers in ordinal data are only labels, not real values. Continuous and discontinuous data may look similar if rounded (50kg, 60kg, 75kg), but we always have the option to display them more precisely.
 :::
 
 ::: {.notes}
 Trombociti su prebrojivi, ali nekad se mere kontinuiranim merama kao npr. spektrometrijom. Vezbe iz biohemiije (kolorimetrija).
 :::
 
-## Ko zna zna (tip podatka)?
+## Guess the data type?
 
 ::: columns
 
 ::: {.column width="50%"}
 - ABO
-- Bol (NRS 0-10 skala)
-- M/Ž
-- Stadijum (I-IV)
+- Pain (NRS 0-10 scale)
+- M/F
+- Stage (I-IV)
 - TA (mmHg)
-- Srčana fr (otk/min)
-- Starost
+- Heart rate (bpm)
+- Age
 :::
 
 ::: {.column width="50%" .incremental}
-- Nominalni
-- Ordinalni
-- Nominalni (binarni)
-- Ordinalni
-- Numerički (kont.)
-- Numerički (diskretni)\*
-- Numerički (kont.)
+- Nominal
+- Ordinal
+- Nominal (binary)
+- Ordinal
+- Numerical (cont.)
+- Numerical (discrete)\*
+- Numerical (cont.)
 :::
 
 :::
 
-## Šta ćemo sa vremenom?
+## What about time?
 
 ![](slike/vreme.png){fig-align="center"}
 
@@ -446,90 +442,90 @@ Trombociti su prebrojivi, ali nekad se mere kontinuiranim merama kao npr. spektr
 Uvek je bolje tretirati vreme kao kontinuirano (mada zavisi od pitanja, individualni efekti vs. trend).
 :::
 
-## Excel se koristi za unos podataka {.center}
+## Excel for data entry {.center}
 
 ![](slike/excel.png)
 
-## Principi uredne baze (tidydata) {.center}
+## Tidy data principles (tidydata) {.center}
 
 ![](slike/tidy-1.png)
 
-## uh... {.center}
+## ugh... {.center}
 
 ![](slike/bazahaos.png)
 
-## Učitavanje gotove baze u EZR
+## Importing a database into the EZR
 
-Zadatak:
+Task:
 
-- Učitati [zadovoljstvo zdravstvenom zaštitom.xlsx]{.yellow} u EZR
-- Učitati [KVS.xlsx]{.yellow} bez da se izgubi prethodna baza
+- Download and import [satisfaction with health care.xlsx]{.yellow} into EZR
+- Load [KVS.xlsx]{.yellow} without overwriting the previous database
 
 ::: {.callout-important}
-Izabrati [Sheet1]{.yellow} (obično se tu nalaze podaci) pri učitavanju baze. Pritiskom na [View]{.yellow} proveriti da je ispravna baza učitana!
+Select [Sheet1]{.yellow} (this is where the data is usually located) when importing the database. Click [View]{.yellow} to check that the correct database is loaded!
 :::
 
-Šta je šifrarnik i čemu služi?
+What is a code book and what is it for?
 
 ::: {.notes}
 Istraživačka baza podataka praćena je šifarnikom koji sadrži informacije o nazivu i redosledu varijabli, opisu varijabli, mernim jedinicama, i skali merenja (nominalni, ordinalni, numerički). Osim toga u šifarniku su, za kategorijalne varijable, date informacije o broju kategorija i kodovima tih kategorija.
 :::
 
-# Česte greške u pravljenju baza
+# Common mistakes in data collection
 
-## Granularni podaci (razdvajanje)
+## Granular data (disaggregation)
 
 ![](slike/tidy-17.png)
 
-## Granularni podaci (spajanje)
+## Granular Data (merging)
 
 ![](slike/tidy-18.png)
 
-## Ponovljenje kolone (neprepoznate varijable)
+## Column repetition (unrecognized variables)
 
 ![](slike/tidy-8.png)
 
-## Ponovljena merenja (lakše upisivanje)
+## Repeated measurements (easier typing)
 
 ![](slike/tidy-9.png)
 
-## Zadatak: različite baze {.variant-one .smaller}
+## Exercise: different bases {.variant-one .smaller}
 
 ::: nonincremental
 
-[Napravi]{.yellow} bazu kako bi:
+[Design]{.yellow} a database for:
 
-- Poredili vrednosti sistolnog pritiska između dijabetičara i zdravih ljudi?
-- Poredili vrednosti glukoze između istih pacijenata pre i posle terapije?
-- Upisali CRP meren serijski u intervalu: 1h, 12h, 24h?
+- Comparing the values of systolic pressure between diabetics and healthy people?
+- Comparing glucose values between the same patients before and after therapy?
+- Recording CRP measured serially at the following times: 1h, 12h, 24h?
 
 ::: {.callout-warning}
-## Teško (opcionalno)
-- Pratili pacijente da saznamo ko je imao recidiv posle operacije?
-- Merili vreme do tromboze između pacijenata koje lečimo agresivno i konzervativno.
-- Merili vreme do tromboze ako pratimo vrednosti d-Dimera serijski 3 dana za redom. 
+## Hard (optional)
+- Follow-up patients to find out who had a relapse after surgery?
+- Measure time to thrombosis between patients treated aggressively and conservatively.
+- Measure time to thrombosis while monitoring d-Dimer values serially for 3 days in a row.
 :::
 
 :::
 
-## Rešenje: dijabetičari i zdravi ljudi
+## Solution: diabetics and healthy people
 
 ```{r}
 tribble(
-  ~Gluk, ~Grupa,
+  ~Gluc, ~Group,
   7.2, "DM",
-  5.1, "Zdrav",
-  5.9, "Zdrav",
-  4.7, "Zdrav",
+  5.1, "Healthy",
+  5.9, "Healthy",
+  4.7, "Healthy",
   11.1, "DM"
 ) %>% tt() %>% style_tt(fontsize = 1)
 ```
 
-## Rešenje: pre i posle
+## Solution: before and after
 
 ```{r}
 tribble(
-  ~gluk_pre, ~gluk_posle,
+  ~gluc_pre, ~gluc_post,
   7.2, 6.1,
   5.1, 5.1,
   5.9, 5.5,
@@ -538,13 +534,13 @@ tribble(
 ) %>% tt() %>% style_tt(fontsize = 1)
 ```
 
-## Rešenje: serija merenja {.smaller}
+## Solution: measurement series {.smaller}
 
-Varijanta 1:
+Variant 1:
 
 ```{r}
 tribble(
-  ~ID, ~CRP, ~Vreme,
+  ~ID, ~CRP, ~Time,
   1, 0.62, "1h",
   1, 0.51, "12h", 
   1, 0.56, "24h",
@@ -553,7 +549,7 @@ tribble(
 ) %>% tt() %>% style_tt(fontsize = 0.8)
 ```
 
-Varijanta 2:
+Variant 2:
 
 ```{r}
 tribble(
@@ -564,18 +560,18 @@ tribble(
 ) %>% tt() %>% style_tt(fontsize = 0.9)
 ```
 
-## Podaci koji nedostaju {.larger}
+## Missing data {.larger}
 
 ```{r}
 treatment <- tribble(
-  ~pacijent, ~intervencija, ~ishod,
-  "Petar Petrovic", 1, 7,
+  ~patient, ~intervention, ~outcome,
+  "Doe Jones", 1, 7,
   NA, 2, 10,
   NA, 3, NA,
-  "Katarina Katarinovic", 1, 4
+  "Mary Smith", 1, 4
 )
 tt(treatment) |> style_tt(j = 1:3, fontsize = 1.2)
 ```
 
-- Ostaviti prazno (moguće greške)
-- Upisati NA
+- Leave blank (possible errors)
+- Enter NA

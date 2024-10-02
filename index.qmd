@@ -31,7 +31,7 @@ Dobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane 
 dat <- data.frame(
   Nedelja = 1:1,
   Tema = c(
-    "[Uvod u medicinsku statistiku](slides/01_uvod/prezentacija.qmd)"
+    "[Uvod u medicinsku statistiku](slides/01_uvod/prezentacija.qmd) ([eng](slides/01_uvod/pres.qmd))"
     # "[Sređivanje podataka](slides/02_sredjivanje/prezentacija.qmd)",
     # "[Statističko opisivanje podataka](slides/03_centralne_mere/prezentacija.qmd)",
     # "[Verovatnoća i raspodele verovatnoća](slides/04_verovatnoca/prezentacija.qmd)",

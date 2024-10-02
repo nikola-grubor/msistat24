@@ -8,11 +8,11 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.553">
+  <meta name="generator" content="quarto-1.5.56">
 
   <meta name="author" content="Dr Nikola Grubor">
-  <meta name="dcterms.date" content="2024-09-24">
-  <title>Medicinska statistika i informatika - Populacija i uzorak</title>
+  <meta name="dcterms.date" content="2024-10-02">
+  <title>Medicinska statistika i informatika – Populacija i uzorak</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -43,7 +43,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -405,7 +405,7 @@ Dr Nikola Grubor
 </div>
 </div>
 
-  <p class="date">2024-09-24</p>
+  <p class="date">2024-10-02</p>
 </section>
 <section id="zašto-uzorkujemo" class="slide level2">
 <h2>Zašto uzorkujemo</h2>
@@ -434,14 +434,30 @@ flowchart TD
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="urgentno-lečenje-septičnog-šoka" class="slide level2">
 <h2>Urgentno lečenje septičnog šoka</h2>
 <p>Sepsa ima ogroman mortalitet. Kako da je lečimo?</p>
 
 <img data-src="slike/sepsis.png" class="r-stretch"><p>Kako da odgovorimo na ovo pitanje?</p>
+<aside class="notes">
+<ol type="1">
+<li>Sta je sepsa.</li>
+<li>Sta sve moze da utice na sepsu?</li>
+<li>Kako onda da uporedimo pacijente?</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="osnovni-termini" class="slide level2">
 <h2>Osnovni termini</h2>
@@ -479,7 +495,24 @@ flowchart TD
 <section id="kako-se-dostupna-populacija-razlikuje" class="slide level2">
 <h2>Kako se dostupna populacija razlikuje?</h2>
 
-<img data-src="slike/sample.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="slike/sample.png" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<ol type="1">
+<li>Kako se pacijenti sa sepsom razlikuju medjusobno?</li>
+<li>Kako lekar utice?</li>
+<li>Kako bolnice uticu?</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="pogrešna-slika-realnosti" class="slide level2">
 <h2>Pogrešna slika realnosti</h2>
 <div class="columns">
@@ -500,12 +533,16 @@ flowchart TD
 <figcaption>Pristrasan pogled.</figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="pristrastnost" class="slide level2">
 <h2>Pristrastnost</h2>
-<p>Kada metod pokazuje netačnu, iskrivljenu sliku realnosti.</p>
+<dl>
+<dt>Statistička pristrastnost</dt>
+<dd>
+Kada metod pokazuje netačnu, iskrivljenu sliku realnosti.
+</dd>
+</dl>
 <aside class="notes">
 <p>Nije isto sto i preciznost. Npr. kada smo namerno nejasni na odgovaranju jer ne znamo tacan odgovor, pa deluje kao da mozda znamo. Medjutim kad nas ispitivac natera da budemo precizniji postane sve jasno.</p>
 <style type="text/css">
@@ -527,6 +564,16 @@ flowchart TD
 <p><img data-src="slike/rand_eg2.png" class="fragment"></p>
 </div>
 </section>
+<section id="mortalitet-sepse-i-randomizacija" class="slide level2">
+<h2>Mortalitet sepse i randomizacija</h2>
+<div>
+<ol type="1">
+<li class="fragment">Kako bi ste randomizovali pacijente u JIL-u?</li>
+<li class="fragment">Dobili ste rezultat …</li>
+<li class="fragment">Sta rezultat znači?</li>
+</ol>
+</div>
+</section>
 <section id="uzorkovanje" class="slide level2">
 <h2>Uzorkovanje</h2>
 <dl>
@@ -538,7 +585,7 @@ test.
 <dd>
 Tačno znamo verovatnoću da neko bude izabran
 </dd>
-<dt>- Neslučajni</dt>
+<dt>Neslučajni</dt>
 <dd>
 Može biti pristrasan
 </dd>
@@ -631,10 +678,10 @@ Može biti pristrasan
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_4fyphpkyff3kpkjwht2k</title>
+    <title>tinytable_11stwimbtmxocmr4rodx</title>
     <style>
-.table td.tinytable_css_t418hu5odp8ni9gquu5t, .table th.tinytable_css_t418hu5odp8ni9gquu5t {    border-bottom: solid 0.1em #d3d8dc; }
-.table td.tinytable_css_fa88pwodvncjlohbnb7m, .table th.tinytable_css_fa88pwodvncjlohbnb7m {    font-size: 1em; }
+.table td.tinytable_css_0ikqow1unxryenpgs8q0, .table th.tinytable_css_0ikqow1unxryenpgs8q0 {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_zme7afl75s9kl6dpim67, .table th.tinytable_css_zme7afl75s9kl6dpim67 {    font-size: 1em; }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -652,7 +699,7 @@ Može biti pristrasan
 
   
     <div class="container">
-      <table class="table table-borderless" id="tinytable_4fyphpkyff3kpkjwht2k" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_11stwimbtmxocmr4rodx" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -688,12 +735,12 @@ Može biti pristrasan
     </div>
 
     <script>
-      function styleCell_tinytable_itft5oqbh5ceg9ktg2zj(i, j, css_id) {
-        var table = document.getElementById("tinytable_4fyphpkyff3kpkjwht2k");
+      function styleCell_tinytable_p7ibinljazwlw1wqkceq(i, j, css_id) {
+        var table = document.getElementById("tinytable_11stwimbtmxocmr4rodx");
         table.rows[i].cells[j].classList.add(css_id);
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_4fyphpkyff3kpkjwht2k');
+        var table = document.getElementById('tinytable_11stwimbtmxocmr4rodx');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -701,8 +748,8 @@ Može biti pristrasan
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_tinytable_itft5oqbh5ceg9ktg2zj(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_4fyphpkyff3kpkjwht2k");
+      function spanCell_tinytable_p7ibinljazwlw1wqkceq(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_11stwimbtmxocmr4rodx");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -729,21 +776,21 @@ Može biti pristrasan
         targetCell.colSpan = colspan;
       }
 
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(0, 0, 'tinytable_css_t418hu5odp8ni9gquu5t') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(0, 1, 'tinytable_css_t418hu5odp8ni9gquu5t') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(0, 2, 'tinytable_css_t418hu5odp8ni9gquu5t') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(1, 0, 'tinytable_css_fa88pwodvncjlohbnb7m') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(2, 0, 'tinytable_css_fa88pwodvncjlohbnb7m') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(3, 0, 'tinytable_css_fa88pwodvncjlohbnb7m') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(4, 0, 'tinytable_css_fa88pwodvncjlohbnb7m') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(1, 1, 'tinytable_css_fa88pwodvncjlohbnb7m') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(2, 1, 'tinytable_css_fa88pwodvncjlohbnb7m') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(3, 1, 'tinytable_css_fa88pwodvncjlohbnb7m') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(4, 1, 'tinytable_css_fa88pwodvncjlohbnb7m') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(1, 2, 'tinytable_css_fa88pwodvncjlohbnb7m') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(2, 2, 'tinytable_css_fa88pwodvncjlohbnb7m') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(3, 2, 'tinytable_css_fa88pwodvncjlohbnb7m') })
-window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9ktg2zj(4, 2, 'tinytable_css_fa88pwodvncjlohbnb7m') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(0, 0, 'tinytable_css_0ikqow1unxryenpgs8q0') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(0, 1, 'tinytable_css_0ikqow1unxryenpgs8q0') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(0, 2, 'tinytable_css_0ikqow1unxryenpgs8q0') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(1, 0, 'tinytable_css_zme7afl75s9kl6dpim67') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(2, 0, 'tinytable_css_zme7afl75s9kl6dpim67') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(3, 0, 'tinytable_css_zme7afl75s9kl6dpim67') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(4, 0, 'tinytable_css_zme7afl75s9kl6dpim67') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(1, 1, 'tinytable_css_zme7afl75s9kl6dpim67') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(2, 1, 'tinytable_css_zme7afl75s9kl6dpim67') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(3, 1, 'tinytable_css_zme7afl75s9kl6dpim67') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(4, 1, 'tinytable_css_zme7afl75s9kl6dpim67') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(1, 2, 'tinytable_css_zme7afl75s9kl6dpim67') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(2, 2, 'tinytable_css_zme7afl75s9kl6dpim67') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(3, 2, 'tinytable_css_zme7afl75s9kl6dpim67') })
+window.addEventListener('load', function () { styleCell_tinytable_p7ibinljazwlw1wqkceq(4, 2, 'tinytable_css_zme7afl75s9kl6dpim67') })
     </script>
 
   
@@ -759,14 +806,14 @@ window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>, <span class="dv">10</span>, <span class="at">replace =</span> F)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 14 54 99 80 56 84  9 58 22 75</code></pre>
+<pre><code> [1] 33 29 74 76 67  1 34 25 45 97</code></pre>
 </div>
 </div>
 <p>Sistematski:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>, <span class="dv">1</span>, <span class="at">replace =</span> F)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 16</code></pre>
+<pre><code>[1] 6</code></pre>
 </div>
 </div>
 <ol type="1">
@@ -785,8 +832,9 @@ window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9
 <h2>Standardna greška aritmetičke sredine</h2>
 
 <img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
-<section id="section" class="slide level2">
-<h2></h2>
+<section id="standardna-greška-definicija" class="slide level2">
+<h2>Standardna greška definicija</h2>
+<p>Standardna greška je …</p>
 <p><span class="math display">\[ SE_{\bar x} = \frac{sd}{\sqrt{n}} \]</span></p>
 </section>
 <section id="centralna-granična-teorema" class="slide level2">
@@ -808,6 +856,9 @@ window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9
 </section>
 <section id="primer-clt" class="slide level2">
 <h2>Primer CLT</h2>
+<div>
+
+</div>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -828,10 +879,10 @@ window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9
 <p><span class="math display">\[ CI = \bar x \pm t \times SE \]</span></p>
 <p><span class="math display">\[ SE = \frac{sd}{\sqrt{n}} \]</span></p>
 </section>
-<section id="ponovljena-istraživanja" class="slide level2">
-<h2>Ponovljena istraživanja</h2>
+<section id="interval-poverenja-i-ponovljena-istraživanja" class="slide level2">
+<h2>Interval poverenja i ponovljena istraživanja</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="definicija" class="slide level2 center">
 <h2>Definicija</h2>
 <div class="r-fit-text">
@@ -877,10 +928,10 @@ window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_c8r1qujjrzpe0grpvobn</title>
+    <title>tinytable_c6zpm4m5as9bpmtjtboc</title>
     <style>
-.table td.tinytable_css_n3gkuk2ijvw494g6i523, .table th.tinytable_css_n3gkuk2ijvw494g6i523 {    border-bottom: solid 0.1em #d3d8dc; }
-.table td.tinytable_css_krtxjiumzjseimsb8ljg, .table th.tinytable_css_krtxjiumzjseimsb8ljg {    font-size: 0.55em; }
+.table td.tinytable_css_t20msr3dflja87j411cg, .table th.tinytable_css_t20msr3dflja87j411cg {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_n3gkuk2ijvw494g6i523, .table th.tinytable_css_n3gkuk2ijvw494g6i523 {    font-size: 0.55em; }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -898,7 +949,7 @@ window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9
 
   
     <div class="container">
-      <table class="table table-borderless" id="tinytable_c8r1qujjrzpe0grpvobn" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_c6zpm4m5as9bpmtjtboc" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -973,12 +1024,12 @@ window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9
     </div>
 
     <script>
-      function styleCell_tinytable_t20msr3dflja87j411cg(i, j, css_id) {
-        var table = document.getElementById("tinytable_c8r1qujjrzpe0grpvobn");
+      function styleCell_tinytable_x7j7x6yh2hcr19yrniga(i, j, css_id) {
+        var table = document.getElementById("tinytable_c6zpm4m5as9bpmtjtboc");
         table.rows[i].cells[j].classList.add(css_id);
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_c8r1qujjrzpe0grpvobn');
+        var table = document.getElementById('tinytable_c6zpm4m5as9bpmtjtboc');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -986,8 +1037,8 @@ window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_tinytable_t20msr3dflja87j411cg(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_c8r1qujjrzpe0grpvobn");
+      function spanCell_tinytable_x7j7x6yh2hcr19yrniga(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_c6zpm4m5as9bpmtjtboc");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -1014,40 +1065,40 @@ window.addEventListener('load', function () { styleCell_tinytable_itft5oqbh5ceg9
         targetCell.colSpan = colspan;
       }
 
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(0, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(0, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(0, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(0, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(1, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(1, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(2, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(2, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(3, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(3, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(4, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(4, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(5, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(5, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(6, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(6, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(7, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(7, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(8, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(8, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(9, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(9, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(10, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(10, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(11, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(11, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(12, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(12, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(13, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(13, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(14, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(14, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(15, 0, 'tinytable_css_krtxjiumzjseimsb8ljg') })
-window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87j411cg(15, 1, 'tinytable_css_krtxjiumzjseimsb8ljg') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(0, 0, 'tinytable_css_t20msr3dflja87j411cg') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(0, 1, 'tinytable_css_t20msr3dflja87j411cg') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(0, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(0, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(1, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(1, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(2, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(2, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(3, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(3, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(4, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(4, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(5, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(5, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(6, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(6, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(7, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(7, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(8, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(8, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(9, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(9, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(10, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(10, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(11, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(11, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(12, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(12, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(13, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(13, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(14, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(14, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(15, 0, 'tinytable_css_n3gkuk2ijvw494g6i523') })
+window.addEventListener('load', function () { styleCell_tinytable_x7j7x6yh2hcr19yrniga(15, 1, 'tinytable_css_n3gkuk2ijvw494g6i523') })
     </script>
 
   
@@ -1275,80 +1326,42 @@ window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1382,18 +1395,7 @@ window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1425,7 +1427,29 @@ window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1433,7 +1457,7 @@ window.addEventListener('load', function () { styleCell_tinytable_t20msr3dflja87
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

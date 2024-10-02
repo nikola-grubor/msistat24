@@ -50,6 +50,12 @@ Sepsa ima ogroman mortalitet. Kako da je lečimo?
 
 Kako da odgovorimo na ovo pitanje?
 
+::: {.notes}
+1. Sta je sepsa.
+2. Sta sve moze da utice na sepsu?
+3. Kako onda da uporedimo pacijente?
+:::
+
 ## Osnovni termini
 
 - Populacija (skup svih istovrsnih elemenata)
@@ -79,6 +85,12 @@ Populacija iz koje se uzima uzorak mozda nije istao kao populacija o kojoj se ze
 
 ![](slike/sample.png){fig-align="center"}
 
+::: {.notes}
+1. Kako se pacijenti sa sepsom razlikuju medjusobno?
+2. Kako lekar utice?
+3. Kako bolnice uticu?
+:::
+
 ## Pogrešna slika realnosti
 
 :::: columns
@@ -102,7 +114,8 @@ Populacija iz koje se uzima uzorak mozda nije istao kao populacija o kojoj se ze
 
 ## Pristrastnost
 
-Kada metod pokazuje netačnu, iskrivljenu sliku realnosti.
+Statistička pristrastnost
+  : Kada metod pokazuje netačnu, iskrivljenu sliku realnosti.
 
 ::: {.notes}
 Nije isto sto i preciznost. Npr. kada smo namerno nejasni na odgovaranju jer ne znamo tacan odgovor, pa deluje kao da mozda znamo. Medjutim kad nas ispitivac natera da budemo precizniji
@@ -119,6 +132,15 @@ postane sve jasno.
 
 :::
 
+## Mortalitet sepse i randomizacija
+
+::: {.incremental}
+
+1. Kako bi ste randomizovali pacijente u JIL-u?
+2. Dobili ste rezultat ...
+3. Sta rezultat znači?
+:::
+
 ## Uzorkovanje
 
 Uzorački okvir
@@ -127,7 +149,7 @@ Uzorački okvir
 Slučajni uzorak
   : Tačno znamo verovatnoću da neko bude izabran
 
-- Neslučajni
+Neslučajni
   : Može biti pristrasan
 
 ## Slučajni uzorci
@@ -206,6 +228,7 @@ Prost:
 
 sample(1:99, 10, replace = F)
 ```
+
 Sistematski:
 
 ```{r}
@@ -250,7 +273,9 @@ pop %>%
        y = "standardizovana gustina")
 ```
 
-##
+## Standardna greška definicija
+
+Standardna greška je ... 
 
 $$ SE_{\bar x} = \frac{sd}{\sqrt{n}} $$
 
@@ -314,9 +339,11 @@ $$ CI = \bar x \pm t \times SE $$
 
 $$ SE = \frac{sd}{\sqrt{n}} $$
 
-## Ponovljena istraživanja
+## Interval poverenja i ponovljena istraživanja
 
 ```{r}
+#| fig-align: "center"
+
 n_rep <- 100
 mu <- 6
 sigma <- 4

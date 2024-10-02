@@ -120,13 +120,13 @@ Efikasnost (50-65 god):
 
 - Mortalitet ($RR = 0.86; ARD = -0.40\%; NNT = 250$)
 - CVD ($RR = 0.69; ARD, -0.43\%; NNT = 233$)
-- CVI ($RR = 0.71; ARD, -0.38\%; NNT = 236$)
+- CVI ($RR = 0.71; ARD, -0.38\%; NNT = 263$)
 - MI ($RR = 0.64; ARD, -0.81\%; NNT = 123$)
 
 ![](slike/statin_jama.png)
 
 ::: {.notes}
-Sta moze da bude problem sa NNT? Sta ako terapija nekog osteti? Ovo su proseci, varijabilitet je isto bitan.
+RR je velik, dok je ARD sitan jer je mortalitet redak. U naucnoj komunikaciji RR su bitni, ali svakodnevno mogu da zavaraju. Sta moze da bude problem sa NNT? Sta ako terapija nekog osteti? Ovo su proseci, varijabilitet je isto bitan.
 :::
 
 ## Grafički prikaz redukcije relativnog rizika
@@ -468,6 +468,8 @@ tibble(
   geom_point(shape = 21, size = 10, fill = "#F4BA02", color = "#F7F8F9", stroke = 1) +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
   labs(y = "Pacijent",
        x = "Krvni prisitak [mmHg]")
 ```
@@ -654,8 +656,10 @@ tibble(
 
 ## Zadatak
 
-- Napraviti tablele
-- Zadaci na bazi sa kursa
+Iz baze [baza DZ.xlsx]{.yellow} tabelarno i grafički prikazati: 
+- hipertenziju, 
+- uhranjenost i, 
+- starost 
 
 ## Struktura kursa
 
