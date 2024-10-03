@@ -440,7 +440,7 @@ Trombociti su prebrojivi, ali nekad se mere kontinuiranim merama kao npr. spektr
 
 ## Šta ćemo sa vremenom?
 
-![](slike/vreme.png){fig-align="center"}
+![](slike/time_srb.png){fig-align="center"}
 
 ::: {.notes}
 Uvek je bolje tretirati vreme kao kontinuirano (mada zavisi od pitanja, individualni efekti vs. trend).

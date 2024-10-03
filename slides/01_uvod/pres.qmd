@@ -281,7 +281,7 @@ SPRINT trial ima ozbilje kritike.
 In clinical practice, BP is often measured with little attention to quality control and may overestimate average SBP by as much as 10 to 15 mm Hg compared with values obtained using guideline recommended methods that have been employed in most landmark antihypertensive drug treatment trials.
 :::
 
-## Vrste podataka
+## Data types
 
 [Data]{.blue} consists of variables. Variables represent a [measure]{.yellow} of some phenomenon.
 
@@ -296,7 +296,7 @@ In clinical practice, BP is often measured with little attention to quality cont
 Mera nije samo rec, ver pojam koji se odnosi na proces dodavanja vrednosti nekim opservacijama. Starost merimo vremenom, tezinu kilogramima, bol proizvoljnom skalom 0-10, antitela koncentracijom, rizik verovatnoćom, itd.
 :::
 
-## Kvalitativni podaci
+## Qualitative data
 
 ```{r}
 question <- tribble(
@@ -313,7 +313,7 @@ tt(question) %>% style_tt(j = 1:2, fontsize = 1)
 The students' answers are qualitative, but they can be turned quantitative by summarizing.
 :::
 
-## Types of numbers
+## Number types lead to data types
 
 - Binary numbers (Yes/No; 1/0; `TRUE`/`FALSE`)
 - Integers ($\mathbb Z$) ("Agreement on a scale of 1 to 7?")
@@ -321,13 +321,21 @@ The students' answers are qualitative, but they can be turned quantitative by su
 
 ## Discontinuous (discrete) and continuous measurements {.smaller}
 
-- **Discontinuous** (discrete) measurements (data) are [qualitative]{.yellow} or can be expressed with [integers]{.yellow}.
+**Discontinuous** (discrete) measurements are [qualitative]{.yellow} or can be expressed with [integers]{.yellow} (whole numbers)
 
-> Number of births: 3, no sense in talking about 3.5 births!
+::: {.callout-tip}
+## Example
 
-- **Continuous** measurements are expressed by [real numbers]{.yellow}
+Number of births: 3, no sense in talking about 3.5 births!
+:::
 
-> When we measure weight in $kg$ we usually round up, but it makes sense to talk about *more precise* measurements ($70 \; \text{kg}$, $70.3467 \; \text{kg}$).
+**Continuous** measurements are expressed by [real numbers]{.yellow}
+
+::: {.callout-tip}
+## Example
+
+When we measure weight in $kg$ we usually round up, but it makes sense to talk about *more precise* measurements ($70 \; \text{kg}$, $70.3467 \; \text{kg}$).
+:::
 
 ::: {.notes}
 The most important takeaway from this is that some kinds of statistics don’t make sense on some kinds of data. Zip code basically serves as a label for a different region. For this reason, it wouldn’t make sense to talk about the average zip code, for example.
@@ -364,7 +372,7 @@ scales <- tribble(
   "Ratio", "OK", "OK", "OK", "OK"
 )
 tt(scales,
-   caption = "Allowed operations based on the scale") %>% 
+   caption = "Allowed operations based on data scale") %>% 
 style_tt(j = 1:5, fontsize = 1)
 ```
 
@@ -401,7 +409,7 @@ These constraints imply certain kinds of statistics. Statistics that simply coun
 - Continuous data can be arbitrarily precise
 
 ::: {.callout-warning}
-Ordinal and discontinuous data can look similar. The difference between them is that the numbers in ordinal data are only labels, not real values. Continuous and discontinuous data may look similar if rounded (50kg, 60kg, 75kg), but we always have the option to display them more precisely.
+Ordinal and discrete numerical data can look similar. The difference between them is that the numbers in ordinal data are only labels, not real values. Continuous and discontinuous data may look similar if rounded (50kg, 60kg, 75kg), but we always have the option to display them more precisely.
 :::
 
 ::: {.notes}
@@ -436,7 +444,7 @@ Trombociti su prebrojivi, ali nekad se mere kontinuiranim merama kao npr. spektr
 
 ## What about time?
 
-![](slike/vreme.png){fig-align="center"}
+![](slike/time_eng.png){fig-align="center"}
 
 ::: {.notes}
 Uvek je bolje tretirati vreme kao kontinuirano (mada zavisi od pitanja, individualni efekti vs. trend).
@@ -455,8 +463,6 @@ Uvek je bolje tretirati vreme kao kontinuirano (mada zavisi od pitanja, individu
 ![](slike/bazahaos.png)
 
 ## Importing a database into the EZR
-
-Task:
 
 - Download and import [satisfaction with health care.xlsx]{.yellow} into EZR
 - Load [KVS.xlsx]{.yellow} without overwriting the previous database
