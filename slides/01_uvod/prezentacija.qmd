@@ -106,7 +106,7 @@ tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
 :::
 :::
 
-::: {.center-h}
+::: {.center-h .fragment}
 [1,693,059 publikacija]{.yellow} na PubMed-u u 2023. god!
 :::
 
@@ -577,5 +577,7 @@ treatment <- tribble(
 tt(treatment) |> style_tt(j = 1:3, fontsize = 1.2)
 ```
 
+::: {.fragment}
 - Ostaviti prazno (moguće greške)
 - Upisati NA
+:::

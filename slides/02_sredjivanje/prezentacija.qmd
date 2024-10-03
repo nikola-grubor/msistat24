@@ -132,54 +132,6 @@ RR je velik, dok je ARD sitan jer je mortalitet redak. U naucnoj komunikaciji RR
 ## Grafički prikaz redukcije relativnog rizika
 
 ```{r}
-#| eval: false
-(tribble(
-  ~Ime, ~Rizik, ~time,
-  "Marko", 5, 1,
-  "Marko", 5 - (5 * 0), 2,
-  "Radoljub", 20, 1,
-  "Radoljub", 20 - (20 * 0), 2
-) %>%
-  ggplot(aes(x = Ime, y = Rizik, group = time)) +
-  geom_col(fill = "tomato", position = "dodge", color = "white") +
-  theme_minimal() +
-  ylim(0, 30)) %>% 
-  ggsave(filename = here("02_sredjivanje/slike", "risk1.png", bg = "white"))
-
-  
-(tribble(
-  ~Ime, ~Rizik, ~time,
-  "Marko", 5, 1,
-  "Marko", 5 - (5 * 0.2), 2,
-  "Radoljub", 20, 1,
-  "Radoljub", 20 - (20 * 0.2), 2
-) %>%
-  ggplot(aes(x = Ime, y = Rizik, group = time)) +
-  geom_col(fill = "tomato", position = "dodge", color = "white") +
-  theme_minimal() +
-  ylim(0, 30)) %>% 
-  ggsave(filename = here("02_sredjivanje", "slike", "risk2.png", bg = "white"))
-  
-  
-(tribble(
-  ~Ime, ~Rizik, ~time,
-  "Marko", 5, 1,
-  "Marko", 5 - (5 * 0.2), 2,
-  "Radoljub", 20, 1,
-  "Radoljub", 20 - (20 * 0.2), 2
-) %>%
-  ggplot(aes(x = Ime, y = Rizik, group = time)) +
-  geom_col(fill = "tomato", position = "dodge", color = "white") +
-  geom_hline(yintercept = 20 - (20 * 0.2), linetype = 2) +
-  geom_hline(yintercept = 20, linetype = 2) +
-  annotate(geom="text", x=1.25, y=18, label="RR = 0.8",
-              color="red", size = 5) +
-  theme_minimal() +
-  ylim(0, 30)) %>% 
-  ggsave(filename = here("02_sredjivanje", "slike", "risk3.png", bg = "white"))
-```
-
-```{r}
 tribble(
   ~Ime, ~Rizik, ~time,
   "Marko", 5, 1,
@@ -188,13 +140,12 @@ tribble(
   "Radoljub", 20 - (20 * 0.2), 2
 ) %>%
   ggplot(aes(x = Ime, y = Rizik, group = time)) +
-  geom_col(fill = "tomato", position = "dodge", color = "white") +
-  geom_hline(yintercept = 20 - (20 * 0.2), linetype = 2) +
-  geom_hline(yintercept = 20, linetype = 2) +
+  geom_col(fill = "#F4BA02", position = "dodge", color = "black") +
+  geom_hline(yintercept = c(20, 20 - (20 * 0.2)), linetype = 2, col = "white") +
   annotate(geom="text", x=1.25, y=18, label="RR = 0.8",
-              color="red", size = 5) +
-  theme_minimal() +
-  ylim(0, 30)
+              color="#F4BA02", size = 5) +
+  scale_y_continuous(labels = scales::label_percent(scale = 1)) +
+  theme_blue()
 ```
 
 ## Kako smanjenje 1 mmHg pritiska utiče na kardiovaskularni rizik?
