@@ -32,14 +32,14 @@
     "href": "slides/02_sredjivanje/prezentacija.html#komunikacija-rizika",
     "title": "Sređivanje podataka",
     "section": "Komunikacija rizika",
-    "text": "Komunikacija rizika\n\n\nMnogi ljudi mešaju relativni i apsolutni rizik.\nPrimer:\n\n1/10,000 žena ima trombozu\n3/10,000 žena koje uzimaju kontraceptivne pilule ima trombozu\n\n\\(RR = \\frac{3/10,000}{1/10,000} = 3.00\\)\n\n\\(\\uparrow\\) 200% u trombozama!\nPromena verovatnoće je samo 0.0002 (2 žene u 10,000)\nTrudnoća povećava verovatnoću tromboze mnogo više (DVT)\n\n\n\n\n\n\nTromboza je retka u opstoj populaciji, ALI su mnogo češći na pilulu. Ima kauzalnih razloga za to. Cost/benefit je težak. Zbog članka mnogo žena prestalo pije KP i dobilo tromboze zbog trudnoće!"
+    "text": "Komunikacija rizika\n\n\nMnogi ljudi mešaju relativni i apsolutni rizik.\n\n1 od 10,000 žena ima trombozu\n3 od 10,000 žena na kontraceptivnim pilulama ima trombozu\n\n\\(RR = \\frac{3/10,000}{1/10,000} = 3.00\\)\n\n\\(\\uparrow\\) 200% u trombozama!\nPromena verovatnoće je samo 0.0002 (2 žene u 10,000)\nTrudnoća povećava verovatnoću tromboze mnogo više (1-2 od 1000 ima DVT)\n\n\n\n\n\n\nTromboza je retka u opstoj populaciji, ALI su mnogo češći na piluli. Ima kauzalnih razloga za to. Cost/benefit je težak. Zbog članka mnogo žena prestalo pije KP i dobilo tromboze zbog trudnoće!"
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#tabelarno-prikazivanje-aps.-i-rel.-podataka",
     "href": "slides/02_sredjivanje/prezentacija.html#tabelarno-prikazivanje-aps.-i-rel.-podataka",
     "title": "Sređivanje podataka",
     "section": "Tabelarno prikazivanje aps. i rel. podataka",
-    "text": "Tabelarno prikazivanje aps. i rel. podataka\n\n\n\n\n\n\nVarijabla\nN = 100\n\n\n\n\nNavika\n\n\n\nNepusac\n54 (54%)\n\n\nPusač\n46 (46%)\n\n\n\n1 n (%)"
+    "text": "Tabelarno prikazivanje aps. i rel. podataka\n\n\n\n\n\n\nVarijabla\nN = 100\n\n\n\n\nNavika\n\n\n\nNepusac\n51 (51%)\n\n\nPusač\n49 (49%)\n\n\n\n1 n (%)"
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#grafičko-prikazivanje-relativnih-brojeva",
