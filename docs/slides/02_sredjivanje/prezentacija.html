@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Dr Nikola Grubor">
-  <meta name="dcterms.date" content="2024-10-04">
+  <meta name="dcterms.date" content="2024-10-08">
   <title>Medicinska statistika i informatika - Sređivanje podataka</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -342,7 +342,7 @@ Dr Nikola Grubor
 </div>
 </div>
 
-  <p class="date">2024-10-04</p>
+  <p class="date">2024-10-08</p>
 </section>
 <section id="section" class="slide level2 center">
 <h2></h2>
@@ -360,6 +360,45 @@ Dr Nikola Grubor
 <div class="r-fit-text">
 <p><span class="math inline">\(f_{abs} = \frac{\#n}{\text{interval}}\)</span></p>
 <p><span class="math inline">\(f_{rel} = \frac{f_{abs}}{\text{Ukupan broj podataka}} \%\)</span></p>
+</div>
+</section>
+<section id="tabelarno-prikazivanje-aps.-i-rel.-podataka" class="slide level2 center">
+<h2>Tabelarno prikazivanje aps. i rel. podataka</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table class="table" data-quarto-postprocess="true" style="NAborder-bottom: 0; font-size: 64px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Varijabla</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">N = 100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Navika</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Nepusac</td>
+<td style="text-align: center;">46 (46%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Pusač</td>
+<td style="text-align: center;">54 (54%)</td>
+</tr>
+</tbody><tfoot>
+<tr class="even">
+<td style="text-align: left; padding: 0;"><sup>1</sup> n (%)</td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
 </div>
 </section>
 <section id="apsolutni-jeleni-i-relativne-ajkule" class="slide level2">
@@ -441,51 +480,12 @@ Dr Nikola Grubor
           display:block!important;
       }</style></aside>
 </section>
-<section id="tabelarno-prikazivanje-aps.-i-rel.-podataka" class="slide level2 center">
-<h2>Tabelarno prikazivanje aps. i rel. podataka</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<table class="table" data-quarto-postprocess="true" style="NAborder-bottom: 0; font-size: 64px; margin-left: auto; margin-right: auto;">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Varijabla</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">N = 100</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Navika</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Nepusac</td>
-<td style="text-align: center;">51 (51%)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Pusač</td>
-<td style="text-align: center;">49 (49%)</td>
-</tr>
-</tbody><tfoot>
-<tr class="even">
-<td style="text-align: left; padding: 0;"><sup>1</sup> n (%)</td>
-<td style="text-align: center;"></td>
-</tr>
-</tfoot>
-
-</table>
-
-
-</div>
-</div>
-</div>
-</section>
-<section id="grafičko-prikazivanje-relativnih-brojeva" class="slide level2 smaller">
-<h2>Grafičko prikazivanje relativnih brojeva</h2>
+<section id="relatini-efekat-statina" class="slide level2 smaller">
+<h2>Relatini efekat statina</h2>
 
 <img data-src="slike/statins.gif" class="r-stretch quarto-figure-center"><p class="caption">Redukcija LDL-a u odnosu na vrstu statina.</p></section>
-<section id="statini" class="slide level2 smaller">
-<h2>Statini</h2>
+<section id="različiti-efekti-u-studijama" class="slide level2 smaller">
+<h2>Različiti efekti u studijama</h2>
 <p>Efikasnost (50-65 god):</p>
 <ul>
 <li>Mortalitet (<span class="math inline">\(RR = 0.86; ARD = -0.40\%; NNT = 250\)</span>)</li>
@@ -562,15 +562,324 @@ Dr Nikola Grubor
 <section id="vizualizacije-su-bitne-u-komunikaciji" class="slide level2">
 <h2>Vizualizacije su bitne u komunikaciji</h2>
 
-<img data-src="slike/challengerTemps.png" class="r-stretch"></section>
-<section id="hirurški-mortalitet" class="slide level2">
-<h2>Hirurški mortalitet</h2>
+<img data-src="slike/challengerTemps.png" class="r-stretch"><aside class="notes">
+<p>1986, shatl challenger je eksplodirao nesto vise od 1 min nakon uzletanja. Uzrok je iznenadno hladno vreme koje su inzinjeri predvideli. Deo je nesto vise od 130 satl misija u svemir. Da su napravili grafikom mozda su mogli da ih ubede.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="šta-nije-u-redu-sa-ovim-srcem" class="slide level2">
+<h2>Šta nije u redu sa ovim srcem?</h2>
+<div class="r-stack">
+<p><img data-src="slike/tga1.png"></p>
+<p><img data-src="slike/tga2.png" class="fragment"></p>
+</div>
+<aside class="notes">
+<p>Transpozicija velikih arterija. Uvod o specijalizovanim hirurskim centrima.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="definisanje-podataka-za-prikupljanje" class="slide level2">
+<h2>Definisanje podataka za prikupljanje</h2>
+<dl>
+<dt>Dete</dt>
+<dd>
+Čovek sa <span class="math inline">\(\lt16\)</span> godina života.
+</dd>
+<dt>Velika (otvorena) hirurgija</dt>
+<dd>
+Zaustavljanje srca + kardiopulmonalni bajpas.
+</dd>
+<dt>Mortalitet</dt>
+<dd>
+Smrt koja se desila <span class="math inline">\(\le30\)</span> dana od operacije.
+</dd>
+</dl>
+<p>Zašto <em>ovako</em> definisan mortalitet nije dobra <span class="yellow">mera</span> kvaliteta hirurgije?</p>
+</section>
+<section id="tabelarno-prikazivanje-podataka" class="slide level2">
+<h2>Tabelarno prikazivanje podataka</h2>
+<div class="cell">
+<div class="cell-output-display">
+ 
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinytable_qrbjgcgujs6a3c003kea</title>
+    <style>
+.table td.tinytable_css_kf6fvihmx4evc9g7b8ku, .table th.tinytable_css_kf6fvihmx4evc9g7b8ku {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_ch7n1v3nejy54wcy2khw, .table th.tinytable_css_ch7n1v3nejy54wcy2khw {    font-size: 0.35em; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+  
+
+  
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_qrbjgcgujs6a3c003kea" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col">Bolnica</th>
+                <th scope="col">Operacije</th>
+                <th scope="col">Prezivelo</th>
+                <th scope="col">Umrlo</th>
+                <th scope="col">Preživljavanje</th>
+                <th scope="col">Smrtnost</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>Newcastle Freeman Hospital                      </td>
+                  <td> 511</td>
+                  <td> 497</td>
+                  <td>14</td>
+                  <td>97.3%</td>
+                  <td>2.7%</td>
+                </tr>
+                <tr>
+                  <td>Leicester Glenfield Hospital                    </td>
+                  <td> 578</td>
+                  <td> 572</td>
+                  <td> 6</td>
+                  <td>99%  </td>
+                  <td>1%  </td>
+                </tr>
+                <tr>
+                  <td>Bristol Royal Hospital For Children             </td>
+                  <td> 710</td>
+                  <td> 697</td>
+                  <td>13</td>
+                  <td>98.2%</td>
+                  <td>1.8%</td>
+                </tr>
+                <tr>
+                  <td>Southampton Wessex Cardiothoracic Centre        </td>
+                  <td> 720</td>
+                  <td> 708</td>
+                  <td>12</td>
+                  <td>98.3%</td>
+                  <td>1.7%</td>
+                </tr>
+                <tr>
+                  <td>Dublin Our Lady's Children's Hospital           </td>
+                  <td> 963</td>
+                  <td> 935</td>
+                  <td>28</td>
+                  <td>97.1%</td>
+                  <td>2.9%</td>
+                </tr>
+                <tr>
+                  <td>Liverpool Alder Hey Hospital                    </td>
+                  <td> 974</td>
+                  <td> 955</td>
+                  <td>19</td>
+                  <td>98.1%</td>
+                  <td>1.9%</td>
+                </tr>
+                <tr>
+                  <td>Leeds General Infirmary                         </td>
+                  <td> 920</td>
+                  <td> 904</td>
+                  <td>16</td>
+                  <td>98.3%</td>
+                  <td>1.7%</td>
+                </tr>
+                <tr>
+                  <td>London Royal Brompton Hospital                  </td>
+                  <td> 661</td>
+                  <td> 653</td>
+                  <td> 8</td>
+                  <td>98.8%</td>
+                  <td>1.2%</td>
+                </tr>
+                <tr>
+                  <td>London Evelina London Children's Hospital       </td>
+                  <td> 932</td>
+                  <td> 913</td>
+                  <td>19</td>
+                  <td>98%  </td>
+                  <td>2%  </td>
+                </tr>
+                <tr>
+                  <td>Birmingham Children's Hospital                  </td>
+                  <td>1141</td>
+                  <td>1118</td>
+                  <td>23</td>
+                  <td>98%  </td>
+                  <td>2%  </td>
+                </tr>
+                <tr>
+                  <td>London Great Ormond Street Hospital for Children</td>
+                  <td>1476</td>
+                  <td>1469</td>
+                  <td> 7</td>
+                  <td>99.5%</td>
+                  <td>0.5%</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function styleCell_tinytable_xazfrxt6k6beyehjbi45(i, j, css_id) {
+        var table = document.getElementById("tinytable_qrbjgcgujs6a3c003kea");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_qrbjgcgujs6a3c003kea');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_tinytable_xazfrxt6k6beyehjbi45(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_qrbjgcgujs6a3c003kea");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(0, 0, 'tinytable_css_kf6fvihmx4evc9g7b8ku') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(0, 1, 'tinytable_css_kf6fvihmx4evc9g7b8ku') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(0, 2, 'tinytable_css_kf6fvihmx4evc9g7b8ku') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(0, 3, 'tinytable_css_kf6fvihmx4evc9g7b8ku') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(0, 4, 'tinytable_css_kf6fvihmx4evc9g7b8ku') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(0, 5, 'tinytable_css_kf6fvihmx4evc9g7b8ku') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(1, 0, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(2, 0, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(3, 0, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(4, 0, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(5, 0, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(6, 0, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(7, 0, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(8, 0, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(9, 0, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(10, 0, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(11, 0, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(1, 1, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(2, 1, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(3, 1, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(4, 1, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(5, 1, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(6, 1, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(7, 1, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(8, 1, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(9, 1, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(10, 1, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(11, 1, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(1, 2, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(2, 2, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(3, 2, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(4, 2, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(5, 2, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(6, 2, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(7, 2, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(8, 2, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(9, 2, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(10, 2, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(11, 2, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(1, 3, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(2, 3, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(3, 3, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(4, 3, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(5, 3, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(6, 3, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(7, 3, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(8, 3, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(9, 3, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(10, 3, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(11, 3, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(1, 4, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(2, 4, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(3, 4, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(4, 4, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(5, 4, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(6, 4, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(7, 4, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(8, 4, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(9, 4, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(10, 4, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(11, 4, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(1, 5, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(2, 5, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(3, 5, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(4, 5, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(5, 5, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(6, 5, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(7, 5, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(8, 5, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(9, 5, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(10, 5, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+window.addEventListener('load', function () { styleCell_tinytable_xazfrxt6k6beyehjbi45(11, 5, 'tinytable_css_ch7n1v3nejy54wcy2khw') })
+    </script>
+
+  
+
+
+</div>
+</div>
+</section>
+<section id="hirurški-mortalitet-kod-transpozicije" class="slide level2">
+<h2>Hirurški mortalitet kod transpozicije</h2>
 <div class="r-stack">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -580,7 +889,7 @@ Dr Nikola Grubor
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -593,6 +902,8 @@ Dr Nikola Grubor
 <li>&lt; 16, bilo je vise operacije ali mereno sve kao jedan dogadjaj, smrt &lt;30 dana usled hirurgije.</li>
 <li>Da li je smrt dobra mera kvaliteta operacije? Zašto?</li>
 <li>Kako mogu drugačije da se prikažu podaci i da drugačije deluju? (red prikazivanja, mortalitet/preživaljvanje), komunikacija rizika kao 1 u 100 dece itd.</li>
+<li>Gde da počne y-osa, 86% izabrano jer je pre 20 godina toliki bio mortalitet u Bristolu.</li>
+<li>“1984-1995”</li>
 </ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -619,7 +930,7 @@ Dr Nikola Grubor
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -627,6 +938,30 @@ Dr Nikola Grubor
 </div>
 </div>
 </section>
+<section id="stubičasti-dijagram" class="slide level2">
+<h2>Stubičasti dijagram</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="kružni-dijagram" class="slide level2">
+<h2>Kružni dijagram</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="576"></section>
+<section id="kružni-dijagram-najzastupljenijih-religija-u-sad" class="slide level2">
+<h2>Kružni dijagram najzastupljenijih religija u SAD</h2>
+
+<img data-src="slike/badpie.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="stubičasti-dijagram-najzastupljenijih-religija-u-sad" class="slide level2">
+<h2>Stubičasti dijagram najzastupljenijih religija u SAD</h2>
+
+<img data-src="slike/religionbar.png" class="r-stretch"></section>
+<section id="kružni-dijagram-udela-bolnica-u-operacijama-transpozicije" class="slide level2">
+<h2>Kružni dijagram udela bolnica u operacijama transpozicije</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="stubičasti-dijagram-udela-bolnica-u-operacijama-transpozicije" class="slide level2">
+<h2>Stubičasti dijagram udela bolnica u operacijama transpozicije</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
 <section id="prikazivanje-nominalnih-podataka" class="slide level2">
 <h2>Prikazivanje nominalnih podataka</h2>
 <p><em>Grupišu se po <span class="yellow">kategorijama</span></em></p>
@@ -639,23 +974,20 @@ Dr Nikola Grubor
 <li>sačuvati grafikon</li>
 </ul></li>
 </ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Savet</strong></p>
+</div>
+<div class="callout-content">
+<p>Statistical analysis <span class="math inline">\(\rightarrow\)</span> Discrete variables <span class="math inline">\(\rightarrow\)</span> Frequency distributions</p>
+</div>
+</div>
+</div>
 </section>
-<section id="stubičasti-dijagram" class="slide level2">
-<h2>Stubičasti dijagram</h2>
-
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="kružni-dijagram" class="slide level2">
-<h2>Kružni dijagram</h2>
-
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="576"></section>
-<section id="problemi-sa-kružnim-dijagramima" class="slide level2">
-<h2>Problemi sa kružnim dijagramima</h2>
-
-<img data-src="slike/badpie.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="stubičasti-dijagram-je-uvek-bolji" class="slide level2">
-<h2>Stubičasti dijagram je uvek bolji</h2>
-
-<img data-src="slike/religionbar.png" class="r-stretch"></section>
 <section id="prikazivanje-ordinalnih-podataka" class="slide level2">
 <h2>Prikazivanje ordinalnih podataka</h2>
 <p><em>Grupišu se po <span class="yellow">kategorijama</span></em></p>
@@ -682,8 +1014,8 @@ Dr Nikola Grubor
 </ul></li>
 </ul>
 </section>
-<section id="tabela-učestalosti" class="slide level2">
-<h2>Tabela učestalosti</h2>
+<section id="diskretne-vrednosti-bronhitisa" class="slide level2">
+<h2>Diskretne vrednosti bronhitisa</h2>
 <div class="cell">
 <div class="cell-output-display">
  
@@ -712,7 +1044,7 @@ Dr Nikola Grubor
 
   
     <div class="container">
-      <table class="table table-borderless" id="tinytable_30ttofnaj2szlja7k1c5" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true"><caption><p>Grupisanje bronhitisa po diskretnim vrednostima.</p></caption>
+      <table class="table table-borderless" id="tinytable_30ttofnaj2szlja7k1c5" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -831,26 +1163,30 @@ window.addEventListener('load', function () { styleCell_tinytable_mek79x9lbjgyte
 </div>
 </div>
 </section>
-<section id="stubičasti-dijagram-1" class="slide level2">
-<h2>Stubičasti dijagram</h2>
+<section id="stubičasti-dijagram-bronhitisa" class="slide level2">
+<h2>Stubičasti dijagram bronhitisa</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
 <section id="kako-prikazati-numeričke-podatke" class="slide level2">
 <h2>Kako prikazati numeričke podatke?</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
 <section id="široki-intervali-nisu-korisni" class="slide level2">
 <h2>Široki intervali nisu korisni</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
 <section id="uski-intervali-nisu-korisni" class="slide level2">
 <h2>Uski intervali nisu korisni</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
 <section id="broj-intervala-je-proizvoljan" class="slide level2">
 <h2>Broj intervala je proizvoljan</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
+<section id="histogram" class="slide level2">
+<h2>Histogram</h2>
+
+<img data-src="slike/blakelyhist.png" class="r-stretch"></section>
 <section id="informacije-sažete-distribucijom" class="slide level2">
 <h2>Informacije sažete distribucijom</h2>
 <div class="r-stack">
@@ -858,7 +1194,7 @@ window.addEventListener('load', function () { styleCell_tinytable_mek79x9lbjgyte
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -868,7 +1204,7 @@ window.addEventListener('load', function () { styleCell_tinytable_mek79x9lbjgyte
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -879,7 +1215,7 @@ window.addEventListener('load', function () { styleCell_tinytable_mek79x9lbjgyte
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -899,21 +1235,52 @@ window.addEventListener('load', function () { styleCell_tinytable_mek79x9lbjgyte
 </ul></li>
 </ul>
 </section>
-<section id="histogram" class="slide level2">
-<h2>Histogram</h2>
-
-<img data-src="slike/blakelyhist.png" class="r-stretch"></section>
 <section id="poligon-frekvencija" class="slide level2">
 <h2>Poligon frekvencija</h2>
-
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
-<section id="telesna-temp." class="slide level2">
-<h2>Telesna temp.</h2>
+<div class="r-stack">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ponekad-možemo-prekršiti-pravila" class="slide level2">
+<h2>Ponekad možemo prekršiti pravila</h2>
 
 <img data-src="slike/bodytemp.png" class="r-stretch"></section>
-<section id="zadatak" class="slide level2">
-<h2>Zadatak</h2>
-<p>Iz baze <span class="yellow">baza DZ.xlsx</span> tabelarno i grafički prikazati: - hipertenziju, - uhranjenost i, - starost</p>
+<section id="vežbanje" class="slide level2">
+<h2>Vežbanje</h2>
+<p>Iz baze <span class="yellow">baza DZ.xlsx</span> tabelarno i grafički prikazati:</p>
+<ul>
+<li>hipertenziju</li>
+<li>uhranjenost</li>
+<li>starost</li>
+</ul>
+</section>
+<section id="zaključak" class="slide level2">
+<h2>Zaključak</h2>
+<ul>
+<li>Relativni rizici deluju bitnije nego što jesu; apsolutni rizici pojašnjavaju</li>
+<li>Očekivane frekvencije (1 od 100) su jasnije za interpretaciju</li>
+<li>Grafikoni se moraju pažljivo praviti i tumačiti</li>
+<li>Način prikazivanja podataka zavisi od njihovog tipa*</li>
+</ul>
 </section>
 <section id="struktura-kursa" class="slide level2">
 <h2>Struktura kursa</h2>

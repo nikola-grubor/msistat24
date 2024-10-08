@@ -39,7 +39,7 @@
     "href": "slides/02_sredjivanje/prezentacija.html#tabelarno-prikazivanje-aps.-i-rel.-podataka",
     "title": "Sređivanje podataka",
     "section": "Tabelarno prikazivanje aps. i rel. podataka",
-    "text": "Tabelarno prikazivanje aps. i rel. podataka\n\n\n\n\n\n\nVarijabla\nN = 100\n\n\n\n\nNavika\n\n\n\nNepusac\n51 (51%)\n\n\nPusač\n49 (49%)\n\n\n\n1 n (%)"
+    "text": "Tabelarno prikazivanje aps. i rel. podataka\n\n\n\n\n\n\nVarijabla\nN = 100\n\n\n\n\nNavika\n\n\n\nNepusac\n46 (46%)\n\n\nPusač\n54 (54%)\n\n\n\n1 n (%)"
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#grafičko-prikazivanje-relativnih-brojeva",
@@ -88,7 +88,7 @@
     "href": "slides/02_sredjivanje/prezentacija.html#vizualizacije-su-bitne-u-komunikaciji",
     "title": "Sređivanje podataka",
     "section": "Vizualizacije su bitne u komunikaciji",
-    "text": "Vizualizacije su bitne u komunikaciji"
+    "text": "Vizualizacije su bitne u komunikaciji\n\n\n1986, shatl challenger je eksplodirao nesto vise od 1 min nakon uzletanja. Uzrok je iznenadno hladno vreme koje su inzinjeri predvideli. Deo je nesto vise od 130 satl misija u svemir. Da su napravili grafikom mozda su mogli da ih ubede."
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#hirurški-mortalitet",
@@ -109,7 +109,7 @@
     "href": "slides/02_sredjivanje/prezentacija.html#prikazivanje-nominalnih-podataka",
     "title": "Sređivanje podataka",
     "section": "Prikazivanje nominalnih podataka",
-    "text": "Prikazivanje nominalnih podataka\nGrupišu se po kategorijama\n\nOdrediti apsolutne i relativne učestalosti za pol i pušenje\nGrafički prikaz\n\nstubičasti dijagram (bar chart)\nkružni dijagram (pie chart)\nsačuvati grafikon"
+    "text": "Prikazivanje nominalnih podataka\nGrupišu se po kategorijama\n\nOdrediti apsolutne i relativne učestalosti za pol i pušenje\nGrafički prikaz\n\nstubičasti dijagram (bar chart)\nkružni dijagram (pie chart)\nsačuvati grafikon\n\n\n\n\n\n\n\n\nSavet\n\n\nStatistical analysis \\(\\rightarrow\\) Discrete variables \\(\\rightarrow\\) Frequency distributions"
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#stubičasti-dijagram",
@@ -809,7 +809,7 @@
     "href": "index.html",
     "title": "Osnovni kurs medicinske statistike i informatike",
     "section": "",
-    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_jbbidse3uxa2hddqzoxu\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku (eng)"
+    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_knrbi8nc2s9kyyrwf3na\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku (eng)\n                \n                \n                  2\n                  Sređivanje podataka"
   },
   {
     "objectID": "about.html",
@@ -1734,5 +1734,145 @@
     "title": "Introduction to Statistics",
     "section": "Example",
     "text": "Example\nNumber of births: 3, no sense in talking about 3.5 births!"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#šta-nije-uredu-sa-ovim-srcem",
+    "href": "slides/02_sredjivanje/prezentacija.html#šta-nije-uredu-sa-ovim-srcem",
+    "title": "Sređivanje podataka",
+    "section": "Šta nije uredu sa ovim srcem?",
+    "text": "Šta nije uredu sa ovim srcem?\n\n\n\nTranspozicija velikih arterija. Uvod o specijalizovanim hirurskim centrima."
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#hirurški-mortalitet-kod-transpozicije",
+    "href": "slides/02_sredjivanje/prezentacija.html#hirurški-mortalitet-kod-transpozicije",
+    "title": "Sređivanje podataka",
+    "section": "Hirurški mortalitet kod transpozicije",
+    "text": "Hirurški mortalitet kod transpozicije\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKako definisemo i merimo: dete, operaciju, kada je za smrt odgovorna hirurgija.\n&lt; 16, bilo je vise operacije ali mereno sve kao jedan dogadjaj, smrt &lt;30 dana usled hirurgije.\nDa li je smrt dobra mera kvaliteta operacije? Zašto?\nKako mogu drugačije da se prikažu podaci i da drugačije deluju? (red prikazivanja, mortalitet/preživaljvanje), komunikacija rizika kao 1 u 100 dece itd.\nGde da počne y-osa, 86% izabrano jer je pre 20 godina toliki bio mortalitet u Bristolu.\n“1984-1995”"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#tabela-učestalosti-bronhitisa",
+    "href": "slides/02_sredjivanje/prezentacija.html#tabela-učestalosti-bronhitisa",
+    "title": "Sređivanje podataka",
+    "section": "Tabela učestalosti bronhitisa",
+    "text": "Tabela učestalosti bronhitisa\n\n\n \n\n  \n    \n    \n    tinytable_30ttofnaj2szlja7k1c5\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Broj resp. infekcija\n                n\n                %\n              \n        \n        \n        \n                \n                  0\n                  4\n                  13\n                \n                \n                  1\n                  8\n                  27\n                \n                \n                  2\n                  8\n                  27\n                \n                \n                  3\n                  4\n                  13\n                \n                \n                  4\n                  2\n                   7\n                \n                \n                  5\n                  4\n                  13"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#stubičasti-dijagram-bronhitisa",
+    "href": "slides/02_sredjivanje/prezentacija.html#stubičasti-dijagram-bronhitisa",
+    "title": "Sređivanje podataka",
+    "section": "Stubičasti dijagram bronhitisa",
+    "text": "Stubičasti dijagram bronhitisa"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#ponekad-možemo-prekršiti-pravila",
+    "href": "slides/02_sredjivanje/prezentacija.html#ponekad-možemo-prekršiti-pravila",
+    "title": "Sređivanje podataka",
+    "section": "Ponekad možemo prekršiti pravila",
+    "text": "Ponekad možemo prekršiti pravila"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#vežbanje",
+    "href": "slides/02_sredjivanje/prezentacija.html#vežbanje",
+    "title": "Sređivanje podataka",
+    "section": "Vežbanje",
+    "text": "Vežbanje\nIz baze baza DZ.xlsx tabelarno i grafički prikazati:\n\nhipertenziju\nuhranjenost\nstarost"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#zaključak",
+    "href": "slides/02_sredjivanje/prezentacija.html#zaključak",
+    "title": "Sređivanje podataka",
+    "section": "Zaključak",
+    "text": "Zaključak\n\nRelativni rizici deluju bitnije nego što jesu; apsolutni rizici pojašnjavaju\nOčekivane frekvencije (1 od 100) su jasnije za interpretaciju\nGrafikoni se moraju pažljivo praviti i tumačiti\nNačin prikazivanja podataka zavisi od njihovog tipa*"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#relatini-efekat-statina",
+    "href": "slides/02_sredjivanje/prezentacija.html#relatini-efekat-statina",
+    "title": "Sređivanje podataka",
+    "section": "Relatini efekat statina",
+    "text": "Relatini efekat statina\n\nRedukcija LDL-a u odnosu na vrstu statina."
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#različiti-efekti-u-studijama",
+    "href": "slides/02_sredjivanje/prezentacija.html#različiti-efekti-u-studijama",
+    "title": "Sređivanje podataka",
+    "section": "Različiti efekti u studijama",
+    "text": "Različiti efekti u studijama\nEfikasnost (50-65 god):\n\nMortalitet (\\(RR = 0.86; ARD = -0.40\\%; NNT = 250\\))\nCVD (\\(RR = 0.69; ARD, -0.43\\%; NNT = 233\\))\nCVI (\\(RR = 0.71; ARD, -0.38\\%; NNT = 263\\))\nMI (\\(RR = 0.64; ARD, -0.81\\%; NNT = 123\\))\n\n\n\nRR je velik, dok je ARD sitan jer je mortalitet redak. U naucnoj komunikaciji RR su bitni, ali svakodnevno mogu da zavaraju. Sta moze da bude problem sa NNT? Sta ako terapija nekog osteti? Ovo su proseci, varijabilitet je isto bitan."
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#šta-nije-u-redu-sa-ovim-srcem",
+    "href": "slides/02_sredjivanje/prezentacija.html#šta-nije-u-redu-sa-ovim-srcem",
+    "title": "Sređivanje podataka",
+    "section": "Šta nije u redu sa ovim srcem?",
+    "text": "Šta nije u redu sa ovim srcem?\n\n\n\n\n\nTranspozicija velikih arterija. Uvod o specijalizovanim hirurskim centrima."
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#definisanje-kriterijuma",
+    "href": "slides/02_sredjivanje/prezentacija.html#definisanje-kriterijuma",
+    "title": "Sređivanje podataka",
+    "section": "Definisanje kriterijuma",
+    "text": "Definisanje kriterijuma\n\nDete\n\nje bilo ko $$16 godina života.\n\nVelika (otvorena) hirurgija\n\nZaustavljanje srca + kardiopulmonalni bajpas.\n\nMortalitet\n\nSmrt koja se desila $$30 dana od operacije.\n\n\nZašto ovako definisan mortalitet nije dobra mera kvaliteta hirurgije?"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#tabelarno-prikazivanje-podataka",
+    "href": "slides/02_sredjivanje/prezentacija.html#tabelarno-prikazivanje-podataka",
+    "title": "Sređivanje podataka",
+    "section": "Tabelarno prikazivanje podataka",
+    "text": "Tabelarno prikazivanje podataka\n\n\n \n\n  \n    \n    \n    tinytable_qrbjgcgujs6a3c003kea\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Bolnica\n                Operacije\n                Prezivelo\n                Umrlo\n                Preživljavanje\n                Smrtnost\n              \n        \n        \n        \n                \n                  Newcastle Freeman Hospital                      \n                   511\n                   497\n                  14\n                  97.3%\n                  2.7%\n                \n                \n                  Leicester Glenfield Hospital                    \n                   578\n                   572\n                   6\n                  99%  \n                  1%  \n                \n                \n                  Bristol Royal Hospital For Children             \n                   710\n                   697\n                  13\n                  98.2%\n                  1.8%\n                \n                \n                  Southampton Wessex Cardiothoracic Centre        \n                   720\n                   708\n                  12\n                  98.3%\n                  1.7%\n                \n                \n                  Dublin Our Lady's Children's Hospital           \n                   963\n                   935\n                  28\n                  97.1%\n                  2.9%\n                \n                \n                  Liverpool Alder Hey Hospital                    \n                   974\n                   955\n                  19\n                  98.1%\n                  1.9%\n                \n                \n                  Leeds General Infirmary                         \n                   920\n                   904\n                  16\n                  98.3%\n                  1.7%\n                \n                \n                  London Royal Brompton Hospital                  \n                   661\n                   653\n                   8\n                  98.8%\n                  1.2%\n                \n                \n                  London Evelina London Children's Hospital       \n                   932\n                   913\n                  19\n                  98%  \n                  2%  \n                \n                \n                  Birmingham Children's Hospital                  \n                  1141\n                  1118\n                  23\n                  98%  \n                  2%  \n                \n                \n                  London Great Ormond Street Hospital for Children\n                  1476\n                  1469\n                   7\n                  99.5%\n                  0.5%"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#hirurški-mortalitet-kod-transpozicije-1984-1995",
+    "href": "slides/02_sredjivanje/prezentacija.html#hirurški-mortalitet-kod-transpozicije-1984-1995",
+    "title": "Sređivanje podataka",
+    "section": "Hirurški mortalitet kod transpozicije (1984-1995)",
+    "text": "Hirurški mortalitet kod transpozicije (1984-1995)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKako definisemo i merimo: dete, operaciju, kada je za smrt odgovorna hirurgija.\n&lt; 16, bilo je vise operacije ali mereno sve kao jedan dogadjaj, smrt &lt;30 dana usled hirurgije.\nDa li je smrt dobra mera kvaliteta operacije? Zašto?\nKako mogu drugačije da se prikažu podaci i da drugačije deluju? (red prikazivanja, mortalitet/preživaljvanje), komunikacija rizika kao 1 u 100 dece itd.\nGde da počne y-osa, 86% izabrano jer je pre 20 godina toliki bio mortalitet u Bristolu."
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#definisanje-podataka-za-prikupljanje",
+    "href": "slides/02_sredjivanje/prezentacija.html#definisanje-podataka-za-prikupljanje",
+    "title": "Sređivanje podataka",
+    "section": "Definisanje podataka za prikupljanje",
+    "text": "Definisanje podataka za prikupljanje\n\nDete\n\nČovek sa \\(\\lt16\\) godina života.\n\nVelika (otvorena) hirurgija\n\nZaustavljanje srca + kardiopulmonalni bajpas.\n\nMortalitet\n\nSmrt koja se desila \\(\\le30\\) dana od operacije.\n\n\nZašto ovako definisan mortalitet nije dobra mera kvaliteta hirurgije?"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#kružni-dijagram-najzastupljenijih-religija-u-sad",
+    "href": "slides/02_sredjivanje/prezentacija.html#kružni-dijagram-najzastupljenijih-religija-u-sad",
+    "title": "Sređivanje podataka",
+    "section": "Kružni dijagram najzastupljenijih religija u SAD",
+    "text": "Kružni dijagram najzastupljenijih religija u SAD"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#kružni-dijagram-udela-bolnica-u-operacijama-transpozicije",
+    "href": "slides/02_sredjivanje/prezentacija.html#kružni-dijagram-udela-bolnica-u-operacijama-transpozicije",
+    "title": "Sređivanje podataka",
+    "section": "Kružni dijagram udela bolnica u operacijama transpozicije",
+    "text": "Kružni dijagram udela bolnica u operacijama transpozicije"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#stubičasti-dijagram-najzastupljenijih-religija-u-sad",
+    "href": "slides/02_sredjivanje/prezentacija.html#stubičasti-dijagram-najzastupljenijih-religija-u-sad",
+    "title": "Sređivanje podataka",
+    "section": "Stubičasti dijagram najzastupljenijih religija u SAD",
+    "text": "Stubičasti dijagram najzastupljenijih religija u SAD"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#stubičasti-dijagram-udela-bolnica-u-operacijama-transpozicije",
+    "href": "slides/02_sredjivanje/prezentacija.html#stubičasti-dijagram-udela-bolnica-u-operacijama-transpozicije",
+    "title": "Sređivanje podataka",
+    "section": "Stubičasti dijagram udela bolnica u operacijama transpozicije",
+    "text": "Stubičasti dijagram udela bolnica u operacijama transpozicije"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#tabela-učestalosti-bronhitisa-grupisana-po-diskretnim-vrednostima",
+    "href": "slides/02_sredjivanje/prezentacija.html#tabela-učestalosti-bronhitisa-grupisana-po-diskretnim-vrednostima",
+    "title": "Sređivanje podataka",
+    "section": "Tabela učestalosti bronhitisa grupisana po diskretnim vrednostima",
+    "text": "Tabela učestalosti bronhitisa grupisana po diskretnim vrednostima\n\n\n \n\n  \n    \n    \n    tinytable_30ttofnaj2szlja7k1c5\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Broj resp. infekcija\n                n\n                %\n              \n        \n        \n        \n                \n                  0\n                  4\n                  13\n                \n                \n                  1\n                  8\n                  27\n                \n                \n                  2\n                  8\n                  27\n                \n                \n                  3\n                  4\n                  13\n                \n                \n                  4\n                  2\n                   7\n                \n                \n                  5\n                  4\n                  13"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#diskretne-vrednosti-bronhitisa",
+    "href": "slides/02_sredjivanje/prezentacija.html#diskretne-vrednosti-bronhitisa",
+    "title": "Sređivanje podataka",
+    "section": "Diskretne vrednosti bronhitisa",
+    "text": "Diskretne vrednosti bronhitisa\n\n\n \n\n  \n    \n    \n    tinytable_30ttofnaj2szlja7k1c5\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Broj resp. infekcija\n                n\n                %\n              \n        \n        \n        \n                \n                  0\n                  4\n                  13\n                \n                \n                  1\n                  8\n                  27\n                \n                \n                  2\n                  8\n                  27\n                \n                \n                  3\n                  4\n                  13\n                \n                \n                  4\n                  2\n                   7\n                \n                \n                  5\n                  4\n                  13"
   }
 ]

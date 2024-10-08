@@ -34,6 +34,20 @@ $f_{rel} = \frac{f_{abs}}{\text{Ukupan broj podataka}} \%$
 
 :::
 
+## Tabelarno prikazivanje aps. i rel. podataka {.center}
+
+```{r}
+N <- 100
+freq_dat <- tibble(
+  Navika = sample(c("Pusač", "Nepusac"), N, replace = T)
+)
+
+tbl_summary(freq_dat) %>%
+  modify_header(label = "Varijabla") %>%
+  as_kable_extra(booktabs = TRUE) %>%
+  kableExtra::kable_styling(font_size = 64)
+```
+
 ## Apsolutni jeleni i relativne ajkule
 
 - Relativni brojevi mogu prenaglasiti rizik (bitnost) neke pojave
@@ -85,25 +99,11 @@ $RR = \frac{3/10,000}{1/10,000} = 3.00$
 Tromboza je retka u opstoj populaciji, ALI su mnogo češći na piluli. Ima kauzalnih razloga za to. Cost/benefit je težak. Zbog članka mnogo žena prestalo pije KP i dobilo tromboze zbog trudnoće!
 :::
 
-## Tabelarno prikazivanje aps. i rel. podataka {.center}
-
-```{r}
-N <- 100
-freq_dat <- tibble(
-  Navika = sample(c("Pusač", "Nepusac"), N, replace = T)
-)
-
-tbl_summary(freq_dat) %>%
-  modify_header(label = "Varijabla") %>%
-  as_kable_extra(booktabs = TRUE) %>%
-  kableExtra::kable_styling(font_size = 64)
-```
-
-## Grafičko prikazivanje relativnih brojeva {.smaller}
+## Relatini efekat statina {.smaller}
 
 ![Redukcija LDL-a u odnosu na vrstu statina.](slike/statins.gif){fig-align="center"}
 
-## Statini {.smaller}
+## Različiti efekti u studijama {.smaller}
 
 Efikasnost (50-65 god):
 
@@ -183,15 +183,48 @@ Da li procedure/intervencije mogu da se mere ovako, smanjenjem rizika? Sta je za
 1986, shatl challenger je eksplodirao nesto vise od 1 min nakon uzletanja. Uzrok je iznenadno hladno vreme koje su inzinjeri predvideli. Deo je nesto vise od 130 satl misija u svemir. Da su napravili grafikom mozda su mogli da ih ubede.
 :::
 
-## Šta nije uredu sa ovim srcem?
+## Šta nije u redu sa ovim srcem?
+
+::: r-stack
 
 ![](slike/tga1.png)
 
 ![](slike/tga2.png){.fragment}
 
+:::
+
 ::: {.notes}
 Transpozicija velikih arterija. Uvod o specijalizovanim hirurskim centrima.
 :::
+
+## Definisanje podataka za prikupljanje
+
+Dete
+  : Čovek sa $\lt16$ godina života.
+  
+Velika (otvorena) hirurgija
+  : Zaustavljanje srca + kardiopulmonalni bajpas.
+  
+Mortalitet
+  : Smrt koja se desila $\le30$ dana od operacije.
+
+  
+Zašto *ovako* definisan mortalitet nije dobra [mera]{.yellow} kvaliteta hirurgije?
+
+## Tabelarno prikazivanje podataka
+
+```{r}
+mort <- readxl::read_xlsx(path = here("slides", "02_sredjivanje", 
+                                               "data", "transposition.xlsx"),
+                                   sheet = 3) %>% drop_na() %>% 
+  rename(Bolnica = Hospital, Operacije = episodes, Prezivelo = survivors,
+         Umrlo = deaths, Preživljavanje = Actual, Smrtnost = `Average Risk`)
+
+mort %>%
+  mutate(Preživljavanje = paste0(Preživljavanje * 100, "%"),
+         Smrtnost = paste0(Smrtnost * 100, "%")) %>% 
+  tt() %>% style_tt(fontsize = 0.35)
+```
 
 ## Hirurški mortalitet kod transpozicije
 
@@ -245,6 +278,7 @@ bad_axis_fig
 3. Da li je smrt dobra mera kvaliteta operacije? Zašto?
 4. Kako mogu drugačije da se prikažu podaci i da drugačije deluju? (red prikazivanja, mortalitet/preživaljvanje), komunikacija rizika kao 1 u 100 dece itd.
 5. Gde da počne y-osa, 86% izabrano jer je pre 20 godina toliki bio mortalitet u Bristolu.
+6. "1984-1995"
 :::
 
 ## Grafikon PISA testiranja
@@ -331,7 +365,7 @@ tibble(
   count(x) %>%
   arrange(desc(x)) %>%
   mutate(prop = n / sum(.$n) * 100) %>%
-  mutate(ypos = cumsum(prop)- 0.5*prop ) %>% 
+  mutate(ypos = cumsum(prop) - 0.5*prop ) %>% 
   ggplot(aes(x = "", y = prop, fill = factor(x))) +
   geom_bar(stat = "identity", width = 1) +
   geom_text(aes(y = ypos, label = x), color = "#01364C", size=6) +
@@ -340,14 +374,50 @@ tibble(
   theme_blue_void()
 ```
 
-## Problemi sa kružnim dijagramima
+## Kružni dijagram najzastupljenijih religija u SAD
 
 ![](slike/badpie.png){fig-align="center"}
 
-## Stubičasti dijagram je uvek bolji
+## Stubičasti dijagram najzastupljenijih religija u SAD
 
 ![](slike/religionbar.png)
 
+## Kružni dijagram udela bolnica u operacijama transpozicije
+
+```{r}
+#| fig-asp: 1
+#| fig-align: "center"
+
+mort %>%
+  mutate(
+    pct = Operacije / sum(Operacije),
+    csum = rev(cumsum(rev(pct))),
+    ypos = pct/2 + lead(csum, 1),
+    ypos = if_else(is.na(ypos), pct/2, ypos)) %>% 
+  ggplot(aes(x = "", y = pct, fill = fct_inorder(Bolnica))) +
+  geom_col() +
+  ggrepel::geom_label_repel(aes(y = ypos, label = Bolnica),
+                            size = 4.5, nudge_x = 1, show.legend = FALSE) +
+  coord_polar("y", direction = 1) +
+  scale_fill_brewer(palette="RdYlGn") +
+  theme_blue_void()
+```
+
+## Stubičasti dijagram udela bolnica u operacijama transpozicije
+
+```{r}
+mort %>%
+  mutate(
+    pct = Operacije / sum(Operacije),
+    Bolnica = fct_reorder(Bolnica, desc(Operacije))) %>% 
+  ggplot(aes(x = pct, y = Bolnica)) +
+  geom_col(fill = "#F4BA02", color = "white") +
+  scale_x_continuous(labels = scales::label_percent(accuracy = 1),
+                     breaks = scales::breaks_extended(10)) +
+  labs(x = "Procenat od svih operacija koji se radi u bolnici") +
+  theme(panel.grid.major.x = element_line()) +
+  theme_blue()
+```
 
 ## Prikazivanje nominalnih podataka
 *Grupišu se po [kategorijama]{.yellow}*
@@ -380,10 +450,9 @@ Statistical analysis $\rightarrow$ Discrete variables $\rightarrow$ Frequency di
   - kružni dijagram (pie chart)
   - sačuvati grafikon
 
-## Tabela učestalosti bronhitisa
+## Diskretne vrednosti bronhitisa
 
 ```{r}
-#| tbl-cap: "Grupisanje bronhitisa po diskretnim vrednostima."
 set.seed(123)
 N <- 30
 tibble(
@@ -415,7 +484,7 @@ tibble(id = 1:N, x = sample(
   theme_void() +
   ggdist::theme_ggdist(base_size = 15) +
   theme_blue() +
-  labs(y = "Ukupan broj", x = "Broj respiratornih infekcija (%)")
+  labs(y = "Ukupan broj pacijenata", x = "Godišnji broj respiratornih infekcija")
 ```
 
 ## Kako prikazati numeričke podatke?
@@ -453,7 +522,7 @@ tibble(
   theme_minimal() +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
-  labs(y = "Broj",
+  labs(y = "Ukupan broj pacijenata",
        x = "Krvni prisitak [mmHg]")
 ```
 
@@ -473,7 +542,7 @@ tibble(
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
-  labs(y = "Ukupan broj",
+  labs(y = "Ukupan broj pacijenata",
        x = "Krvni prisitak [mmHg]")
 ```
 
@@ -492,7 +561,7 @@ tibble(
   theme_minimal() +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
-  labs(y = "Ukupan broj",
+  labs(y = "Ukupan broj pacijenata",
        x = "Krvni prisitak [mmHg]")
 ```
 
@@ -516,10 +585,11 @@ tibble(
   ggplot(aes(x = TA)) +
   geom_histogram(aes(y = after_stat(density)), 
                  bins = 30, fill = "#F4BA02", color = "white", size = 1) +
-  theme_void() +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
-  labs(y = "Pacijent",
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(y = "Ukupan broj pacijenata",
        x = "Krvni prisitak [mmHg]")
 ```
 
@@ -537,10 +607,11 @@ tibble(
   ggplot(aes(x = TA)) +
   geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "#F4BA02", size = 1) +
   stat_function(fun = dnorm, args = list(mean = 120, sd = 10), color = "#F7F8F9", size = 1.5) +
-  theme_void() +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
-  labs(y = "Pacijent",
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(y = "Ukupan broj pacijenata",
        x = "Krvni prisitak [mmHg]")
   
 
@@ -571,10 +642,11 @@ tibble(
   
   annotate("text", label = "Više verovatno", x = 135, y = 0.04, size = 7, color = "dodgerblue") +
   annotate("text", label = "Manje\nverovatno", x = 145, y = 0.015, size = 7, color = "tomato") +
-  theme_void() +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
-  labs(y = "Pacijent",
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(y = "Ukupan broj pacijenata",
        x = "Krvni prisitak [mmHg]")
 ```
 
@@ -592,44 +664,49 @@ tibble(
 
 ## Poligon frekvencija
 
+::: r-stack
+
 ```{r}
+#| fig-asp: 0.65
 set.seed(123)
 N <- 30
-tibble(
+dat_poly <- tibble(
   id = 1:N,
   TA = rnorm(N, mean = 120, sd = 10)
-) %>% 
+) 
+
+dat_poly %>% 
   ggplot(aes(x = TA)) +
   geom_histogram(breaks = seq(100, 140, by = 5), fill = "#F4BA02", color = "black") +
   geom_freqpoly(breaks = seq(100, 140, by = 5), color = "#F7F8F9", linewidth = 2) +
-  geom_point(stat="bin", aes(y=..count..), breaks = seq(100, 140, by = 5), 
+  geom_point(stat="bin", aes(y = after_stat(count)), breaks = seq(100, 140, by = 5), 
              size = 6, color = "white", shape = 21, fill = "#F4BA02", stroke = 2) +
   scale_x_continuous(breaks = seq(100, 140, by = 5)) + 
   theme_minimal() +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
-  labs(y = "Ukupan broj",
+  labs(y = "Ukupan broj pacijenata",
        x = "Krvni prisitak [mmHg]")
 ```
 
 ::: {.fragment}
 
 ```{r}
-tibble(
-  id = 1:N,
-  TA = rnorm(N, mean = 120, sd = 10)
-) %>% 
+#| fig-asp: 0.65
+dat_poly %>% 
   ggplot(aes(x = TA)) +
   geom_freqpoly(breaks = seq(100, 140, by = 5), color = "#F7F8F9", linewidth = 2) +
-  geom_point(stat="bin", aes(y=..count..), breaks = seq(100, 140, by = 5), 
+  geom_point(stat="bin", aes(y = after_stat(count)), breaks = seq(100, 140, by = 5), 
              size = 6, color = "white", shape = 21, fill = "#F4BA02", stroke = 2) +
   scale_x_continuous(breaks = seq(100, 140, by = 5)) + 
   theme_minimal() +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
-  labs(y = "Ukupan broj",
+  labs(y = "Ukupan broj pacijenata",
        x = "Krvni prisitak [mmHg]")
 ```
+
+:::
 
 :::
 
@@ -639,16 +716,17 @@ tibble(
 
 ## Vežbanje
 
-Iz baze [baza DZ.xlsx]{.yellow} tabelarno i grafički prikazati: 
-- hipertenziju, 
-- uhranjenost i, 
+Iz baze [baza DZ.xlsx]{.yellow} tabelarno i grafički prikazati:
+
+- hipertenziju
+- uhranjenost
 - starost
 
 ## Zaključak
 
 - Relativni rizici deluju bitnije nego što jesu; apsolutni rizici pojašnjavaju
 - Očekivane frekvencije (1 od 100) su jasnije za interpretaciju
-- Grafikoni se moraju pažljuvo praviti i tumačiti
+- Grafikoni se moraju pažljivo praviti i tumačiti
 - Način prikazivanja podataka zavisi od njihovog tipa*
 
 ## Struktura kursa
