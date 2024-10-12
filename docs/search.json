@@ -39,7 +39,7 @@
     "href": "slides/02_sredjivanje/prezentacija.html#tabelarno-prikazivanje-aps.-i-rel.-podataka",
     "title": "Sređivanje podataka",
     "section": "Tabelarno prikazivanje aps. i rel. podataka",
-    "text": "Tabelarno prikazivanje aps. i rel. podataka\n\n\n\n\n\n\nVarijabla\nN = 100\n\n\n\n\nNavika\n\n\n\nNepusac\n46 (46%)\n\n\nPusač\n54 (54%)\n\n\n\n1 n (%)"
+    "text": "Tabelarno prikazivanje aps. i rel. podataka\n\n\n\n\n\n\nVarijabla\nN = 100\n\n\n\n\nNavika\n\n\n\nNepusac\n51 (51%)\n\n\nPusač\n49 (49%)\n\n\n\n1 n (%)"
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#grafičko-prikazivanje-relativnih-brojeva",
@@ -207,7 +207,7 @@
     "href": "slides/02_sredjivanje/prezentacija.html#prikazivanje-kontinuiranih-podataka",
     "title": "Sređivanje podataka",
     "section": "Prikazivanje kontinuiranih podataka",
-    "text": "Prikazivanje kontinuiranih podataka\nGrupišu se po kategorijama\n\nOdrediti apsolutne i relativne učestalosti za starost\nGrafički prikaz\n\nhistogram\npoligon frekvencija"
+    "text": "Prikazivanje kontinuiranih podataka\nGrupišu se po klasnim intervalima\n\nOdrediti apsolutne i relativne učestalosti za starost\nGrafički prikaz\n\nhistogram\npoligon frekvencija"
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#histogram",
@@ -1796,7 +1796,7 @@
     "href": "slides/02_sredjivanje/prezentacija.html#različiti-efekti-u-studijama",
     "title": "Sređivanje podataka",
     "section": "Različiti efekti u studijama",
-    "text": "Različiti efekti u studijama\nEfikasnost (50-65 god):\n\nMortalitet (\\(RR = 0.86; ARD = -0.40\\%; NNT = 250\\))\nCVD (\\(RR = 0.69; ARD, -0.43\\%; NNT = 233\\))\nCVI (\\(RR = 0.71; ARD, -0.38\\%; NNT = 263\\))\nMI (\\(RR = 0.64; ARD, -0.81\\%; NNT = 123\\))\n\n\n\nRR je velik, dok je ARD sitan jer je mortalitet redak. U naucnoj komunikaciji RR su bitni, ali svakodnevno mogu da zavaraju. Sta moze da bude problem sa NNT? Sta ako terapija nekog osteti? Ovo su proseci, varijabilitet je isto bitan."
+    "text": "Različiti efekti u studijama\nEfikasnost (50-65 god):\n\nMortalitet (\\(RR = 0.86; ARR = 0.40\\%; NNT = 250\\))\nCVD (\\(RR = 0.69; ARR = 0.43\\%; NNT = 233\\))\nCVI (\\(RR = 0.71; ARR = 0.38\\%; NNT = 263\\))\nMI (\\(RR = 0.64; ARR = 0.81\\%; NNT = 123\\))\n\n\n\nRR je velik, dok je ARD sitan jer je mortalitet redak. U naucnoj komunikaciji RR su bitni, ali svakodnevno mogu da zavaraju. Sta moze da bude problem sa NNT? Sta ako terapija nekog osteti? Ovo su proseci, varijabilitet je isto bitan."
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#šta-nije-u-redu-sa-ovim-srcem",
@@ -1817,7 +1817,7 @@
     "href": "slides/02_sredjivanje/prezentacija.html#tabelarno-prikazivanje-podataka",
     "title": "Sređivanje podataka",
     "section": "Tabelarno prikazivanje podataka",
-    "text": "Tabelarno prikazivanje podataka\n\n\n \n\n  \n    \n    \n    tinytable_qrbjgcgujs6a3c003kea\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Bolnica\n                Operacije\n                Prezivelo\n                Umrlo\n                Preživljavanje\n                Smrtnost\n              \n        \n        \n        \n                \n                  Newcastle Freeman Hospital                      \n                   511\n                   497\n                  14\n                  97.3%\n                  2.7%\n                \n                \n                  Leicester Glenfield Hospital                    \n                   578\n                   572\n                   6\n                  99%  \n                  1%  \n                \n                \n                  Bristol Royal Hospital For Children             \n                   710\n                   697\n                  13\n                  98.2%\n                  1.8%\n                \n                \n                  Southampton Wessex Cardiothoracic Centre        \n                   720\n                   708\n                  12\n                  98.3%\n                  1.7%\n                \n                \n                  Dublin Our Lady's Children's Hospital           \n                   963\n                   935\n                  28\n                  97.1%\n                  2.9%\n                \n                \n                  Liverpool Alder Hey Hospital                    \n                   974\n                   955\n                  19\n                  98.1%\n                  1.9%\n                \n                \n                  Leeds General Infirmary                         \n                   920\n                   904\n                  16\n                  98.3%\n                  1.7%\n                \n                \n                  London Royal Brompton Hospital                  \n                   661\n                   653\n                   8\n                  98.8%\n                  1.2%\n                \n                \n                  London Evelina London Children's Hospital       \n                   932\n                   913\n                  19\n                  98%  \n                  2%  \n                \n                \n                  Birmingham Children's Hospital                  \n                  1141\n                  1118\n                  23\n                  98%  \n                  2%  \n                \n                \n                  London Great Ormond Street Hospital for Children\n                  1476\n                  1469\n                   7\n                  99.5%\n                  0.5%"
+    "text": "Tabelarno prikazivanje podataka\n\n\n \n\n  \n    \n    \n    tinytable_px5jqa1sm3apsczijpt6\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Bolnica\n                Operacije\n                Prezivelo\n                Umrlo\n                Preživljavanje\n                Smrtnost\n              \n        \n        \n        \n                \n                  Newcastle Freeman Hospital                      \n                   511\n                   497\n                  14\n                  97.3%\n                  2.7%\n                \n                \n                  Leicester Glenfield Hospital                    \n                   578\n                   572\n                   6\n                  99%  \n                  1%  \n                \n                \n                  Bristol Royal Hospital For Children             \n                   710\n                   697\n                  13\n                  98.2%\n                  1.8%\n                \n                \n                  Southampton Wessex Cardiothoracic Centre        \n                   720\n                   708\n                  12\n                  98.3%\n                  1.7%\n                \n                \n                  Dublin Our Lady's Children's Hospital           \n                   963\n                   935\n                  28\n                  97.1%\n                  2.9%\n                \n                \n                  Liverpool Alder Hey Hospital                    \n                   974\n                   955\n                  19\n                  98.1%\n                  1.9%\n                \n                \n                  Leeds General Infirmary                         \n                   920\n                   904\n                  16\n                  98.3%\n                  1.7%\n                \n                \n                  London Royal Brompton Hospital                  \n                   661\n                   653\n                   8\n                  98.8%\n                  1.2%\n                \n                \n                  London Evelina London Children's Hospital       \n                   932\n                   913\n                  19\n                  98%  \n                  2%  \n                \n                \n                  Birmingham Children's Hospital                  \n                  1141\n                  1118\n                  23\n                  98%  \n                  2%  \n                \n                \n                  London Great Ormond Street Hospital for Children\n                  1476\n                  1469\n                   7\n                  99.5%\n                  0.5%"
   },
   {
     "objectID": "slides/02_sredjivanje/prezentacija.html#hirurški-mortalitet-kod-transpozicije-1984-1995",
@@ -1874,5 +1874,26 @@
     "title": "Sređivanje podataka",
     "section": "Diskretne vrednosti bronhitisa",
     "text": "Diskretne vrednosti bronhitisa\n\n\n \n\n  \n    \n    \n    tinytable_30ttofnaj2szlja7k1c5\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Broj resp. infekcija\n                n\n                %\n              \n        \n        \n        \n                \n                  0\n                  4\n                  13\n                \n                \n                  1\n                  8\n                  27\n                \n                \n                  2\n                  8\n                  27\n                \n                \n                  3\n                  4\n                  13\n                \n                \n                  4\n                  2\n                   7\n                \n                \n                  5\n                  4\n                  13"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#dodatak-definicija-relativnog-rizka",
+    "href": "slides/02_sredjivanje/prezentacija.html#dodatak-definicija-relativnog-rizka",
+    "title": "Sređivanje podataka",
+    "section": "Dodatak: definicija relativnog rizka",
+    "text": "Dodatak: definicija relativnog rizka\n\nRizik\n\nJe proporcija.\n\n\n\\[ R = \\frac{\\text{broj infarkta}}{\\text{ukupan broj pacijenata}} \\]\n\nRelativni rizik\n\nJe odnos proporcija.\n\n\n\\[ RR = \\frac{\\text{rizik sa statinom}}{\\text{rizik bez statina}} \\]\nAko je RR \\(\\lt1\\) rizik je manji kod grupe koja je uzimala statin. Relativni rizik meri koje su šanse da se dogadjaj desi u grupi koja je uzimala lek u odnosu na onu koja nije."
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#dodatak-definicija-apsolutnog-rizika",
+    "href": "slides/02_sredjivanje/prezentacija.html#dodatak-definicija-apsolutnog-rizika",
+    "title": "Sređivanje podataka",
+    "section": "Dodatak: definicija apsolutnog rizika",
+    "text": "Dodatak: definicija apsolutnog rizika\n\nApsolutna redukcija rizika (ARR)\n\nRazlika (ne odnos proporcija) između broja događaja kod pacijenata koji su pili statin i onih koji nisu.\n\n\n\\[ ARR = \\text{rizik bez statina} - \\text{rizik sa statinom} \\]\n\nBroj potreban za lečenje (NNT)\n\nBroj pacijenata koji moramo da lečimo (engl. NNT, number needed to treat) da bi sprečili jedan neželjen događaj.\n\n\n\\[ NNT = 1/ARR \\]"
+  },
+  {
+    "objectID": "slides/02_sredjivanje/prezentacija.html#grafički-prikaz-relativne-redukcije-rizika",
+    "href": "slides/02_sredjivanje/prezentacija.html#grafički-prikaz-relativne-redukcije-rizika",
+    "title": "Sređivanje podataka",
+    "section": "Grafički prikaz relativne redukcije rizika",
+    "text": "Grafički prikaz relativne redukcije rizika"
   }
 ]

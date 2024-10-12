@@ -107,10 +107,10 @@ Tromboza je retka u opstoj populaciji, ALI su mnogo češći na piluli. Ima kauz
 
 Efikasnost (50-65 god):
 
-- Mortalitet ($RR = 0.86; ARD = -0.40\%; NNT = 250$)
-- CVD ($RR = 0.69; ARD, -0.43\%; NNT = 233$)
-- CVI ($RR = 0.71; ARD, -0.38\%; NNT = 263$)
-- MI ($RR = 0.64; ARD, -0.81\%; NNT = 123$)
+- Mortalitet ($RR = 0.86; ARR = 0.40\%; NNT = 250$)
+- CVD ($RR = 0.69; ARR = 0.43\%; NNT = 233$)
+- CVI ($RR = 0.71; ARR = 0.38\%; NNT = 263$)
+- MI ($RR = 0.64; ARR = 0.81\%; NNT = 123$)
 
 ![](slike/statin_jama.png)
 
@@ -118,7 +118,33 @@ Efikasnost (50-65 god):
 RR je velik, dok je ARD sitan jer je mortalitet redak. U naucnoj komunikaciji RR su bitni, ali svakodnevno mogu da zavaraju. Sta moze da bude problem sa NNT? Sta ako terapija nekog osteti? Ovo su proseci, varijabilitet je isto bitan.
 :::
 
-## Grafički prikaz redukcije relativnog rizika
+## Dodatak: definicija relativnog rizka {.smaller}
+
+Rizik
+  : Je [proporcija]{.yellow}. 
+
+$$ R = \frac{\text{broj infarkta}}{\text{ukupan broj pacijenata}} $$
+
+Relativni rizik
+  : Je [odnos proporcija]{.yellow}.
+  
+$$ RR = \frac{\text{rizik sa statinom}}{\text{rizik bez statina}} $$
+
+Ako je [RR]{.yellow} $\lt1$ rizik je manji kod grupe koja je uzimala statin. [Relativni rizik]{.yellow} meri koje su šanse da se dogadjaj desi u grupi koja je uzimala lek u odnosu na onu koja nije.
+
+## Dodatak: definicija apsolutnog rizika
+
+Apsolutna redukcija rizika (ARR)
+  : [Razlika]{.yellow} (ne odnos proporcija) između broja događaja kod pacijenata koji su pili statin i onih koji nisu.
+  
+$$ ARR = \text{rizik bez statina} - \text{rizik sa statinom} $$
+
+Broj potreban za lečenje (NNT)
+  : Broj pacijenata koji moramo da lečimo (engl. *NNT, number needed to treat*) da bi sprečili jedan neželjen događaj.
+  
+$$ NNT = 1/ARR $$
+
+## Grafički prikaz relativne redukcije rizika
 
 ```{r}
 tribble(
@@ -655,7 +681,7 @@ tibble(
 ::::
 
 ## Prikazivanje kontinuiranih podataka
-*Grupišu se po [kategorijama]{.yellow}*
+*Grupišu se po [klasnim intervalima]{.yellow}*
 
 - Odrediti apsolutne i relativne učestalosti za **starost**
 - Grafički prikaz
