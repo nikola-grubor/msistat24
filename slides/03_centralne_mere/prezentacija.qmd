@@ -91,6 +91,7 @@ Indeksi dinamike
 ## Praćenje LDL odgovora na statin (1)
 
 ```{r}
+#| fig-asp: 0.618
 lipid <- tribble(
   ~ID, ~Mesec, ~LDL,
   1, 1, 5.2,
@@ -113,8 +114,9 @@ ggplot(lipid, aes( x = Mesec, y = LDL, group = ID, color = factor(ID))) +
   annotate("text", label = "Visoko rizičan", x = 11, y = 4.7, col = "#F7F8F9",
            size = 5) +
   ylim(0, 6) +
-  theme(panel.grid.major.y = element_line(),
+  theme(panel.grid.minor.y = element_line(),
         legend.position = "none") +
+  ggdist::theme_ggdist(base_size = 18) +
   theme_blue() +
   labs(color = "Pacijent",
        y = "LDL mmol/L")
@@ -132,6 +134,7 @@ Bazni indeks dinamike ima uvek [istu osnovu]{.yellow}.
 ## Praćenje LDL odgovora na statin (2)
 
 ```{r}
+#| fig-asp: 0.618
 
 ggplot(lipid, aes( x = Mesec, y = LDL, group = ID, color = factor(ID))) +
   geom_line(linewidth = 2) +
@@ -147,7 +150,9 @@ ggplot(lipid, aes( x = Mesec, y = LDL, group = ID, color = factor(ID))) +
   ylim(0, 6) +
   theme(panel.grid.major.y = element_line(),
         legend.position = "none") +
+  ggdist::theme_ggdist(base_size = 18) +
   theme_blue() +
+  theme(legend.position = "none") +
   labs(color = "Pacijent",
        y = "LDL mmol/L")
 ```
@@ -155,6 +160,8 @@ ggplot(lipid, aes( x = Mesec, y = LDL, group = ID, color = factor(ID))) +
 ## Porvršina infarktnog polja miokarda
 
 ```{r}
+#| fig-asp: 0.618
+
 myocard <- tribble(
   ~ID, ~Sati, ~trop,
   1, 0, 0.3,
@@ -169,7 +176,7 @@ myocard <- tribble(
 ggplot(myocard, aes( x = Sati, y = trop)) +
   geom_line(linewidth = 2, col = "#F4BA02") +
   geom_point(size = 4, col = "#F4BA02") +
-  geom_hline(yintercept = 4.9, linetype = "dashed", color = "#F7F8F9") +
+  geom_hline(yintercept = 0.04, linetype = "dashed", color = "#F7F8F9") +
   annotate("text", label = "Visoko rizičan", x = 11, y = 4.7, col = "#F7F8F9",
            size = 4) +
   ylim(0, 1) +
@@ -181,6 +188,7 @@ ggplot(myocard, aes( x = Sati, y = trop)) +
                             seed = 123) +
   theme(panel.grid.major.y = element_line(),
         legend.position = "none") +
+  ggdist::theme_ggdist(base_size = 18) +
   theme_blue() +
   labs(x = "Vreme (h)",
        y = "cTnI umcg/L")
@@ -211,7 +219,7 @@ $$ \text{Prevalencija} = \; P = \frac{O_u}{St} \times 1,000,000 $$
 
 ## Problem
 
-::: {.r-fit-text}
+::: {.r-fit-text .h-center}
 
 Prijateljica ti kaže da se porodila u terminu.
 
@@ -228,12 +236,15 @@ Da li je ovo [neobično]{.yellow} nisko?
 ::: {.r-stack}
 
 ```{r}
+#| fig-asp: 0.618
+
+
 bweight <- tibble( tezina = rnorm(1e6, 3480, 462) )
 
 ggplot(bweight, aes( x = tezina )) +
   geom_histogram(binwidth = 500, color = "#F7F8F9", fill = "#F4BA02") +
   scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
-  ggdist::theme_ggdist(base_size = 15) +
+  ggdist::theme_ggdist(base_size = 18) +
   theme(axis.text.y = element_blank()) +
   theme_blue() +
   labs(x = "Težina u gramima", y = "")
@@ -242,12 +253,14 @@ ggplot(bweight, aes( x = tezina )) +
 ::: {.fragment}
 
 ```{r}
+#| fig-asp: 0.618
+
 ggplot(bweight, aes( x = tezina )) +
   geom_histogram(binwidth = 500, color = "#F7F8F9", fill = "#F4BA02") +
   geom_vline(xintercept = 2910, linetype = 2, col = "#F7F8F9",
              linewidth = 1.5) +
   scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
-  ggdist::theme_ggdist(base_size = 15) +
+  ggdist::theme_ggdist(base_size = 18) +
   theme(axis.text.y = element_blank()) +
   theme_blue() +
   labs(x = "Težina u gramima", y = "")
@@ -325,6 +338,7 @@ ggplot(data = unimod, aes( x = x)) +
 
 ```{r}
 #| fig-align: "center"
+#| fig-asp: 0.618
 
 ggplot(bweight, aes( x = tezina )) +
   geom_histogram(binwidth = 500, color = "#F7F8F9", fill = "#F4BA02") +
@@ -333,9 +347,9 @@ ggplot(bweight, aes( x = tezina )) +
   geom_vline(xintercept = mean(bweight$tezina), linetype = 1, col = "tomato",
              linewidth = 1.5) +
   annotate("text", label = paste(round( mean(bweight$tezina) ), "g"),
-                                 x = 4200, y = 4e6, size = 6, col = "#F7F8F9") +
+                                 x = 4200, y = 4e5, size = 6, col = "#F7F8F9") +
   scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
-  ggdist::theme_ggdist(base_size = 15) +
+  ggdist::theme_ggdist(base_size = 18) +
   theme(axis.text.y = element_blank()) +
   theme_blue() +
   labs(x = "Težina u gramima", y = "")
@@ -384,10 +398,16 @@ bmi_skole <- tribble(
 tt(bmi_skole)
 ```
 
+::: {.fragment}
+
 $$ \bar x = \frac{\text{broj učenika}_{škola} \times \text{BMI}_{škola}}{\text{ukupno učenika}_{škola}} = $$ 
 
-$$ \frac{225 \times 22.7 + 307 \times 19.4 + 511 \times 20.9}{255 + 307 + 511} = 21.1 $$
+:::
 
+::: {.fragment}
+
+$$ \frac{225 \times 22.7 + 307 \times 19.4 + 511 \times 20.9}{255 + 307 + 511} = 21.1 $$
+:::
 
 ## Prednosti i mane aritmetičke sredine
 
@@ -409,11 +429,14 @@ Ove dve stavke mogu biti u konfliktu.
 
 Model uči specifičnosti uzorka (šum).
 
-## Ekstremne vrednosti snažno utiču na artimetičku sredinu
+## Ekstremne vrednosti
+
+Značajno utiču na artimetičku sredinu.
 
 ::: {.r-stack}
 
 ```{r}
+#| fig-asp: 0.618
 salary <- tibble(salary = c(rnorm(1000, 80000, 10000), rep(1e6, 10)))
 
 ggplot(salary, aes( x = salary)) +
@@ -423,12 +446,15 @@ ggplot(salary, aes( x = salary)) +
   annotate("text", label = "88,903 RSD\n(80,000 RSD)", x = 250000, y = 100,
            size = 6, col = "#F7F8F9") +
   # theme(axis.text.y = element_blank()) +
+  ggdist::theme_ggdist(base_size = 18) +
   theme_blue() +
   labs(x = "Neto zarada", y = "Broj")
 ```
 ::: {.fragment}
 
 ```{r}
+#| fig-asp: 0.618
+
 
 ggplot(salary, aes( x = salary)) +
   geom_histogram(fill = "#F4BA02", col = "#F7F8F9", bins = 80) + 
@@ -437,6 +463,7 @@ ggplot(salary, aes( x = salary)) +
   annotate("text", label = "Medijana = 79,765 RSD\n(80,000 RSD)", x = 350000, y = 100,
            size = 6, col = "#F7F8F9") +
   # theme(axis.text.y = element_blank()) +
+  ggdist::theme_ggdist(base_size = 18) +
   theme_blue() +
   labs(x = "Neto zarada", y = "Broj")
 ```
@@ -445,7 +472,7 @@ ggplot(salary, aes( x = salary)) +
 
 :::
 
-## Robustna medijana {.smaller}
+## Robustna medijana
 
 - Manje osetljiva na ekstremne vrednosti (outlier)
 - Otkriva srednju poziciju
@@ -507,7 +534,7 @@ ggplot(bweight, aes( x = tezina )) +
   geom_vline(xintercept = 2910, linetype = 2, col = "#F7F8F9",
              linewidth = 1.5, alpha = 0.5) +
   scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
-  ggdist::theme_ggdist(base_size = 15) +
+  ggdist::theme_ggdist(base_size = 18) +
   theme(axis.text.y = element_blank()) +
   theme_blue() +
   labs(x = "Težina u gramima", y = "")
@@ -528,7 +555,7 @@ ggplot(bweight, aes( x = tezina )) +
   geom_vline(xintercept = 2910, linetype = 2, col = "#F7F8F9",
              linewidth = 1.5, alpha = 0.5) +
   scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
-  ggdist::theme_ggdist(base_size = 15) +
+  ggdist::theme_ggdist(base_size = 18) +
   theme(axis.text.y = element_blank()) +
   theme_blue() +
   labs(x = "Težina u gramima", y = "")
@@ -561,7 +588,7 @@ ggplot(bweight, aes( x = tezina )) +
                 color = "#F7F8F9", size = 1.5,
                 xlim = c(3480-4*462, 3480+4*462)) +
   scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
-  ggdist::theme_ggdist(base_size = 15) +
+  ggdist::theme_ggdist(base_size = 18) +
   theme(axis.text.y = element_blank()) +
   theme_blue() +
   labs(x = "Težina u gramima", y = "")
@@ -670,8 +697,12 @@ vrednosti skupa podataka oko srednje vrednosti.
 Koliko variraju vrednosti od najmanje do najveće?
 
 $$ I = x_{max} - x_{min} = 31337 - 244 = 31093 \; \; \text{opseg pogodaka} $$
+```{r}
+#| fig-asp: 0.618
+#| fig-align: "center"
 
-
+fig_1 + theme_blue_void()
+```
 
 ## Kvantili
 

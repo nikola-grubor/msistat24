@@ -334,7 +334,7 @@ Number of births: 3, no sense in talking about 3.5 births!
 ::: {.callout-tip}
 ## Example
 
-When we measure weight in $kg$ we usually round up, but it makes sense to talk about *more precise* measurements ($70 \; \text{kg}$, $70.3467 \; \text{kg}$).
+When we measure weight in $kg$ we usually round the numbers so they look whole, but it sill makes sense to talk about *more precise* measurements ($70 \; \text{kg}$, $70.3467 \; \text{kg}$).
 :::
 
 ::: {.notes}
