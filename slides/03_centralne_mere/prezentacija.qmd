@@ -27,27 +27,25 @@ library(patchwork)
 source(file = here("slides", "theme", "ggthemes.R"))
 ```
 
-# Relativni brojevi
+# Relativni brojevi (koeficijenti)
 
 ## Koeficijenti strukture
 
 ```{r}
 kreveti <- tribble(
-  ~Jedinica, ~BolnicaA, ~BolnicaB,
+  ~Jedinica, ~`Bolnica A`, ~`Bolnica B`,
   "Interno", 70, 80,
   "Ginekološko", 40, 140,
   "Hirurško", 80, 100,
   "Pedijatrijsko", 50, 160) %>% 
-  mutate(Ukupno = BolnicaA + BolnicaB) %>%
-  add_row(tibble(Jedinica = "Ukupno", BolnicaA = sum(.$BolnicaA), 
-                 BolnicaB = sum(.$BolnicaB),
+  mutate(Ukupno = `Bolnica A` + `Bolnica B`) %>%
+  add_row(tibble(Jedinica = "Ukupno", `Bolnica A` = sum(.$`Bolnica A`), 
+                 `Bolnica B` = sum(.$`Bolnica B`),
                  Ukupno = sum(.$Ukupno)))
 
 tt(kreveti) %>%
   style_tt(fontsize = 1)
 ```
-
-
 
 ## Struktura postelja na odeljenjima?
 
@@ -92,6 +90,7 @@ Indeksi dinamike
 
 ```{r}
 #| fig-asp: 0.618
+
 lipid <- tribble(
   ~ID, ~Mesec, ~LDL,
   1, 1, 5.2,
@@ -217,9 +216,9 @@ $$ \text{Prevalencija} = \; P = \frac{O_u}{St} \times 1,000,000 $$
 
 # Mere centralne tendencije
 
-## Problem
+## Problem {.center}
 
-::: {.r-fit-text .h-center}
+::: {.r-fit-text}
 
 Prijateljica ti kaže da se porodila u terminu.
 
@@ -232,6 +231,8 @@ Da li je ovo [neobično]{.yellow} nisko?
 :::
 
 ## Populacija težina neonatusa
+
+Kako uopšte da opišemo šta je [obično]{.yellow}?
 
 ::: {.r-stack}
 
@@ -272,15 +273,40 @@ ggplot(bweight, aes( x = tezina )) +
 
 ## Šta je model?
 
+:::: columns
+
+::: {.column}
+
 Namena statističkog modela je da najjednostavnije predstavi [stukturu]{.yellow} podataka.
+
+::: {.callout-tip}
+## Primer
+
+Atlasi koje koristimo ne prikazuju anatomiju kako ona *zapravo* izgleda u prirodi. Napravljeni su tako da najjednostavnije prikažu tipične anatomske odnose.
+:::
+
+:::
+
+::: {.column}
+
+![](slike/cbd.png)
+
+:::
+
+::::
 
 ## Model je opis procesa
 
-It can also be useful to think of a statistical model as a theory of how the observed data were generated; our goal then becomes to find the model that most efficiently and accurately summarizes the way in which the data were actually generated.
+Može biti korisno razmišljati o statističkim modelima kao o teorijama kako nastaju opservacije (podaci).
 
+Cilj je naći najefikasniji i najprecizniji način da se predstavi mehanizam kojim nastaju podaci.
+
+::: {.callout-tip}
 ## Modeli nisu tačni
 
-> As the statistician George Box famously said: “All models are wrong but some are useful.”
+Poznati satističar Džordž Boks je izrekao citat: "Svi modeli su pogrešni, ali neki su korisni."
+
+:::
 
 ## Osnovna sturuktura modela
 
@@ -300,13 +326,25 @@ This expresses the idea that the data can be broken into two portions: one porti
 
 ## Šta je najbolji opis podataka
 
-Pitanje je onda: kako da odredimo vrednost koja najbolje predstavlja podatke?
+:::: columns
 
-::: {.fragment}
+::: {.column}
+
+Kako da odredimo vrednost koja najbolje predstavlja podatke?
+
 - Mod
 - Medijana
 - Aritmetička sredina
+
 :::
+
+::: {.column}
+
+![](slike/faces.jpg){width=70%}
+
+:::
+
+::::
 
 ::: notes
 Kao kada biramo predsednika.
@@ -334,6 +372,10 @@ ggplot(data = unimod, aes( x = x)) +
   
 ```
 
+::: {.center-h}
+Gde su tipične vrednosti?
+:::
+
 ## Aritmetička sredina {.smaller}
 
 ```{r}
@@ -359,6 +401,10 @@ $$ \bar x = \frac{\sum_{i=1}^{n}x_i}{n} = \frac{x_1 + x_2 + ... + x_n}{n} $$
 ::: {.notes}
 Ako koristimo aritmetičku sredinu kao opis podataka prosečna greska će biti nula, međutim svaka individualna procena će i dalje imati neku grešku!
 :::
+
+## Šta su prednosti aritmetičke sredine?
+
+Objasnjenje.
 
 ## Aritmetička sredina za grupisane podatke {.smaller}
 
@@ -416,18 +462,18 @@ $$ \frac{225 \times 22.7 + 307 \times 19.4 + 511 \times 20.9}{255 + 307 + 511} =
 - Ne može da se koristi sa kategorijalnim podacima
 - Ekstremne vrednosti značajno utiču
 
-## Šta je "dobar" model?
+<!-- ## Šta je "dobar" model? -->
 
-- Opisuje podatke verno (ima najmanju moguću grešku)
-- Generalizuje se na druge podatke
+<!-- - Opisuje podatke verno (ima najmanju moguću grešku) -->
+<!-- - Generalizuje se na druge podatke -->
 
-Ove dve stavke mogu biti u konfliktu.
+<!-- Ove dve stavke mogu biti u konfliktu. -->
 
-## Primer generalizacije
+<!-- ## Primer generalizacije -->
 
-## Da li model može biti previše "dobar"
+<!-- ## Da li model može biti previše "dobar" -->
 
-Model uči specifičnosti uzorka (šum).
+<!-- Model uči specifičnosti uzorka (šum). -->
 
 ## Ekstremne vrednosti
 
@@ -443,13 +489,14 @@ ggplot(salary, aes( x = salary)) +
   geom_histogram(fill = "#F4BA02", col = "#F7F8F9", bins = 80) + 
   scale_x_continuous(label = scales::label_currency(prefix = "", 
                                                     suffix = " RSD")) +
-  annotate("text", label = "88,903 RSD\n(80,000 RSD)", x = 250000, y = 100,
-           size = 6, col = "#F7F8F9") +
+  annotate("text", label = "88,903 RSD\n(80,000 RSD)", x = 300000, y = 100,
+           size = 8, col = "#F7F8F9") +
   # theme(axis.text.y = element_blank()) +
   ggdist::theme_ggdist(base_size = 18) +
   theme_blue() +
   labs(x = "Neto zarada", y = "Broj")
 ```
+
 ::: {.fragment}
 
 ```{r}
@@ -460,8 +507,8 @@ ggplot(salary, aes( x = salary)) +
   geom_histogram(fill = "#F4BA02", col = "#F7F8F9", bins = 80) + 
   scale_x_continuous(label = scales::label_currency(prefix = "", 
                                                     suffix = " RSD")) +
-  annotate("text", label = "Medijana = 79,765 RSD\n(80,000 RSD)", x = 350000, y = 100,
-           size = 6, col = "#F7F8F9") +
+  annotate("text", label = "Medijana = 79,765 RSD\n(80,000 RSD)", x = 450000, y = 100,
+           size = 8, col = "#F7F8F9") +
   # theme(axis.text.y = element_blank()) +
   ggdist::theme_ggdist(base_size = 18) +
   theme_blue() +
@@ -481,8 +528,13 @@ ggplot(salary, aes( x = salary)) +
 
 ## Računanje medijane (1)
 
-$$ 8,6,3,14,12,7,6,4,9 $$ {#eq-median-unorded}
-$$ 3,4,6,6,7,8,9,12,14 $$ {#eq-median-ordered}
+Sirovi podaci:
+
+$$ 8,6,3,14,12,7,6,4,9 $$ 
+
+Poređani:
+
+$$ 3,4,6,6,7,8,9,12,14 $$
 
 Formula za poziciju medijane:
 
@@ -628,7 +680,7 @@ Kako da okarakterišemo [opseg]{.yellow} pogodaka?
 ## Prikazivanje varijabiliteta
 
 ```{r}
-#| fig-asp: 0.65
+#| fig-asp: 0.618
 #| fig-align: "center"
 
 bean <- read.csv(file = here::here("slides", "03_centralne_mere", "data", "bean.csv")) %>% 
@@ -791,6 +843,36 @@ Koeficijent varijacije se izražava u procentima!
 ::: {.notes}
 The coefficient of variation should be computed only for data measured on scales that have a meaningful zero (ratio scale) and hence allow relative comparison of two measurements (i.e., division of one measurement by the other). The coefficient of variation may not have any meaning for data on an interval scale.
 :::
+
+## Homogeni i heterogeni podaci
+
+```{r}
+#| fig-align: "center"
+#| fig-asp: 0.618
+
+
+ggplot() +
+  stat_function(
+    fun = dnorm,
+    args = list(mean = 10, sd = 2),
+    xlim = c(10-3*2, 10+3*2),
+    col = "#F4BA02",
+    linewidth = 2
+  ) +
+  stat_function(
+    fun = dnorm,
+    args = list(mean = 10, sd = 10),
+    xlim = c(10-3*10, 10+3*10),
+    col = "tomato",
+    linewidth = 2
+  ) +
+  annotate("text", label = paste("CV = ", 2/10*100, "%"),
+           x = 20, y = 0.18, col = "white", size = 8) +
+  annotate("text", label = paste("CV = ", 10/10*100, "%"),
+           x = -2, y = 0.05, col = "white", size = 8) +
+  theme_blue_void()
+```
+
 
 ## Z-vrednost
 
