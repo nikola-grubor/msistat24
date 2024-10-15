@@ -90,6 +90,7 @@ Indeksi dinamike
 
 ```{r}
 #| fig-asp: 0.618
+#| fig-align: "center"
 
 lipid <- tribble(
   ~ID, ~Mesec, ~LDL,
@@ -134,6 +135,7 @@ Bazni indeks dinamike ima uvek [istu osnovu]{.yellow}.
 
 ```{r}
 #| fig-asp: 0.618
+#| fig-align: "center"
 
 ggplot(lipid, aes( x = Mesec, y = LDL, group = ID, color = factor(ID))) +
   geom_line(linewidth = 2) +
@@ -156,10 +158,11 @@ ggplot(lipid, aes( x = Mesec, y = LDL, group = ID, color = factor(ID))) +
        y = "LDL mmol/L")
 ```
 
-## Porvršina infarktnog polja miokarda
+## Površina infarktnog polja miokarda
 
 ```{r}
 #| fig-asp: 0.618
+#| fig-align: "center"
 
 myocard <- tribble(
   ~ID, ~Sati, ~trop,
@@ -195,7 +198,7 @@ ggplot(myocard, aes( x = Sati, y = trop)) +
 
 ## Lančani indeks dinamike {.smaller}
 
-$$ \frac{0.3}{0.3} \times 100 = 266 \% $$
+$$ \frac{0.8}{0.3} \times 100 = 266 \% $$
 
 $$ \frac{0.3}{0.8} \times 100 = 37.5 \%, \; \text{u padu} $$
 
@@ -226,13 +229,13 @@ Beba na porođaju ima [2.91 kg]{.yellow}.
 
 Rečeno joj je da je ovo ispod proseka, i sad je zabrinuta.
 
-Da li je ovo [neobično]{.yellow} nisko?
+Da li je ovo [neobično]{.yellow} nisko? Kako definišemo [obično]{.yellow}?
 
 :::
 
 ## Populacija težina neonatusa
 
-Kako uopšte da opišemo šta je [obično]{.yellow}?
+Kako da opišemo [strukturu]{.yellow} ovih podataka?
 
 ::: {.r-stack}
 
@@ -297,9 +300,7 @@ Atlasi koje koristimo ne prikazuju anatomiju kako ona *zapravo* izgleda u prirod
 
 ## Model je opis procesa
 
-Može biti korisno razmišljati o statističkim modelima kao o teorijama kako nastaju opservacije (podaci).
-
-Cilj je naći najefikasniji i najprecizniji način da se predstavi mehanizam kojim nastaju podaci.
+Može biti korisno razmišljati o statističkim modelima kao o [teorijama]{.yellow} kako nastaju opservacije (podaci).
 
 ::: {.callout-tip}
 ## Modeli nisu tačni
@@ -308,21 +309,29 @@ Poznati satističar Džordž Boks je izrekao citat: "Svi modeli su pogrešni, al
 
 :::
 
-## Osnovna sturuktura modela
+[Cilj]{.yellow} je naći najefikasniji i najprecizniji način da se predstavi [mehanizam]{.yellow} kojim nastaju podaci.
 
-$$ \text{podaci} = \text{model} + \text{greška} $$ {#eq-def-model}
+## Šta je greška modela?
+
+$$ \text{podaci} = \text{model} + \text{greška} $$
 
 Preko modela možemo da dobijemo [predviđanja]{.yellow}.
 
-$$  \widehat{\text{podaci}}_i = \text{model}_i $$ {#eq-def-model-approx}
+$$  \text{model} = \widehat{\text{podaci}}  $$
 
 [Greška]{.yellow} modela je razlika između predviđanja modela i stvarnih podataka.
 
-$$ \text{greška}_i = \text{podaci}_i - \widehat{\text{podaci}} $$ {#eq-def-error}
+$$ \text{greška}_i = \text{podaci}_i - \widehat{\text{podaci}} $$
 
 ::: notes
 This expresses the idea that the data can be broken into two portions: one portion that is described by a statistical model, which expresses the values that we expect the data to take given our knowledge, and another portion that we refer to as the error that reflects the difference between the model’s predictions and the observed data.
 :::
+
+## Šta je "dobar" model?
+
+Model koji [najmanje greši]{.yellow} je najbolji model.
+
+$$ \text{greška}_i = \text{podaci}_i - \widehat{\text{podaci}} $$
 
 ## Šta je najbolji opis podataka
 
@@ -350,12 +359,24 @@ Kako da odredimo vrednost koja najbolje predstavlja podatke?
 Kao kada biramo predsednika.
 :::
 
+<!-- Ove dve stavke mogu biti u konfliktu. -->
+
+<!-- ## Primer generalizacije -->
+
+<!-- ## Da li model može biti previše "dobar" -->
+
+<!-- Model uči specifičnosti uzorka (šum). -->
+
 ## Mod
 
 Najjednostavniji predstavnik podataka je najčešća vrednost, tzv. mod (tipična vrednost).
 
-$$ 1,2,2,4,4,4,7,8,9,11,11$$
+$$ 1,2,2,4,4,4,7,8,9,11,11 $$
 $$ mod = 4 $$
+
+::: {.callout-important}
+Mod je jedina mera koja se može upotrebiti za nominalne podatke.
+:::
 
 ## Unimodalna i bimodalna raspodela
 
@@ -376,7 +397,7 @@ ggplot(data = unimod, aes( x = x)) +
 Gde su tipične vrednosti?
 :::
 
-## Aritmetička sredina {.smaller}
+## Prosek neonatalne težine {.smaller}
 
 ```{r}
 #| fig-align: "center"
@@ -389,22 +410,65 @@ ggplot(bweight, aes( x = tezina )) +
   geom_vline(xintercept = mean(bweight$tezina), linetype = 1, col = "tomato",
              linewidth = 1.5) +
   annotate("text", label = paste(round( mean(bweight$tezina) ), "g"),
-                                 x = 4200, y = 4e5, size = 6, col = "#F7F8F9") +
+                                 x = 4200, y = 4e5, size = 8, col = "#F7F8F9") +
   scale_x_continuous(breaks = c(2000, 3000, 4000, 5000)) +
   ggdist::theme_ggdist(base_size = 18) +
   theme(axis.text.y = element_blank()) +
   theme_blue() +
   labs(x = "Težina u gramima", y = "")
 ```
+
 $$ \bar x = \frac{\sum_{i=1}^{n}x_i}{n} = \frac{x_1 + x_2 + ... + x_n}{n} $$ 
 
 ::: {.notes}
 Ako koristimo aritmetičku sredinu kao opis podataka prosečna greska će biti nula, međutim svaka individualna procena će i dalje imati neku grešku!
 :::
 
-## Šta su prednosti aritmetičke sredine?
+## Karakteristike artimetičke sredine
 
-Objasnjenje.
+Aritmetička sredina ima prosečnu grešku od [nula]{.yellow}:
+
+$$ \text{prosečna greška} = \frac{1}{n}\sum_{i = n}^n  (x_i - \bar x) = 0  $$
+
+Aritmetička sredina ima [najmanju]{.yellow} moguću prosečnu kvadratnu grešku:
+
+$$ \text{prosečna kvadratna greška} = \frac{1}{n}\sum_{i = n}^n (x_i - \bar x )^2 $$
+
+## Zbir kvadrata greške aritmetičke sredine je najmanji
+
+```{r}
+#| fig-asp: 0.618
+#| fig-align: "center"
+
+set.seed(123)
+sse_data <- rnorm(300, mean = 3480, sd = 2)
+mean_estimates <- seq(3480-2, 3480+2, by = 0.01)
+
+sse <- sapply(mean_estimates, function(m) sum((sse_data - m)^2))
+
+plot_data <- data.frame(mean_estimate = mean_estimates, 
+                        SSE = sse)
+
+ggplot(plot_data, aes(x = mean_estimate, y = SSE)) +
+  geom_line(color = "#F4BA02", linewidth = 1.5) +
+  geom_vline(xintercept = mean(sse_data), 
+             linetype = "dashed", color = "#F7F8F9", linewidth = 1.5) +
+  annotate("text", x = mean(sse_data) + 0.2, y = min(sse) + 700, 
+           label = "bar(x)", 
+           color = "#F7F8F9", size = 8,
+           parse = TRUE) +
+  scale_x_continuous(labels = scales::label_number(suffix = " g")) +
+  labs(x = "Pokušaj opisa podataka (aritmetička sredina)",
+       y = "Zbir kvadratnog odstupanja") +
+  ggdist::theme_ggdist(base_size = 18) +
+  theme_blue()
+
+```
+
+
+::: {.notes}
+It turns out that if we use the arithmetic mean as our estimator then the average error will indeed be zero (see the simple proof at the end of the chapter if you are interested). Even though the average of errors from the mean is zero, each individual still has some degree of error; some are positive and some are negative, and those cancel each other out to give an average error of zero.
+:::
 
 ## Aritmetička sredina za grupisane podatke {.smaller}
 
@@ -452,7 +516,7 @@ $$ \bar x = \frac{\text{broj učenika}_{škola} \times \text{BMI}_{škola}}{\tex
 
 ::: {.fragment}
 
-$$ \frac{225 \times 22.7 + 307 \times 19.4 + 511 \times 20.9}{255 + 307 + 511} = 21.1 $$
+$$ \overline{BMI} = \frac{225 \times 22.7 + 307 \times 19.4 + 511 \times 20.9}{255 + 307 + 511} = 21.1 $$
 :::
 
 ## Prednosti i mane aritmetičke sredine
@@ -462,33 +526,23 @@ $$ \frac{225 \times 22.7 + 307 \times 19.4 + 511 \times 20.9}{255 + 307 + 511} =
 - Ne može da se koristi sa kategorijalnim podacima
 - Ekstremne vrednosti značajno utiču
 
-<!-- ## Šta je "dobar" model? -->
-
-<!-- - Opisuje podatke verno (ima najmanju moguću grešku) -->
-<!-- - Generalizuje se na druge podatke -->
-
-<!-- Ove dve stavke mogu biti u konfliktu. -->
-
-<!-- ## Primer generalizacije -->
-
-<!-- ## Da li model može biti previše "dobar" -->
-
-<!-- Model uči specifičnosti uzorka (šum). -->
-
 ## Ekstremne vrednosti
-
-Značajno utiču na artimetičku sredinu.
 
 ::: {.r-stack}
 
 ```{r}
 #| fig-asp: 0.618
+#| fig-width: 12
+#| fig-align: "center"
+
+
 salary <- tibble(salary = c(rnorm(1000, 80000, 10000), rep(1e6, 10)))
 
 ggplot(salary, aes( x = salary)) +
   geom_histogram(fill = "#F4BA02", col = "#F7F8F9", bins = 80) + 
-  scale_x_continuous(label = scales::label_currency(prefix = "", 
-                                                    suffix = " RSD")) +
+  geom_vline(xintercept = mean(salary$salary), linewidth = 2, linetype = 2,
+             col = "tomato") +
+  scale_x_continuous(label = scales::label_number(suffix = " RSD")) +
   annotate("text", label = "88,903 RSD\n(80,000 RSD)", x = 300000, y = 100,
            size = 8, col = "#F7F8F9") +
   # theme(axis.text.y = element_blank()) +
@@ -501,12 +555,14 @@ ggplot(salary, aes( x = salary)) +
 
 ```{r}
 #| fig-asp: 0.618
-
+#| fig-align: "center"
+#| fig-width: 12
 
 ggplot(salary, aes( x = salary)) +
-  geom_histogram(fill = "#F4BA02", col = "#F7F8F9", bins = 80) + 
-  scale_x_continuous(label = scales::label_currency(prefix = "", 
-                                                    suffix = " RSD")) +
+  geom_histogram(fill = "#F4BA02", col = "#F7F8F9", bins = 80) +
+  geom_vline(xintercept = median(salary$salary), linewidth = 2, linetype = 2,
+             col = "tomato") +
+  scale_x_continuous(label = scales::label_number(suffix = " RSD")) +
   annotate("text", label = "Medijana = 79,765 RSD\n(80,000 RSD)", x = 450000, y = 100,
            size = 8, col = "#F7F8F9") +
   # theme(axis.text.y = element_blank()) +
@@ -566,7 +622,18 @@ $$ me = \frac{4+8}{2} = 6 $$
 
 ## Prednost i mane mera centralne tendencije
 
-Tabela pros and cons
+```{r}
+data.frame(
+  Kontekst = c(
+    "Numerički podaci bez ekstremnih vrednosti",
+    "Numerički + ekstremne vrednosti",
+    "Ordinalni",
+    "Ordinalni, $\\lt3$ kategorije",
+    "Nominalni"),
+  Mera = c("Aritmetička sredina", "Medijana", "Medijana", "Mod", "Mod"),
+  check.names = FALSE) %>%
+  tt()
+```
 
 ## Koliko je retka težina od 2.91 kg?
 
@@ -591,6 +658,7 @@ ggplot(bweight, aes( x = tezina )) +
   theme_blue() +
   labs(x = "Težina u gramima", y = "")
 ```
+
 ::: {.fragment}
 
 ```{r}
@@ -612,6 +680,7 @@ ggplot(bweight, aes( x = tezina )) +
   theme_blue() +
   labs(x = "Težina u gramima", y = "")
 ```
+
 :::
 
 ::: {.fragment}
@@ -667,7 +736,7 @@ So a population can be thought of as a physical group of individuals, but also a
 ::: {.column}
 915 ljudi je pokušalo da pogodi koliko ima slatkiša u tegli.
 
-Kako da okarakterišemo [opseg]{.yellow} pogodaka?
+Kako da okarakterišemo [varijaciju]{.yellow} pogodaka?
 
 :::
 
@@ -756,76 +825,173 @@ $$ I = x_{max} - x_{min} = 31337 - 244 = 31093 \; \; \text{opseg pogodaka} $$
 fig_1 + theme_blue_void()
 ```
 
+<!-- ## Kvantili -->
+
+<!-- Dele podatke u jednak broj grupa. -->
+
+<!-- :::: {.r-stack} -->
+
+<!-- ```{r} -->
+<!-- N <- 100 -->
+<!-- quantile <- tibble( x = 1:N , y = 1) -->
+<!-- quantile %>%  -->
+<!--   ggplot(aes( x = x , y = y)) + -->
+<!--   geom_point(size = 1 , color = "#F4BA02") + -->
+<!--   theme_blue_void() -->
+<!-- ``` -->
+
+<!-- ::: {.fragment} -->
+
+<!-- ```{r} -->
+<!-- quantile <- tibble( x = 1:N , y = 1) -->
+<!-- quantile %>%  -->
+<!--   ggplot(aes( x = x , y = y)) + -->
+<!--   geom_point(size = 1 , color = "#F4BA02") + -->
+<!--   geom_vline(xintercept = N/2, linewidth = 1, linetype = 2, color = "#F7F8F9") + -->
+<!--   annotate("text", label = "paste(bold(medijana), \", 50. percentil\")",  -->
+<!--            x = N/2 + 30, y = 1.5, parse = TRUE, size = 7, color = "#F7F8F9") + -->
+<!--   theme_blue_void() + -->
+<!--   ylim(0, 2) -->
+<!-- ``` -->
+
+<!-- ::: -->
+
+<!-- ::: {.fragment} -->
+
+<!-- ```{r} -->
+<!-- quantile <- tibble( x = 1:N , y = 1) -->
+<!-- quantile %>%  -->
+<!--   ggplot(aes( x = x , y = y)) + -->
+<!--   geom_point(size = 1 , color = "#F4BA02") + -->
+<!--   annotate("segment", x = 1.25:N+0.25, y = 0.8, yend = 1.2, size = 0.5,  -->
+<!--            linetype = 2, color = "#F7F8F9") + -->
+<!--   annotate("text", label = "Percentili",  -->
+<!--            x = 15, y = 1.5, parse = TRUE, size = 7, color = "#F7F8F9") + -->
+<!--   theme_blue_void() + -->
+<!--   ylim(0, 2) -->
+<!-- ``` -->
+
+<!-- ::: -->
+
+<!-- :::: -->
+
 ## Kvantili
 
-Dele podatke u jednak broj grupa.
+![](slike/quant.png){fig-align="center"}
 
-:::: {.r-stack}
+## Tablica očekivanog rasta
+
+![](slike/growth.jpg){width=50% fig-align="center"}
+
+## Grafikon kutije (Box-and-Whisker Plot)
 
 ```{r}
-quantile <- tibble( x = 1:20 , y = 1)
-quantile %>% 
-  ggplot(aes( x = x , y = y)) +
-  geom_point(size = 8 , color = "#F4BA02") +
-  theme_blue_void()
+#| fig-asp: 0.618
+#| fig-align: "center"
+
+tibble(
+  data = c(rnorm(50, 10, 2), rnorm(50, 20, 5), rpois(50, 7)),
+  group = c(rep("Grupa I", 50), rep("Grupa II", 50), rep("Grupa III", 50))
+) %>% 
+  ggplot(aes(x = data, y = factor(group), fill = group)) +
+  geom_boxplot(col = "#F7F8F9") +
+  labs(x = "Starost", y = "") +
+  scale_x_continuous(breaks = scales::breaks_pretty()) +
+  ggdist::theme_ggdist(base_size = 18) +
+  theme_blue() +
+  theme(legend.position = "none")
+```
+
+## Definicija varijanse
+
+Varijansa je srednje kvadratno odstupanje od aritmetičke sredine:
+
+$$ \text{Var} = \frac{\sum(x-\bar x)^2}{n - 1} \; \text{grama}^2 $$
+
+Poenta varijanse.
+
+## Standardna devijacija
+
+```{r}
+ggplot() +
+  geom_vline(xintercept = 10, linetype = 2, col = "white", linewidth = 2) +
+  stat_function(
+    fun = dnorm,
+    args = list(mean = 10, sd = 2),
+    xlim = c(10-3*2, 10+3*2),
+    col = "#F4BA02",
+    linewidth = 2
+  ) +
+  stat_function(
+    fun = dnorm,
+    args = list(mean = 10, sd = 10),
+    xlim = c(10-3*10, 10+3*10),
+    col = "tomato",
+    linewidth = 2
+  ) +
+  annotate("text", label = paste("sd = ", 2),
+           x = 20, y = 0.18, col = "#F4BA02", size = 8) +
+  annotate("text", label = paste("sd = ", 10),
+           x = -2, y = 0.05, col = "tomato", size = 8) +
+  scale_x_continuous(breaks = scales::breaks_pretty()) +
+  ggdist::theme_ggdist(base_size = 18) +
+  theme(axis.text.y = element_blank()) +
+  theme_blue() +
+  labs( x = "", y = "")
+```
+
+## Definicija standardne devijacije
+
+Standardna devijacija je kvadratni koren iz srednjeg kvadratnog odstupanja od aritmetičke sredine:
+
+$$ \text{Var} = sd^{2} = \frac{\sum(x-\bar x)^2}{n - 1} \; \text{grama}^{2} $$
+$$ sd = \sqrt{\frac{\sum(x-\bar x)^2}{n - 1} \; } \text{grama} $$
+
+## Sumirani pokušaji pogodaka
+
+:::: columns
+
+::: {.column}
+
+```{r}
+
+getmode <- function(v) {
+   uniqv <- unique(v)
+   uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+bean %>% 
+  summarise(`Aritmetička sredina` = round(mean(guess)),
+            Medijana = round(median(guess)),
+            Mod = getmode(guess),
+            Opseg = paste(round(min(guess)), " - ", round(max(guess))),
+            `Interkvartilni opseg` = paste(round(quantile(guess, 1/4)), " - ", 
+                                           round(quantile(guess, 3/4))),
+            `Standardna devijacija` = round(sd(guess))) %>%
+   sjmisc::rotate_df(rn = "Mera") %>% rename("Svi podaci" = V1) %>% 
+  tt() %>% style_tt(fontsize = 0.75)
 ```
 
 ::: {.fragment}
-
-```{r}
-quantile <- tibble( x = 1:20 , y = 1)
-quantile %>% 
-  ggplot(aes( x = x , y = y)) +
-  geom_point(size = 8 , color = "#F4BA02") +
-  geom_vline(xintercept = 10, linewidth = 2, linetype = 2, color = "#F7F8F9") +
-  annotate("text", label = "paste(bold(medijana), \", 50. percentil\")", 
-           x = 15, y = 1.5, parse = TRUE, size = 7, color = "#F7F8F9") +
-  theme_blue_void() +
-  ylim(0, 2)
-```
+Tačan broj je [1616]{.yellow}.
+:::
 
 :::
 
-::: {.fragment}
-
-```{r}
-quantile <- tibble( x = 1:20 , y = 1)
-quantile %>% 
-  ggplot(aes( x = x , y = y)) +
-  geom_point(size = 8 , color = "#F4BA02") +
-  annotate("segment", x = 1.5:19.5, y = 0.8, yend = 1.2, size = 1.5, 
-           linetype = 2, color = "#F7F8F9") +
-  annotate("text", label = "Percentili", 
-           x = 15, y = 1.5, parse = TRUE, size = 7, color = "#F7F8F9") +
-  theme_blue_void() +
-  ylim(0, 2)
-```
-
+::: {.column}
+![](slike/beans.png){width="75%"}
 :::
 
 ::::
 
-## Tablica očekivanog rasta
-
-![](slike/growth.jpg)
-## Grafikon kutije (Box-and-Whisker Plot)
-
-## Definicija Varijanse
-
-$$ var = \frac{\sum(x-\bar x)^2}{n - 1} \; \text{mmHg}^2 $$
-
-## Poenta varijanse
-
-## Plot showing varience
-
-## Definicija standardne devijacije
-
-$$ var = sd^{2} = \frac{\sum(x-\bar x)^2}{n - 1} \; \text{mmHg}^{2} $$
-$$ sd = \sqrt{(\frac{\sum(x-\bar x)^2}{n - 1}) \; \text{mmHg}^2} $$
-
-Definicija
-
-PLot showing sd
+::: {.notes}
+1. Opseg je osetljiv na ekstremne vrednosti, bizaran pokusaj od 31000.
+2. IQR nije osetljiv na ekstremne vrednosti. Pokazuje centralnu polovinu.
+3. SD je podlozna ekstremnim vrednostima, najbolja za simetricne podatke.
+4. Medijana je najbolja.
+5. Mod je podlozan zaokruzivanju.
+6. Desno-iskosena pa artmeticka sredina nije pogodna.
+:::
 
 ## Koeficijent varijacije
 
@@ -867,14 +1033,14 @@ ggplot() +
     linewidth = 2
   ) +
   annotate("text", label = paste("CV = ", 2/10*100, "%"),
-           x = 20, y = 0.18, col = "white", size = 8) +
+           x = 20, y = 0.18, col = "#F4BA02", size = 8) +
   annotate("text", label = paste("CV = ", 10/10*100, "%"),
-           x = -2, y = 0.05, col = "white", size = 8) +
+           x = -2.5, y = 0.05, col = "tomato", size = 8) +
   theme_blue_void()
 ```
 
 
-## Z-vrednost
+## Z-vrednost {.center}
 
 Koliko je *standardnih devijacija* podatak udaljen od artmetičke sredine?
 
