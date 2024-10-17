@@ -908,8 +908,6 @@ Varijansa je srednje kvadratno odstupanje od aritmetičke sredine:
 
 $$ \text{Var} = \frac{\sum(x-\bar x)^2}{n - 1} \; \text{grama}^2 $$
 
-Poenta varijanse.
-
 ## Standardna devijacija
 
 ```{r}

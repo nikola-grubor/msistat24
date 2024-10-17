@@ -72,7 +72,7 @@ Nedostatak vitamina C $\rightarrow$ Skorbut
 
 - Slučajni (stohastnični)
 
-Prostor elementarnih ishoda $\omega$ je skup svih mogućih ishoda.
+Prostor (elementarnih) ishoda $\omega$ je skup svih mogućih ishoda.
 
 $\omega = \{A, B\, O, AB\}$
 
@@ -297,7 +297,7 @@ Aksiomi:
 Dodatni termini:
 
 - Verovatnoća događaja ($p$)
-- Verovatnoća supronost događaja ($1-p = q$)
+- Verovatnoća suprotnog događaja ($1-p = q$)
 - Komplementarnost ($p+q = 1$)
 
 ## Isključivost
