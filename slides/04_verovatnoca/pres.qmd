@@ -1,10 +1,9 @@
 ---
-title: "Kratak uvod u verovatnoću"
+title: "A short introduction to probability"
 date: last-modified
 author: "Dr Nikola Grubor"
 # institute: "Institut za Medicinsku Statistiku i Informatiku"
 logo: "slike/logo.png"
-lang: sr-Latn
 
 # format:
 #   revealjs:
@@ -24,7 +23,7 @@ library(gtsummary)
 source(file = here("slides", "theme", "ggthemes.R"))
 ```
 
-## de Méréov problem
+## de Méré's problem
 
 :::: columns
 
@@ -38,14 +37,14 @@ source(file = here("slides", "theme", "ggthemes.R"))
 
 ::::
 
-## Potreba za teorijom verovatnoće
+## The need for probability theory
 
 :::: columns
 
 ::: {.column}
-Verovatnoća kao produžetak Aristotelove logike.
+Probability as an extension of Aristotle's logic.
 
-Dobijamo mogućnost da pričamo o (ne)sigurnosti ubeđenja.
+We get to talk about the (un)certainty of belief.
 :::
 
 ::: {.column}
@@ -54,50 +53,53 @@ Dobijamo mogućnost da pričamo o (ne)sigurnosti ubeđenja.
 
 ::::
 
-## Šta je verovatnoća
+## Basic terms in probability theory {.smaller}
 
-[Eksperiment]{.yellow} je aktivnost koja proizvodi ishod (biramo novi put da testiramo da li je brži od starog).
+[Experiment]{.yellow}
+  : An activity that produces an outcome (choosing a new path to test if it is faster than the old one).
 
-$$ \text{Eksperiment} \rightarrow \text{Ishod} $$
+$$ \text{Experiment} \rightarrow \text{Outcome} $$
 
-[Prostor ishoda]{.yellow} je skup svih mogućih ishoda eksperimenta.
+[Sample space]{.yellow}
+  : The set of all possible outcomes of an experiment.
 
-$$ \text{Prostor ishoda kocke:} \; \omega = \{1,2,3,4,5,6\} $$
+$$ \text{Dice sample space:} \; \omega = \{1,2,3,4,5,6\} $$
 
-[Događaj]{.yellow} je podskup prostora ishoda.
+[Event]{.yellow}
+  : A subset of the outcome space.
 
-$$ \text{Događaj bacanja kocke} \; x = 6 $$
+$$ \text{Dice roll event} \; x = 6 $$
 
-## Kako delimo događaje?
+## Types of events
 
-Događaj je skup mogućih ishoda, a može biti:
+An event is a set of possible outcomes, and can be:
 
-- Deterministički (Nedostatak vitamina C $\rightarrow$ Skorbut)
+- Deterministic (e.g. Vitamin C deficiency $\rightarrow$ Scurvy)
 
-- Slučajni (stohastnični)
+- Random (stochastic)
 
-[Prostor]{.yellow} (elementarnih) [ishoda]{.yellow} $\omega$ je skup svih mogućih ishoda.
+The [sample space]{.yellow} of (elementary) [outcomes]{.yellow} $\omega$ is a set of all possible outcomes.
 
-$$ \omega = \{A, B\, O, AB\} \; \; \; \omega = \{\text{zdrav}, \text{bolestan}\} $$
+$$ \omega = \{A, B\, O, AB\} \; \; \; \omega = \{\text{healthy}, \text{sick}\} $$
 
-## Somatske ili germinativne mutacije
+## Somatic or germline mutations
 
 ![](slike/events.png)
 
-## Definicija verovatnoće {.center}
+## Definition of probability {.center}
 
 ::: {.r-fit-text}
-Verovatnoća je [mera očekivanja]{.yellow} 
+Probability is a [measure of expectation]{.yellow} 
 
-nekog slučajnog događaja.
+of some random event.
 :::
 
 ::: {.notes}
-Slučajan događaj = rezultat procesa koji ne znamo kako radi. Mera, proces kojim
-dodajem broj nečemu (metar i razdaljina, znanje i ocene).
+A random event = the result of a process that we don't know how it works. Measure, process by which
+I add a number to something (meter and distance, knowledge and grades).
 :::
 
-## Očekivanje je opštije od aritmetičke sredine
+## Expectation is more general than the mean
 
 :::: columns
 
@@ -109,8 +111,8 @@ dodajem broj nečemu (metar i razdaljina, znanje i ocene).
 ::: {.column}
 
 ::: {.callout-note}
-Očekivanja su svuda u medicini: preživljavanje, vreme do oporavka nakon uzimanja leka,
-lab. testovi (markeri, biohem. parametri, eGFR), itd.
+Expectations are everywhere in medicine: survival, time to recovery after taking the drug,
+lab. tests (markers, biochemical parameters, eGFR), etc.
 :::
 
 :::
@@ -118,11 +120,11 @@ lab. testovi (markeri, biohem. parametri, eGFR), itd.
 ::::
 
 ::: {.notes}
-Očekivana vrednost ne mora da bude najčešća (mod), i ne poklapa se sa svakodnevnom upotrebom.
-Ne mora ni da bude vrednost koja može da se desi 3.5 na kockici od 6 strana.
+The expected value does not have to be the most common (mode), nor does it does have to coincide with everyday use.
+It doesn't even have to be a value that can happen to be 3.5 on a 6-sided die.
 :::
 
-## Zakon velikih brojeva
+## Law of large numbers
 
 ```{r}
 
@@ -141,46 +143,46 @@ tibble(x = 1:length(runningavg), y = runningavg) %>%
     linewidth = 1,
     linetype = "dashed"
   ) +
-  ggdist::theme_ggdist(base_size = 15) +
+  ggdist::theme_ggdist(base_size = 18) +
   theme_blue() +
   ylim(1, 6) +
-  labs(y = "Aritmetička sredina (očekivanje)", x = "Događaj")
+  labs(y = "Mean (expectation)", x = "Event")
 ```
 
 
-## Kako određujemo verovatnoću?
+## How do we determine probability?
 
-1. Objektivna
-   - Teorijska (matematička)
-   - Empirijska (statistička)
+1. Objective
+   - Theoretical (mathematical)
+   - Empirical (statistical)
 
-2. Subjektivna
-   - Ubeđenje
+2. Subjective
+   - Belief
 
-## Teorijska verovatnoća
+## Theoretical probability
 
-- Znamo je pre merenja
-- Svi mogući ishodi su jednako verovatni
+- Available before measurement
+- All possible outcomes are equally likely
 
 ![](slike/classical.png){fig-align="center"}
 
-## Empirijska verovatnoća
+## Empirical probability
 
-Empirijska verovatnoća se određuje ([brojanjem]{.yellow}) posle posmatranog događaja.
+Empirical probability is determined (by counting) after observing the event.
 
 :::: columns
 
 ::: {.column}
-$$ p = \frac{\text{očekivano}}{\text{ukupno}} $$ 
+$$ p = \frac{\text{expected}}{\text{total}} $$ 
 :::
 
 ::: {.column}
 
 ```{r}
 tribble(
-  ~"Krvna grupa", ~"Relativna učestalnost",
+  ~"Blood group", ~"Relative frequency",
   "O", "45%",
-  "А", "39%",
+  "A", "39%",
   "B", "12%",
   "AB", "4%"
 ) %>% tt(.) %>% style_tt(fontsize = 1)
@@ -190,13 +192,13 @@ tribble(
 
 ::::
 
-## Subjektivna verovatnoća
+## Subjective probability
 
 :::: columns
 
 ::: {.column}
-- Uverenje
-- Ekspertsko mišljenje
+- Belief
+- Expert opinion
 
 ```{r}
 #| fig-width: 6
@@ -244,14 +246,14 @@ ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
     "text",
     x = 0.525,
     y = 1.8,
-    label = "dokazi",
+    label = "evidence",
     color = "#F7F8F9"
   ) +
   annotate(
     "text",
     x = 0.2,
     y = 1.8,
-    label = "apriorna",
+    label = "prior",
     fontface = "bold.italic",
     color = "#F7F8F9"
   ) +
@@ -259,7 +261,7 @@ ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
     "text",
     x = 0.8,
     y = 1.8,
-    label = "aposteriorna",
+    label = "posterior",
     fontface = "bold.italic",
     color = "#F7F8F9"
   ) +
@@ -276,11 +278,11 @@ ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
 ```{mermaid}
 
 flowchart TD
-  S(Simptom) --> A("Apriorna Verovatnoća")
-  Z(Znak) --> A
-  P(Prevlenca) --> A
-  A --> T{"Dijagnostički test"}
-  T --> AP("Aposteriorna Verovatnoća")
+  S(Symptom) --> A("Prior Belief")
+  Z(Sign) --> A
+  P(Prevalence) --> A
+  A --> T{"Diagnostic test"}
+  T --> AP("Posterior Belief")
 
 ```
 
@@ -288,32 +290,32 @@ flowchart TD
 
 ::::
 
-## Osobine verovatnoće
+## Properties of probability
 
-Aksiomi:
+Axioms:
 
-- Nenegativnost [0, 1]
-- Normiranost (zbir = 1)
-- Aditivnost
+- Non-negativity [0, 1]
+- Normality (sum = 1)
+- Additivity
 
-Dodatni termini:
+Additional dates:
 
-- Verovatnoća događaja ($p$)
-- Verovatnoća suprotnog događaja ($1-p = q$)
-- Komplementarnost ($p+q = 1$)
+- Event probability ($p$)
+- Probability of the opposite event ($1-p = q$)
+- Complementarity ($p+q = 1$)
 
-## Isključivost
+## Exclusivity
 
-Događaji su isključivi ako ne mogu da se dogode istovremeno.
+Events are exclusive if they cannot occur simultaneously.
 
-- Krvna grupa
-- Prisustvo simptoma gripa
-- Prisustvo medicinskog znaka
-- Dijagnoze
+- Blood group
+- Flu symptoms
+- Medical sign
+- Diagnoses
 
-## Zakoni verovatnoće: adicija (1)
+## Laws of probability: addition (1)
 
-Adicija (sabiranje verovatnoća) [isključivih]{.yellow} događaja.
+Addition (summation of probabilities) of [exclusive]{.yellow} events.
 
 ::: r-stack
 
@@ -322,9 +324,9 @@ Adicija (sabiranje verovatnoća) [isključivih]{.yellow} događaja.
 ![](slike/prob2.png){fig-align="center" .fragment}
 :::
 
-## Zakoni verovatnoće: adicija (2)
+## Laws of Probability: Addition (2)
 
-Adicija (sabiranje verovatnoća) [neisključivih]{.blue} događaja.
+Addition (summation of probabilities) of [non-exclusive]{.blue} events.
 
 ::: r-stack
 
@@ -336,32 +338,32 @@ Adicija (sabiranje verovatnoća) [neisključivih]{.blue} događaja.
 
 :::
 
-## Zakoni verovatnoće: multiplikacija
+## Laws of probability: multiplication
 
-Multiplikacija [isključivih]{.blue} događaja.
+Multiplication of [exclusive]{.blue} events.
 
 ![](slike/prob7.png){fig-align="center"}
 
 $$ P(A \cap B) = P(A) \times P(B) $$
 
-## Verovatnoća zavisnih (uslovnih) događaja
+## Conditional probability
 
 ![](slike/prob7.png){fig-align="center"}
 
 $$ P(A \cap B) = P(A) \times P(B|A) = P(B) \times P(A|B) $$
 
-## Verovatnoća u dijagnostici
+## Probability in diagnostics
 
 ![](slike/scenario.png){fig-align="center"}
 
-## CENTOR Skor
+## CENTOR Score
 
 :::: columns
 
 ::: {.column width="40%"}
 
-- Doprinos svakog simptoma/znaka verovatnoći strep. infekcije
-- Rezultat je pre-test verovatnoca
+- The contribution of each symptom/sign to the likelihood of strep. infections
+- The result is a pre-test probability
 
 :::
 
@@ -371,44 +373,45 @@ $$ P(A \cap B) = P(A) \times P(B|A) = P(B) \times P(A|B) $$
 :::
 
 ::::
-## Teorijske raspodele verovatnoća
 
-Teorijske raspodele verovatnoća su specifični matematički opisi ([modeli]{.yellow}) slučajnih događaja.
+## Theoretical probability distributions
 
-- Binomna
-- Normalna
+Theoretical probability distributions are specific mathematical descriptions ([models]{.yellow}) of random phenomena.
 
-## Metematički model
+- Binomial
+- Normal
+
+## Mathematical model
 
 :::: columns
 
 ::: {.column}
-![Matematički model](slike/plane1.jpg)
+![Mathematical model](slike/plane1.jpg)
 :::
 
 ::: {.column}
-![Stvarnost](slike/plane2.jpg)
+![Reality](slike/plane2.jpg)
 :::
 
 ::::
 
-## Bernulijev eksperiment
+## Bernoulli's experiment
 
 :::: columns
 
 ::: {.column}
 
-- Model procesa bacanja novčića.
-- Osnovna gradivna jedinica drugih distribucija.
+- A model of the coin tossing process.
+- Basic building unit for other distributions.
 
-Novčić bačen jednom:
+A coin tossed once:
 
 ```{r}
 #| echo: true
 rbinom(n = 1, size = 1, prob = 0.5)
 ```
 
-Novčić bačen 10 puta:
+Coin tossed 10 times:
 
 ```{r}
 #| echo: true
@@ -424,23 +427,23 @@ rbinom(10, 1, 0.5)
 
 ::::
 
-## Binomna raspodela
+## Binomial distribution
 
 :::: columns
 
 ::: {.column}
 
-Uslovi:
+Conditions:
 
-- Isključivi događaji
-- Konstantna verovatnoća
-- Nezavisni
+- Exclusive events
+- Constant probability
+- Independent
 
 :::
 
 ::: {.column}
 
-Binomna verovatnoća je data:
+The binomial probability is given by:
 
 $$ P(X = x) = \frac{n!}{x!(n-x)!}p^{x}q^{n-x} $$
 
@@ -452,8 +455,9 @@ $$ P(X = x) = \frac{n!}{x!(n-x)!}p^{x}q^{n-x} $$
 #| fig-width: 10
 #| fig-height: 3
 #| fig-align: "center"
+
 data.frame(heads = 0:10, prob = dbinom(x = 0:10, size = 10, prob = 0.5)) %>%
-  mutate(Heads = ifelse(heads == 2, "2", "ostalo")) %>%
+  mutate(Heads = ifelse(heads == 2, "2", "other")) %>%
 ggplot(aes(x = factor(heads), y = prob, fill = Heads)) +
   geom_col() +
   geom_text(
@@ -465,33 +469,33 @@ ggplot(aes(x = factor(heads), y = prob, fill = Heads)) +
   ) +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
-  scale_fill_manual(values = c("2" = "tomato", "ostalo" = "#F4BA02")) +
-  labs(x = "Uspeh (x)",
-       y = "Verovatnoća",
-       fill = "Broj uspeha") 
+  scale_fill_manual(values = c("2" = "tomato", "other" = "#F4BA02")) +
+  labs(x = "Successes in 10 coin tosses (x)",
+       y = "Probability",
+       fill = "N successes") 
 ```
 
 
-## Zadatak 1
+## Exercise 1
 
 ::: {.r-fit-text}
 
-Učestalost hipertenzije u populaciji starijih od 65 godina iznosi [42%]{.yellow}. 
+The frequency of hypertension in the population over 65 years old is [42%]{.yellow}. 
 
-Kolika je verovatnoća da u slučajnom uzorku veličine [7 osoba]{.yellow}, 
+What is the probability that [two]{.yellow} people with hypertension will be in a 
 
-izabranom iz te iste populacije, [dve]{.yellow} osobe imaju hipertenziju?
+random sample of [7]{.yellow} people chosen from that same population?
 
 :::
 
-## Zašto je normalna distribucija česta?
+## Why is the normal distribution frequent?
 
 :::: columns
 
 ::: {.column}
 
-- Normlana distrubucija nastaje sabiranjem (ili množenjem) rezultata mnogo sitnijih procesa.
-- Na primer, greške u merenju, varijacije rasta, i brzina molekula su procesi u kojima se javlja.
+- The normal distribution is created by adding (or multiplying) the results of many smaller processes.
+- Measurement errors, growth variations, and molecular velocity are examples of such processes.
 
 :::
 
@@ -512,7 +516,7 @@ gde će pojedinačna osoba završiti, možemo znati koje će udaljenosti biti
 najčešće.
 :::
 
-## Normalna raspodela
+## Normal distribution
 
 ```{r}
 ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
@@ -525,9 +529,9 @@ ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
                 color = "#F4BA02", linewidth = 2) + 
   annotate("text", x = 0.55, y = 0.225, label = c("sd"), color = "#F7F8F9",
            size = 6) +
-  annotate("text", x = 0, y = 0.45, label = c("aritmetička sredina"), color = "#F7F8F9",
+  annotate("text", x = 0, y = 0.45, label = c("mean"), color = "#F7F8F9",
            size = 6) +
-  annotate("text", x = 1.8, y = 0.225, label = c("tačka\ninfleksije"), color = "#F7F8F9",
+  annotate("text", x = 1.8, y = 0.225, label = c("point of\ninflection"), color = "#F7F8F9",
            size = 6) +
   ylab("") +
   scale_y_continuous(breaks = NULL) +
@@ -535,20 +539,20 @@ ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
   theme_blue()
 ```
 
-## Standardna normalna reaspodela
+## Standard normal distribution
 
-Normalna raspodela gde je $\bar x = 0$ i $sd = 1$. Dobija se formulom: 
+Normal distribution where $\bar x = 0$ and $sd = 1$. It is given by the formula: 
 
 $$ z_i = \frac{x_i - \mu}{\sigma} $$
 
-Nekada bila bitna zbog tablica verovatnoca. 
+It used to be important when calculation was done by hand via probability tables.
 
 ::: {.notes}
 Inace bi morali da napravimo beskonacno tablica verovatnoca;
 za svaku mogucu normalnu distribuciju.
 :::
 
-## Tablica verovatnoća
+## Probability table
 
 ![](slike/table.png){fig-align="center"}
 
@@ -556,7 +560,7 @@ za svaku mogucu normalnu distribuciju.
 30 "zakljucanih" ljudskih kalkulatora koji racunaju verovatnocu.
 :::
 
-## Studentova t-distribucija
+## Student's t-distribution
 
 ```{r}
 ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
@@ -569,12 +573,13 @@ ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue()
 ```
+
 ::: {.notes}
 100 god stara.Varijabilitet populacije nespoznat, pa cemo uzeti iz uzorka, sto dodaje jos
 nesigurnosti. Za svaki stepen slobode (koliko informacija smo iskoristili da procenimo variabilitet) postoji posebna t-distribucija. t-dist se priblizava z-dist za beskonacno stepena slobode.
 :::
 
-## Hi-kvadratna distribucija
+## Chi-square distribution
 
 ```{r}
 ggplot(data = data.frame(x = c(0, 10)), aes(x)) +
@@ -596,7 +601,7 @@ Uzorci iz Z-dist^2^ (postaju pozitivni) i to postane hi-kvadrat.
 F dist. (dist of ratio of two variances)
 :::
 
-## 68-95-99.7
+## 68-95-99.7%
 
 ```{r}
 ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
@@ -637,27 +642,27 @@ ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
                      labels = scales::label_percent(suffix = " sd", scale = 1))
 ```
 
-## Zadatak 2
+## Exercise 2
 
 ::: {.r-fit-text}
 
-U populaciji žena starosti između 25 i 50 godina vrednosti mokraćne kiseline u
+In a population of women between the ages of 25 and 50, serum uric acid values
 
-serumu su normalno raspoređene sa [aritmetičkom sredinom 333]{.yellow} mmol/L i
+are normally distributed with a [mean 333]{.yellow} mmol/L and a
 
-[standardnom devijacijom 30]{.yellow} mmol/L.
+[standard deviation 30]{.yellow} mmol/L.
 
 :::
 
 ::: {.r-fit-text}
 
-Kolika je verovatnoća da slučajno izabrana osoba iz ove populacije ima
+What is the probability that a randomly selected person from this population has a 
 
-vrednost mokraćne kiseline u serumu [veću od 410]{.yellow} mmol/l?
+serum uric acid value [greater than 410]{.yellow} mmol/l?
 
 :::
 
-## Računanje verovatnoće: normalna raspodela
+## Probability calculation: normal distribution
 
 :::: {.r-stack}
 
@@ -675,8 +680,8 @@ mkis %>%
   geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "#F4BA02", size = 1) +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
-  labs(y = "Verovatnoca",
-       x = "Mokraćna kiselina [mmol/L]")
+  labs(y = "Probability",
+       x = "Uric acid [mmol/L]")
 ```
 
 ::: {.fragment}
@@ -689,8 +694,8 @@ mkis %>%
   stat_function(fun = dnorm, args = list(mean = 333, sd = 30), color = "#F7F8F9", size = 1.5) +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
-  labs(y = "Verovatnoca",
-       x = "Mokraćna kiselina [mmol/L]")
+  labs(y = "Probability",
+       x = "Uric acid [mmol/L]")
 ```
 
 :::
@@ -709,12 +714,12 @@ mkis %>%
                 xlim = c(333+2*30, 333+3*30),
                 geom = "area", alpha = 3/4, fill = "tomato") +
   stat_function(fun = dnorm, args = list(mean = 333, sd = 30), color = "#F7F8F9", size = 1.5) +
-  annotate("text", label = "Više verovatno", x = 270, y = 0.010, size = 7, color = "dodgerblue") +
-  annotate("text", label = "Manje\nverovatno", x = 410, y = 0.005, size = 7, color = "tomato") +
+  annotate("text", label = "More probable", x = 270, y = 0.010, size = 7, color = "dodgerblue") +
+  annotate("text", label = "Less\nprobable", x = 410, y = 0.005, size = 7, color = "tomato") +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
-  labs(y = "Verovatnoca",
-       x = "Mokraćna kiselina [mmol/L]")
+  labs(y = "Probability",
+       x = "Uric acid [mmol/L]")
 ```
 
 :::
@@ -731,30 +736,14 @@ mkis %>%
                 geom = "area", alpha = 3/4, fill = "tomato") +
   stat_function(fun = dnorm, args = list(mean = 333, sd = 30), 
                 color = "#F7F8F9", size = 1.5) +
-  annotate("text", label = "Više od 410", x = 420, y = 0.0025, 
+  annotate("text", label = "Over 410 mmol/L", x = 420, y = 0.0025, 
            size = 7, color = "tomato") +
   ggdist::theme_ggdist(base_size=15) +
   theme_blue() +
-  labs(y = "Verovatnoca",
-       x = "Mokraćna kiselina [mmol/L]")
+  labs(y = "Probability",
+       x = "Uric acid [mmol/L]")
 ```
 
 :::
 
 ::::
-
-## Struktura kursa
-
-```{r}
-teme <- c(
-  "Uvod u medicinsku statistiku", "Sređivanje podataka",
-  "Statističko opisivanje podataka", "Verovatnoća i raspodele verovatnoća",
-  "Populacija i uzorak", "Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama",
-  "Testiranje hipoteza o učestalostima", "Testiranje hipoteza o rangovima", "Korelacija",
-  "Regresija / Kolokvijum", "Podaci, informacije i znanje", "Zdravstveni informacioni sistem",
-  "Mere dijagnostičke tačnosti", "Medicinsko odlučivanje", "Bioinformatika"
-)
-
-kurs <- tibble(Nedelja = 1:15, Tema = teme)
-tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
-```

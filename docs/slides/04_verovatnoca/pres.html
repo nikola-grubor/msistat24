@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sr-Latn"><head>
+<html lang="en"><head>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -12,7 +12,7 @@
 
   <meta name="author" content="Dr Nikola Grubor">
   <meta name="dcterms.date" content="2024-10-19">
-  <title>Medicinska statistika i informatika – Kratak uvod u verovatnoću</title>
+  <title>Medicinska statistika i informatika – A short introduction to probability</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -395,7 +395,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Kratak uvod u verovatnoću</h1>
+  <h1 class="title">A short introduction to probability</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -407,8 +407,8 @@ Dr Nikola Grubor
 
   <p class="date">2024-10-19</p>
 </section>
-<section id="de-méréov-problem" class="slide level2">
-<h2>de Méréov problem</h2>
+<section id="de-mérés-problem" class="slide level2">
+<h2>de Méré’s problem</h2>
 <div class="columns">
 <div class="column">
 <div class="quarto-figure quarto-figure-center">
@@ -426,47 +426,62 @@ Dr Nikola Grubor
 </div>
 </div></div>
 </section>
-<section id="potreba-za-teorijom-verovatnoće" class="slide level2">
-<h2>Potreba za teorijom verovatnoće</h2>
+<section id="the-need-for-probability-theory" class="slide level2">
+<h2>The need for probability theory</h2>
 <div class="columns">
 <div class="column">
-<p>Verovatnoća kao produžetak Aristotelove logike.</p>
-<p>Dobijamo mogućnost da pričamo o (ne)sigurnosti ubeđenja.</p>
+<p>Probability as an extension of Aristotle’s logic.</p>
+<p>We get to talk about the (un)certainty of belief.</p>
 </div><div class="column">
 <p><img data-src="slike/jaynes.jpg" style="width:70.0%"></p>
 </div></div>
 </section>
-<section id="šta-je-verovatnoća" class="slide level2">
-<h2>Šta je verovatnoća</h2>
-<p><span class="yellow">Eksperiment</span> je aktivnost koja proizvodi ishod (biramo novi put da testiramo da li je brži od starog).</p>
-<p><span class="math display">\[ \text{Eksperiment} \rightarrow \text{Ishod} \]</span></p>
-<p><span class="yellow">Prostor ishoda</span> je skup svih mogućih ishoda eksperimenta.</p>
-<p><span class="math display">\[ \text{Prostor ishoda kocke:} \; \omega = \{1,2,3,4,5,6\} \]</span></p>
-<p><span class="yellow">Događaj</span> je podskup prostora ishoda.</p>
-<p><span class="math display">\[ \text{Događaj bacanja kocke} \; x = 6 \]</span></p>
+<section id="basic-terms-in-probability-theory" class="slide level2 smaller">
+<h2>Basic terms in probability theory</h2>
+<dl>
+<dt><span class="yellow">Experiment</span></dt>
+<dd>
+An activity that produces an outcome (choosing a new path to test if it is faster than the old one).
+</dd>
+</dl>
+<p><span class="math display">\[ \text{Experiment} \rightarrow \text{Outcome} \]</span></p>
+<dl>
+<dt><span class="yellow">Sample space</span></dt>
+<dd>
+The set of all possible outcomes of an experiment.
+</dd>
+</dl>
+<p><span class="math display">\[ \text{Dice sample space:} \; \omega = \{1,2,3,4,5,6\} \]</span></p>
+<dl>
+<dt><span class="yellow">Event</span></dt>
+<dd>
+A subset of the outcome space.
+</dd>
+</dl>
+<p><span class="math display">\[ \text{Dice roll event} \; x = 6 \]</span></p>
 </section>
-<section id="kako-delimo-događaje" class="slide level2">
-<h2>Kako delimo događaje?</h2>
-<p>Događaj je skup mogućih ishoda, a može biti:</p>
+<section id="types-of-events" class="slide level2">
+<h2>Types of events</h2>
+<p>An event is a set of possible outcomes, and can be:</p>
 <ul>
-<li><p>Deterministički (Nedostatak vitamina C <span class="math inline">\(\rightarrow\)</span> Skorbut)</p></li>
-<li><p>Slučajni (stohastnični)</p></li>
+<li><p>Deterministic (e.g.&nbsp;Vitamin C deficiency <span class="math inline">\(\rightarrow\)</span> Scurvy)</p></li>
+<li><p>Random (stochastic)</p></li>
 </ul>
-<p><span class="yellow">Prostor</span> (elementarnih) <span class="yellow">ishoda</span> <span class="math inline">\(\omega\)</span> je skup svih mogućih ishoda.</p>
-<p><span class="math display">\[ \omega = \{A, B\, O, AB\} \; \; \; \omega = \{\text{zdrav}, \text{bolestan}\} \]</span></p>
+<p>The <span class="yellow">sample space</span> of (elementary) <span class="yellow">outcomes</span> <span class="math inline">\(\omega\)</span> is a set of all possible outcomes.</p>
+<p><span class="math display">\[ \omega = \{A, B\, O, AB\} \; \; \; \omega = \{\text{healthy}, \text{sick}\} \]</span></p>
 </section>
-<section id="somatske-ili-germinativne-mutacije" class="slide level2">
-<h2>Somatske ili germinativne mutacije</h2>
+<section id="somatic-or-germline-mutations" class="slide level2">
+<h2>Somatic or germline mutations</h2>
 
 <img data-src="slike/events.png" class="r-stretch"></section>
-<section id="definicija-verovatnoće" class="slide level2 center">
-<h2>Definicija verovatnoće</h2>
+<section id="definition-of-probability" class="slide level2 center">
+<h2>Definition of probability</h2>
 <div class="r-fit-text">
-<p>Verovatnoća je <span class="yellow">mera očekivanja</span></p>
-<p>nekog slučajnog događaja.</p>
+<p>Probability is a <span class="yellow">measure of expectation</span></p>
+<p>of some random event.</p>
 </div>
 <aside class="notes">
-<p>Slučajan događaj = rezultat procesa koji ne znamo kako radi. Mera, proces kojim dodajem broj nečemu (metar i razdaljina, znanje i ocene).</p>
+<p>A random event = the result of a process that we don’t know how it works. Measure, process by which I add a number to something (meter and distance, knowledge and grades).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -479,8 +494,8 @@ Dr Nikola Grubor
           display:block!important;
       }</style></aside>
 </section>
-<section id="očekivanje-je-opštije-od-aritmetičke-sredine" class="slide level2">
-<h2>Očekivanje je opštije od aritmetičke sredine</h2>
+<section id="expectation-is-more-general-than-the-mean" class="slide level2">
+<h2>Expectation is more general than the mean</h2>
 <div class="columns">
 <div class="column">
 <div class="quarto-figure quarto-figure-center">
@@ -495,16 +510,16 @@ Dr Nikola Grubor
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Beleška</strong></p>
+<p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Očekivanja su svuda u medicini: preživljavanje, vreme do oporavka nakon uzimanja leka, lab. testovi (markeri, biohem. parametri, eGFR), itd.</p>
+<p>Expectations are everywhere in medicine: survival, time to recovery after taking the drug, lab. tests (markers, biochemical parameters, eGFR), etc.</p>
 </div>
 </div>
 </div>
 </div></div>
 <aside class="notes">
-<p>Očekivana vrednost ne mora da bude najčešća (mod), i ne poklapa se sa svakodnevnom upotrebom. Ne mora ni da bude vrednost koja može da se desi 3.5 na kockici od 6 strana.</p>
+<p>The expected value does not have to be the most common (mode), nor does it does have to coincide with everyday use. It doesn’t even have to be a value that can happen to be 3.5 on a 6-sided die.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -517,38 +532,38 @@ Dr Nikola Grubor
           display:block!important;
       }</style></aside>
 </section>
-<section id="zakon-velikih-brojeva" class="slide level2">
-<h2>Zakon velikih brojeva</h2>
+<section id="law-of-large-numbers" class="slide level2">
+<h2>Law of large numbers</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="kako-određujemo-verovatnoću" class="slide level2">
-<h2>Kako određujemo verovatnoću?</h2>
+<img data-src="pres_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="how-do-we-determine-probability" class="slide level2">
+<h2>How do we determine probability?</h2>
 <ol type="1">
-<li>Objektivna
+<li>Objective
 <ul>
-<li>Teorijska (matematička)</li>
-<li>Empirijska (statistička)</li>
+<li>Theoretical (mathematical)</li>
+<li>Empirical (statistical)</li>
 </ul></li>
-<li>Subjektivna
+<li>Subjective
 <ul>
-<li>Ubeđenje</li>
+<li>Belief</li>
 </ul></li>
 </ol>
 </section>
-<section id="teorijska-verovatnoća" class="slide level2">
-<h2>Teorijska verovatnoća</h2>
+<section id="theoretical-probability" class="slide level2">
+<h2>Theoretical probability</h2>
 <ul>
-<li>Znamo je pre merenja</li>
-<li>Svi mogući ishodi su jednako verovatni</li>
+<li>Available before measurement</li>
+<li>All possible outcomes are equally likely</li>
 </ul>
 
 <img data-src="slike/classical.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="empirijska-verovatnoća" class="slide level2">
-<h2>Empirijska verovatnoća</h2>
-<p>Empirijska verovatnoća se određuje (<span class="yellow">brojanjem</span>) posle posmatranog događaja.</p>
+<section id="empirical-probability" class="slide level2">
+<h2>Empirical probability</h2>
+<p>Empirical probability is determined (by counting) after observing the event.</p>
 <div class="columns">
 <div class="column">
-<p><span class="math display">\[ p = \frac{\text{očekivano}}{\text{ukupno}} \]</span></p>
+<p><span class="math display">\[ p = \frac{\text{expected}}{\text{total}} \]</span></p>
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
@@ -582,8 +597,8 @@ Dr Nikola Grubor
         <thead>
         
               <tr>
-                <th scope="col">Krvna grupa</th>
-                <th scope="col">Relativna učestalnost</th>
+                <th scope="col">Blood group</th>
+                <th scope="col">Relative frequency</th>
               </tr>
         </thead>
         
@@ -593,7 +608,7 @@ Dr Nikola Grubor
                   <td>45%</td>
                 </tr>
                 <tr>
-                  <td>А </td>
+                  <td>A </td>
                   <td>39%</td>
                 </tr>
                 <tr>
@@ -669,19 +684,19 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
 </div>
 </div></div>
 </section>
-<section id="subjektivna-verovatnoća" class="slide level2">
-<h2>Subjektivna verovatnoća</h2>
+<section id="subjective-probability" class="slide level2">
+<h2>Subjective probability</h2>
 <div class="columns">
 <div class="column">
 <ul>
-<li>Uverenje</li>
-<li>Ekspertsko mišljenje</li>
+<li>Belief</li>
+<li>Expert opinion</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-4-1.png" width="576"></p>
+<p><img data-src="pres_files/figure-revealjs/unnamed-chunk-4-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -693,11 +708,11 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
-  S(Simptom) --&gt; A("Apriorna Verovatnoća")
-  Z(Znak) --&gt; A
-  P(Prevlenca) --&gt; A
-  A --&gt; T{"Dijagnostički test"}
-  T --&gt; AP("Aposteriorna Verovatnoća")
+  S(Symptom) --&gt; A("Prior Belief")
+  Z(Sign) --&gt; A
+  P(Prevalence) --&gt; A
+  A --&gt; T{"Diagnostic test"}
+  T --&gt; AP("Posterior Belief")
 
 </pre>
 </div>
@@ -707,34 +722,34 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
 </div>
 </div></div>
 </section>
-<section id="osobine-verovatnoće" class="slide level2">
-<h2>Osobine verovatnoće</h2>
-<p>Aksiomi:</p>
+<section id="properties-of-probability" class="slide level2">
+<h2>Properties of probability</h2>
+<p>Axioms:</p>
 <ul>
-<li>Nenegativnost [0, 1]</li>
-<li>Normiranost (zbir = 1)</li>
-<li>Aditivnost</li>
+<li>Non-negativity [0, 1]</li>
+<li>Normality (sum = 1)</li>
+<li>Additivity</li>
 </ul>
-<p>Dodatni termini:</p>
+<p>Additional dates:</p>
 <ul>
-<li>Verovatnoća događaja (<span class="math inline">\(p\)</span>)</li>
-<li>Verovatnoća suprotnog događaja (<span class="math inline">\(1-p = q\)</span>)</li>
-<li>Komplementarnost (<span class="math inline">\(p+q = 1\)</span>)</li>
-</ul>
-</section>
-<section id="isključivost" class="slide level2">
-<h2>Isključivost</h2>
-<p>Događaji su isključivi ako ne mogu da se dogode istovremeno.</p>
-<ul>
-<li>Krvna grupa</li>
-<li>Prisustvo simptoma gripa</li>
-<li>Prisustvo medicinskog znaka</li>
-<li>Dijagnoze</li>
+<li>Event probability (<span class="math inline">\(p\)</span>)</li>
+<li>Probability of the opposite event (<span class="math inline">\(1-p = q\)</span>)</li>
+<li>Complementarity (<span class="math inline">\(p+q = 1\)</span>)</li>
 </ul>
 </section>
-<section id="zakoni-verovatnoće-adicija-1" class="slide level2">
-<h2>Zakoni verovatnoće: adicija (1)</h2>
-<p>Adicija (sabiranje verovatnoća) <span class="yellow">isključivih</span> događaja.</p>
+<section id="exclusivity" class="slide level2">
+<h2>Exclusivity</h2>
+<p>Events are exclusive if they cannot occur simultaneously.</p>
+<ul>
+<li>Blood group</li>
+<li>Flu symptoms</li>
+<li>Medical sign</li>
+<li>Diagnoses</li>
+</ul>
+</section>
+<section id="laws-of-probability-addition-1" class="slide level2">
+<h2>Laws of probability: addition (1)</h2>
+<p>Addition (summation of probabilities) of <span class="yellow">exclusive</span> events.</p>
 <div class="r-stack">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -748,9 +763,9 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
 </div>
 </div>
 </section>
-<section id="zakoni-verovatnoće-adicija-2" class="slide level2">
-<h2>Zakoni verovatnoće: adicija (2)</h2>
-<p>Adicija (sabiranje verovatnoća) <span class="blue">neisključivih</span> događaja.</p>
+<section id="laws-of-probability-addition-2" class="slide level2">
+<h2>Laws of Probability: Addition (2)</h2>
+<p>Addition (summation of probabilities) of <span class="blue">non-exclusive</span> events.</p>
 <div class="r-stack">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -769,28 +784,28 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
 </div>
 </div>
 </section>
-<section id="zakoni-verovatnoće-multiplikacija" class="slide level2">
-<h2>Zakoni verovatnoće: multiplikacija</h2>
-<p>Multiplikacija <span class="blue">isključivih</span> događaja.</p>
+<section id="laws-of-probability-multiplication" class="slide level2">
+<h2>Laws of probability: multiplication</h2>
+<p>Multiplication of <span class="blue">exclusive</span> events.</p>
 
 <img data-src="slike/prob7.png" class="quarto-figure quarto-figure-center r-stretch"><p><span class="math display">\[ P(A \cap B) = P(A) \times P(B) \]</span></p>
 </section>
-<section id="verovatnoća-zavisnih-uslovnih-događaja" class="slide level2">
-<h2>Verovatnoća zavisnih (uslovnih) događaja</h2>
+<section id="conditional-probability" class="slide level2">
+<h2>Conditional probability</h2>
 
 <img data-src="slike/prob7.png" class="quarto-figure quarto-figure-center r-stretch"><p><span class="math display">\[ P(A \cap B) = P(A) \times P(B|A) = P(B) \times P(A|B) \]</span></p>
 </section>
-<section id="verovatnoća-u-dijagnostici" class="slide level2">
-<h2>Verovatnoća u dijagnostici</h2>
+<section id="probability-in-diagnostics" class="slide level2">
+<h2>Probability in diagnostics</h2>
 
 <img data-src="slike/scenario.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="centor-skor" class="slide level2">
-<h2>CENTOR Skor</h2>
+<section id="centor-score" class="slide level2">
+<h2>CENTOR Score</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
-<li>Doprinos svakog simptoma/znaka verovatnoći strep. infekcije</li>
-<li>Rezultat je pre-test verovatnoca</li>
+<li>The contribution of each symptom/sign to the likelihood of strep. infections</li>
+<li>The result is a pre-test probability</li>
 </ul>
 </div><div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
@@ -800,51 +815,51 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
 </div>
 </div></div>
 </section>
-<section id="teorijske-raspodele-verovatnoća" class="slide level2">
-<h2>Teorijske raspodele verovatnoća</h2>
-<p>Teorijske raspodele verovatnoća su specifični matematički opisi (<span class="yellow">modeli</span>) slučajnih događaja.</p>
+<section id="theoretical-probability-distributions" class="slide level2">
+<h2>Theoretical probability distributions</h2>
+<p>Theoretical probability distributions are specific mathematical descriptions (<span class="yellow">models</span>) of random phenomena.</p>
 <ul>
-<li>Binomna</li>
-<li>Normalna</li>
+<li>Binomial</li>
+<li>Normal</li>
 </ul>
 </section>
-<section id="metematički-model" class="slide level2">
-<h2>Metematički model</h2>
+<section id="mathematical-model" class="slide level2">
+<h2>Mathematical model</h2>
 <div class="columns">
 <div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="slike/plane1.jpg"></p>
-<figcaption>Matematički model</figcaption>
+<figcaption>Mathematical model</figcaption>
 </figure>
 </div>
 </div><div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="slike/plane2.jpg"></p>
-<figcaption>Stvarnost</figcaption>
+<figcaption>Reality</figcaption>
 </figure>
 </div>
 </div></div>
 </section>
-<section id="bernulijev-eksperiment" class="slide level2">
-<h2>Bernulijev eksperiment</h2>
+<section id="bernoullis-experiment" class="slide level2">
+<h2>Bernoulli’s experiment</h2>
 <div class="columns">
 <div class="column">
 <ul>
-<li>Model procesa bacanja novčića.</li>
-<li>Osnovna gradivna jedinica drugih distribucija.</li>
+<li>A model of the coin tossing process.</li>
+<li>Basic building unit for other distributions.</li>
 </ul>
-<p>Novčić bačen jednom:</p>
+<p>A coin tossed once:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
 </div>
-<p>Novčić bačen 10 puta:</p>
+<p>Coin tossed 10 times:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">rbinom</span>(<span class="dv">10</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">rbinom</span>(<span class="dv">10</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 0 1 1 1 0 1 1 1 0 0</code></pre>
 </div>
@@ -853,37 +868,37 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
 <p><img data-src="slike/bern.png"></p>
 </div></div>
 </section>
-<section id="binomna-raspodela" class="slide level2">
-<h2>Binomna raspodela</h2>
+<section id="binomial-distribution" class="slide level2">
+<h2>Binomial distribution</h2>
 <div class="columns">
 <div class="column">
-<p>Uslovi:</p>
+<p>Conditions:</p>
 <ul>
-<li>Isključivi događaji</li>
-<li>Konstantna verovatnoća</li>
-<li>Nezavisni</li>
+<li>Exclusive events</li>
+<li>Constant probability</li>
+<li>Independent</li>
 </ul>
 </div><div class="column">
-<p>Binomna verovatnoća je data:</p>
+<p>The binomial probability is given by:</p>
 <p><span class="math display">\[ P(X = x) = \frac{n!}{x!(n-x)!}p^{x}q^{n-x} \]</span></p>
 </div></div>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="zadatak-1" class="slide level2">
-<h2>Zadatak 1</h2>
+<img data-src="pres_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise 1</h2>
 <div class="r-fit-text">
-<p>Učestalost hipertenzije u populaciji starijih od 65 godina iznosi <span class="yellow">42%</span>.</p>
-<p>Kolika je verovatnoća da u slučajnom uzorku veličine <span class="yellow">7 osoba</span>,</p>
-<p>izabranom iz te iste populacije, <span class="yellow">dve</span> osobe imaju hipertenziju?</p>
+<p>The frequency of hypertension in the population over 65 years old is <span class="yellow">42%</span>.</p>
+<p>What is the probability that <span class="yellow">two</span> people with hypertension will be in a</p>
+<p>random sample of <span class="yellow">7</span> people chosen from that same population?</p>
 </div>
 </section>
-<section id="zašto-je-normalna-distribucija-česta" class="slide level2">
-<h2>Zašto je normalna distribucija česta?</h2>
+<section id="why-is-the-normal-distribution-frequent" class="slide level2">
+<h2>Why is the normal distribution frequent?</h2>
 <div class="columns">
 <div class="column">
 <ul>
-<li>Normlana distrubucija nastaje sabiranjem (ili množenjem) rezultata mnogo sitnijih procesa.</li>
-<li>Na primer, greške u merenju, varijacije rasta, i brzina molekula su procesi u kojima se javlja.</li>
+<li>The normal distribution is created by adding (or multiplying) the results of many smaller processes.</li>
+<li>Measurement errors, growth variations, and molecular velocity are examples of such processes.</li>
 </ul>
 </div><div class="column">
 <p><img data-src="slike/galton.gif"></p>
@@ -902,15 +917,15 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
           display:block!important;
       }</style></aside>
 </section>
-<section id="normalna-raspodela" class="slide level2">
-<h2>Normalna raspodela</h2>
+<section id="normal-distribution" class="slide level2">
+<h2>Normal distribution</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
-<section id="standardna-normalna-reaspodela" class="slide level2">
-<h2>Standardna normalna reaspodela</h2>
-<p>Normalna raspodela gde je <span class="math inline">\(\bar x = 0\)</span> i <span class="math inline">\(sd = 1\)</span>. Dobija se formulom:</p>
+<img data-src="pres_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="standard-normal-distribution" class="slide level2">
+<h2>Standard normal distribution</h2>
+<p>Normal distribution where <span class="math inline">\(\bar x = 0\)</span> and <span class="math inline">\(sd = 1\)</span>. It is given by the formula:</p>
 <p><span class="math display">\[ z_i = \frac{x_i - \mu}{\sigma} \]</span></p>
-<p>Nekada bila bitna zbog tablica verovatnoca.</p>
+<p>It used to be important when calculation was done by hand via probability tables.</p>
 <aside class="notes">
 <p>Inace bi morali da napravimo beskonacno tablica verovatnoca; za svaku mogucu normalnu distribuciju.</p>
 <style type="text/css">
@@ -925,8 +940,8 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
           display:block!important;
       }</style></aside>
 </section>
-<section id="tablica-verovatnoća" class="slide level2">
-<h2>Tablica verovatnoća</h2>
+<section id="probability-table" class="slide level2">
+<h2>Probability table</h2>
 
 <img data-src="slike/table.png" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
 <p>30 “zakljucanih” ljudskih kalkulatora koji racunaju verovatnocu.</p>
@@ -942,10 +957,10 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
           display:block!important;
       }</style></aside>
 </section>
-<section id="studentova-t-distribucija" class="slide level2">
-<h2>Studentova t-distribucija</h2>
+<section id="students-t-distribution" class="slide level2">
+<h2>Student’s t-distribution</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"><aside class="notes">
+<img data-src="pres_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"><aside class="notes">
 <p>100 god stara.Varijabilitet populacije nespoznat, pa cemo uzeti iz uzorka, sto dodaje jos nesigurnosti. Za svaki stepen slobode (koliko informacija smo iskoristili da procenimo variabilitet) postoji posebna t-distribucija. t-dist se priblizava z-dist za beskonacno stepena slobode.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -959,10 +974,10 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
           display:block!important;
       }</style></aside>
 </section>
-<section id="hi-kvadratna-distribucija" class="slide level2">
-<h2>Hi-kvadratna distribucija</h2>
+<section id="chi-square-distribution" class="slide level2">
+<h2>Chi-square distribution</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"><aside class="notes">
+<img data-src="pres_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"><aside class="notes">
 <p>Uzorci iz Z-dist<sup>2</sup> (postaju pozitivni) i to postane hi-kvadrat. (sum of square deviations) / (pop. variance) -&gt; kako idu df inf hi postaje z. F dist. (dist of ratio of two variances)</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -977,29 +992,29 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
       }</style></aside>
 </section>
 <section id="section" class="slide level2">
-<h2>68-95-99.7</h2>
+<h2>68-95-99.7%</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
-<section id="zadatak-2" class="slide level2">
-<h2>Zadatak 2</h2>
+<img data-src="pres_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise 2</h2>
 <div class="r-fit-text">
-<p>U populaciji žena starosti između 25 i 50 godina vrednosti mokraćne kiseline u</p>
-<p>serumu su normalno raspoređene sa <span class="yellow">aritmetičkom sredinom 333</span> mmol/L i</p>
-<p><span class="yellow">standardnom devijacijom 30</span> mmol/L.</p>
+<p>In a population of women between the ages of 25 and 50, serum uric acid values</p>
+<p>are normally distributed with a <span class="yellow">mean 333</span> mmol/L and a</p>
+<p><span class="yellow">standard deviation 30</span> mmol/L.</p>
 </div>
 <div class="r-fit-text">
-<p>Kolika je verovatnoća da slučajno izabrana osoba iz ove populacije ima</p>
-<p>vrednost mokraćne kiseline u serumu <span class="yellow">veću od 410</span> mmol/l?</p>
+<p>What is the probability that a randomly selected person from this population has a</p>
+<p>serum uric acid value <span class="yellow">greater than 410</span> mmol/l?</p>
 </div>
 </section>
-<section id="računanje-verovatnoće-normalna-raspodela" class="slide level2">
-<h2>Računanje verovatnoće: normalna raspodela</h2>
+<section id="probability-calculation-normal-distribution" class="slide level2">
+<h2>Probability calculation: normal distribution</h2>
 <div class="r-stack">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+<p><img data-src="pres_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1009,18 +1024,7 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+<p><img data-src="pres_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1031,199 +1035,22 @@ window.addEventListener('load', function () { styleCell_tinytable_x9lbjgytenm6se
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+<p><img data-src="pres_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</div>
-</section>
-<section id="struktura-kursa" class="slide level2">
-<h2>Struktura kursa</h2>
+<div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
- 
-
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_gyctuxg88lv10h6q6z4a</title>
-    <style>
-.table td.tinytable_css_quarwvmkvev6do2mau27, .table th.tinytable_css_quarwvmkvev6do2mau27 {    border-bottom: solid 0.1em #d3d8dc; }
-.table td.tinytable_css_6pgvwz3rkmzhrubantan, .table th.tinytable_css_6pgvwz3rkmzhrubantan {    font-size: 0.55em; }
-    </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-    </script>
-  
-
-  
-    <div class="container">
-      <table class="table table-borderless" id="tinytable_gyctuxg88lv10h6q6z4a" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
-        
-              <tr>
-                <th scope="col">Nedelja</th>
-                <th scope="col">Tema</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td> 1</td>
-                  <td>Uvod u medicinsku statistiku                                           </td>
-                </tr>
-                <tr>
-                  <td> 2</td>
-                  <td>Sređivanje podataka                                                    </td>
-                </tr>
-                <tr>
-                  <td> 3</td>
-                  <td>Statističko opisivanje podataka                                        </td>
-                </tr>
-                <tr>
-                  <td> 4</td>
-                  <td>Verovatnoća i raspodele verovatnoća                                    </td>
-                </tr>
-                <tr>
-                  <td> 5</td>
-                  <td>Populacija i uzorak                                                    </td>
-                </tr>
-                <tr>
-                  <td> 6</td>
-                  <td>Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama</td>
-                </tr>
-                <tr>
-                  <td> 7</td>
-                  <td>Testiranje hipoteza o učestalostima                                    </td>
-                </tr>
-                <tr>
-                  <td> 8</td>
-                  <td>Testiranje hipoteza o rangovima                                        </td>
-                </tr>
-                <tr>
-                  <td> 9</td>
-                  <td>Korelacija                                                             </td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>Regresija / Kolokvijum                                                 </td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td>Podaci, informacije i znanje                                           </td>
-                </tr>
-                <tr>
-                  <td>12</td>
-                  <td>Zdravstveni informacioni sistem                                        </td>
-                </tr>
-                <tr>
-                  <td>13</td>
-                  <td>Mere dijagnostičke tačnosti                                            </td>
-                </tr>
-                <tr>
-                  <td>14</td>
-                  <td>Medicinsko odlučivanje                                                 </td>
-                </tr>
-                <tr>
-                  <td>15</td>
-                  <td>Bioinformatika                                                         </td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <script>
-      function styleCell_tinytable_w8a0xaodudjns96lvahb(i, j, css_id) {
-        var table = document.getElementById("tinytable_gyctuxg88lv10h6q6z4a");
-        table.rows[i].cells[j].classList.add(css_id);
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_gyctuxg88lv10h6q6z4a');
-        var newRow = table.insertRow(i);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_tinytable_w8a0xaodudjns96lvahb(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_gyctuxg88lv10h6q6z4a");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
-        for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
-            }
-          }
-        }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
-      }
-
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(0, 0, 'tinytable_css_quarwvmkvev6do2mau27') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(0, 1, 'tinytable_css_quarwvmkvev6do2mau27') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(0, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(0, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(1, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(1, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(2, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(2, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(3, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(3, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(4, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(4, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(5, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(5, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(6, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(6, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(7, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(7, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(8, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(8, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(9, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(9, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(10, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(10, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(11, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(11, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(12, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(12, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(13, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(13, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(14, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(14, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(15, 0, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns96lvahb(15, 1, 'tinytable_css_6pgvwz3rkmzhrubantan') })
-    </script>
-
-  
-
-
+<div>
+<figure>
+<p><img data-src="pres_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -1523,12 +1350,12 @@ window.addEventListener('load', function () { styleCell_tinytable_w8a0xaodudjns9
         // flash "checked"
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Kopirano!");
+        button.setAttribute("title", "Copied!");
         let tooltip;
         if (window.bootstrap) {
           button.setAttribute("data-bs-toggle", "tooltip");
           button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Kopirano!");
+          button.setAttribute("data-bs-title", "Copied!");
           tooltip = new bootstrap.Tooltip(button, 
             { trigger: "manual", 
               customClass: "code-copy-button-tooltip",

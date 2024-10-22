@@ -431,7 +431,7 @@
     "href": "index.html",
     "title": "Osnovni kurs medicinske statistike i informatike",
     "section": "",
-    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_sccvv6rpvnde989pzw2b\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku (eng)\n                \n                \n                  2\n                  Sređivanje podataka\n                \n                \n                  3\n                  Statističko opisivanje podataka"
+    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_e8h3jr83dqwnxrkigtr6\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku (eng)\n                \n                \n                  2\n                  Sređivanje podataka\n                \n                \n                  3\n                  Statističko opisivanje podataka\n                \n                \n                  4\n                  Verovatnoća i raspodele verovatnoća (eng)"
   },
   {
     "objectID": "slides/04_verovatnoca/prezentacija.html#de-méréov-problem",
@@ -452,14 +452,14 @@
     "href": "slides/04_verovatnoca/prezentacija.html#šta-je-verovatnoća",
     "title": "Kratak uvod u verovatnoću",
     "section": "Šta je verovatnoća",
-    "text": "Šta je verovatnoća\nEksperiment je aktivnost koja proizvodi ishod (biramo novi put da testiramo da li je brži od starog).\nProstor ishoda je skup svih mogućih ishoda eksperimenta.\nDogađaj je podskup prostora ishoda."
+    "text": "Šta je verovatnoća\nEksperiment je aktivnost koja proizvodi ishod (biramo novi put da testiramo da li je brži od starog).\n\\[ \\text{Eksperiment} \\rightarrow \\text{Ishod} \\]\nProstor ishoda je skup svih mogućih ishoda eksperimenta.\n\\[ \\text{Prostor ishoda kocke:} \\; \\omega = \\{1,2,3,4,5,6\\} \\]\nDogađaj je podskup prostora ishoda.\n\\[ \\text{Događaj bacanja kocke} \\; x = 6 \\]"
   },
   {
     "objectID": "slides/04_verovatnoca/prezentacija.html#kako-delimo-događaje",
     "href": "slides/04_verovatnoca/prezentacija.html#kako-delimo-događaje",
     "title": "Kratak uvod u verovatnoću",
     "section": "Kako delimo događaje?",
-    "text": "Kako delimo događaje?\nDogađaj je skup mogućih ishoda, a može biti:\n\nDeterministički\n\nNedostatak vitamina C \\(\\rightarrow\\) Skorbut\n\nSlučajni (stohastnični)\n\nProstor elementarnih ishoda \\(\\omega\\) je skup svih mogućih ishoda.\n\\(\\omega = \\{A, B\\, O, AB\\}\\)\n\\(\\omega = \\{\\text{zdrav}, \\text{bolestan}\\}\\)"
+    "text": "Kako delimo događaje?\nDogađaj je skup mogućih ishoda, a može biti:\n\nDeterministički (Nedostatak vitamina C \\(\\rightarrow\\) Skorbut)\nSlučajni (stohastnični)\n\nProstor (elementarnih) ishoda \\(\\omega\\) je skup svih mogućih ishoda.\n\\[ \\omega = \\{A, B\\, O, AB\\} \\; \\; \\; \\omega = \\{\\text{zdrav}, \\text{bolestan}\\} \\]"
   },
   {
     "objectID": "slides/04_verovatnoca/prezentacija.html#somatske-ili-germinativne-mutacije",
@@ -494,7 +494,7 @@
     "href": "slides/04_verovatnoca/prezentacija.html#kako-određujemo-verovatnoću",
     "title": "Kratak uvod u verovatnoću",
     "section": "Kako određujemo verovatnoću?",
-    "text": "Kako određujemo verovatnoću?\nObjektivna\n\nTeorijska (matematička)\nEmpirijska (statistička)\n\nSubjektivna"
+    "text": "Kako određujemo verovatnoću?\n\nObjektivna\n\nTeorijska (matematička)\nEmpirijska (statistička)\n\nSubjektivna\n\nUbeđenje"
   },
   {
     "objectID": "slides/04_verovatnoca/prezentacija.html#teorijska-verovatnoća",
@@ -522,7 +522,7 @@
     "href": "slides/04_verovatnoca/prezentacija.html#osobine-verovatnoće",
     "title": "Kratak uvod u verovatnoću",
     "section": "Osobine verovatnoće",
-    "text": "Osobine verovatnoće\nAksiomi:\n\nNenegativnost [0, 1]\nNormiranost (zbir = 1)\nAditivnost\n\nDodatni termini:\n\nVerovatnoća događaja (\\(p\\))\nVerovatnoća supronost događaja (\\(1-p = q\\))\nKomplementarnost (\\(p+q = 1\\))"
+    "text": "Osobine verovatnoće\nAksiomi:\n\nNenegativnost [0, 1]\nNormiranost (zbir = 1)\nAditivnost\n\nDodatni termini:\n\nVerovatnoća događaja (\\(p\\))\nVerovatnoća suprotnog događaja (\\(1-p = q\\))\nKomplementarnost (\\(p+q = 1\\))"
   },
   {
     "objectID": "slides/04_verovatnoca/prezentacija.html#isključivost",
@@ -578,7 +578,7 @@
     "href": "slides/04_verovatnoca/prezentacija.html#teorijske-raspodele-verovatnoća",
     "title": "Kratak uvod u verovatnoću",
     "section": "Teorijske raspodele verovatnoća",
-    "text": "Teorijske raspodele verovatnoća\nTeorijske raspodele verovatnoća su specifični matematički modeli raspodela (distribucija) verovatnoća.\n\nBinomna\nNormalna"
+    "text": "Teorijske raspodele verovatnoća\nTeorijske raspodele verovatnoća su specifični matematički opisi (modeli) slučajnih događaja.\n\nBinomna\nNormalna"
   },
   {
     "objectID": "slides/04_verovatnoca/prezentacija.html#metematički-model",
@@ -592,7 +592,7 @@
     "href": "slides/04_verovatnoca/prezentacija.html#bernulijev-eksperiment",
     "title": "Kratak uvod u verovatnoću",
     "section": "Bernulijev eksperiment",
-    "text": "Bernulijev eksperiment\n\n\n\nModel procesa bacanja novčića.\nOsnovna gradivna jedinica za distribucije.\n\nNovčić bačen jednom:\n\nrbinom(n = 1, size = 1, prob = 0.5)\n\n[1] 0\n\n\nNovčić bačen 10 puta:\n\nrbinom(10, 1, 0.5)\n\n [1] 0 1 1 1 0 1 1 1 0 0"
+    "text": "Bernulijev eksperiment\n\n\n\nModel procesa bacanja novčića.\nOsnovna gradivna jedinica drugih distribucija.\n\nNovčić bačen jednom:\n\nrbinom(n = 1, size = 1, prob = 0.5)\n\n[1] 0\n\n\nNovčić bačen 10 puta:\n\nrbinom(10, 1, 0.5)\n\n [1] 0 1 1 1 0 1 1 1 0 0"
   },
   {
     "objectID": "slides/04_verovatnoca/prezentacija.html#binomna-raspodela",
@@ -908,5 +908,278 @@
     "title": "Populacija i uzorak",
     "section": "Struktura kursa",
     "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_c6zpm4m5as9bpmtjtboc\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#de-mérés-problem",
+    "href": "slides/04_verovatnoca/pres.html#de-mérés-problem",
+    "title": "A short introduction to probability",
+    "section": "de Méré’s problem",
+    "text": "de Méré’s problem\n\n\n\n\n\nPierre de Fermat\n\n\n\n\n\n\nBlaise Pascal"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#the-need-for-probability-theory",
+    "href": "slides/04_verovatnoca/pres.html#the-need-for-probability-theory",
+    "title": "A short introduction to probability",
+    "section": "The need for probability theory",
+    "text": "The need for probability theory\n\n\nProbability as an extension of Aristotle’s logic.\nWe get to talk about the (un)certainty of belief."
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#what-is-probability",
+    "href": "slides/04_verovatnoca/pres.html#what-is-probability",
+    "title": "A short introduction to probability",
+    "section": "What is probability",
+    "text": "What is probability\n\nExperiment\n\nAn activity that produces an outcome (choosing a new path to test if it is faster than the old one).\n\n\n\\[ \\text{Experiment} \\rightarrow \\text{Outcome} \\]\n\nSample space\n\nThe set of all possible outcomes of an experiment.\n\n\n\\[ \\text{Dice sample space:} \\; \\omega = \\{1,2,3,4,5,6\\} \\]\n\nEvent\n\nA subset of the outcome space.\n\n\n\\[ \\text{Dice roll event} \\; x = 6 \\]"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#types-of-events",
+    "href": "slides/04_verovatnoca/pres.html#types-of-events",
+    "title": "A short introduction to probability",
+    "section": "Types of events",
+    "text": "Types of events\nAn event is a set of possible outcomes, and can be:\n\nDeterministic (e.g. Vitamin C deficiency \\(\\rightarrow\\) Scurvy)\nRandom (stochastic)\n\nThe sample space of (elementary) outcomes \\(\\omega\\) is a set of all possible outcomes.\n\\[ \\omega = \\{A, B\\, O, AB\\} \\; \\; \\; \\omega = \\{\\text{healthy}, \\text{sick}\\} \\]"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#somatic-or-germline-mutations",
+    "href": "slides/04_verovatnoca/pres.html#somatic-or-germline-mutations",
+    "title": "A short introduction to probability",
+    "section": "Somatic or germline mutations",
+    "text": "Somatic or germline mutations"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#definition-of-probability",
+    "href": "slides/04_verovatnoca/pres.html#definition-of-probability",
+    "title": "A short introduction to probability",
+    "section": "Definition of probability",
+    "text": "Definition of probability\n\nProbability is a measure of expectation\nof some random event.\n\n\nA random event = the result of a process that we don’t know how it works. Measure, process by which I add a number to something (meter and distance, knowledge and grades)."
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#expectation-is-more-general-than-the-mean",
+    "href": "slides/04_verovatnoca/pres.html#expectation-is-more-general-than-the-mean",
+    "title": "A short introduction to probability",
+    "section": "Expectation is more general than the mean",
+    "text": "Expectation is more general than the mean\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nExpectations are everywhere in medicine: survival, time to recovery after taking the drug, lab. tests (markers, biochemical parameters, eGFR), etc.\n\n\n\n\n\nThe expected value does not have to be the most common (mode), nor does it does have to coincide with everyday use. It doesn’t even have to be a value that can happen to be 3.5 on a 6-sided die."
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#zakon-velikih-brojeva",
+    "href": "slides/04_verovatnoca/pres.html#zakon-velikih-brojeva",
+    "title": "A short introduction to probability",
+    "section": "Zakon velikih brojeva",
+    "text": "Zakon velikih brojeva"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#how-do-we-determine-probability",
+    "href": "slides/04_verovatnoca/pres.html#how-do-we-determine-probability",
+    "title": "A short introduction to probability",
+    "section": "How do we determine probability?",
+    "text": "How do we determine probability?\n\nObjective\n\nTheoretical (mathematical)\nEmpirical (statistical)\n\nSubjective\n\nBelief"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#theoretical-probability",
+    "href": "slides/04_verovatnoca/pres.html#theoretical-probability",
+    "title": "A short introduction to probability",
+    "section": "Theoretical probability",
+    "text": "Theoretical probability\n\nAvailable before measurement\nAll possible outcomes are equally likely"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#empirical-probability",
+    "href": "slides/04_verovatnoca/pres.html#empirical-probability",
+    "title": "A short introduction to probability",
+    "section": "Empirical probability",
+    "text": "Empirical probability\nEmpirical probability is determined (by counting) after observing the event.\n\n\n\\[ p = \\frac{\\text{expected}}{\\text{total}} \\]\n\n\n\n \n\n  \n    \n    \n    tinytable_fnaj2szlja7k1c57vzdf\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Blood group\n                Relative frequency\n              \n        \n        \n        \n                \n                  O \n                  45%\n                \n                \n                  A \n                  39%\n                \n                \n                  B \n                  12%\n                \n                \n                  AB\n                  4%"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#subjective-probability",
+    "href": "slides/04_verovatnoca/pres.html#subjective-probability",
+    "title": "A short introduction to probability",
+    "section": "Subjective probability",
+    "text": "Subjective probability\n\n\n\nBelief\nExpert opinion\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nflowchart TD\n  S(Symptom) --&gt; A(\"Prior Belief\")\n  Z(Sign) --&gt; A\n  P(Prevalence) --&gt; A\n  A --&gt; T{\"Diagnostic test\"}\n  T --&gt; AP(\"Posterior Belief\")"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#properties-of-probability",
+    "href": "slides/04_verovatnoca/pres.html#properties-of-probability",
+    "title": "A short introduction to probability",
+    "section": "Properties of probability",
+    "text": "Properties of probability\nAxioms:\n\nNon-negativity [0, 1]\nNormality (sum = 1)\nAdditivity\n\nAdditional dates:\n\nEvent probability (\\(p\\))\nProbability of the opposite event (\\(1-p = q\\))\nComplementarity (\\(p+q = 1\\))"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#exclusivity",
+    "href": "slides/04_verovatnoca/pres.html#exclusivity",
+    "title": "A short introduction to probability",
+    "section": "Exclusivity",
+    "text": "Exclusivity\nEvents are exclusive if they cannot occur simultaneously.\n\nBlood group\nFlu symptoms\nMedical sign\nDiagnoses"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#laws-of-probability-addition-1",
+    "href": "slides/04_verovatnoca/pres.html#laws-of-probability-addition-1",
+    "title": "A short introduction to probability",
+    "section": "Laws of probability: addition (1)",
+    "text": "Laws of probability: addition (1)\nAddition (summation of probabilities) of exclusive events."
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#laws-of-probability-addition-2",
+    "href": "slides/04_verovatnoca/pres.html#laws-of-probability-addition-2",
+    "title": "A short introduction to probability",
+    "section": "Laws of Probability: Addition (2)",
+    "text": "Laws of Probability: Addition (2)\nAddition (summation of probabilities) of non-exclusive events."
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#laws-of-probability-multiplication",
+    "href": "slides/04_verovatnoca/pres.html#laws-of-probability-multiplication",
+    "title": "A short introduction to probability",
+    "section": "Laws of probability: multiplication",
+    "text": "Laws of probability: multiplication\nMultiplication of exclusive events.\n\n\\[ P(A \\cap B) = P(A) \\times P(B) \\]"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#probability-of-dependent-conditional-events",
+    "href": "slides/04_verovatnoca/pres.html#probability-of-dependent-conditional-events",
+    "title": "A short introduction to probability",
+    "section": "Probability of dependent (conditional) events",
+    "text": "Probability of dependent (conditional) events\n\n\\[ P(A \\cap B) = P(A) \\times P(B|A) = P(B) \\times P(A|B) \\]"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#probability-in-diagnostics",
+    "href": "slides/04_verovatnoca/pres.html#probability-in-diagnostics",
+    "title": "A short introduction to probability",
+    "section": "Probability in diagnostics",
+    "text": "Probability in diagnostics"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#centor-score",
+    "href": "slides/04_verovatnoca/pres.html#centor-score",
+    "title": "A short introduction to probability",
+    "section": "CENTOR Score",
+    "text": "CENTOR Score\n\n\n\nThe contribution of each symptom/sign to the likelihood of strep. infections\nThe result is a pre-test probability"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#theoretical-probability-distributions",
+    "href": "slides/04_verovatnoca/pres.html#theoretical-probability-distributions",
+    "title": "A short introduction to probability",
+    "section": "Theoretical probability distributions",
+    "text": "Theoretical probability distributions\nTheoretical probability distributions are specific mathematical descriptions (models) of random phenomena.\n\nBinomial\nNormal"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#mathematical-model",
+    "href": "slides/04_verovatnoca/pres.html#mathematical-model",
+    "title": "A short introduction to probability",
+    "section": "Mathematical model",
+    "text": "Mathematical model\n\n\n\n\n\nMathematical model\n\n\n\n\n\n\nReality"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#bernoullis-experiment",
+    "href": "slides/04_verovatnoca/pres.html#bernoullis-experiment",
+    "title": "A short introduction to probability",
+    "section": "Bernoulli’s experiment",
+    "text": "Bernoulli’s experiment\n\n\n\nA model of the coin tossing process.\nBasic building unit for other distributions.\n\nA coin tossed once:\n\nrbinom(n = 1, size = 1, prob = 0.5)\n\n[1] 0\n\n\nCoin tossed 10 times:\n\nrbinom(10, 1, 0.5)\n\n [1] 0 1 1 1 0 1 1 1 0 0"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#binomial-distribution",
+    "href": "slides/04_verovatnoca/pres.html#binomial-distribution",
+    "title": "A short introduction to probability",
+    "section": "Binomial distribution",
+    "text": "Binomial distribution\n\n\nConditions:\n\nExclusive events\nConstant probability\nIndependent\n\n\nThe binomial probability is given by:\n\\[ P(X = x) = \\frac{n!}{x!(n-x)!}p^{x}q^{n-x} \\]"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#task-1",
+    "href": "slides/04_verovatnoca/pres.html#task-1",
+    "title": "A short introduction to probability",
+    "section": "Task 1",
+    "text": "Task 1\n\nThe frequency of hypertension in the population over 65 years old is 42%.\nWhat is the probability that in a random sample of size 7 people,\nchosen from that same population, two people have hypertension?"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#why-is-the-normal-distribution-frequent",
+    "href": "slides/04_verovatnoca/pres.html#why-is-the-normal-distribution-frequent",
+    "title": "A short introduction to probability",
+    "section": "Why is the normal distribution frequent?",
+    "text": "Why is the normal distribution frequent?\n\n\n\nThe normal distribution is created by adding (or multiplying) the results of many smaller processes.\nMeasurement errors, growth variations, and molecular velocity are examples of such processes.\n\n\n\n\n\nPoređaj 1000 svojih najbližih prijatelja na sredinu fudbalskog terena. Svako ima novčić u ruci. Kad padne glava ide se korak napred, a kad padne pismo korak nazad. Nakon 16 bacanja izmeri udaljenost od pocetne linije. Da li možes da znas proporciju ljudi koja stoji na liniji? A 5 metara od linije? I ako ne znamo gde će pojedinačna osoba završiti, možemo znati koje će udaljenosti biti najčešće."
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#normal-distribution",
+    "href": "slides/04_verovatnoca/pres.html#normal-distribution",
+    "title": "A short introduction to probability",
+    "section": "Normal distribution",
+    "text": "Normal distribution"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#standard-normal-distribution",
+    "href": "slides/04_verovatnoca/pres.html#standard-normal-distribution",
+    "title": "A short introduction to probability",
+    "section": "Standard normal distribution",
+    "text": "Standard normal distribution\nNormal distribution where \\(\\bar x = 0\\) and \\(sd = 1\\). It is given by the formula:\n\\[ z_i = \\frac{x_i - \\mu}{\\sigma} \\]\nIt used to be important when calculation was done by hand via probability tables.\n\nInace bi morali da napravimo beskonacno tablica verovatnoca; za svaku mogucu normalnu distribuciju."
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#probability-table",
+    "href": "slides/04_verovatnoca/pres.html#probability-table",
+    "title": "A short introduction to probability",
+    "section": "Probability table",
+    "text": "Probability table\n\n\n30 “zakljucanih” ljudskih kalkulatora koji racunaju verovatnocu."
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#students-t-distribution",
+    "href": "slides/04_verovatnoca/pres.html#students-t-distribution",
+    "title": "A short introduction to probability",
+    "section": "Student’s t-distribution",
+    "text": "Student’s t-distribution\n\n\n100 god stara.Varijabilitet populacije nespoznat, pa cemo uzeti iz uzorka, sto dodaje jos nesigurnosti. Za svaki stepen slobode (koliko informacija smo iskoristili da procenimo variabilitet) postoji posebna t-distribucija. t-dist se priblizava z-dist za beskonacno stepena slobode."
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#hi-kvadratna-distribucija",
+    "href": "slides/04_verovatnoca/pres.html#hi-kvadratna-distribucija",
+    "title": "A short introduction to probability",
+    "section": "Hi-kvadratna distribucija",
+    "text": "Hi-kvadratna distribucija\n\n\nUzorci iz Z-dist2 (postaju pozitivni) i to postane hi-kvadrat. (sum of square deviations) / (pop. variance) -&gt; kako idu df inf hi postaje z. F dist. (dist of ratio of two variances)"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#section",
+    "href": "slides/04_verovatnoca/pres.html#section",
+    "title": "A short introduction to probability",
+    "section": "68-95-99.7%",
+    "text": "68-95-99.7%"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#exercise-2",
+    "href": "slides/04_verovatnoca/pres.html#exercise-2",
+    "title": "A short introduction to probability",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nIn a population of women between the ages of 25 and 50, serum uric acid values\nare normally distributed with a mean 333 mmol/L and a\nstandard deviation 30 mmol/L.\n\n\nWhat is the probability that a randomly selected person from this population has a\nserum uric acid value greater than 410 mmol/l?"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#probability-calculation-normal-distribution",
+    "href": "slides/04_verovatnoca/pres.html#probability-calculation-normal-distribution",
+    "title": "A short introduction to probability",
+    "section": "Probability calculation: normal distribution",
+    "text": "Probability calculation: normal distribution"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#basic-terms-in-probability-theory",
+    "href": "slides/04_verovatnoca/pres.html#basic-terms-in-probability-theory",
+    "title": "A short introduction to probability",
+    "section": "Basic terms in probability theory",
+    "text": "Basic terms in probability theory\n\nExperiment\n\nAn activity that produces an outcome (choosing a new path to test if it is faster than the old one).\n\n\n\\[ \\text{Experiment} \\rightarrow \\text{Outcome} \\]\n\nSample space\n\nThe set of all possible outcomes of an experiment.\n\n\n\\[ \\text{Dice sample space:} \\; \\omega = \\{1,2,3,4,5,6\\} \\]\n\nEvent\n\nA subset of the outcome space.\n\n\n\\[ \\text{Dice roll event} \\; x = 6 \\]"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#law-of-large-numbers",
+    "href": "slides/04_verovatnoca/pres.html#law-of-large-numbers",
+    "title": "A short introduction to probability",
+    "section": "Law of large numbers",
+    "text": "Law of large numbers"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#conditional-probability",
+    "href": "slides/04_verovatnoca/pres.html#conditional-probability",
+    "title": "A short introduction to probability",
+    "section": "Conditional probability",
+    "text": "Conditional probability\n\n\\[ P(A \\cap B) = P(A) \\times P(B|A) = P(B) \\times P(A|B) \\]"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#exercise-1",
+    "href": "slides/04_verovatnoca/pres.html#exercise-1",
+    "title": "A short introduction to probability",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nThe frequency of hypertension in the population over 65 years old is 42%.\nWhat is the probability that two people with hypertension will be in a\nrandom sample of 7 people chosen from that same population?"
+  },
+  {
+    "objectID": "slides/04_verovatnoca/pres.html#chi-square-distribution",
+    "href": "slides/04_verovatnoca/pres.html#chi-square-distribution",
+    "title": "A short introduction to probability",
+    "section": "Chi-square distribution",
+    "text": "Chi-square distribution\n\n\nUzorci iz Z-dist2 (postaju pozitivni) i to postane hi-kvadrat. (sum of square deviations) / (pop. variance) -&gt; kako idu df inf hi postaje z. F dist. (dist of ratio of two variances)"
   }
 ]
