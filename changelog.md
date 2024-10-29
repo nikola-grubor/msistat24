@@ -13,7 +13,8 @@ Pogledati sve prezentacije na kraju da li raspored ima smisla.
 - dodati zadatak
 
 ## 04_verovatnoća
-- preraspodeliti slajdove tako da imaju smisla
+- sve: srediti zarez na elementarnim ishodima
+- eng: fix typo on slide for axioms
 
 ## 05_uzorak
 

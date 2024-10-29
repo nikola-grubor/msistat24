@@ -431,7 +431,7 @@
     "href": "index.html",
     "title": "Osnovni kurs medicinske statistike i informatike",
     "section": "",
-    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_e8h3jr83dqwnxrkigtr6\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku (eng)\n                \n                \n                  2\n                  Sređivanje podataka\n                \n                \n                  3\n                  Statističko opisivanje podataka\n                \n                \n                  4\n                  Verovatnoća i raspodele verovatnoća (eng)"
+    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_k6jj631i35064hy32ffd\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku (eng)\n                \n                \n                  2\n                  Sređivanje podataka\n                \n                \n                  3\n                  Statističko opisivanje podataka\n                \n                \n                  4\n                  Verovatnoća i raspodele verovatnoća (eng)\n                \n                \n                  5\n                  Populacija i uzorak"
   },
   {
     "objectID": "slides/04_verovatnoca/prezentacija.html#de-méréov-problem",
@@ -683,7 +683,7 @@
     "href": "slides/05_uzorak/prezentacija.html#zašto-uzorkujemo",
     "title": "Populacija i uzorak",
     "section": "Zašto uzorkujemo",
-    "text": "Zašto uzorkujemo\n\n\n\nOgraničenja: vreme i novac.\nKako da zaključimo ispravno, a da nismo videli svaki primer onoga što nas interesuje?\n\n\n\n\n\n\n\n%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%\n%%| fig-width: 10\n\nflowchart TD\n  A[Ciljna populacija] --&gt; B[\"Uzoračka populacija\"]\n  B --&gt; C[Uzorak]\n  C --\"Zaključak\"--&gt; A"
+    "text": "Zašto uzorkujemo\n\n\n\nOgraničenja: vreme i novac.\nKako da zaključimo ispravno, a da nismo videli svaki primer onoga što nas interesuje?\n\n\n\n\n\n\n\n%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%\n\nflowchart TD\n  A[Ciljna populacija] --&gt; B[\"Uzoračka populacija\"]\n  B --&gt; C[Uzorak]\n  C --\"Zaključak\"--&gt; A"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#urgentno-lečenje-septičnog-šoka",
@@ -746,7 +746,7 @@
     "href": "slides/05_uzorak/prezentacija.html#uzorkovanje",
     "title": "Populacija i uzorak",
     "section": "Uzorkovanje",
-    "text": "Uzorkovanje\n\nUzorački okvir\n\ntest.\n\nSlučajni uzorak\n\nTačno znamo verovatnoću da neko bude izabran\n\nNeslučajni\n\nMože biti pristrasan"
+    "text": "Uzorkovanje\n\nUzorački okvir\n\nSpisak ili lista svih elemenata populacije koju želimo da uzorkujemo.\n\n\n\nSlučajni uzorak\n\nTačno znamo verovatnoću da neko bude izabran\n\nNeslučajni\n\nMože biti pristrasan"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#slučajni-uzorci",
@@ -774,7 +774,7 @@
     "href": "slides/05_uzorak/prezentacija.html#klaster-slučajan-uzorak",
     "title": "Populacija i uzorak",
     "section": "Klaster slučajan uzorak",
-    "text": "Klaster slučajan uzorak"
+    "text": "Klaster slučajan uzorak\nKoristan kada nemamo definisan uzorački okvir ili nas zanima opsežna populacija koju nije lako uzorkovati."
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#stratifikovan-slučajan-uzorak",
@@ -802,21 +802,21 @@
     "href": "slides/05_uzorak/prezentacija.html#terminologija-i-notacija",
     "title": "Populacija i uzorak",
     "section": "Terminologija (i notacija)",
-    "text": "Terminologija (i notacija)\n\n\n \n\n  \n    \n    \n    tinytable_1gr6r5qavtsj8tfmzwme\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                \n                Populacija (parametar)\n                Uzorak (statistika)\n              \n        \n        \n        \n                \n                  Aritmetička sredina  \n                  $\\mu$     \n                  $\\bar x$\n                \n                \n                  Varijansa            \n                  $\\sigma^2$\n                  $sd^2$   \n                \n                \n                  Standardna devijacija\n                  $\\sigma$  \n                  $sd$     \n                \n                \n                  Proporcija           \n                  $\\pi$     \n                  $p$"
+    "text": "Terminologija (i notacija)\n\n\n \n\n  \n    \n    \n    tinytable_gzg1yp9o6i30bso2t83o\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                \n                Populacija (parametar)\n                Uzorak (statistika)\n              \n        \n        \n        \n                \n                  Aritmetička sredina  \n                  $\\mu$     \n                  $\\bar x$\n                \n                \n                  Varijansa            \n                  $\\sigma^2$\n                  $sd^2$   \n                \n                \n                  Standardna devijacija\n                  $\\sigma$  \n                  $sd$     \n                \n                \n                  Proporcija           \n                  $\\pi$     \n                  $p$"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#vežba",
     "href": "slides/05_uzorak/prezentacija.html#vežba",
     "title": "Populacija i uzorak",
     "section": "Vežba",
-    "text": "Vežba\nIz baze “Sistolni pritisak.xlsx” odrediti prost i sistematski uzorak veličine 10.\nProst:\n\nsample(1:99, 10, replace = F)\n\n [1] 80 95 98 91 53  8 48 41 26 75\n\n\nSistematski:\n\nsample(1:99, 1, replace = F)\n\n[1] 13\n\n\n\nOdrediti početnu jedinicu\n\nKorak \\(k = \\frac{99}{10} \\approx 10\\)\nIzabrati svaku 10-tu jedinicu"
+    "text": "Vežba\nIz baze “Sistolni pritisak.xlsx” odrediti prost i sistematski uzorak veličine 10.\nProst:\n\nsample(1:99, 10, replace = F)\n\n [1] 60 17 73 25 49 39 91 58 92 43\n\n\nSistematski:\n\nsample(1:99, 1, replace = F)\n\n[1] 40\n\n\n\nOdrediti početnu jedinicu\n\nKorak \\(k = \\frac{99}{10} \\approx 10\\)\nIzabrati svaku 10-tu jedinicu"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#greška-uzorkovanja",
     "href": "slides/05_uzorak/prezentacija.html#greška-uzorkovanja",
     "title": "Populacija i uzorak",
     "section": "Greška uzorkovanja",
-    "text": "Greška uzorkovanja\nRegardless of how representative our sample is, it’s likely that the statistic that we compute from the sample is going to differ at least slightly from the population parameter. We refer to this as sampling error. If we take multiple samples, the value of our statistical estimate will also vary from sample to sample; we refer to this distribution of our statistic across samples as the sampling distribution."
+    "text": "Greška uzorkovanja\n\nRazlika između statistike izračunate na uzorku i parametra populacije.\nPonavljanjim uzorkovanjem možemo da saznamo raspodelu greške (uzoračka raspodela) statistike.\n\n\nStandardna greška\n\nStandardna greška je standardna devijacija uzoračke raspodele.\n\n\n\\[ SE_{\\bar x} = \\frac{sd}{\\sqrt{n}} \\]"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#standardna-greška-aritmetičke-sredine",
@@ -837,7 +837,7 @@
     "href": "slides/05_uzorak/prezentacija.html#centralna-granična-teorema",
     "title": "Populacija i uzorak",
     "section": "Centralna granična teorema",
-    "text": "Centralna granična teorema\nThe Central Limit Theorem tells us that as sample sizes get larger, the sampling distribution of the mean will become normally distributed, even if the data within each sample are not normally distributed.\n\nThe Central Limit Theorem is important for statistics because it allows us to safely assume that the sampling distribution of the mean will be normal in most cases. This means that we can take advantage of statistical techniques that assume a normal distribution"
+    "text": "Centralna granična teorema"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#primer-clt",
@@ -858,7 +858,7 @@
     "href": "slides/05_uzorak/prezentacija.html#ocenjivanje-populacionih-parametara-na-osnovu-uzorka",
     "title": "Populacija i uzorak",
     "section": "Ocenjivanje populacionih parametara na osnovu uzorka",
-    "text": "Ocenjivanje populacionih parametara na osnovu uzorka\n\\[ CI = \\bar x \\pm t \\times SE \\]\n\\[ SE = \\frac{sd}{\\sqrt{n}} \\]"
+    "text": "Ocenjivanje populacionih parametara na osnovu uzorka\nJedan od najvažnijih istraživačkih zadataka jeste ocena populacionih parametara, najčešće aritmetičke sredine ili proporcije."
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#interval-poverenja-i-ponovljena-istraživanja",
@@ -885,8 +885,8 @@
     "objectID": "slides/05_uzorak/prezentacija.html#inverval-poverenja",
     "href": "slides/05_uzorak/prezentacija.html#inverval-poverenja",
     "title": "Populacija i uzorak",
-    "section": "Inverval poverenja",
-    "text": "Inverval poverenja\nci.png"
+    "section": "99% Inverval poverenja",
+    "text": "99% Inverval poverenja"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#zadatak-1",
@@ -907,7 +907,7 @@
     "href": "slides/05_uzorak/prezentacija.html#struktura-kursa",
     "title": "Populacija i uzorak",
     "section": "Struktura kursa",
-    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_c6zpm4m5as9bpmtjtboc\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
+    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_ojo5xo0fzjyothms3d9m\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
   },
   {
     "objectID": "slides/04_verovatnoca/pres.html#de-mérés-problem",
@@ -1181,5 +1181,40 @@
     "title": "A short introduction to probability",
     "section": "Chi-square distribution",
     "text": "Chi-square distribution\n\n\nUzorci iz Z-dist2 (postaju pozitivni) i to postane hi-kvadrat. (sum of square deviations) / (pop. variance) -&gt; kako idu df inf hi postaje z. F dist. (dist of ratio of two variances)"
+  },
+  {
+    "objectID": "slides/05_uzorak/prezentacija.html#section",
+    "href": "slides/05_uzorak/prezentacija.html#section",
+    "title": "Populacija i uzorak",
+    "section": "",
+    "text": "The Central Limit Theorem is important for statistics because it allows us to safely assume that the sampling distribution of the mean will be normal in most cases. This means that we can take advantage of statistical techniques that assume a normal distribution"
+  },
+  {
+    "objectID": "slides/05_uzorak/prezentacija.html#title",
+    "href": "slides/05_uzorak/prezentacija.html#title",
+    "title": "Populacija i uzorak",
+    "section": "Title",
+    "text": "Title\n\nThe Central Limit Theorem is important for statistics because it allows us to safely assume that the sampling distribution of the mean will be normal in most cases. This means that we can take advantage of statistical techniques that assume a normal distribution"
+  },
+  {
+    "objectID": "slides/05_uzorak/prezentacija.html#generalizacija",
+    "href": "slides/05_uzorak/prezentacija.html#generalizacija",
+    "title": "Populacija i uzorak",
+    "section": "Generalizacija",
+    "text": "Generalizacija\nSaznanje o celoj populaciji bez da smo ih videli.\n\n\n\n\n\n%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%\n\nflowchart TD\n  A[Ciljna populacija] --&gt; B[\"Uzoračka populacija\"]\n  B --&gt; C[Uzorak]\n  C --\"Zaključak\"--&gt; A"
+  },
+  {
+    "objectID": "slides/05_uzorak/prezentacija.html#interval-poverenja-i-tačkasta-procena",
+    "href": "slides/05_uzorak/prezentacija.html#interval-poverenja-i-tačkasta-procena",
+    "title": "Populacija i uzorak",
+    "section": "Interval poverenja i tačkasta procena",
+    "text": "Interval poverenja i tačkasta procena\n\\[ CI = \\bar x \\pm t \\times SE \\]\ngde je: \\(\\bar x\\), aritmetička sredina; \\(t\\), kritična vrednost; \\(SE\\), standardna greška.\n\\[ SE = \\frac{sd}{\\sqrt{n}} \\]"
+  },
+  {
+    "objectID": "slides/05_uzorak/prezentacija.html#interval-poverenja",
+    "href": "slides/05_uzorak/prezentacija.html#interval-poverenja",
+    "title": "Populacija i uzorak",
+    "section": "95% interval poverenja",
+    "text": "95% interval poverenja"
   }
 ]

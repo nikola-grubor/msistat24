@@ -30,7 +30,6 @@ source(file = here("slides", "theme", "ggthemes.R"))
 
 ```{mermaid}
 %%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
-%%| fig-width: 10
 
 flowchart TD
   A[Ciljna populacija] --> B["Uzoračka populacija"]
@@ -144,13 +143,13 @@ postane sve jasno.
 ## Uzorkovanje
 
 Uzorački okvir
-  : test.
+  : Spisak ili lista svih elemenata populacije koju želimo da uzorkujemo.
 
-Slučajni uzorak
-  : Tačno znamo verovatnoću da neko bude izabran
+1. Slučajni uzorak
+   - Tačno znamo verovatnoću da neko bude izabran
 
-Neslučajni
-  : Može biti pristrasan
+2. Neslučajni
+   - Može biti pristrasan
 
 ## Slučajni uzorci
 
@@ -159,9 +158,9 @@ Neslučajni
 - Stratifikovani
 - Klaster
 
-## Prost slučajan uzorak
+## Prost slučajan uzorak {.smaller}
 
-Najjednostavniji oblik uzorkovanja. Bira se $n$ jedinica iz *izmešane* populacije (npr. uzorak krvi).
+[Najjednostavniji]{.yellow} oblik uzorkovanja. Bira se $n$ jedinica iz *izmešane* populacije (npr. uzorak krvi).
 
 ![](slike/simple_random.png){fig-align="center"}
 
@@ -169,9 +168,9 @@ Najjednostavniji oblik uzorkovanja. Bira se $n$ jedinica iz *izmešane* populaci
 
 :::
 
-## Sistematski slučajan uzorak
+## Sistematski slučajan uzorak {.smaller}
 
-Koristi se kao zamena za prost slučajan uzorak kada nemamo spisak jedinica ili je spisak nasumičnog redosleda.
+Koristi se kao [zamena]{.yellow} za prost slučajan uzorak kada nemamo spisak jedinica ili je spisak nasumičnog redosleda.
 
 ![](slike/systematic_sample.png){fig-align="center"}
 
@@ -179,7 +178,9 @@ Koristi se kao zamena za prost slučajan uzorak kada nemamo spisak jedinica ili 
 Ako su jedinice nekako poređane, uzorak će se ponašati kao prost slučajan ukoliko način na koji su poređani (pozicija) nema veze sa ispitivanom karakteristikom ali ne ako je lista ciklicna ili prati neku formu. Sistematski uzorak je forma klaster uzorka. I dalje ima okvir: svaki 10ti čovek koji izađe iz aviona je reprezentativan za ljude u avionu, dok svaki 10ti student koji udje u biblioteku nije.
 :::
 
-## Klaster slučajan uzorak
+## Klaster slučajan uzorak {.smaller}
+
+Koristan kada nemamo definisan uzorački okvir ili nas zanima opsežna populacija koju nije lako uzorkovati.
 
 ![](slike/cluster.png)
 
@@ -243,7 +244,14 @@ sample(1:99, 1, replace = F)
 
 ## Greška uzorkovanja
 
-Regardless of how representative our sample is, it’s likely that the statistic that we compute from the sample is going to differ at least slightly from the population parameter. We refer to this as sampling error. If we take multiple samples, the value of our statistical estimate will also vary from sample to sample; we refer to this distribution of our statistic across samples as the sampling distribution.
+1. Razlika između [statistike]{.yellow} izračunate na uzorku i [parametra]{.blue} populacije.
+
+2. Ponavljanjim uzorkovanjem možemo da saznamo [raspodelu greške]{.yellow} (uzoračka raspodela) statistike.
+
+Standardna greška
+  : Standardna greška je standardna devijacija uzoračke raspodele. 
+
+$$ SE_{\bar x} = \frac{sd}{\sqrt{n}} $$
 
 ## Standardna greška aritmetičke sredine
 
@@ -273,17 +281,9 @@ pop %>%
        y = "standardizovana gustina")
 ```
 
-## Standardna greška definicija
+___
 
-Standardna greška je ... 
-
-$$ SE_{\bar x} = \frac{sd}{\sqrt{n}} $$
-
-## Centralna granična teorema
-
-The Central Limit Theorem tells us that as sample sizes get larger, the sampling 
-distribution of the mean will become normally distributed, even if the data 
-within each sample are not normally distributed.
+{{< video https://youtu.be/zeJD6dqJ5lo?t=381 width="100%" height="100%" >}}
 
 ::: {.notes}
 The Central Limit Theorem is important for statistics because it allows us to 
@@ -329,20 +329,39 @@ sample_mean %>%
        y = "standardizovana gustina")
 ```
 
-## Ciljna grupa throwback
+## Generalizacija
 
-Kako da saznam nesto o grupi pacijenata
+Saznanje o celoj populaciji bez da smo ih videli.
+
+```{mermaid}
+%%| fig-align: "center"
+%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
+
+flowchart TD
+  A[Ciljna populacija] --> B["Uzoračka populacija"]
+  B --> C[Uzorak]
+  C --"Zaključak"--> A
+```
+
 
 ## Ocenjivanje populacionih parametara na osnovu uzorka
 
+Jedan od najvažnijih istraživačkih zadataka jeste [ocena]{.yellow} populacionih parametara, najčešće aritmetičke sredine ili proporcije.
+
+## Interval poverenja i tačkasta procena
+
 $$ CI = \bar x \pm t \times SE $$
+
+gde je: $\bar x$, aritmetička sredina; $t$, kritična vrednost; $SE$, standardna greška.
 
 $$ SE = \frac{sd}{\sqrt{n}} $$
 
-## Interval poverenja i ponovljena istraživanja
+## 95% interval poverenja
 
 ```{r}
 #| fig-align: "center"
+
+set.seed(55224)
 
 n_rep <- 100
 mu <- 6
@@ -351,24 +370,25 @@ sigma <- 4
 tibble(
   sim_id = 1:n_rep,
   est = rnorm(n_rep, mu, sigma),
-  conf_67_low = est - 0.674*sigma,
-  conf_67_high = est + 0.674*sigma,
-  conf_low = est - 1.960*sigma,
-  conf_high = est + 1.960*sigma
-) %>% 
+  conf_67_low = est - 0.674 * sigma,
+  conf_67_high = est + 0.674 * sigma,
+  conf_low = est - 1.960 * sigma,
+  conf_high = est + 1.960 * sigma
+) %>%
+  mutate(outside_ci = if_else(mu < conf_low | mu > conf_high, "Nije obuhvaćen", "Obuhvaćen")) %>%
   ggplot(aes(y = est, x = sim_id)) +
   geom_hline(yintercept = mu, color = "#F7F8F9") +
-  geom_point(color = "#F4BA02") +
-  geom_pointrange(aes(ymin = conf_low, ymax = conf_high), color = "#F4BA02") +
-  geom_pointrange(aes(ymin = conf_67_low, ymax = conf_67_high),
-                  linewidth = 1.1, color = "#F4BA02") +
+  geom_point(aes(color = outside_ci)) +
+  geom_pointrange(aes(ymin = conf_low, ymax = conf_high, color = outside_ci)) +
+  geom_pointrange(aes(ymin = conf_67_low, ymax = conf_67_high, color = outside_ci), linewidth = 1.1) +
+  scale_color_manual(values = c("Obuhvaćen" = "#F4BA02", "Nije obuhvaćen" = "red")) +
   theme_blue() +
   labs(
     y = "Ocena, 50%, i 95% interval poverenja",
-    x = "Simulacija"
-  )
+    x = "Simulacija",
+    color = "") +
+  theme(legend.position = "bottom")
 ```
-
 
 ## Definicija {.center}
 
@@ -390,9 +410,32 @@ rizik greške) ali je širi od 95%.
 
 :::
 
-## Inverval poverenja
+## 99% Inverval poverenja
 
-ci.png
+```{r}
+tibble(
+  sim_id = 1:n_rep,
+  est = rnorm(n_rep, mu, sigma),
+  conf_67_low = est - 0.674 * sigma,
+  conf_67_high = est + 0.674 * sigma,
+  conf_low = est - 2.576 * sigma,
+  conf_high = est + 2.576 * sigma
+) %>%
+  mutate(outside_ci = if_else(mu < conf_low | mu > conf_high, "Nije obuhvaćen", "Obuhvaćen")) %>%
+  ggplot(aes(y = est, x = sim_id)) +
+  geom_hline(yintercept = mu, color = "#F7F8F9") +
+  geom_point(aes(color = outside_ci)) +
+  geom_pointrange(aes(ymin = conf_low, ymax = conf_high, color = outside_ci)) +
+  geom_pointrange(aes(ymin = conf_67_low, ymax = conf_67_high, color = outside_ci), linewidth = 1.1) +
+  scale_color_manual(values = c("Obuhvaćen" = "#F4BA02", "Nije obuhvaćen" = "red")) +
+  theme_blue() +
+  labs(
+    y = "Ocena, 50%, i 99% interval poverenja",
+    x = "Simulacija",
+    color = "") +
+  theme(legend.position = "bottom")
+```
+
 
 ## Zadatak 1
 
