@@ -461,12 +461,12 @@ flowchart TD
 <section id="osnovni-termini" class="slide level2">
 <h2>Osnovni termini</h2>
 <ul>
-<li>Populacija (skup svih istovrsnih elemenata)
+<li><span class="yellow">Populacija</span> (skup svih istovrsnih elemenata)
 <ul>
 <li>Ciljna populacija (skup elemenata za koji generalizujemo)</li>
 </ul></li>
-<li>Uzoracka populacija (populacija koja je dostupna)</li>
-<li>Uzorak (podskup osnovnog skupa (populacije) izabran na osnovu kriterijuma)</li>
+<li><span class="yellow">Uzoracka populacija</span> (populacija koja je dostupna)</li>
+<li><span class="yellow">Uzorak</span> (podskup osnovnog skupa (populacije) izabran na osnovu kriterijuma)</li>
 </ul>
 </section>
 <section id="istraživačko-pitanje-vs.-ciljna-grupa" class="slide level2">
@@ -565,11 +565,134 @@ Kada metod pokazuje netačnu, iskrivljenu sliku realnosti.
 </section>
 <section id="mortalitet-sepse-i-randomizacija" class="slide level2">
 <h2>Mortalitet sepse i randomizacija</h2>
-<div>
+<div class="fragment">
 <ol type="1">
-<li class="fragment">Kako bi ste randomizovali pacijente u JIL-u?</li>
-<li class="fragment">Dobili ste rezultat …</li>
-<li class="fragment">Sta rezultat znači?</li>
+<li>Kako bi ste randomizovali pacijente u JIL-u?</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Dobili smo rezultat:</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+ 
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinytable_ojhy664mrakriv8n99dj</title>
+    <style>
+.table td.tinytable_css_18ulc2pqqcymub0vw634, .table th.tinytable_css_18ulc2pqqcymub0vw634 {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_rrogyvno96cfyan6rd84, .table th.tinytable_css_rrogyvno96cfyan6rd84 {    font-size: 0.9em; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+  
+
+  
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_ojhy664mrakriv8n99dj" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col">Intervencija</th>
+                <th scope="col">Mortalitet</th>
+                <th scope="col">Ukupno</th>
+                <th scope="col">Stopa smrtnosti (%)</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>Agresivna terapija      </td>
+                  <td>92</td>
+                  <td>439</td>
+                  <td>21.0</td>
+                </tr>
+                <tr>
+                  <td>Manje agresivna terapija</td>
+                  <td>81</td>
+                  <td>446</td>
+                  <td>18.2</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function styleCell_tinytable_b69n7rwrs0ntpswcrwu3(i, j, css_id) {
+        var table = document.getElementById("tinytable_ojhy664mrakriv8n99dj");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_ojhy664mrakriv8n99dj');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_tinytable_b69n7rwrs0ntpswcrwu3(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_ojhy664mrakriv8n99dj");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+
+window.addEventListener('load', function () { styleCell_tinytable_b69n7rwrs0ntpswcrwu3(0, 0, 'tinytable_css_18ulc2pqqcymub0vw634') })
+window.addEventListener('load', function () { styleCell_tinytable_b69n7rwrs0ntpswcrwu3(0, 1, 'tinytable_css_18ulc2pqqcymub0vw634') })
+window.addEventListener('load', function () { styleCell_tinytable_b69n7rwrs0ntpswcrwu3(0, 2, 'tinytable_css_18ulc2pqqcymub0vw634') })
+window.addEventListener('load', function () { styleCell_tinytable_b69n7rwrs0ntpswcrwu3(0, 3, 'tinytable_css_18ulc2pqqcymub0vw634') })
+window.addEventListener('load', function () { styleCell_tinytable_b69n7rwrs0ntpswcrwu3(1, 0, 'tinytable_css_rrogyvno96cfyan6rd84') })
+window.addEventListener('load', function () { styleCell_tinytable_b69n7rwrs0ntpswcrwu3(2, 0, 'tinytable_css_rrogyvno96cfyan6rd84') })
+window.addEventListener('load', function () { styleCell_tinytable_b69n7rwrs0ntpswcrwu3(1, 1, 'tinytable_css_rrogyvno96cfyan6rd84') })
+window.addEventListener('load', function () { styleCell_tinytable_b69n7rwrs0ntpswcrwu3(2, 1, 'tinytable_css_rrogyvno96cfyan6rd84') })
+window.addEventListener('load', function () { styleCell_tinytable_b69n7rwrs0ntpswcrwu3(1, 2, 'tinytable_css_rrogyvno96cfyan6rd84') })
+window.addEventListener('load', function () { styleCell_tinytable_b69n7rwrs0ntpswcrwu3(2, 2, 'tinytable_css_rrogyvno96cfyan6rd84') })
+window.addEventListener('load', function () { styleCell_tinytable_b69n7rwrs0ntpswcrwu3(1, 3, 'tinytable_css_rrogyvno96cfyan6rd84') })
+window.addEventListener('load', function () { styleCell_tinytable_b69n7rwrs0ntpswcrwu3(2, 3, 'tinytable_css_rrogyvno96cfyan6rd84') })
+    </script>
+
+  
+
+
+</div>
+</div>
+<ol start="3" type="1">
+<li>Sta rezultat znači?</li>
 </ol>
 </div>
 </section>
@@ -664,6 +787,31 @@ Spisak ili lista svih elemenata populacije koju želimo da uzorkujemo.
 </ul></li>
 </ul>
 </section>
+<section id="vežba-uzorkovanje" class="slide level2">
+<h2>Vežba: uzorkovanje</h2>
+<p>Iz baze <span class="yellow">“Sistolni pritisak.xlsx”</span> odrediti <span class="yellow">prost i sistematski uzorak</span> veličine 10.</p>
+<p>Prost:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>, <span class="dv">10</span>, <span class="at">replace =</span> F)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  3 20 69 84 93 21 96 27 45 74</code></pre>
+</div>
+</div>
+<p>Sistematski:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>, <span class="dv">1</span>, <span class="at">replace =</span> F)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 51</code></pre>
+</div>
+</div>
+<ol type="1">
+<li>Odrediti početnu jedinicu
+<ul>
+<li>Korak <span class="math inline">\(k = \frac{99}{10} \approx 10\)</span></li>
+<li>Izabrati svaku 10-tu jedinicu</li>
+</ul></li>
+</ol>
+</section>
 <section id="problemi-neslučajnih-uzoraka" class="slide level2">
 <h2>Problemi neslučajnih uzoraka</h2>
 <ul>
@@ -680,10 +828,10 @@ Spisak ili lista svih elemenata populacije koju želimo da uzorkujemo.
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_gzg1yp9o6i30bso2t83o</title>
+    <title>tinytable_mdoml2xwzxyrttkjpke6</title>
     <style>
-.table td.tinytable_css_myt7fk4c3xnsibgi3ky0, .table th.tinytable_css_myt7fk4c3xnsibgi3ky0 {    border-bottom: solid 0.1em #d3d8dc; }
-.table td.tinytable_css_vf0j0ydex12kric78qm7, .table th.tinytable_css_vf0j0ydex12kric78qm7 {    font-size: 1em; }
+.table td.tinytable_css_3uymz7cwhjxalob88ld0, .table th.tinytable_css_3uymz7cwhjxalob88ld0 {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_b6gqv99x95mqsctck3qn, .table th.tinytable_css_b6gqv99x95mqsctck3qn {    font-size: 1em; }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -701,7 +849,7 @@ Spisak ili lista svih elemenata populacije koju želimo da uzorkujemo.
 
   
     <div class="container">
-      <table class="table table-borderless" id="tinytable_gzg1yp9o6i30bso2t83o" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_mdoml2xwzxyrttkjpke6" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -737,12 +885,12 @@ Spisak ili lista svih elemenata populacije koju želimo da uzorkujemo.
     </div>
 
     <script>
-      function styleCell_tinytable_e18elfhgfzsc4fhfnxor(i, j, css_id) {
-        var table = document.getElementById("tinytable_gzg1yp9o6i30bso2t83o");
+      function styleCell_tinytable_6bj02zzv9qo60g7jd1im(i, j, css_id) {
+        var table = document.getElementById("tinytable_mdoml2xwzxyrttkjpke6");
         table.rows[i].cells[j].classList.add(css_id);
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_gzg1yp9o6i30bso2t83o');
+        var table = document.getElementById('tinytable_mdoml2xwzxyrttkjpke6');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -750,8 +898,8 @@ Spisak ili lista svih elemenata populacije koju želimo da uzorkujemo.
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_tinytable_e18elfhgfzsc4fhfnxor(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_gzg1yp9o6i30bso2t83o");
+      function spanCell_tinytable_6bj02zzv9qo60g7jd1im(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_mdoml2xwzxyrttkjpke6");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -778,21 +926,21 @@ Spisak ili lista svih elemenata populacije koju želimo da uzorkujemo.
         targetCell.colSpan = colspan;
       }
 
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(0, 0, 'tinytable_css_myt7fk4c3xnsibgi3ky0') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(0, 1, 'tinytable_css_myt7fk4c3xnsibgi3ky0') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(0, 2, 'tinytable_css_myt7fk4c3xnsibgi3ky0') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(1, 0, 'tinytable_css_vf0j0ydex12kric78qm7') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(2, 0, 'tinytable_css_vf0j0ydex12kric78qm7') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(3, 0, 'tinytable_css_vf0j0ydex12kric78qm7') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(4, 0, 'tinytable_css_vf0j0ydex12kric78qm7') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(1, 1, 'tinytable_css_vf0j0ydex12kric78qm7') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(2, 1, 'tinytable_css_vf0j0ydex12kric78qm7') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(3, 1, 'tinytable_css_vf0j0ydex12kric78qm7') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(4, 1, 'tinytable_css_vf0j0ydex12kric78qm7') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(1, 2, 'tinytable_css_vf0j0ydex12kric78qm7') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(2, 2, 'tinytable_css_vf0j0ydex12kric78qm7') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(3, 2, 'tinytable_css_vf0j0ydex12kric78qm7') })
-window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4fhfnxor(4, 2, 'tinytable_css_vf0j0ydex12kric78qm7') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(0, 0, 'tinytable_css_3uymz7cwhjxalob88ld0') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(0, 1, 'tinytable_css_3uymz7cwhjxalob88ld0') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(0, 2, 'tinytable_css_3uymz7cwhjxalob88ld0') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(1, 0, 'tinytable_css_b6gqv99x95mqsctck3qn') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(2, 0, 'tinytable_css_b6gqv99x95mqsctck3qn') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(3, 0, 'tinytable_css_b6gqv99x95mqsctck3qn') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(4, 0, 'tinytable_css_b6gqv99x95mqsctck3qn') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(1, 1, 'tinytable_css_b6gqv99x95mqsctck3qn') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(2, 1, 'tinytable_css_b6gqv99x95mqsctck3qn') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(3, 1, 'tinytable_css_b6gqv99x95mqsctck3qn') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(4, 1, 'tinytable_css_b6gqv99x95mqsctck3qn') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(1, 2, 'tinytable_css_b6gqv99x95mqsctck3qn') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(2, 2, 'tinytable_css_b6gqv99x95mqsctck3qn') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(3, 2, 'tinytable_css_b6gqv99x95mqsctck3qn') })
+window.addEventListener('load', function () { styleCell_tinytable_6bj02zzv9qo60g7jd1im(4, 2, 'tinytable_css_b6gqv99x95mqsctck3qn') })
     </script>
 
   
@@ -800,31 +948,6 @@ window.addEventListener('load', function () { styleCell_tinytable_e18elfhgfzsc4f
 
 </div>
 </div>
-</section>
-<section id="vežba" class="slide level2">
-<h2>Vežba</h2>
-<p>Iz baze <span class="yellow">“Sistolni pritisak.xlsx”</span> odrediti <span class="yellow">prost i sistematski uzorak</span> veličine 10.</p>
-<p>Prost:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>, <span class="dv">10</span>, <span class="at">replace =</span> F)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 60 17 73 25 49 39 91 58 92 43</code></pre>
-</div>
-</div>
-<p>Sistematski:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">99</span>, <span class="dv">1</span>, <span class="at">replace =</span> F)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 40</code></pre>
-</div>
-</div>
-<ol type="1">
-<li>Odrediti početnu jedinicu
-<ul>
-<li>Korak <span class="math inline">\(k = \frac{99}{10} \approx 10\)</span></li>
-<li>Izabrati svaku 10-tu jedinicu</li>
-</ul></li>
-</ol>
 </section>
 <section id="greška-uzorkovanja" class="slide level2">
 <h2>Greška uzorkovanja</h2>
@@ -843,7 +966,7 @@ Standardna greška je standardna devijacija uzoračke raspodele.
 <section id="standardna-greška-aritmetičke-sredine" class="slide level2">
 <h2>Standardna greška aritmetičke sredine</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
 <section class="slide level2">
 
 <iframe data-external="1" src="https://www.youtube.com/embed/zeJD6dqJ5lo?t=381" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
@@ -869,10 +992,10 @@ Standardna greška je standardna devijacija uzoračke raspodele.
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-7-2.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-8-2.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -906,12 +1029,12 @@ flowchart TD
 <h2>Interval poverenja i tačkasta procena</h2>
 <p><span class="math display">\[ CI = \bar x \pm t \times SE \]</span></p>
 <p>gde je: <span class="math inline">\(\bar x\)</span>, aritmetička sredina; <span class="math inline">\(t\)</span>, kritična vrednost; <span class="math inline">\(SE\)</span>, standardna greška.</p>
-<p><span class="math display">\[ SE = \frac{sd}{\sqrt{n}} \]</span></p>
+<p><span class="math display">\[ SE = \frac{sd}{\sqrt{n}} \]</span> gde je: <span class="math inline">\(sd\)</span>, standardna devijacija statistike u uzorku (populaciona nije dostupna); <span class="math inline">\(n\)</span> broj opservacija.</p>
 </section>
 <section id="interval-poverenja" class="slide level2">
 <h2>95% interval poverenja</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="definicija" class="slide level2 center">
 <h2>Definicija</h2>
 <div class="r-fit-text">
@@ -929,23 +1052,49 @@ flowchart TD
 <section id="inverval-poverenja" class="slide level2">
 <h2>99% Inverval poverenja</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
-<section id="zadatak-1" class="slide level2">
-<h2>Zadatak 1</h2>
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="vežba-interval-poverenja-za-kontinuirane-podatke" class="slide level2">
+<h2>Vežba: interval poverenja za kontinuirane podatke</h2>
 <div class="r-fit-text">
 <p>Koristeći bazu podataka <span class="yellow">Sistolna TA.xlsx</span> odrediti</p>
 <p><span class="yellow">99% interval</span> poverenja <span class="yellow">aritmetičke sredine</span></p>
 <p>sistolnog arterijskog pritiska ispitanika sa</p>
 <p>akutnim koronarnim sindromom.</p>
 </div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Komande</strong></p>
+</div>
+<div class="callout-content">
+<p>Statistical analysis <span class="math inline">\(\rightarrow\)</span> Continuous variables <span class="math inline">\(\rightarrow\)</span> Single-sample t-test</p>
+</div>
+</div>
+</div>
 </section>
-<section id="zadatak-2" class="slide level2">
-<h2>Zadatak 2</h2>
+<section id="vežba-interval-poverenja-za-diskretne-podatke" class="slide level2">
+<h2>Vežba: interval poverenja za diskretne podatke</h2>
 <div class="r-fit-text">
 <p>Na uzorku od <span class="yellow">500 učenika</span> u jednoj opštini nađena je</p>
 <p>anemija kod <span class="yellow">25 učenika</span>. Odrediti <span class="yellow">95% interval</span></p>
 <p>poverenja <span class="yellow">proporcije</span> učenika sa anemijom u toj</p>
 <p>opštini.</p>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Komande</strong></p>
+</div>
+<div class="callout-content">
+<p>Statistical analysis <span class="math inline">\(\rightarrow\)</span> Discrete variables <span class="math inline">\(\rightarrow\)</span> Confidence interval for a proportion</p>
+</div>
+</div>
 </div>
 </section>
 <section id="struktura-kursa" class="slide level2">

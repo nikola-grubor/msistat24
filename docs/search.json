@@ -739,7 +739,7 @@
     "href": "slides/05_uzorak/prezentacija.html#mortalitet-sepse-i-randomizacija",
     "title": "Populacija i uzorak",
     "section": "Mortalitet sepse i randomizacija",
-    "text": "Mortalitet sepse i randomizacija\n\n\nKako bi ste randomizovali pacijente u JIL-u?\nDobili ste rezultat …\nSta rezultat znači?"
+    "text": "Mortalitet sepse i randomizacija\n\n\nKako bi ste randomizovali pacijente u JIL-u?\n\n\n\n\nDobili smo rezultat:\n\n\n\n \n\n  \n    \n    \n    tinytable_ojhy664mrakriv8n99dj\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Intervencija\n                Mortalitet\n                Ukupno\n                Stopa smrtnosti (%)\n              \n        \n        \n        \n                \n                  Agresivna terapija      \n                  92\n                  439\n                  21.0\n                \n                \n                  Manje agresivna terapija\n                  81\n                  446\n                  18.2\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\nSta rezultat znači?"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#uzorkovanje",
@@ -802,7 +802,7 @@
     "href": "slides/05_uzorak/prezentacija.html#terminologija-i-notacija",
     "title": "Populacija i uzorak",
     "section": "Terminologija (i notacija)",
-    "text": "Terminologija (i notacija)\n\n\n \n\n  \n    \n    \n    tinytable_gzg1yp9o6i30bso2t83o\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                \n                Populacija (parametar)\n                Uzorak (statistika)\n              \n        \n        \n        \n                \n                  Aritmetička sredina  \n                  $\\mu$     \n                  $\\bar x$\n                \n                \n                  Varijansa            \n                  $\\sigma^2$\n                  $sd^2$   \n                \n                \n                  Standardna devijacija\n                  $\\sigma$  \n                  $sd$     \n                \n                \n                  Proporcija           \n                  $\\pi$     \n                  $p$"
+    "text": "Terminologija (i notacija)\n\n\n \n\n  \n    \n    \n    tinytable_mdoml2xwzxyrttkjpke6\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                \n                Populacija (parametar)\n                Uzorak (statistika)\n              \n        \n        \n        \n                \n                  Aritmetička sredina  \n                  $\\mu$     \n                  $\\bar x$\n                \n                \n                  Varijansa            \n                  $\\sigma^2$\n                  $sd^2$   \n                \n                \n                  Standardna devijacija\n                  $\\sigma$  \n                  $sd$     \n                \n                \n                  Proporcija           \n                  $\\pi$     \n                  $p$"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#vežba",
@@ -893,14 +893,14 @@
     "href": "slides/05_uzorak/prezentacija.html#zadatak-1",
     "title": "Populacija i uzorak",
     "section": "Zadatak 1",
-    "text": "Zadatak 1\n\nKoristeći bazu podataka Sistolna TA.xlsx odrediti\n99% interval poverenja aritmetičke sredine\nsistolnog arterijskog pritiska ispitanika sa\nakutnim koronarnim sindromom."
+    "text": "Zadatak 1\n\nKoristeći bazu podataka Sistolna TA.xlsx odrediti\n99% interval poverenja aritmetičke sredine\nsistolnog arterijskog pritiska ispitanika sa\nakutnim koronarnim sindromom.\n\n\n\n\n\n\n\nSavet\n\n\nStatistical analysis \\(\\rightarrow\\) Continuous variables \\(\\rightarrow\\) Single-sample t-test"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#zadatak-2",
     "href": "slides/05_uzorak/prezentacija.html#zadatak-2",
     "title": "Populacija i uzorak",
     "section": "Zadatak 2",
-    "text": "Zadatak 2\n\nNa uzorku od 500 učenika u jednoj opštini nađena je\nanemija kod 25 učenika. Odrediti 95% interval\npoverenja proporcije učenika sa anemijom u toj\nopštini."
+    "text": "Zadatak 2\n\nNa uzorku od 500 učenika u jednoj opštini nađena je\nanemija kod 25 učenika. Odrediti 95% interval\npoverenja proporcije učenika sa anemijom u toj\nopštini.\n\n\n\n\n\n\n\nSavet\n\n\nStatistical analysis \\(\\rightarrow\\) Discrete variables \\(\\rightarrow\\) Confidence interval for a proportion"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#struktura-kursa",
@@ -1208,7 +1208,7 @@
     "href": "slides/05_uzorak/prezentacija.html#interval-poverenja-i-tačkasta-procena",
     "title": "Populacija i uzorak",
     "section": "Interval poverenja i tačkasta procena",
-    "text": "Interval poverenja i tačkasta procena\n\\[ CI = \\bar x \\pm t \\times SE \\]\ngde je: \\(\\bar x\\), aritmetička sredina; \\(t\\), kritična vrednost; \\(SE\\), standardna greška.\n\\[ SE = \\frac{sd}{\\sqrt{n}} \\]"
+    "text": "Interval poverenja i tačkasta procena\n\\[ CI = \\bar x \\pm t \\times SE \\]\ngde je: \\(\\bar x\\), aritmetička sredina; \\(t\\), kritična vrednost; \\(SE\\), standardna greška.\n\\[ SE = \\frac{sd}{\\sqrt{n}} \\] gde je: \\(sd\\), standardna devijacija statistike u uzorku (populaciona nije dostupna); \\(n\\) broj opservacija."
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#interval-poverenja",
@@ -1216,5 +1216,26 @@
     "title": "Populacija i uzorak",
     "section": "95% interval poverenja",
     "text": "95% interval poverenja"
+  },
+  {
+    "objectID": "slides/05_uzorak/prezentacija.html#vežba-uzorkovanje",
+    "href": "slides/05_uzorak/prezentacija.html#vežba-uzorkovanje",
+    "title": "Populacija i uzorak",
+    "section": "Vežba: uzorkovanje",
+    "text": "Vežba: uzorkovanje\nIz baze “Sistolni pritisak.xlsx” odrediti prost i sistematski uzorak veličine 10.\nProst:\n\nsample(1:99, 10, replace = F)\n\n [1]  3 20 69 84 93 21 96 27 45 74\n\n\nSistematski:\n\nsample(1:99, 1, replace = F)\n\n[1] 51\n\n\n\nOdrediti početnu jedinicu\n\nKorak \\(k = \\frac{99}{10} \\approx 10\\)\nIzabrati svaku 10-tu jedinicu"
+  },
+  {
+    "objectID": "slides/05_uzorak/prezentacija.html#vežba-interval-poverenja-za-kontinuirane-podatke",
+    "href": "slides/05_uzorak/prezentacija.html#vežba-interval-poverenja-za-kontinuirane-podatke",
+    "title": "Populacija i uzorak",
+    "section": "Vežba: interval poverenja za kontinuirane podatke",
+    "text": "Vežba: interval poverenja za kontinuirane podatke\n\nKoristeći bazu podataka Sistolna TA.xlsx odrediti\n99% interval poverenja aritmetičke sredine\nsistolnog arterijskog pritiska ispitanika sa\nakutnim koronarnim sindromom.\n\n\n\n\n\n\n\nKomande\n\n\nStatistical analysis \\(\\rightarrow\\) Continuous variables \\(\\rightarrow\\) Single-sample t-test"
+  },
+  {
+    "objectID": "slides/05_uzorak/prezentacija.html#vežba-interval-poverenja-za-diskretne-podatke",
+    "href": "slides/05_uzorak/prezentacija.html#vežba-interval-poverenja-za-diskretne-podatke",
+    "title": "Populacija i uzorak",
+    "section": "Vežba: interval poverenja za diskretne podatke",
+    "text": "Vežba: interval poverenja za diskretne podatke\n\nNa uzorku od 500 učenika u jednoj opštini nađena je\nanemija kod 25 učenika. Odrediti 95% interval\npoverenja proporcije učenika sa anemijom u toj\nopštini.\n\n\n\n\n\n\n\nKomande\n\n\nStatistical analysis \\(\\rightarrow\\) Discrete variables \\(\\rightarrow\\) Confidence interval for a proportion"
   }
 ]

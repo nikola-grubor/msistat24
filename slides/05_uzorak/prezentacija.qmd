@@ -57,10 +57,10 @@ Kako da odgovorimo na ovo pitanje?
 
 ## Osnovni termini
 
-- Populacija (skup svih istovrsnih elemenata)
+- [Populacija]{.yellow} (skup svih istovrsnih elemenata)
     + Ciljna populacija (skup elemenata za koji generalizujemo)
-- Uzoracka populacija (populacija koja je dostupna)
-- Uzorak (podskup osnovnog skupa (populacije) izabran na osnovu kriterijuma)
+- [Uzoracka populacija]{.yellow} (populacija koja je dostupna)
+- [Uzorak]{.yellow} (podskup osnovnog skupa (populacije) izabran na osnovu kriterijuma)
 
 ## Istraživačko pitanje vs. ciljna grupa
 
@@ -133,11 +133,28 @@ postane sve jasno.
 
 ## Mortalitet sepse i randomizacija
 
-::: {.incremental}
+::: {.fragment}
 
 1. Kako bi ste randomizovali pacijente u JIL-u?
-2. Dobili ste rezultat ...
+
+:::
+
+::: {.fragment}
+
+2. Dobili smo rezultat:
+
+```{r}
+tribble(
+  ~Intervencija, ~Mortalitet, ~Ukupno,
+  "Agresivna terapija", 92, 439,
+  "Manje agresivna terapija", 81, 446
+) |>
+  mutate(`Stopa smrtnosti (%)` = round ( Mortalitet / Ukupno * 100 , 1) )  |>
+  tt() |> style_tt(fontsize = 0.9)
+```
+
 3. Sta rezultat znači?
+
 :::
 
 ## Uzorkovanje
@@ -199,26 +216,7 @@ Populacija se deli na stratume od interesa. Jedinice (birane prostim slučajnim 
 - Namerni
     + Pilot studija (inovacije)
     
-## Problemi neslučajnih uzoraka
-
-- Postoji selekciona pristrasnost
-- Upitna valjanost generalizacije
-
-## Terminologija (i notacija)
-
-```{r}
-tribble(
-  ~"", ~"Populacija (parametar)", ~"Uzorak (statistika)",
-  "Aritmetička sredina", "$\\mu$", "$\\bar x$",
-  "Varijansa", "$\\sigma^2$", "$sd^2$",
-  "Standardna devijacija", "$\\sigma$", "$sd$",
-  "Proporcija", "$\\pi$", "$p$"
-) %>% 
-  tt() %>% style_tt(fontsize = 1)
-  
-```
-
-## Vežba
+## Vežba: uzorkovanje
 
 Iz baze ["Sistolni pritisak.xlsx"]{.yellow} odrediti [prost i sistematski uzorak]{.yellow} veličine 10.
 
@@ -241,6 +239,25 @@ sample(1:99, 1, replace = F)
 1. Odrediti početnu jedinicu
     + Korak $k = \frac{99}{10} \approx 10$
     + Izabrati svaku 10-tu jedinicu
+
+## Problemi neslučajnih uzoraka
+
+- Postoji selekciona pristrasnost
+- Upitna valjanost generalizacije
+
+## Terminologija (i notacija)
+
+```{r}
+tribble(
+  ~"", ~"Populacija (parametar)", ~"Uzorak (statistika)",
+  "Aritmetička sredina", "$\\mu$", "$\\bar x$",
+  "Varijansa", "$\\sigma^2$", "$sd^2$",
+  "Standardna devijacija", "$\\sigma$", "$sd$",
+  "Proporcija", "$\\pi$", "$p$"
+) %>% 
+  tt() %>% style_tt(fontsize = 1)
+  
+```
 
 ## Greška uzorkovanja
 
@@ -355,6 +372,7 @@ $$ CI = \bar x \pm t \times SE $$
 gde je: $\bar x$, aritmetička sredina; $t$, kritična vrednost; $SE$, standardna greška.
 
 $$ SE = \frac{sd}{\sqrt{n}} $$
+gde je: $sd$, standardna devijacija statistike u uzorku (populaciona nije dostupna); $n$ broj opservacija.
 
 ## 95% interval poverenja
 
@@ -437,7 +455,7 @@ tibble(
 ```
 
 
-## Zadatak 1
+## Vežba: interval poverenja za kontinuirane podatke 
 
 ::: {.r-fit-text}
 
@@ -451,8 +469,13 @@ akutnim koronarnim sindromom.
 
 :::
 
+::: {.callout-tip}
+## Komande
+Statistical analysis $\rightarrow$ Continuous variables $\rightarrow$ Single-sample t-test
+:::
 
-## Zadatak 2
+
+## Vežba: interval poverenja za diskretne podatke
 
 ::: {.r-fit-text}
 
@@ -464,6 +487,11 @@ poverenja [proporcije]{.yellow} učenika sa anemijom u toj
 
 opštini.
 
+:::
+
+::: {.callout-tip}
+## Komande
+Statistical analysis $\rightarrow$ Discrete variables $\rightarrow$ Confidence interval for a proportion
 :::
 
 ## Struktura kursa
