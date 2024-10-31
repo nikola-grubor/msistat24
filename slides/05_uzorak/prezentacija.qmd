@@ -190,32 +190,6 @@ Populacija se deli na stratume od interesa. Jedinice (birane prostim slučajnim 
 - Namerni
     + Pilot studija (inovacije)
     
-## Mortalitet sepse i randomizacija
-
-::: {.fragment}
-
-1. Kako bi ste randomizovali pacijente u JIL-u?
-
-:::
-
-::: {.fragment}
-
-2. Dobili smo rezultat:
-
-```{r}
-tribble(
-  ~Intervencija, ~Mortalitet, ~Ukupno,
-  "Agresivna terapija", 92, 439,
-  "Manje agresivna terapija", 81, 446
-) |>
-  mutate(`Stopa smrtnosti (%)` = round ( Mortalitet / Ukupno * 100 , 1) )  |>
-  tt() |> style_tt(fontsize = 0.9)
-```
-
-3. Da li je ovo dobra procena mortaliteta?
-
-:::
-    
 ## Vežba: uzorkovanje
 
 Iz baze ["Sistolni pritisak.xlsx"]{.yellow} odrediti [prost i sistematski uzorak]{.yellow} veličine 10.
@@ -258,6 +232,32 @@ tribble(
   tt() %>% style_tt(fontsize = 1)
   
 ```
+
+## Mortalitet sepse i randomizacija
+
+::: {.fragment}
+
+1. Kako bi ste randomizovali pacijente u JIL-u?
+
+:::
+
+::: {.fragment}
+
+2. Dobili smo rezultat:
+
+```{r}
+tribble(
+  ~Intervencija, ~Mortalitet, ~Ukupno,
+  "Agresivna terapija", 92, 439,
+  "Manje agresivna terapija", 81, 446
+) |>
+  mutate(`Stopa smrtnosti (%)` = round ( Mortalitet / Ukupno * 100 , 1) )  |>
+  tt() |> style_tt(fontsize = 0.9)
+```
+
+3. Da li je ovo dobra procena mortaliteta?
+
+:::
 
 ## Greška uzorkovanja
 
@@ -359,34 +359,6 @@ sample_mean %>%
        y = "standardizovana gustina")
 ```
 
-## Generalizacija
-
-Saznanje o celoj populaciji bez da smo ih videli.
-
-```{r}
-tribble(
-  ~Intervencija, ~Mortalitet, ~Ukupno,
-  "Agresivna terapija", 92, 439,
-  "Manje agresivna terapija", 81, 446
-) |>
-  mutate(`Stopa smrtnosti (%)` = round ( Mortalitet / Ukupno * 100 , 1),
-         `95% IP (%)` = round(
-           (Mortalitet / Ukupno) + -1*1.96*sqrt(Mortalitet/Ukupno*(1 - Mortalitet/Ukupno)/(Mortalitet+Ukupno)) * 100, 2
-           )  |>
-  tt() |> style_tt(fontsize = 0.9)
-```
-
-```{mermaid}
-%%| fig-align: "center"
-%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
-
-flowchart TD
-  A[Ciljna populacija] --> B["Uzoračka populacija"]
-  B --> C[Uzorak]
-  C --"Zaključak"--> A
-```
-
-
 ## Ocenjivanje populacionih parametara na osnovu uzorka
 
 Jedan od najvažnijih istraživačkih zadataka jeste [ocena]{.yellow} populacionih parametara, najčešće aritmetičke sredine ili proporcije.
@@ -396,8 +368,6 @@ Jedan od najvažnijih istraživačkih zadataka jeste [ocena]{.yellow} populacion
 $$ CI = \bar x \pm t \times SE $$
 
 gde je: $\bar x$, aritmetička sredina; $t$, kritična vrednost; $SE$, standardna greška.
-
-
 
 ## 95% interval poverenja
 
@@ -479,6 +449,33 @@ rizik greške) ali je širi od 95%.
 
 :::
 
+## Generalizacija
+
+Saznanje o celoj populaciji bez da smo ih videli.
+
+```{r}
+tribble(
+  ~Intervencija, ~Mortalitet, ~Ukupno,
+  "Agresivna terapija", 92, 439,
+  "Manje agresivna terapija", 81, 446
+) |>
+  rowwise() |>
+  mutate(
+    `Stopa smrtnosti (%)` = round (Mortalitet / Ukupno * 100 , 1),
+    `95% IP (%)` = paste(round(binom.test(x = Mortalitet, n = Ukupno)$conf.int[1] * 100, 2), " - ",
+                         round(binom.test(x = Mortalitet, n = Ukupno)$conf.int[2] * 100, 2))) |>
+      tt() |> style_tt(fontsize = 0.8) %>% style_tt(i = 0, fontsize = 0.75)
+```
+
+```{mermaid}
+%%| fig-align: "center"
+%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
+
+flowchart TD
+  A[Ciljna populacija] --> B["Uzoračka populacija"]
+  B --> C[Uzorak]
+  C --"Zaključak"--> A
+```
 
 ## Vežba: interval poverenja za kontinuirane podatke 
 
