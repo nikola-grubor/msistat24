@@ -739,7 +739,7 @@
     "href": "slides/05_uzorak/prezentacija.html#mortalitet-sepse-i-randomizacija",
     "title": "Populacija i uzorak",
     "section": "Mortalitet sepse i randomizacija",
-    "text": "Mortalitet sepse i randomizacija\n\n\nKako bi ste randomizovali pacijente u JIL-u?\n\n\n\n\nDobili smo rezultat:\n\n\n\n \n\n  \n    \n    \n    tinytable_ojhy664mrakriv8n99dj\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Intervencija\n                Mortalitet\n                Ukupno\n                Stopa smrtnosti (%)\n              \n        \n        \n        \n                \n                  Agresivna terapija      \n                  92\n                  439\n                  21.0\n                \n                \n                  Manje agresivna terapija\n                  81\n                  446\n                  18.2\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\nSta rezultat znači?"
+    "text": "Mortalitet sepse i randomizacija\n\n\nKako bi ste randomizovali pacijente u JIL-u?\n\n\n\n\nDobili smo rezultat:\n\n\n\n \n\n  \n    \n    \n    tinytable_wmbkflqcrgzovo1u1q2b\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Intervencija\n                Mortalitet\n                Ukupno\n                Stopa smrtnosti (%)\n              \n        \n        \n        \n                \n                  Agresivna terapija      \n                  92\n                  439\n                  21.0\n                \n                \n                  Manje agresivna terapija\n                  81\n                  446\n                  18.2\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\nDa li je ovo dobra procena mortaliteta?"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#uzorkovanje",
@@ -802,7 +802,7 @@
     "href": "slides/05_uzorak/prezentacija.html#terminologija-i-notacija",
     "title": "Populacija i uzorak",
     "section": "Terminologija (i notacija)",
-    "text": "Terminologija (i notacija)\n\n\n \n\n  \n    \n    \n    tinytable_mdoml2xwzxyrttkjpke6\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                \n                Populacija (parametar)\n                Uzorak (statistika)\n              \n        \n        \n        \n                \n                  Aritmetička sredina  \n                  $\\mu$     \n                  $\\bar x$\n                \n                \n                  Varijansa            \n                  $\\sigma^2$\n                  $sd^2$   \n                \n                \n                  Standardna devijacija\n                  $\\sigma$  \n                  $sd$     \n                \n                \n                  Proporcija           \n                  $\\pi$     \n                  $p$"
+    "text": "Terminologija (i notacija)\n\n\n \n\n  \n    \n    \n    tinytable_lexu1u9gaxbsie08034j\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                \n                Populacija (parametar)\n                Uzorak (statistika)\n              \n        \n        \n        \n                \n                  Aritmetička sredina  \n                  $\\mu$     \n                  $\\bar x$\n                \n                \n                  Varijansa            \n                  $\\sigma^2$\n                  $sd^2$   \n                \n                \n                  Standardna devijacija\n                  $\\sigma$  \n                  $sd$     \n                \n                \n                  Proporcija           \n                  $\\pi$     \n                  $p$"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#vežba",
@@ -816,7 +816,7 @@
     "href": "slides/05_uzorak/prezentacija.html#greška-uzorkovanja",
     "title": "Populacija i uzorak",
     "section": "Greška uzorkovanja",
-    "text": "Greška uzorkovanja\n\nRazlika između statistike izračunate na uzorku i parametra populacije.\nPonavljanjim uzorkovanjem možemo da saznamo raspodelu greške (uzoračka raspodela) statistike.\n\n\nStandardna greška\n\nStandardna greška je standardna devijacija uzoračke raspodele.\n\n\n\\[ SE_{\\bar x} = \\frac{sd}{\\sqrt{n}} \\]"
+    "text": "Greška uzorkovanja\n\nRazlika između statistike izračunate na uzorku i parametra populacije.\nPonavljanjim uzorkovanjem možemo da saznamo raspodelu greške (uzoračka raspodela) statistike.\n\n\nStandardna greška\n\nStandardna greška je standardna devijacija uzoračke raspodele."
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#standardna-greška-aritmetičke-sredine",
@@ -1208,7 +1208,7 @@
     "href": "slides/05_uzorak/prezentacija.html#interval-poverenja-i-tačkasta-procena",
     "title": "Populacija i uzorak",
     "section": "Interval poverenja i tačkasta procena",
-    "text": "Interval poverenja i tačkasta procena\n\\[ CI = \\bar x \\pm t \\times SE \\]\ngde je: \\(\\bar x\\), aritmetička sredina; \\(t\\), kritična vrednost; \\(SE\\), standardna greška.\n\\[ SE = \\frac{sd}{\\sqrt{n}} \\] gde je: \\(sd\\), standardna devijacija statistike u uzorku (populaciona nije dostupna); \\(n\\) broj opservacija."
+    "text": "Interval poverenja i tačkasta procena\n\\[ CI = \\bar x \\pm t \\times SE \\]\ngde je: \\(\\bar x\\), aritmetička sredina; \\(t\\), kritična vrednost; \\(SE\\), standardna greška."
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#interval-poverenja",
@@ -1222,7 +1222,7 @@
     "href": "slides/05_uzorak/prezentacija.html#vežba-uzorkovanje",
     "title": "Populacija i uzorak",
     "section": "Vežba: uzorkovanje",
-    "text": "Vežba: uzorkovanje\nIz baze “Sistolni pritisak.xlsx” odrediti prost i sistematski uzorak veličine 10.\nProst:\n\nsample(1:99, 10, replace = F)\n\n [1]  3 20 69 84 93 21 96 27 45 74\n\n\nSistematski:\n\nsample(1:99, 1, replace = F)\n\n[1] 51\n\n\n\nOdrediti početnu jedinicu\n\nKorak \\(k = \\frac{99}{10} \\approx 10\\)\nIzabrati svaku 10-tu jedinicu"
+    "text": "Vežba: uzorkovanje\nIz baze “Sistolni pritisak.xlsx” odrediti prost i sistematski uzorak veličine 10.\nProst:\n\nsample(1:99, 10, replace = F)\n\n [1] 39 79 30 90 31  7 76 42 96 84\n\n\nSistematski:\n\nsample(1:99, 1, replace = F)\n\n[1] 37\n\n\n\nOdrediti početnu jedinicu\n\nKorak \\(k = \\frac{N}{n} = \\frac{99}{10} \\approx 10\\)\nIzabrati svaku 10-tu jedinicu"
   },
   {
     "objectID": "slides/05_uzorak/prezentacija.html#vežba-interval-poverenja-za-kontinuirane-podatke",
@@ -1237,5 +1237,26 @@
     "title": "Populacija i uzorak",
     "section": "Vežba: interval poverenja za diskretne podatke",
     "text": "Vežba: interval poverenja za diskretne podatke\n\nNa uzorku od 500 učenika u jednoj opštini nađena je\nanemija kod 25 učenika. Odrediti 95% interval\npoverenja proporcije učenika sa anemijom u toj\nopštini.\n\n\n\n\n\n\n\nKomande\n\n\nStatistical analysis \\(\\rightarrow\\) Discrete variables \\(\\rightarrow\\) Confidence interval for a proportion"
+  },
+  {
+    "objectID": "slides/05_uzorak/prezentacija.html#primer-centralne-granične-teoreme",
+    "href": "slides/05_uzorak/prezentacija.html#primer-centralne-granične-teoreme",
+    "title": "Populacija i uzorak",
+    "section": "Primer centralne granične teoreme",
+    "text": "Primer centralne granične teoreme\nBilo koja raspodela \\(\\rightarrow\\) arit. sred. uzorka \\(\\rightarrow\\) normalna raspodela arit. sredina"
+  },
+  {
+    "objectID": "slides/05_uzorak/prezentacija.html#vrste-uzoraka",
+    "href": "slides/05_uzorak/prezentacija.html#vrste-uzoraka",
+    "title": "Populacija i uzorak",
+    "section": "Vrste uzoraka",
+    "text": "Vrste uzoraka\n\nUzorački okvir\n\nSpisak ili lista svih elemenata populacije koju želimo da uzorkujemo.\n\n\n\nSlučajni uzorak\n\nTačno znamo verovatnoću da neko bude izabran\n\nNeslučajni\n\nMože biti pristrasan"
+  },
+  {
+    "objectID": "slides/05_uzorak/prezentacija.html#standardna-greška-aritmetičke-sredine-i-proporcije",
+    "href": "slides/05_uzorak/prezentacija.html#standardna-greška-aritmetičke-sredine-i-proporcije",
+    "title": "Populacija i uzorak",
+    "section": "Standardna greška aritmetičke sredine i proporcije",
+    "text": "Standardna greška aritmetičke sredine i proporcije\nStandardna greška aritmetičke sredine:\n\\[ SE_{\\bar x} = \\frac{sd}{\\sqrt{n}} \\]\ngde je: \\(sd\\), standardna devijacija statistike u uzorku (populaciona nije dostupna); \\(n\\) broj opservacija.\nStandardna greška proporcije:\n\\[ SE_{p} = \\sqrt{\\frac{p(1-p)}{n}} \\] gde je: \\(p\\), proporcija događaja u uzorku; \\(n\\) broj opservacija."
   }
 ]

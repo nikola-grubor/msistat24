@@ -131,35 +131,9 @@ postane sve jasno.
 
 :::
 
-## Mortalitet sepse i randomizacija
+## Vrste uzoraka
 
-::: {.fragment}
-
-1. Kako bi ste randomizovali pacijente u JIL-u?
-
-:::
-
-::: {.fragment}
-
-2. Dobili smo rezultat:
-
-```{r}
-tribble(
-  ~Intervencija, ~Mortalitet, ~Ukupno,
-  "Agresivna terapija", 92, 439,
-  "Manje agresivna terapija", 81, 446
-) |>
-  mutate(`Stopa smrtnosti (%)` = round ( Mortalitet / Ukupno * 100 , 1) )  |>
-  tt() |> style_tt(fontsize = 0.9)
-```
-
-3. Sta rezultat znači?
-
-:::
-
-## Uzorkovanje
-
-Uzorački okvir
+[Uzorački okvir]{.yellow}
   : Spisak ili lista svih elemenata populacije koju želimo da uzorkujemo.
 
 1. Slučajni uzorak
@@ -216,6 +190,32 @@ Populacija se deli na stratume od interesa. Jedinice (birane prostim slučajnim 
 - Namerni
     + Pilot studija (inovacije)
     
+## Mortalitet sepse i randomizacija
+
+::: {.fragment}
+
+1. Kako bi ste randomizovali pacijente u JIL-u?
+
+:::
+
+::: {.fragment}
+
+2. Dobili smo rezultat:
+
+```{r}
+tribble(
+  ~Intervencija, ~Mortalitet, ~Ukupno,
+  "Agresivna terapija", 92, 439,
+  "Manje agresivna terapija", 81, 446
+) |>
+  mutate(`Stopa smrtnosti (%)` = round ( Mortalitet / Ukupno * 100 , 1) )  |>
+  tt() |> style_tt(fontsize = 0.9)
+```
+
+3. Da li je ovo dobra procena mortaliteta?
+
+:::
+    
 ## Vežba: uzorkovanje
 
 Iz baze ["Sistolni pritisak.xlsx"]{.yellow} odrediti [prost i sistematski uzorak]{.yellow} veličine 10.
@@ -237,7 +237,7 @@ sample(1:99, 1, replace = F)
 ```
 
 1. Odrediti početnu jedinicu
-    + Korak $k = \frac{99}{10} \approx 10$
+    + Korak $k = \frac{N}{n} = \frac{99}{10} \approx 10$
     + Izabrati svaku 10-tu jedinicu
 
 ## Problemi neslučajnih uzoraka
@@ -266,9 +266,20 @@ tribble(
 2. Ponavljanjim uzorkovanjem možemo da saznamo [raspodelu greške]{.yellow} (uzoračka raspodela) statistike.
 
 Standardna greška
-  : Standardna greška je standardna devijacija uzoračke raspodele. 
+  : Standardna greška je standardna devijacija uzoračke raspodele.
+  
+## Standardna greška aritmetičke sredine i proporcije {.smaller}
+
+Standardna greška [aritmetičke sredine]{.yellow}:
 
 $$ SE_{\bar x} = \frac{sd}{\sqrt{n}} $$
+
+gde je: $sd$, standardna devijacija statistike u uzorku (populaciona nije dostupna); $n$ broj opservacija.
+
+Standardna greška [proporcije]{.yellow}:
+
+$$ SE_{p} = \sqrt{\frac{p(1-p)}{n}} $$
+gde je: $p$, proporcija događaja u uzorku; $n$ broj opservacija.
 
 ## Standardna greška aritmetičke sredine
 
@@ -309,7 +320,9 @@ cases. This means that we can take advantage of statistical techniques that assu
 a normal distribution
 :::
 
-## Primer CLT
+## Primer centralne granične teoreme
+
+Bilo koja raspodela $\rightarrow$ arit. sred. uzorka $\rightarrow$ normalna raspodela arit. sredina
 
 ```{r}
 #| layout-ncol: 2
@@ -350,6 +363,19 @@ sample_mean %>%
 
 Saznanje o celoj populaciji bez da smo ih videli.
 
+```{r}
+tribble(
+  ~Intervencija, ~Mortalitet, ~Ukupno,
+  "Agresivna terapija", 92, 439,
+  "Manje agresivna terapija", 81, 446
+) |>
+  mutate(`Stopa smrtnosti (%)` = round ( Mortalitet / Ukupno * 100 , 1),
+         `95% IP (%)` = round(
+           (Mortalitet / Ukupno) + -1*1.96*sqrt(Mortalitet/Ukupno*(1 - Mortalitet/Ukupno)/(Mortalitet+Ukupno)) * 100, 2
+           )  |>
+  tt() |> style_tt(fontsize = 0.9)
+```
+
 ```{mermaid}
 %%| fig-align: "center"
 %%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
@@ -371,8 +397,7 @@ $$ CI = \bar x \pm t \times SE $$
 
 gde je: $\bar x$, aritmetička sredina; $t$, kritična vrednost; $SE$, standardna greška.
 
-$$ SE = \frac{sd}{\sqrt{n}} $$
-gde je: $sd$, standardna devijacija statistike u uzorku (populaciona nije dostupna); $n$ broj opservacija.
+
 
 ## 95% interval poverenja
 
@@ -382,8 +407,8 @@ gde je: $sd$, standardna devijacija statistike u uzorku (populaciona nije dostup
 set.seed(55224)
 
 n_rep <- 100
-mu <- 6
-sigma <- 4
+mu <- 21
+sigma <- 0.0381
 
 tibble(
   sim_id = 1:n_rep,
@@ -407,26 +432,6 @@ tibble(
     color = "") +
   theme(legend.position = "bottom")
 ```
-
-## Definicija {.center}
-
-::: {.r-fit-text}
-
-Od svih 95% intervala poverenja, 95%
-
-njih sadrži pravu populacionu vrednost.
-
-:::
-
-## 95% vs. 99% {.center}
-
-::: {.r-fit-text}
-
-99% interval je sigurniji (ima manji
-
-rizik greške) ali je širi od 95%.
-
-:::
 
 ## 99% Inverval poverenja
 
@@ -453,6 +458,26 @@ tibble(
     color = "") +
   theme(legend.position = "bottom")
 ```
+
+## Definicija {.center}
+
+::: {.r-fit-text}
+
+Od svih 95% intervala poverenja, 95%
+
+njih sadrži pravu populacionu vrednost.
+
+:::
+
+## 95% vs. 99% {.center}
+
+::: {.r-fit-text}
+
+99% interval je [sigurniji]{.yellow} (ima manji
+
+rizik greške) ali je širi od 95%.
+
+:::
 
 
 ## Vežba: interval poverenja za kontinuirane podatke 
