@@ -1260,6 +1260,7 @@
     "text": "Standardna greška aritmetičke sredine i proporcije\nStandardna greška aritmetičke sredine:\n\\[ SE_{\\bar x} = \\frac{sd}{\\sqrt{n}} \\]\ngde je: \\(sd\\), standardna devijacija statistike u uzorku (populaciona nije dostupna); \\(n\\) broj opservacija.\nStandardna greška proporcije:\n\\[ SE_{p} = \\sqrt{\\frac{p(1-p)}{n}} \\] gde je: \\(p\\), proporcija događaja u uzorku; \\(n\\) broj opservacija."
   },
   {
+<<<<<<< Updated upstream
     "objectID": "slides/10_regresija/prezentacija.html#struktura-kursa",
     "href": "slides/10_regresija/prezentacija.html#struktura-kursa",
     "title": "Korelacija i regresija",
@@ -1272,5 +1273,243 @@
     "title": "Korelacija i regresija",
     "section": "",
     "text": "Korelacija \\(\\color{darkgreen}{\\not =}\\) Kauzalnost"
+=======
+    "objectID": "slides/06_hipoteze/prezentacija.html#background-image-slikearc.jpg",
+    "href": "slides/06_hipoteze/prezentacija.html#background-image-slikearc.jpg",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "{background-image = “slike/arc.jpg”}",
+    "text": "{background-image = “slike/arc.jpg”}"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#načinite-svoje-teorije-složenim",
+    "href": "slides/06_hipoteze/prezentacija.html#načinite-svoje-teorije-složenim",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Načinite svoje teorije složenim",
+    "text": "Načinite svoje teorije složenim"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#struktura-kursa",
+    "href": "slides/06_hipoteze/prezentacija.html#struktura-kursa",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Struktura kursa",
+    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_w7sozsmdaebtdna8vl3i\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#background-image-httpswww.worldhistory.orguploadsimages14751.jpgv1718105765-0",
+    "href": "slides/06_hipoteze/prezentacija.html#background-image-httpswww.worldhistory.orguploadsimages14751.jpgv1718105765-0",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "{background-image = “https://www.worldhistory.org/uploads/images/14751.jpg?v=1718105765-0”}",
+    "text": "{background-image = “https://www.worldhistory.org/uploads/images/14751.jpg?v=1718105765-0”}"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#background-image-httpswww.worldhistory.orguploadsimages14751.jpg",
+    "href": "slides/06_hipoteze/prezentacija.html#background-image-httpswww.worldhistory.orguploadsimages14751.jpg",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "{background-image = “https://www.worldhistory.org/uploads/images/14751.jpg”}",
+    "text": "{background-image = “https://www.worldhistory.org/uploads/images/14751.jpg”}"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#background-imagehttpswww.worldhistory.orguploadsimages14751.jpg-background-size-contain-background-repeat-no-repeat",
+    "href": "slides/06_hipoteze/prezentacija.html#background-imagehttpswww.worldhistory.orguploadsimages14751.jpg-background-size-contain-background-repeat-no-repeat",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "{background-image=“https://www.worldhistory.org/uploads/images/14751.jpg” background-size: contain; background-repeat: no-repeat}",
+    "text": "{background-image=“https://www.worldhistory.org/uploads/images/14751.jpg” background-size: contain; background-repeat: no-repeat}"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#tri-cilja-statistike",
+    "href": "slides/06_hipoteze/prezentacija.html#tri-cilja-statistike",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Tri cilja statistike",
+    "text": "Tri cilja statistike\n\nOpis podataka\nOdlučivanje\n\nObjašnjenje (uzroka) podataka\n\nPredviđanje"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#intuicija-za-testiranje-hipoteza",
+    "href": "slides/06_hipoteze/prezentacija.html#intuicija-za-testiranje-hipoteza",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Intuicija za testiranje hipoteza",
+    "text": "Intuicija za testiranje hipoteza"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#nulta-hipoteza",
+    "href": "slides/06_hipoteze/prezentacija.html#nulta-hipoteza",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Nulta hipoteza",
+    "text": "Nulta hipoteza"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#alternativna-hipoteza",
+    "href": "slides/06_hipoteze/prezentacija.html#alternativna-hipoteza",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Alternativna hipoteza",
+    "text": "Alternativna hipoteza"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#sumirano",
+    "href": "slides/06_hipoteze/prezentacija.html#sumirano",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Sumirano",
+    "text": "Sumirano\nKad prihvatam, kad ne mogu da odbacim"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#notacija-nultih-hipoteza",
+    "href": "slides/06_hipoteze/prezentacija.html#notacija-nultih-hipoteza",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Notacija nultih hipoteza",
+    "text": "Notacija nultih hipoteza\narit lek A = arit leb B\nproporcija vakinisanih = prop"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#zena-koja-pije-čaj",
+    "href": "slides/06_hipoteze/prezentacija.html#zena-koja-pije-čaj",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Zena koja pije čaj",
+    "text": "Zena koja pije čaj\nŠta je nulta ovde? Kako da budemo još sigurniji?\nTea.png"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#greške-u-zaključivanju",
+    "href": "slides/06_hipoteze/prezentacija.html#greške-u-zaključivanju",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Greške u zaključivanju",
+    "text": "Greške u zaključivanju\nmeme.png"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#greške-tabela",
+    "href": "slides/06_hipoteze/prezentacija.html#greške-tabela",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Greške tabela",
+    "text": "Greške tabela"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#snaga-statističkog-testa",
+    "href": "slides/06_hipoteze/prezentacija.html#snaga-statističkog-testa",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Snaga statističkog testa",
+    "text": "Snaga statističkog testa\nres.png\ngalileo.png saturn"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#formalan-prikaz",
+    "href": "slides/06_hipoteze/prezentacija.html#formalan-prikaz",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Formalan prikaz",
+    "text": "Formalan prikaz\nDve distribucije i regioni greške"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#šta-utiče-na-snagu",
+    "href": "slides/06_hipoteze/prezentacija.html#šta-utiče-na-snagu",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Šta utiče na snagu?",
+    "text": "Šta utiče na snagu?"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#praški-golem",
+    "href": "slides/06_hipoteze/prezentacija.html#praški-golem",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Praški golem",
+    "text": "Praški golem"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#izbor-statističkog-testa",
+    "href": "slides/06_hipoteze/prezentacija.html#izbor-statističkog-testa",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Izbor statističkog testa",
+    "text": "Izbor statističkog testa\nIzbor statističkog testa • Kao roboti • Moćni • Nisu mudri • Opasni su • Uske upotrebe\nflowchart.png"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#izbor-statističkog-testa-2",
+    "href": "slides/06_hipoteze/prezentacija.html#izbor-statističkog-testa-2",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Izbor statističkog testa 2",
+    "text": "Izbor statističkog testa 2\nTip podataka • Dizajn studije • Broj uzoraka • Nezavisni ili Zavisni • Parametarski • Zahtevaju norm. raspodelu • Neparametarski\nflowchart.png"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#statistički-zaključak-i-kritične-vrednosti",
+    "href": "slides/06_hipoteze/prezentacija.html#statistički-zaključak-i-kritične-vrednosti",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Statistički zaključak i kritične vrednosti",
+    "text": "Statistički zaključak i kritične vrednosti\nRegion odbacivanja, granične vrednosti zed testa"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#william-sealz-gosstet-1876---1937",
+    "href": "slides/06_hipoteze/prezentacija.html#william-sealz-gosstet-1876---1937",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "William Sealz Gosstet (1876 - 1937)",
+    "text": "William Sealz Gosstet (1876 - 1937)\nbeer.png"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#r-output-studentovog-t-testa",
+    "href": "slides/06_hipoteze/prezentacija.html#r-output-studentovog-t-testa",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "R output Studentovog t-testa",
+    "text": "R output Studentovog t-testa"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#studentov-t-test",
+    "href": "slides/06_hipoteze/prezentacija.html#studentov-t-test",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Studentov t-test",
+    "text": "Studentov t-test\nGolem.png\nUslovi\n\nSlučajno biran uzorak\nNumerički podaci\nNormalna raspodela u populaciji"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#t-raspodela",
+    "href": "slides/06_hipoteze/prezentacija.html#t-raspodela",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "t-raspodela",
+    "text": "t-raspodela\nKritična vrednost"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#studentov-t-test-golem",
+    "href": "slides/06_hipoteze/prezentacija.html#studentov-t-test-golem",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Studentov t-test golem",
+    "text": "Studentov t-test golem\nFlags p &lt; .001"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#vežba-interpretacija",
+    "href": "slides/06_hipoteze/prezentacija.html#vežba-interpretacija",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Vežba: interpretacija",
+    "text": "Vežba: interpretacija\nDa li se pritisak razlikuje kod pacijenata koji su preležali infarkt?\nH0 : μzdrav = μinfarkt p = 0.00242\n120 mmHg 145 mmHg\nH0 : μzdrav = μinfarkt p = 0.82\n120 mmHg 145 mmHg"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#verzije-studentovog-t-testa",
+    "href": "slides/06_hipoteze/prezentacija.html#verzije-studentovog-t-testa",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Verzije Studentovog t-testa",
+    "text": "Verzije Studentovog t-testa"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#vežba-studentov-t-test-za-jedan-uzorak",
+    "href": "slides/06_hipoteze/prezentacija.html#vežba-studentov-t-test-za-jedan-uzorak",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Vežba: Studentov t-test za jedan uzorak",
+    "text": "Vežba: Studentov t-test za jedan uzorak\nNa osnovu prethodnih istraživanja očekivana aritmetička sredina iznosi 145 mmHg. Da li populacija iz koje potiče uzorak u bazi Sistolna TA.xlsx ima aritmetičku sredinu jednaku očekivanoj? Testirati na nivou značajnosti od 0.05."
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#vežba-studentov-t-test-za-dva-nezavisna-uzorka",
+    "href": "slides/06_hipoteze/prezentacija.html#vežba-studentov-t-test-za-dva-nezavisna-uzorka",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Vežba: Studentov t-test za dva nezavisna uzorka",
+    "text": "Vežba: Studentov t-test za dva nezavisna uzorka\n\ntestiranje normalnosti\n\nDa li se ukupan holesterol u bazi DZ.xlsx razlikuje kod pušača i nepušača? Testirati na nivou značajnosti od 0.01."
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#vežba-studentov-t-test-za-dva-zavisna-uzorka",
+    "href": "slides/06_hipoteze/prezentacija.html#vežba-studentov-t-test-za-dva-zavisna-uzorka",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Vežba: Studentov t-test za dva zavisna uzorka",
+    "text": "Vežba: Studentov t-test za dva zavisna uzorka"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#nameštanje-p-vrednosti",
+    "href": "slides/06_hipoteze/prezentacija.html#nameštanje-p-vrednosti",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Nameštanje p-vrednosti",
+    "text": "Nameštanje p-vrednosti\npvrednost.png xkcd\nNapredovanje uslovljeno radovima Problem višestrukog testiranja “Vidi da li ima značajne razlike…”"
+  },
+  {
+    "objectID": "slides/06_hipoteze/prezentacija.html#možemo-da-pročitamo-rad",
+    "href": "slides/06_hipoteze/prezentacija.html#možemo-da-pročitamo-rad",
+    "title": "Testiranje hipoteza o populacionim prosečnim vrednosima i proporcijama",
+    "section": "Možemo da pročitamo rad",
+    "text": "Možemo da pročitamo rad\nOseltamivir treatment for influenza in adults"
+>>>>>>> Stashed changes
   }
 ]

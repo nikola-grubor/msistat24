@@ -16,9 +16,479 @@ library(gtsummary)
 source(file = here("slides", "theme", "ggthemes.R"))
 ```
 
-## 
+## {background-image="https://www.worldhistory.org/uploads/images/14751.jpg" background-size="contain" background-repeat="no-repeat" background-color="#170F0C" data-menu-title="Demoni ili epilepsija"}
+
+## {background-image="https://upload.wikimedia.org/wikipedia/en/d/dc/Russell_teapot.png" background-size="contain" background-repeat="no-repeat" background-color="#0B0A09" data-menu-title="Rasselov čajnik"}
+
+## Tri cilja statistike
+
+- Opis podataka
+- Objašnjenje (uzroka) podataka
+   + Odlučivanje
+- Predviđanje
+
+## Statističko testiranje nultih hipoteza
+
+- Bitno za razumevanje naučnih radova
+- Neintuitivno je $\rightarrow$ neshvaćeno
+- Korisno u kontekstu
 
 ## Načinite svoje teorije složenim
+
+:::: columns
+
+::: {.column}
+
+> "Ukoliko naučna tvrdnja govori o realnosti, onda mora biti [opovrgljiva]{.yellow}: a ukoliko nije [opovrgljiva]{.yellow}, ona onda ne govori o stvarnosti.
+
+― Karl R. Popper, Logika naučnog otkrića (1934)
+
+:::
+
+::: {.column}
+
+![Karl Popper](slike/popper.jpg)
+
+:::
+
+
+::::
+
+## Kako naučnici razmisljaju?
+
+::: {.center-h}
+
+$H$: Da li su više vrednosti serumske glukoze povezane sa brojem akni?
+
+:::
+
+1. Izmerimo glukozu i prebrojimo akne.
+2. Da li su akne češće (verovatnije)  sa višim vrednostima glukoze i ostalim infomacijma koje posedujemo?
+
+## ...a statističari?
+
+::: {.center-h}
+
+Međutim, zbog istorijskih razloga...
+
+:::
+
+1. Izvrnemo našu hipotezu: Više vrednosti serumske glukoze nisu povezane sa brojem akni.
+2. Pretpostavimo da je izvrnuta hipoteza (1) [istinita]{.yellow}.
+3. Procenimo koliko su podaci koje smo dobili verovatni ako je (2) tačno.
+4. Ako su podaci malo verovatni, zaključimo da je (2) pogrešno; ali ako su podaci verovatni, zadržimo (2).
+
+## Recept za testiranje nulte hipoteze
+
+1. Formiranje [hipoteze]{.yellow} koja predstavlja naše mišljenje (pre nego što smo videli podatke)
+2. Određivanje nulte i alternativne hipoteze
+3. Prikupljanje podataka *relevantnih* za našu hipotezu
+4. Napraviti model koji predstavlja podatke i izračunati [test statistiku]{.yellow}
+5. Izračunati verovatnoću da naši podaci daju dobijenu test statistiku ako je nulta hipoteza tačna
+6. Proceniti "statističku značajnost"
+
+## Da li je BMI povezan sa fizičkom aktivnošću?
+
+```{r}
+nhanes <- NHANES::NHANES %>% 
+  select(Gender, Age, Weight, Height, BMI, PhysActive) %>% 
+  rename(Pol = Gender, Starost = Age, Masa = Weight, Visina = Height, Aktivan = PhysActive) %>% 
+  drop_na()
+
+nhanes %>% 
+  head(.) %>% 
+  tt() %>% 
+  style_tt(i = 0, fontsize = 0.80) %>% 
+  style_tt(fontsize = 0.80)
+```
+
+$$ BMI = \frac{masa(kg)}{visina(m)^2} $$
+
+## Korak 1: Formulisanje hipoteze
+
+Pretpostavljamo da je $BMI$ veći kod ljudi koji se ne bave fizičkom aktivnošću, u poređenju sa onima koji to rade.
+
+## Korak 2: Definisanje nulte i alternativne hipoteze
+
+Kako očekujemo da će izgledati podaci ako [nema nikakvog efekta]{.yellow}.
+
+$$ H_0: BMI_{aktivni} = BMI_{neaktivni} $$ 
+
+Odgovarajuća alternativna hipoteza je onda:
+
+$$ H_1: BMI_{aktivni} \not = BMI_{neaktivni} $$ 
+
+## Korak 3: Prikupiti podatke
+
+```{r}
+nhanes %>%
+  group_by(Aktivan) %>% 
+  summarise(N = n(), `Aritmetička sredina` = mean(BMI), `sd` = sd(BMI)) %>%
+  mutate(across(where(is.numeric), ~ round(. , digits = 2))) %>%  
+  tt()
+```
+
+```{r}
+#| fig-asp: 0.618
+#| fig-align: "center"
+
+nhanes %>% 
+  ggplot(aes( x = Aktivan, y = BMI)) +
+  geom_boxplot(color = "white", fill = "#F4BA02") +
+  labs(x = "Fizički aktivan?", y = "Body Mass Index (BMI)") +
+  ggdist::theme_ggdist(base_size=15) +
+  theme(panel.grid.minor.y = element_line(),
+        panel.grid.minor.x = element_line()) +
+  theme_blue()
+```
+
+
+## Korak 4: Opisati podatke modelom i izračunati test-statistiku
+
+Određivanje da li imamo dovoljno dokaza za $H1$ kada [poredimo aritmetičke sredine]{.yellow} se radi uz pomoć [Studentovog t-testa]{.yellow}.
+
+<!-- $$ t = \frac{\bar x_1 - \bar x_2}{ \sqrt{ \frac{sd_1^2}{n_1} + \frac{sd_2^2}{n_2} } } $$ -->
+$$ t = \frac{\bar x_1 - \bar x_2}{ SE(\bar x_1 - \bar x_2) } $$
+gde je: $x$ aritmetička sredina; $SE$, standardna greška razlike arit. sredine.
+
+## {background-image="slike/guinness.jpg" background-opacity=0.5 data-menu-title="William Gosset (Student)"}
+
+:::: columns
+
+::: {.column}
+
+[William Sealy Gosset (1876-1937)]{.yellow}
+
+:::
+
+::: {.column}
+
+![](slike/gosset.jpg){.fragment}
+
+:::
+
+
+::::
+
+## Korak 5: Odrediti verovatnoću opserviranih podataka ako je nulta tačna
+
+```{r}
+#| echo: true
+t.test(BMI ~ Aktivan, data = nhanes)
+```
+
+## Studentova t-distribucija
+
+::: r-stack
+
+```{r}
+set.seed(0236)
+
+# Simulate some study data into a dataframe. Tx effect = 0.5
+study_df <- data_frame(
+    y = c(rnorm(20, 0, 1),                       # Control arm outcomes
+          rnorm(20, 0, 1) + 0.5),                # Active arm outcomes
+    arm = rep(c("Control", "Active"), each = 20) # Arm labels
+  )
+
+study_df$arm <- relevel(factor(study_df$arm), ref = "Control")
+
+# First, just to see how eveCalcuate T "by hand"
+m_act <- mean(study_df$y[study_df$arm == "Active"])  # mean outcome active arm
+m_con <- mean(study_df$y[study_df$arm == "Control"]) # mean outcome control arm
+v_act <-  var(study_df$y[study_df$arm == "Active"])  # outcome variance active
+v_con <-  var(study_df$y[study_df$arm == "Control"]) # outcome variance control
+n <- 20 # Sample size in each group
+se <- sqrt(v_act / n + v_con / n) # Pooled standard error
+df_s <- (v_act / n + v_con / n) ^ 2 / # Need this for the sampling dist. below
+  ((v_act ^ 2 / (n ^ 2 * (n - 1))) +
+     (v_con ^ 2 / (n ^ 2 * (n - 1))))
+
+t_sample <- round((m_act - m_con) / se, 2)
+```
+
+```{r}
+#| fig-asp: 0.618
+
+g1 <- ggplot(data_frame(x = c(-4 , 4)), aes(x = x)) +
+  stat_function(
+    fun = dt,
+    args = list(df = df_s),
+    geom = "area",
+    fill = "#F4BA02"
+  ) +
+  xlim(c(-4 , 4)) +
+  scale_x_continuous(labels = scales::label_number(accuracy = 0.01)) +
+  xlab("t-statistika") +
+  ylab("Gustina") +
+  ggdist::theme_ggdist(base_size = 15) +
+  theme_blue()
+
+g1
+```
+
+::: {.fragment}
+
+```{r}
+#| fig-asp: 0.618
+
+g2 <- g1 +
+  geom_vline(xintercept = t_sample, col = "white") +
+  stat_function(
+    xlim = c(t_sample , 4),
+    fun = dt,
+    args = list(df = df_s),
+    geom = "area",
+    fill = "#F4BA02"
+  ) +
+  scale_x_continuous(breaks = c(-3, -1.5, 0, 1.5, t_sample, 3)) +
+  theme(panel.grid.minor = element_blank())
+  # ggtitle(
+  #   paste0(
+  #     "The proportion of the total area in the darker part of the distribution\n for t (given the null is true) is ",
+  #     signif(pt(t_sample, df_s, lower.tail = FALSE), 2)
+  #   )
+  # )
+
+g2
+```
+
+:::
+
+::: {.fragment}
+
+```{r}
+#| fig-asp: 0.618
+
+g3 <- g2 +
+  stat_function(
+    xlim = c(t_sample , 4),
+    fun = dt,
+    args = list(df = df_s),
+    geom = "area",
+    fill = "tomato"
+  ) +
+  stat_function(
+    xlim = c(-4, -t_sample),
+    fun = dt,
+    args = list(df = df_s),
+    geom = "area",
+    fill = "tomato"
+  )
+# ggtitle(paste0("The proportion of the total area in the darker part of the distribution\n for t is ", signif(2 * pt(t_sample, df_s, lower.tail = FALSE), 3)))
+
+g3
+```
+:::
+
+:::
+
+## Korak 6: Proceniti "statističku značajnost"
+
+Koliko dokaza nam treba da budemo ubeđeni da razlika postoji?
+
+- Poslednji korak
+- Kontroverzan
+- Nema "tačan" odgovor
+
+Konvencionalna vrednost od $p<0.05$ je istorijski artefakt koji garantuje da ćemo pogrešno zaključiti u 5% slučajeva.
+
+## Testiranje hipoteza kao odlučivanje: Neyman-Pearsonov pristup
+
+```{r}
+errornp <- data.frame(
+  Odluka = c("Odbacivanje $H_0$", "Neodbacivanje $H_0$"),
+  `$H_0$ istina` = c("Greška prvog tipa ($\\alpha$)", 
+                     "Ispravan zakljucak \n($1-\\beta =$ snaga testa)"),
+  `$H_0$ neistina` = c("Ispravan zakljucak \n($1-\\alpha =$ nivo poverenja)",
+                     "Greska drugog tipa ($\\beta$)"),
+  check.names = FALSE
+)
+
+tt(errornp) |> 
+  style_tt(fontsize = 1) |> 
+  format_tt(markdown = TRUE)
+```
+
+## {#preg-id background-image="slike/preg.png" data-menu-title="Primer tipove greške"}
+
+## Snaga testa ($1-\beta$)
+
+![](slike/power.png){fig-align="center"}
+
+![](slike/saturn.jpeg){.fragment fig-align="center"}
+
+# Šta znači dobiti $p = 0.01$?
+
+## Da li to znači da je verovatnoća da je $H_0$ tačna 0.01?
+
+> Ne. P-vrednost je [verovatnoća podataka]{.yellow} *ako* pretpostavimo da je nulta hipoteza tačna ($P(podaci|H_0)$). Nema nikakve veze sa obrnutom tvrdjom tačnosti nulte ako opserviramo podatke ($P(H_0|podaci)$).
+
+## Da li je to verovatnoća da ćemo napraviti grešku u zaključivanju od 0.01 (1%)?
+
+> Ne. To je opet $P(H_0|podaci)$, p-vrednosti se odnose na verovatnoću podataka, ne na verovatnoće hipoteza.
+
+## Da li to znači da ako ponovimo studiju šansa da dobijmo isti rezultat je 99%?
+
+> Ne. P-vrednost je tvrdnja verovatnosti [trenutnih podataka]{.yellow} ako uzmemo da je nulta hipoteza tačna. Ne dozvoljava nam da pravimo tvrdnje o budućim replikacijama.
+
+## Da li niska p-vrednost znači da smo našli klinički bitan efekat?
+
+> Ne. To što je nešto statistički značajno nam ne govori [ništa o jačini efekta]{.yellow}. Sa dovoljno velikim uzorkom lako je otkriti statistički značajne, ali sitne efekte.
+
+## Formalan prikaz odnosa grešaka
+
+![](slike/errors.png){fig-align="center"}
+
+## Šta utiče na snagu?
+
+Snaga zavisi od:
+
+- Odabranog nivoa značajnosti (α nivo)
+- Veličine uzorka
+- Formulacije $H_1$ kao dvosmerne ili jednosmerne
+- Stvarne razlike ispitivane pojave (effect size)
+
+## {#golem-id background-image="slike/prague.jpg" data-menu-title="Praški golem" background-opacity=0.75}
+
+:::: columns
+
+::: {.column}
+
+:::
+
+::: {.column}
+
+![](slike/golem.jpeg){.fragment}
+
+:::
+
+
+::::
+
+## Uslovi primene t-testa
+
+1. Slučajno biran uzorak
+2. Numerički podaci
+3. Normalna raspodela u populaciji
+
+## Izbor statističkog testa (1)
+
+:::: columns
+
+::: {.column}
+
+Statistički testovi su:
+
+- Kao roboti
+- Moćni
+- Nisu mudri
+- Opasni
+- Uske kontekstualne primene
+
+:::
+
+::: {.column}
+
+![](slike/chart.jpg){width=90%}
+
+:::
+
+
+::::
+
+## Izbor statističkog testa (2)
+
+:::: columns
+
+::: {.column}
+
+Izbor statističkog testa zavisi od:
+
+- Tipa podataka
+- Dizajna studije
+   + Nezavisni ili zavisni
+- Broja uzoraka
+- Raspodele podataka
+   + Parametarski (neparametarski)
+
+:::
+
+::: {.column}
+
+![](slike/chart.jpg){width=90%}
+
+:::
+
+::::
+
+## Verzije Studentovog t-testa
+
+1. Studentov t-test za jedan uzorak
+2. Studentov t-test za dva nezavisna uzorka
+3. Studentov t-test za dva zavisna uzorka
+
+## Vežba: Studentov t-test za jedan uzorak
+
+::: {.r-fit-text}
+
+Na osnovu prethodnih istraživanja očekivana 
+
+[aritmetička sredina iznosi 145]{.yellow} mmHg. 
+
+Da li populacija iz koje potiče uzorak u 
+
+[bazi Sistolna TA.xlsx]{.yellow} ima
+
+aritmetičku sredinu jednaku očekivanoj?
+
+Testirati na [nivou značajnosti od 0.05]{.yellow}.
+
+:::
+
+## Vežba: Studentov t-test za dva nezavisna uzorka
+
+::: {.r-fit-text}
+
+Da li se ukupan holesterol u [bazi DZ.xlsx]{.yellow} 
+
+razlikuje kod pušača i nepušača? Testirati na 
+
+[nivou značajnosti od 0.01]{.yellow}.
+
+:::
+
+<!-- ## Vežba: Studentov t-test za dva zavisna uzorka -->
+
+<!-- ::: {.r-fit-text} -->
+
+<!-- ::: -->
+
+## Nameštanje p-vrednosti
+
+:::: columns
+
+::: {.column}
+
+- Institucionalni problem
+- Manjak edukacije
+- Problem višestrukog testiranja
+- "Vidi da li ima značajne razlike..."
+- "Smislićemo hipotezu kad vidimo kakva je baza..."
+
+:::
+
+::: {.column}
+
+![](slike/p.png){width=80%}
+
+:::
+
+::::
+
+## Možemo da pročitamo rad
+
+![](slike/study.png){fig-align="center"}
 
 ## Struktura kursa
 
