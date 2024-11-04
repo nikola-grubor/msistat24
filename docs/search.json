@@ -1258,5 +1258,19 @@
     "title": "Populacija i uzorak",
     "section": "Standardna greška aritmetičke sredine i proporcije",
     "text": "Standardna greška aritmetičke sredine i proporcije\nStandardna greška aritmetičke sredine:\n\\[ SE_{\\bar x} = \\frac{sd}{\\sqrt{n}} \\]\ngde je: \\(sd\\), standardna devijacija statistike u uzorku (populaciona nije dostupna); \\(n\\) broj opservacija.\nStandardna greška proporcije:\n\\[ SE_{p} = \\sqrt{\\frac{p(1-p)}{n}} \\] gde je: \\(p\\), proporcija događaja u uzorku; \\(n\\) broj opservacija."
+  },
+  {
+    "objectID": "slides/10_regresija/prezentacija.html#struktura-kursa",
+    "href": "slides/10_regresija/prezentacija.html#struktura-kursa",
+    "title": "Korelacija i regresija",
+    "section": "Struktura kursa",
+    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_s5b1xftrrkt479rxflf9\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
+  },
+  {
+    "objectID": "slides/10_regresija/prezentacija.html#section-1",
+    "href": "slides/10_regresija/prezentacija.html#section-1",
+    "title": "Korelacija i regresija",
+    "section": "",
+    "text": "Korelacija \\(\\color{darkgreen}{\\not =}\\) Kauzalnost"
   }
 ]

@@ -1,0 +1,62 @@
+---
+title: "Korelacija i regresija"
+date: last-modified
+author: "Dr Nikola Grubor"
+# institute: "Institut za Medicinsku Statistiku i Informatiku"
+logo: "slike/logo.png"
+lang: sr-Latn
+---
+```{r}
+library(glue)
+library(here)
+library(tidyverse)
+library(tinytable)
+library(gtsummary)
+source(file = here("slides", "theme", "ggthemes.R"))
+```
+
+# Korelacija
+
+## 
+
+:::: column
+
+::: {.column}
+
+![Stephen Jay Gould](slike/gould.jpg)
+
+:::
+
+::: {.column}
+
+> Netačna pretpostavka da korelacija podrazumeva uzročnu vezu je verovatno jedna od dve ili tri najveće greške u čovekovom zaključivanju.
+
+:::
+
+::::
+
+## {background-image="slike/palm.jpg"}
+
+::: {.r-fit-text}
+
+[Korelacija]{.green} $\color{darkgreen}{\not =}$ [Kauzalnost]{.green}
+
+:::
+
+##
+
+## Struktura kursa
+
+```{r}
+teme <- c(
+  "Uvod u medicinsku statistiku", "Sređivanje podataka",
+  "Statističko opisivanje podataka", "Verovatnoća i raspodele verovatnoća",
+  "Populacija i uzorak", "Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama",
+  "Testiranje hipoteza o učestalostima", "Testiranje hipoteza o rangovima", "Korelacija",
+  "Regresija / Kolokvijum", "Podaci, informacije i znanje", "Zdravstveni informacioni sistem",
+  "Mere dijagnostičke tačnosti", "Medicinsko odlučivanje", "Bioinformatika"
+)
+
+kurs <- tibble(Nedelja = 1:15, Tema = teme)
+tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
+```
