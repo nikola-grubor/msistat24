@@ -16,6 +16,7 @@ section-divs: false
 ::: {.g-col-6}
 
 ![](MSI.png){width="40%" fig-align="right"}
+
 :::
 
 :::

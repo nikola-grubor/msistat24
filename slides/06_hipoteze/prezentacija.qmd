@@ -310,7 +310,7 @@ tt(errornp) |>
   format_tt(markdown = TRUE)
 ```
 
-## {#preg-id background-image="slike/preg.png" data-menu-title="Primer tipove greške"}
+## {#preg-id background-image="slike/preg.png" data-menu-title="Primer tipove greške" background-size="contain"}
 
 ## Snaga testa ($1-\beta$)
 
