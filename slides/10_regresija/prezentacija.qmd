@@ -271,6 +271,16 @@ bork %>%
 
 ## Vežba: napraviti dijagram rasturanja 
 
+::: {.r-fit-text}
+
+Učitati [bazu DZ]{.yellow}.
+
+Prikazati grafički vezu između [starosti]{.yellow} i [ukupnog holesterola]{.yellow}?
+
+Prikazati grafički vezu između [triglicerida]{.yellow} i [stepena uhranjenosti]{.yellow}?
+
+:::
+
 ## Korelacioni koeficijent
 
 Definicija
@@ -312,7 +322,7 @@ bork %>%
   ggdist::theme_ggdist(base_size = 34) +
   theme_blue() +
   labs(y = "%C20-22 masnih kiselina",
-       z = "Senzitivnost insulina (mg/m2/min)")
+       x = "Senzitivnost insulina (mg/m2/min)")
 ```
 
 ## Pearsonov koeficijent korelacije
@@ -357,7 +367,7 @@ datasaurus_dozen |>
 
 ggplot(datasaurus_dozen, aes(x = x, y = y)) +
   geom_point(col = "white") + 
-  geom_smooth(method = "lm", formula = "y ~ x", col = "orange", se = FALSE) +
+  geom_smooth(method = "lm", formula = "y ~ x", col = "#F4BA02", se = FALSE) +
   facet_wrap(~dataset) +
   theme_blue()
 ```
@@ -383,7 +393,7 @@ Uslovi:
 ```{r}
 #| echo: true
 
-cor.test(~ insulin + c20, data = bork, method = "pearson")
+cor.test(~ insulin + c20, data = bork, method = "spearman")
 ```
 
 ## Interpretacija koeficijenta korelacije
@@ -395,9 +405,270 @@ cor.test(~ insulin + c20, data = bork, method = "pearson")
 1. Proveriti normalnost (koeficijent varijacije)
 2. Pearson ili Spearman
 
-## {background-image="slike/corr_xkcd.png" background-size="contain"}
+::: {.r-fit-text}
+
+Učitati [bazu DZ]{.yellow}.
+
+Da li postoji povezanost između [starosti]{.yellow} i [ukupnog holesterola]{.yellow}?
+
+Da li postoji povezanost između [triglicerida]{.yellow} i [stepena uhranjenosti]{.yellow}?
+
+:::
+
+## {background-image="slike/corr_xkcd.png" background-size="contain"  data-menu-title="Korelacija i kauzalnost"}
 
 # Regresija
+
+![](slike/reg.png){fig-align="right"}
+
+## Metematički model
+
+:::: columns
+
+::: {.column}
+![$y = \alpha + \beta x$](slike/plane1.jpg)
+:::
+
+::: {.column}
+![$y = \text{komplikovano...}$](slike/plane2.jpg)
+:::
+
+::::
+
+## Anatomija regresione jednačine (1)
+
+:::: columns
+
+::: {.column}
+
+```{r}
+#| fig-asp: 1
+
+bork %>% 
+  ggplot(aes(x = c20, y = insulin)) +
+  geom_point(col = "white", size = 8) +
+  geom_smooth(se = FALSE, method = "lm", col = "#F4BA02") +
+  ggdist::theme_ggdist(base_size = 34) +
+  theme_blue() +
+  labs(x = "%C20-22 masnih kiselina",
+       y = "Senzitivnost insulina (mg/m2/min)")
+  
+```
+
+$$ y = \alpha + \beta x $$
+
+:::
+
+::: {.column}
+
+Linearni odnos:
+
+::: {.incremental}
+
+- $y$, zavisna varijabla
+- $x$, nezavisna varijabla
+- $\alpha$, regresiona konstanta kad je $x = 0$
+- $\beta$, regresioni koeficijent (promena $y$ ako $x+1$)
+
+:::
+
+:::
+
+::::
+
+## Anatomija regresione jednačine (2)
+
+:::: columns
+
+::: {.column}
+
+```{r}
+#| fig-asp: 1
+
+bork %>% 
+  ggplot(aes(x = c20, y = insulin)) +
+  geom_point(col = "white", size = 8) +
+  geom_smooth(se = FALSE, method = "lm", col = "#F4BA02") +
+  ggdist::theme_ggdist(base_size = 34) +
+  theme_blue() +
+  labs(x = "%C20-22 masnih kiselina",
+       y = "Senzitivnost insulina (mg/m2/min)")
+  
+```
+
+$$ y = \alpha + \beta x $$
+
+:::
+
+::: {.column}
+
+::: {.incremental}
+
+- $ r^2 = cor(x,y)^2 $, koeficijent derterminacije (0-1, udeo objašnjene varijacije)
+- $ r^2 = 0.50 $
+- $ r^2 \times 100 = 50 \% $
+
+:::
+
+:::
+
+::::
+
+## Anatomija regresione jednačine (3)
+
+```{r}
+lm_bork <- lm(formula = insulin ~ c20, data = bork)
+  
+lm_bork %>% 
+  broom::tidy() %>% 
+  mutate(across(where(is.numeric), ~ round(. , 2)),
+         p.value = style_pvalue(p.value, digits = 3)) %>% 
+  tt() %>% 
+  style_tt(i = 0, fontsize = 0.7) %>% 
+  style_tt(fontsize = 0.7)
+```
+
+:::: columns
+
+::: {.column width="50%"}
+
+```{r}
+#| fig-asp: 1
+
+bork %>% 
+  ggplot(aes(x = c20, y = insulin)) +
+  geom_point(col = "white", size = 8) +
+  geom_smooth(se = FALSE, method = "lm", col = "#F4BA02") +
+  ggdist::theme_ggdist(base_size = 34) +
+  theme_blue() +
+  labs(x = "%C20-22 masnih kiselina",
+       y = "Senzitivnost insulina (mg/m2/min)")
+  
+```
+
+:::
+
+::: {.column width="50%"}
+
+$$ y = \alpha + \beta x $$
+
+$$ \text{insulin} = -1220 + 76 \times \text{%C20-22} $$
+```{r}
+R2 <- summary(lm_bork)$r.squared
+```
+
+$ R^2 = $ `{r} R2`
+
+:::
+
+::::
+
+## Pretpostavke linearne regresije
+
+1. Normalnost (reziduala*)
+2. Linearnost
+3. Nezavisnost (merenja nisu ponovljena)
+4. Jednakost varijansi
+
+## Gde su pretpostavke ispunjene?
+
+```{r}
+
+ggplot(anscombe_quartet, aes(x = x, y = y)) +
+  geom_point(col = "white", size = 5) + 
+  geom_smooth(method = "lm", formula = "y ~ x", col = "#F4BA02", linewidth = 2) +
+  facet_wrap(~dataset) +
+  ggdist::theme_ggdist(base_size = 15) +
+  theme_blue()
+```
+
+## {background-image="slike/extrapolate.png" background-size="contain"  data-menu-title="Ekstrapolacija i interpolacija"}
+
+## Šta je statistička kontrola?
+
+```{r}
+#| fig-asp: 0.618
+#| fig-align: "center"
+#| fig-width: 2
+
+ex5 <- dagitty::dagitty(
+  '
+dag {
+
+"Pridružena varijabla" [pos="0,0"]
+"Prediktor" [exposure,pos="-0.5,1"]
+"Ishod" [outcome,pos="0.5,1"]
+
+"Pridružena varijabla" -> "Prediktor"
+"Pridružena varijabla" -> "Ishod"
+"Prediktor" -> "Ishod"
+}
+
+'
+)
+
+par(bg = "#01364C")
+# dagitty::coordinates(ex5) <- list( x=c(X=0,Y=2, Z=1) , y=c(X=0,Y=0,Z=-1) )
+rethinking::drawdag( ex5 , cex = 1, lwd = 1, radius = 5,
+                     col_arrow="white",
+                     col_segment = "white", 
+                     col_labels = "white", 
+                     col_shapes = "white")
+```
+
+
+```{r}
+#| echo: true
+N <- 300
+
+primer <- tibble(
+  pridruzena_varijabla = sample(0:1, N, replace = TRUE),
+  prediktor = runif(N, 0 , 1) + (0.3 * pridruzena_varijabla),
+  ishod = 2.0 + (0.5 * prediktor) + (0.25 * pridruzena_varijabla)
+)
+```
+
+```{r}
+head(primer) %>% 
+  tt() %>% 
+  style_tt(i = 0, fontsize = 0.5) %>% 
+  style_tt(fontsize = 0.5)
+```
+
+## Kontrolisanje putem regresije
+
+```{r}
+#| echo: true
+lm(ishod ~ prediktor, data = primer)
+```
+```{r}
+#| echo: true
+lm(ishod ~ prediktor + pridruzena_varijabla, data = primer)
+```
+
+## Vežba: linearna regresija
+
+Koristeći dopunjenu [bazu DZ]{.yellow} odgovori na sledeća istraživačka pitanja:
+
+::: {.r-fit-text}
+
+1. Da li postoji povezanost između [sistolne tenzije]{.blue} i
+
+[ukupnog holesterola]{.blue}?
+
+2. Za ispitanika sa [ukupnim holesterolom od 6.2 mmol/l]{.blue}
+
+izračunaj [vrednost sistolne tenzije]{.blue} (mmmHg).
+
+:::
+
+## Korelacija vs. regresija
+
+- Korelacija opisuje povezanost između varijabli, ne određuje najbolju liniju
+- Kod korelacije nije potrebno razmišljati o uzrocima
+- Kod regresije $Y$ $\rightarrow$ $X$ $\not =$ $Y$ $\leftarrow$ $X$
+
+## {background-image="slike/rex.png" background-size="contain"  data-menu-title="Korelacija i kauzalnost"}
 
 ## Struktura kursa
 
