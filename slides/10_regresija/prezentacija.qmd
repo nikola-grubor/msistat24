@@ -327,7 +327,7 @@ bork %>%
 
 ## Pearsonov koeficijent korelacije
 
-$H_0:$ Ispitivane varijable nisu povezane.
+$H_0:$ Ispitivane varijable nisu [linearno]{.yellow} povezane.
 
 Uslovi:
 
@@ -374,7 +374,7 @@ ggplot(datasaurus_dozen, aes(x = x, y = y)) +
 
 ## Spearmanov koeficijent korelacije
 
-$H_0:$ Ispitivane varijable nisu povezane.
+$H_0:$ Ispitivane varijable nisu [monotono]{.yellow} povezane.
 
 ::: {.callout-tip}
 Daje verodostojnije rezultate kada podaci neispunjavaju uslove linearnosti ili normalne raspodele.
@@ -399,6 +399,45 @@ cor.test(~ insulin + c20, data = bork, method = "spearman")
 ## Interpretacija koeficijenta korelacije
 
 ![](slike/interpretacija.jpg){fig-align="center"}
+
+## Šta ako se ne slažu korelacije?
+
+:::: columns
+
+::: {.column}
+
+```{r}
+#| echo: true
+x <- 0:20
+y <- exp(x)
+```
+
+```{r}
+#| fig-asp: 1
+plot(x, y)
+```
+
+:::
+
+::: {.column}
+
+Pearsonova korelacija:
+
+```{r}
+cor.test(x, y, method = "pearson")$estimate
+```
+
+Spearmanova korelacija:
+
+```{r}
+cor.test(x, y, method = "spearman")$estimate
+```
+
+Ako je Spearman $\gt$ Pearson, znači da imamo monotonu (uzlaznu ili silaznu) povezanost, a ne linearnu povezanost.
+
+:::
+
+::::
 
 ## Vežba: izračunavanje korelacije
 

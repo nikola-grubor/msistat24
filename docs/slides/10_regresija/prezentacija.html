@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.56">
 
   <meta name="author" content="Dr Nikola Grubor">
-  <meta name="dcterms.date" content="2024-11-07">
+  <meta name="dcterms.date" content="2024-11-08">
   <title>Medicinska statistika i informatika – Korelacija i regresija</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -402,7 +402,7 @@ Dr Nikola Grubor
 </div>
 </div>
 
-  <p class="date">2024-11-07</p>
+  <p class="date">2024-11-08</p>
 </section>
 <section>
 <section id="korelacija" class="title-slide slide level1 center">
@@ -614,7 +614,7 @@ Koeficijent korelacije je statistika koja kvantifikuje jačinu povezanosti varij
 </section>
 <section id="pearsonov-koeficijent-korelacije" class="slide level2">
 <h2>Pearsonov koeficijent korelacije</h2>
-<p><span class="math inline">\(H_0:\)</span> Ispitivane varijable nisu povezane.</p>
+<p><span class="math inline">\(H_0:\)</span> Ispitivane varijable nisu <span class="yellow">linearno</span> povezane.</p>
 <p>Uslovi:</p>
 <ul>
 <li>Nezavisne opservacije</li>
@@ -941,7 +941,7 @@ window.addEventListener('load', function () { styleCell_tinytable_t57llugx3c4olo
 <img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
 <section id="spearmanov-koeficijent-korelacije" class="slide level2">
 <h2>Spearmanov koeficijent korelacije</h2>
-<p><span class="math inline">\(H_0:\)</span> Ispitivane varijable nisu povezane.</p>
+<p><span class="math inline">\(H_0:\)</span> Ispitivane varijable nisu <span class="yellow">monotono</span> povezane.</p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -999,6 +999,41 @@ sample estimates:
 </section>
 <section id="section-2" class="slide level2" data-background-image="slike/corr_xkcd.png" data-background-size="contain" data-menu-title="Korelacija i kauzalnost">
 <h2></h2>
+</section>
+<section id="šta-ako-se-ne-slažu-korelacije" class="slide level2">
+<h2>Šta ako se ne slažu korelacije?</h2>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb5-2"><a></a>y <span class="ot">&lt;-</span> <span class="fu">exp</span>(x)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column">
+<p>Pearsonova korelacija:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>     cor 
+0.527173 </code></pre>
+</div>
+</div>
+<p>Spearmanova korelacija:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>rho 
+  1 </code></pre>
+</div>
+</div>
+<p>Ako je Spearman <span class="math inline">\(\gt\)</span> Pearson, znači da imamo monotonu (uzlaznu ili silaznu) povezanost, a ne linearnu povezanost.</p>
+</div></div>
 </section></section>
 <section>
 <section id="regresija" class="title-slide slide level1 center">
@@ -1032,7 +1067,7 @@ sample estimates:
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1058,7 +1093,7 @@ sample estimates:
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1211,7 +1246,7 @@ window.addEventListener('load', function () { styleCell_tinytable_jhsgw11cn2h1bc
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1234,21 +1269,21 @@ window.addEventListener('load', function () { styleCell_tinytable_jhsgw11cn2h1bc
 <section id="gde-su-pretpostavke-ispunjene" class="slide level2">
 <h2>Gde su pretpostavke ispunjene?</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section>
 <section id="section-3" class="slide level2" data-background-image="slike/extrapolate.png" data-background-size="contain" data-menu-title="Ekstrapolacija i interpolacija">
 <h2></h2>
 </section>
 <section id="šta-je-statistička-kontrola" class="slide level2">
 <h2>Šta je statistička kontrola?</h2>
 
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" width="192"><div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>N <span class="ot">&lt;-</span> <span class="dv">300</span></span>
-<span id="cb5-2"><a></a></span>
-<span id="cb5-3"><a></a>primer <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb5-4"><a></a>  <span class="at">pridruzena_varijabla =</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, N, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb5-5"><a></a>  <span class="at">prediktor =</span> <span class="fu">runif</span>(N, <span class="dv">0</span> , <span class="dv">1</span>) <span class="sc">+</span> (<span class="fl">0.3</span> <span class="sc">*</span> pridruzena_varijabla),</span>
-<span id="cb5-6"><a></a>  <span class="at">ishod =</span> <span class="fl">2.0</span> <span class="sc">+</span> (<span class="fl">0.5</span> <span class="sc">*</span> prediktor) <span class="sc">+</span> (<span class="fl">0.25</span> <span class="sc">*</span> pridruzena_varijabla)</span>
-<span id="cb5-7"><a></a>)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" width="192"><div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>N <span class="ot">&lt;-</span> <span class="dv">300</span></span>
+<span id="cb8-2"><a></a></span>
+<span id="cb8-3"><a></a>primer <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb8-4"><a></a>  <span class="at">pridruzena_varijabla =</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, N, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb8-5"><a></a>  <span class="at">prediktor =</span> <span class="fu">runif</span>(N, <span class="dv">0</span> , <span class="dv">1</span>) <span class="sc">+</span> (<span class="fl">0.3</span> <span class="sc">*</span> pridruzena_varijabla),</span>
+<span id="cb8-6"><a></a>  <span class="at">ishod =</span> <span class="fl">2.0</span> <span class="sc">+</span> (<span class="fl">0.5</span> <span class="sc">*</span> prediktor) <span class="sc">+</span> (<span class="fl">0.25</span> <span class="sc">*</span> pridruzena_varijabla)</span>
+<span id="cb8-7"><a></a>)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -1401,7 +1436,7 @@ window.addEventListener('load', function () { styleCell_tinytable_q8iyxmbeys6sx8
 <section id="kontrolisanje-putem-regresije" class="slide level2">
 <h2>Kontrolisanje putem regresije</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">lm</span>(ishod <span class="sc">~</span> prediktor, <span class="at">data =</span> primer)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">lm</span>(ishod <span class="sc">~</span> prediktor, <span class="at">data =</span> primer)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -1413,7 +1448,7 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">lm</span>(ishod <span class="sc">~</span> prediktor <span class="sc">+</span> pridruzena_varijabla, <span class="at">data =</span> primer)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">lm</span>(ishod <span class="sc">~</span> prediktor <span class="sc">+</span> pridruzena_varijabla, <span class="at">data =</span> primer)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:

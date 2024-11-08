@@ -88,7 +88,7 @@
     "href": "slides/10_regresija/prezentacija.html#pearsonov-koeficijent-korelacije",
     "title": "Korelacija i regresija",
     "section": "Pearsonov koeficijent korelacije",
-    "text": "Pearsonov koeficijent korelacije\n\\(H_0:\\) Ispitivane varijable nisu povezane.\nUslovi:\n\nNezavisne opservacije\nNormalna raspodela u populaciji\nSvaka varijabla mora da ima svog para\nPretpostavlja linearan odnos varijabli"
+    "text": "Pearsonov koeficijent korelacije\n\\(H_0:\\) Ispitivane varijable nisu linearno povezane.\nUslovi:\n\nNezavisne opservacije\nNormalna raspodela u populaciji\nSvaka varijabla mora da ima svog para\nPretpostavlja linearan odnos varijabli"
   },
   {
     "objectID": "slides/10_regresija/prezentacija.html#tumačenje-rezultata-pearsonove-korelacije",
@@ -116,7 +116,7 @@
     "href": "slides/10_regresija/prezentacija.html#spearmanov-koeficijent-korelacije",
     "title": "Korelacija i regresija",
     "section": "Spearmanov koeficijent korelacije",
-    "text": "Spearmanov koeficijent korelacije\n\\(H_0:\\) Ispitivane varijable nisu povezane.\n\n\n\n\n\n\nSavet\n\n\nDaje verodostojnije rezultate kada podaci neispunjavaju uslove linearnosti ili normalne raspodele.\n\n\n\nUslovi:\n\nVarijabla nema normalnu raspodelu\nPodaci su ordinalni ili rangovi\nSvaka varijabla mora da ima svog para\nNelinearan odnos varijabli (scatterplot)\nMonotoničnost*"
+    "text": "Spearmanov koeficijent korelacije\n\\(H_0:\\) Ispitivane varijable nisu monotono povezane.\n\n\n\n\n\n\nSavet\n\n\nDaje verodostojnije rezultate kada podaci neispunjavaju uslove linearnosti ili normalne raspodele.\n\n\n\nUslovi:\n\nVarijabla nema normalnu raspodelu\nPodaci su ordinalni ili rangovi\nSvaka varijabla mora da ima svog para\nNelinearan odnos varijabli (scatterplot)\nMonotoničnost*"
   },
   {
     "objectID": "slides/10_regresija/prezentacija.html#tumačenje-rezultata-spearmanove-korelacije",
@@ -2455,5 +2455,12 @@
     "title": "Korelacija i regresija",
     "section": "Kontrolisanje putem regresije",
     "text": "Kontrolisanje putem regresije\n\nlm(ishod ~ prediktor, data = primer)\n\n\nCall:\nlm(formula = ishod ~ prediktor, data = primer)\n\nCoefficients:\n(Intercept)    prediktor  \n     2.0054       0.6846  \n\n\n\nlm(ishod ~ prediktor + pridruzena_varijabla, data = primer)\n\n\nCall:\nlm(formula = ishod ~ prediktor + pridruzena_varijabla, data = primer)\n\nCoefficients:\n         (Intercept)             prediktor  pridruzena_varijabla  \n                2.00                  0.50                  0.25"
+  },
+  {
+    "objectID": "slides/10_regresija/prezentacija.html#šta-ako-se-ne-slažu-korelacije",
+    "href": "slides/10_regresija/prezentacija.html#šta-ako-se-ne-slažu-korelacije",
+    "title": "Korelacija i regresija",
+    "section": "Šta ako se ne slažu korelacije?",
+    "text": "Šta ako se ne slažu korelacije?\n\n\n\nx &lt;- 0:20\ny &lt;- exp(x)\n\n\n\n\n\n\n\n\n\n\n\nPearsonova korelacija:\n\n\n     cor \n0.527173 \n\n\nSpearmanova korelacija:\n\n\nrho \n  1 \n\n\nAko je Spearman \\(\\gt\\) Pearson, znači da imamo monotonu (uzlaznu ili silaznu) povezanost, a ne linearnu povezanost."
   }
 ]
