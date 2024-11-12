@@ -30,7 +30,7 @@ Dobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane 
 #| echo: false
 
 dat <- data.frame(
-  Nedelja = 1:7,
+  Nedelja = 1:9,
   Tema = c(
     "[Uvod u medicinsku statistiku](slides/01_uvod/prezentacija.qmd) ([eng](slides/01_uvod/pres.qmd))",
     "[Sređivanje podataka](slides/02_sredjivanje/prezentacija.qmd)",
@@ -38,10 +38,10 @@ dat <- data.frame(
     "[Verovatnoća i raspodele verovatnoća](slides/04_verovatnoca/prezentacija.qmd) ([eng](slides/04_verovatnoca/pres.qmd))",
     "[Populacija i uzorak](slides/05_uzorak/prezentacija.qmd)",
     "[Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama](slides/06_hipoteze/prezentacija.qmd)",
-    # "[Testiranje hipoteza o učestalostima]()",
+    "[Testiranje hipoteza o učestalostima](slides/07_hi_kvadrat/prezentacija.qmd)",
     # "[Testiranje hipoteza o rangovima]()",
-    # "[Korelacija]()",
-    "[Korelacija i regresija](slides/10_regresija/prezentacija.qmd)"
+    "[Korelacija](slides/09_korelacija/prezentacija.qmd)",
+    "[Regresija](slides/10_regresija/prezentacija.qmd)"
     # "[Podaci, informacije i znanje]()",
     # "[Zdravstveni informacioni sistem]()",
     # "[Mere dijagnostičke tačnosti]()",

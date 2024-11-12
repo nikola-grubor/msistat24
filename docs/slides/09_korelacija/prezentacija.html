@@ -12,7 +12,7 @@
 
   <meta name="author" content="Dr Nikola Grubor">
   <meta name="dcterms.date" content="2024-11-11">
-  <title>Medicinska statistika i informatika - Regresija</title>
+  <title>Medicinska statistika i informatika - Korelacija i regresija</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -392,7 +392,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Regresija</h1>
+  <h1 class="title">Korelacija i regresija</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -404,6 +404,57 @@ Dr Nikola Grubor
 
   <p class="date">2024-11-11</p>
 </section>
+<section>
+<section id="korelacija" class="title-slide slide level1 center">
+<h1>Korelacija</h1>
+
+</section>
+<section id="korelacija-i-kauzalnost" class="slide level2">
+<h2>Korelacija i kauzalnost</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="slike/gould.jpg"></p>
+</div><div class="column">
+<blockquote>
+<p>Netačna pretpostavka da korelacija podrazumeva uzročnu vezu je verovatno jedna od dve ili tri najveće greške u čovekovom zaključivanju.</p>
+</blockquote>
+<p>— Stephen Jay Gould (1941 - 2002)</p>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2" data-background-image="slike/palm.jpg">
+<h2></h2>
+<div class="columns">
+<div class="column">
+<div class="r-fit-text">
+<p><span class="black">Ljudi su prirodno dobri</span></p>
+<p><span class="black">u kauzalnom zaključivaju.</span></p>
+<p><span class="black">Korelacija <span class="math inline">\(\not =\)</span> Kauzalnost</span></p>
+</div>
+</div><div class="column">
+
+</div>
+</div>
+</section>
+<section id="neverovatne-povezanosti" class="slide level2">
+<h2>Neverovatne povezanosti</h2>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slike/spurious1.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slike/spurious2.png" class="fragment quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="julski-efekat" class="slide level2">
+<h2>Julski efekat</h2>
+
+<img data-src="slike/july.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="vrste-povezanosti" class="slide level2">
 <h2>Vrste povezanosti</h2>
 <div class="r-stack">
@@ -451,30 +502,62 @@ Dr Nikola Grubor
 </div>
 </div>
 </section>
-<section id="metematički-model" class="slide level2">
-<h2>Metematički model</h2>
+<section id="varljivi-podaci" class="slide level2">
+<h2>Varljivi podaci</h2>
+
+<img data-src="slike/choco.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="primer-lipidi-i-insulinska-rezistencija-1" class="slide level2">
+<h2>Primer: lipidi i insulinska rezistencija (1)</h2>
 <div class="columns">
 <div class="column">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="slike/plane1.jpg"></p>
-<figcaption><span class="math inline">\(y = \alpha + \beta x\)</span></figcaption>
-</figure>
+<p><span class="math inline">\(H:\)</span> Lipidni sastav membrane skeletnih mišićih ćelija utiče na insulinsku rezistenciju.</p>
+<p><em>Borkman et al.&nbsp;(1993)</em></p>
+</div><div class="column">
+<p><img data-src="slike/resist.gif"></p>
+<p><img data-src="slike/igf.gif" style="width:75.0%"></p>
+</div>
+</div>
+</section>
+<section id="primer-lipidi-i-insulinska-rezistencija-2" class="slide level2">
+<h2>Primer: lipidi i insulinska rezistencija (2)</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Scatterplot (dijagram rasturanja)</li>
+<li>Kako da opišemo odnos ove dve varijable?</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><span class="yellow">Korelacija</span></li>
+</ul>
 </div>
 </div><div class="column">
-<div class="quarto-figure quarto-figure-center">
+<div class="cell">
+<div class="cell-output-display">
+<div>
 <figure>
-<p><img data-src="slike/plane2.jpg"></p>
-<figcaption><span class="math inline">\(y = \text{komplikovano...}\)</span></figcaption>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
 </figure>
+</div>
+</div>
 </div>
 </div>
 </div>
 </section>
-<section id="anatomija-regresione-jednačine-1" class="slide level2">
-<h2>Anatomija regresione jednačine (1)</h2>
+<section id="section-1" class="slide level2" data-background-image="slike/corr.svg" data-menu-title="Spektar korelacija">
+<h2></h2>
+</section>
+<section id="karakteristike-linearne-povezanosti" class="slide level2">
+<h2>Karakteristike linearne povezanosti</h2>
 <div class="columns">
 <div class="column">
+<ul>
+<li><span class="yellow">Smer</span> (pozitivan <span class="math inline">\(+\)</span>, negativan <span class="math inline">\(-\)</span>)</li>
+<li><span class="yellow">Stepen</span> (od <span class="math inline">\(-1\)</span> do <span class="math inline">\(+1\)</span>, “jačina” povezanosti)</li>
+<li><span class="yellow">Oblik</span> (Linearan, nelinearan)</li>
+<li>Scatterplot (dijagram rasturanja)</li>
+</ul>
+</div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -484,47 +567,85 @@ Dr Nikola Grubor
 </div>
 </div>
 </div>
-<p><span class="math display">\[ y = \alpha + \beta x \]</span></p>
-</div><div class="column">
-<p>Linearni odnos:</p>
-<div>
-<ul>
-<li class="fragment"><span class="math inline">\(y\)</span>, zavisna varijabla</li>
-<li class="fragment"><span class="math inline">\(x\)</span>, nezavisna varijabla</li>
-<li class="fragment"><span class="math inline">\(\alpha\)</span>, regresiona konstanta kad je <span class="math inline">\(x = 0\)</span></li>
-<li class="fragment"><span class="math inline">\(\beta\)</span>, regresioni koeficijent (promena <span class="math inline">\(y\)</span> ako <span class="math inline">\(x+1\)</span>)</li>
-</ul>
-</div>
 </div>
 </div>
 </section>
-<section id="anatomija-regresione-jednačine-2" class="slide level2">
-<h2>Anatomija regresione jednačine (2)</h2>
-<div class="columns">
-<div class="column">
-<div class="cell">
-<div class="cell-output-display">
-<div>
+<section id="vežba-napraviti-dijagram-rasturanja" class="slide level2">
+<h2>Vežba: napraviti dijagram rasturanja</h2>
+<div class="r-fit-text">
+<p>Učitati <span class="yellow">bazu DZ</span>.</p>
+<p>Prikazati grafički vezu između <span class="yellow">starosti</span> i <span class="yellow">ukupnog holesterola</span>?</p>
+<p>Prikazati grafički vezu između <span class="yellow">triglicerida</span> i <span class="yellow">stepena uhranjenosti</span>?</p>
+</div>
+</section>
+<section id="korelacioni-koeficijent" class="slide level2">
+<h2>Korelacioni koeficijent</h2>
+<dl>
+<dt>Definicija</dt>
+<dd>
+Koeficijent korelacije je statistika koja kvantifikuje jačinu povezanosti varijabli.
+</dd>
+</dl>
+<ul>
+<li><span class="yellow">Pearsonov</span> koeficijent korelacije (r)</li>
+<li><span class="yellow">Spearmanov</span> koeficijent korelacije ranga (<span class="math inline">\(\rho\)</span>)</li>
+</ul>
+</section>
+<section id="simetričnost-korelacija" class="slide level2">
+<h2>Simetričnost korelacija</h2>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+<figcaption>Masne kiseline predviđaju insulinsku senzitivnost.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-8-2.png" width="960"></p>
+<figcaption>Insulinska senzitivnost predviđa masne kiseline.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><span class="math display">\[ y = \alpha + \beta x \]</span></p>
-</div><div class="column">
-<div>
-<ul>
-<li class="fragment">$ r^2 = cor(x,y)^2 $, koeficijent derterminacije (0-1, udeo objašnjene varijacije)</li>
-<li class="fragment">$ r^2 = 0.50 $</li>
-<li class="fragment">$ r^2 = 50 % $</li>
-</ul>
 </div>
+</section>
+<section id="pearsonov-koeficijent-korelacije" class="slide level2">
+<h2>Pearsonov koeficijent korelacije</h2>
+<p><span class="math inline">\(H_0:\)</span> Ispitivane varijable nisu <span class="yellow">linearno</span> povezane.</p>
+<p>Uslovi:</p>
+<ul>
+<li>Nezavisne opservacije</li>
+<li>Normalna raspodela u populaciji</li>
+<li>Svaka varijabla mora da ima svog para</li>
+<li>Pretpostavlja linearan odnos varijabli</li>
+</ul>
+</section>
+<section id="tumačenje-rezultata-pearsonove-korelacije" class="slide level2">
+<h2>Tumačenje rezultata Pearsonove korelacije</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">cor.test</span>(<span class="sc">~</span> insulin <span class="sc">+</span> c20, <span class="at">data =</span> bork, <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's product-moment correlation
+
+data:  insulin and c20
+t = 4.9612, df = 18, p-value = 0.000101
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.4783589 0.8998777
+sample estimates:
+ cor 
+0.76 </code></pre>
 </div>
 </div>
 </section>
-<section id="anatomija-regresione-jednačine-3" class="slide level2">
-<h2>Anatomija regresione jednačine (3)</h2>
+<section id="svi-ovi-podaci-imaju-iste-numeričke-osobine-ali" class="slide level2 scrollable">
+<h2>Svi ovi podaci imaju iste numeričke osobine, ali…</h2>
 <div class="cell">
 <div class="cell-output-display">
  
@@ -558,28 +679,119 @@ Dr Nikola Grubor
         <thead>
         
               <tr>
-                <th scope="col">term</th>
-                <th scope="col">estimate</th>
-                <th scope="col">std.error</th>
-                <th scope="col">statistic</th>
-                <th scope="col">p.value</th>
+                <th scope="col">dataset</th>
+                <th scope="col">mean_x</th>
+                <th scope="col">sd_x</th>
+                <th scope="col">mean_y</th>
+                <th scope="col">sd_y</th>
+                <th scope="col">cor</th>
               </tr>
         </thead>
         
         <tbody>
                 <tr>
-                  <td>(Intercept)</td>
-                  <td>-1220</td>
-                  <td>306.74</td>
-                  <td>-3.98</td>
-                  <td>&lt;0.001</td>
+                  <td>away      </td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.06</td>
                 </tr>
                 <tr>
-                  <td>c20        </td>
-                  <td>   76</td>
-                  <td> 15.32</td>
-                  <td> 4.96</td>
-                  <td>&lt;0.001</td>
+                  <td>bullseye  </td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.07</td>
+                </tr>
+                <tr>
+                  <td>circle    </td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.07</td>
+                </tr>
+                <tr>
+                  <td>dino      </td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.06</td>
+                </tr>
+                <tr>
+                  <td>dots      </td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.06</td>
+                </tr>
+                <tr>
+                  <td>h_lines   </td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.06</td>
+                </tr>
+                <tr>
+                  <td>high_lines</td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.07</td>
+                </tr>
+                <tr>
+                  <td>slant_down</td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.07</td>
+                </tr>
+                <tr>
+                  <td>slant_up  </td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.07</td>
+                </tr>
+                <tr>
+                  <td>star      </td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.06</td>
+                </tr>
+                <tr>
+                  <td>v_lines   </td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.07</td>
+                </tr>
+                <tr>
+                  <td>wide_lines</td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.07</td>
+                </tr>
+                <tr>
+                  <td>x_shape   </td>
+                  <td>54</td>
+                  <td>17</td>
+                  <td>48</td>
+                  <td>27</td>
+                  <td>-0.07</td>
                 </tr>
         </tbody>
       </table>
@@ -632,21 +844,91 @@ window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfm
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(0, 2, 'tinytable_css_jyow139w4o7okhu56gr6') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(0, 3, 'tinytable_css_jyow139w4o7okhu56gr6') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(0, 4, 'tinytable_css_jyow139w4o7okhu56gr6') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(0, 5, 'tinytable_css_jyow139w4o7okhu56gr6') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(0, 0, 'tinytable_css_xkgbtyto2hvgvpcjjsjt') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(0, 1, 'tinytable_css_xkgbtyto2hvgvpcjjsjt') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(0, 2, 'tinytable_css_xkgbtyto2hvgvpcjjsjt') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(0, 3, 'tinytable_css_xkgbtyto2hvgvpcjjsjt') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(0, 4, 'tinytable_css_xkgbtyto2hvgvpcjjsjt') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(0, 5, 'tinytable_css_xkgbtyto2hvgvpcjjsjt') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(1, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(2, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(3, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(4, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(5, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(6, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(7, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(8, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(9, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(10, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(11, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(12, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(13, 0, 'tinytable_css_79gha1iccutlt9f4zwfr') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(1, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(2, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(3, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(4, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(5, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(6, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(7, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(8, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(9, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(10, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(11, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(12, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(13, 1, 'tinytable_css_79gha1iccutlt9f4zwfr') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(1, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(2, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(3, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(4, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(5, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(6, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(7, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(8, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(9, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(10, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(11, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(12, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(13, 2, 'tinytable_css_79gha1iccutlt9f4zwfr') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(1, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(2, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(3, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(4, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(5, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(6, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(7, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(8, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(9, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(10, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(11, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(12, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(13, 3, 'tinytable_css_79gha1iccutlt9f4zwfr') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(1, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
 window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(2, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(3, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(4, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(5, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(6, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(7, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(8, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(9, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(10, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(11, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(12, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(13, 4, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(1, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(2, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(3, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(4, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(5, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(6, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(7, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(8, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(9, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(10, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(11, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(12, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
+window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfmw9o7h8(13, 5, 'tinytable_css_79gha1iccutlt9f4zwfr') })
     </script>
 
   
@@ -654,250 +936,106 @@ window.addEventListener('load', function () { styleCell_tinytable_lja7k1c57vzdfm
 
 </div>
 </div>
+</section>
+<section id="uvek-vizualizovati-podatke" class="slide level2">
+<h2>Uvek vizualizovati podatke!</h2>
+
+<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="spearmanov-koeficijent-korelacije" class="slide level2">
+<h2>Spearmanov koeficijent korelacije</h2>
+<p><span class="math inline">\(H_0:\)</span> Ispitivane varijable nisu <span class="yellow">monotono</span> povezane.</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Savet</strong></p>
+</div>
+<div class="callout-content">
+<p>Daje verodostojnije rezultate kada podaci neispunjavaju uslove linearnosti ili normalne raspodele.</p>
+</div>
+</div>
+</div>
+<p>Uslovi:</p>
+<ol type="1">
+<li>Varijabla nema normalnu raspodelu</li>
+<li>Podaci su <span class="yellow">ordinalni</span> ili rangovi</li>
+<li>Svaka varijabla mora da ima svog para</li>
+<li>Nelinearan odnos varijabli (scatterplot)</li>
+<li>Monotoničnost*</li>
+</ol>
+</section>
+<section id="tumačenje-rezultata-spearmanove-korelacije" class="slide level2">
+<h2>Tumačenje rezultata Spearmanove korelacije</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">cor.test</span>(<span class="sc">~</span> insulin <span class="sc">+</span> c20, <span class="at">data =</span> bork, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Spearman's rank correlation rho
+
+data:  insulin and c20
+S = 372, p-value = 0.0004998
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+      rho 
+0.7203008 </code></pre>
+</div>
+</div>
+</section>
+<section id="interpretacija-koeficijenta-korelacije" class="slide level2">
+<h2>Interpretacija koeficijenta korelacije</h2>
+
+<img data-src="slike/interpretacija.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="šta-ako-se-ne-slažu-korelacije" class="slide level2">
+<h2>Šta ako se ne slažu korelacije?</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb5-2"><a></a>y <span class="ot">&lt;-</span> <span class="fu">exp</span>(x)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
-<p><span class="math display">\[ y = \alpha + \beta x \]</span></p>
-<p><span class="math display">\[ \text{insulin} = -1220 + 76 \times \text{%C20-22} \]</span></p>
-<p>$ R^2 = $ 0.5776</p>
+</div><div class="column">
+<p>Pearsonova korelacija:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>     cor 
+0.527173 </code></pre>
+</div>
+</div>
+<p>Spearmanova korelacija:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>rho 
+  1 </code></pre>
+</div>
+</div>
+<p>Ako je Spearman <span class="math inline">\(\gt\)</span> Pearson, znači da imamo monotonu (uzlaznu ili silaznu) povezanost, a ne linearnu povezanost.</p>
 </div>
 </div>
 </section>
-<section id="pretpostavke-linearne-regresije" class="slide level2">
-<h2>Pretpostavke linearne regresije</h2>
+<section id="vežba-izračunavanje-korelacije" class="slide level2">
+<h2>Vežba: izračunavanje korelacije</h2>
 <ol type="1">
-<li>Normalnost (reziduala*)</li>
-<li>Linearnost</li>
-<li>Nezavisnost (merenja nisu ponovljena)</li>
-<li>Jednakost varijansi</li>
+<li>Proveriti normalnost (koeficijent varijacije)</li>
+<li>Pearson ili Spearman</li>
 </ol>
-</section>
-<section id="gde-su-pretpostavke-ispunjene" class="slide level2">
-<h2>Gde su pretpostavke ispunjene?</h2>
-
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
-<section id="section" class="slide level2" data-background-image="slike/extrapolate.png" data-background-size="contain" data-menu-title="Ekstrapolacija i interpolacija">
-<h2></h2>
-</section>
-<section id="šta-je-statistička-kontrola" class="slide level2">
-<h2>Šta je statistička kontrola?</h2>
-
-<img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" width="192"><div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>N <span class="ot">&lt;-</span> <span class="dv">300</span></span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a>primer <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb1-4"><a></a>  <span class="at">pridruzena_varijabla =</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, N, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-5"><a></a>  <span class="at">prediktor =</span> <span class="fu">runif</span>(N, <span class="dv">0</span> , <span class="dv">1</span>) <span class="sc">+</span> (<span class="fl">0.3</span> <span class="sc">*</span> pridruzena_varijabla),</span>
-<span id="cb1-6"><a></a>  <span class="at">ishod =</span> <span class="fl">2.0</span> <span class="sc">+</span> (<span class="fl">0.5</span> <span class="sc">*</span> prediktor) <span class="sc">+</span> (<span class="fl">0.25</span> <span class="sc">*</span> pridruzena_varijabla)</span>
-<span id="cb1-7"><a></a>)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
- 
-
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_f1xdtrkmto5329rb20wz</title>
-    <style>
-.table td.tinytable_css_cecthpzz2oatfavu1lg4, .table th.tinytable_css_cecthpzz2oatfavu1lg4 {    border-bottom: solid 0.1em #d3d8dc; }
-.table td.tinytable_css_osf8llndtu7d0mpmukg6, .table th.tinytable_css_osf8llndtu7d0mpmukg6 {    font-size: 0.5em; }
-.table td.tinytable_css_bviiog8muwf749riwf57, .table th.tinytable_css_bviiog8muwf749riwf57 {    font-size: 0.5em; }
-    </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-    </script>
-  
-
-  
-    <div class="container">
-      <table class="table table-borderless" id="tinytable_f1xdtrkmto5329rb20wz" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
-        
-              <tr>
-                <th scope="col">pridruzena_varijabla</th>
-                <th scope="col">prediktor</th>
-                <th scope="col">ishod</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td>0</td>
-                  <td>0.9336965</td>
-                  <td>2.466848</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>0.8425316</td>
-                  <td>2.671266</td>
-                </tr>
-                <tr>
-                  <td>0</td>
-                  <td>0.2194225</td>
-                  <td>2.109711</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>0.7894278</td>
-                  <td>2.644714</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>1.1011487</td>
-                  <td>2.800574</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>0.7076307</td>
-                  <td>2.603815</td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <script>
-      function styleCell_tinytable_4cmr7nfamtvqe09lzotq(i, j, css_id) {
-        var table = document.getElementById("tinytable_f1xdtrkmto5329rb20wz");
-        table.rows[i].cells[j].classList.add(css_id);
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_f1xdtrkmto5329rb20wz');
-        var newRow = table.insertRow(i);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_tinytable_4cmr7nfamtvqe09lzotq(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_f1xdtrkmto5329rb20wz");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
-        for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
-            }
-          }
-        }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
-      }
-
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(0, 0, 'tinytable_css_cecthpzz2oatfavu1lg4') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(0, 1, 'tinytable_css_cecthpzz2oatfavu1lg4') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(0, 2, 'tinytable_css_cecthpzz2oatfavu1lg4') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(0, 0, 'tinytable_css_osf8llndtu7d0mpmukg6') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(0, 1, 'tinytable_css_osf8llndtu7d0mpmukg6') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(0, 2, 'tinytable_css_osf8llndtu7d0mpmukg6') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(1, 0, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(2, 0, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(3, 0, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(4, 0, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(5, 0, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(6, 0, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(1, 1, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(2, 1, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(3, 1, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(4, 1, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(5, 1, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(6, 1, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(1, 2, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(2, 2, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(3, 2, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(4, 2, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(5, 2, 'tinytable_css_bviiog8muwf749riwf57') })
-window.addEventListener('load', function () { styleCell_tinytable_4cmr7nfamtvqe09lzotq(6, 2, 'tinytable_css_bviiog8muwf749riwf57') })
-    </script>
-
-  
-
-
-</div>
-</div>
-</section>
-<section id="kontrolisanje-putem-regresije" class="slide level2">
-<h2>Kontrolisanje putem regresije</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">lm</span>(ishod <span class="sc">~</span> prediktor, <span class="at">data =</span> primer)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = ishod ~ prediktor, data = primer)
-
-Coefficients:
-(Intercept)    prediktor  
-     2.0076       0.6929  </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">lm</span>(ishod <span class="sc">~</span> prediktor <span class="sc">+</span> pridruzena_varijabla, <span class="at">data =</span> primer)</span></code><button title="Kopiraj" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = ishod ~ prediktor + pridruzena_varijabla, data = primer)
-
-Coefficients:
-         (Intercept)             prediktor  pridruzena_varijabla  
-                2.00                  0.50                  0.25  </code></pre>
-</div>
-</div>
-</section>
-<section id="vežba-linearna-regresija" class="slide level2">
-<h2>Vežba: linearna regresija</h2>
-<p>Koristeći dopunjenu <span class="yellow">bazu DZ</span> odgovori na sledeća istraživačka pitanja:</p>
 <div class="r-fit-text">
-<ol type="1">
-<li>Da li postoji povezanost između <span class="blue">sistolne tenzije</span> i</li>
-</ol>
-<p><span class="blue">ukupnog holesterola</span>?</p>
-<ol start="2" type="1">
-<li>Za ispitanika sa <span class="blue">ukupnim holesterolom od 6.2 mmol/l</span></li>
-</ol>
-<p>izračunaj <span class="blue">vrednost sistolne tenzije</span> (mmmHg).</p>
+<p>Učitati <span class="yellow">bazu DZ</span>.</p>
+<p>Da li postoji povezanost između <span class="yellow">starosti</span> i <span class="yellow">ukupnog holesterola</span>?</p>
+<p>Da li postoji povezanost između <span class="yellow">triglicerida</span> i <span class="yellow">stepena uhranjenosti</span>?</p>
 </div>
 </section>
-<section id="korelacija-vs.-regresija" class="slide level2">
-<h2>Korelacija vs.&nbsp;regresija</h2>
-<ul>
-<li>Korelacija opisuje povezanost između varijabli, ne određuje najbolju liniju</li>
-<li>Kod korelacije nije potrebno razmišljati o uzrocima</li>
-<li>Kod regresije <span class="math inline">\(Y\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(X\)</span> <span class="math inline">\(\not =\)</span> <span class="math inline">\(Y\)</span> <span class="math inline">\(\leftarrow\)</span> <span class="math inline">\(X\)</span></li>
-</ul>
-</section>
-<section id="section-1" class="slide level2" data-background-image="slike/rex.png" data-background-size="contain" data-menu-title="Korelacija i kauzalnost">
+<section id="section-2" class="slide level2" data-background-image="slike/corr_xkcd.png" data-background-size="contain" data-menu-title="Korelacija i kauzalnost">
 <h2></h2>
 </section>
 <section id="struktura-kursa" class="slide level2">
@@ -909,10 +1047,10 @@ Coefficients:
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_s34u8ireasgobi6ae8ni</title>
+    <title>tinytable_wtx1jdo6yulflswu7ntm</title>
     <style>
-.table td.tinytable_css_aw8mg97hno6bf2uykxrz, .table th.tinytable_css_aw8mg97hno6bf2uykxrz {    border-bottom: solid 0.1em #d3d8dc; }
-.table td.tinytable_css_6gsxgadwx9xcbywa7g3b, .table th.tinytable_css_6gsxgadwx9xcbywa7g3b {    font-size: 0.55em; }
+.table td.tinytable_css_vgpmpz7ez2wprpgm970f, .table th.tinytable_css_vgpmpz7ez2wprpgm970f {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_2dr58wix0rt3pa4ziyw4, .table th.tinytable_css_2dr58wix0rt3pa4ziyw4 {    font-size: 0.55em; }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -930,7 +1068,7 @@ Coefficients:
 
   
     <div class="container">
-      <table class="table table-borderless" id="tinytable_s34u8ireasgobi6ae8ni" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_wtx1jdo6yulflswu7ntm" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -1005,12 +1143,12 @@ Coefficients:
     </div>
 
     <script>
-      function styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(i, j, css_id) {
-        var table = document.getElementById("tinytable_s34u8ireasgobi6ae8ni");
+      function styleCell_tinytable_t9xjd5h17ak6m79g55rv(i, j, css_id) {
+        var table = document.getElementById("tinytable_wtx1jdo6yulflswu7ntm");
         table.rows[i].cells[j].classList.add(css_id);
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_s34u8ireasgobi6ae8ni');
+        var table = document.getElementById('tinytable_wtx1jdo6yulflswu7ntm');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -1018,8 +1156,8 @@ Coefficients:
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_tinytable_h0e5w9xph4y5s8ljtdsa(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_s34u8ireasgobi6ae8ni");
+      function spanCell_tinytable_t9xjd5h17ak6m79g55rv(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_wtx1jdo6yulflswu7ntm");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -1046,40 +1184,40 @@ Coefficients:
         targetCell.colSpan = colspan;
       }
 
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(0, 0, 'tinytable_css_aw8mg97hno6bf2uykxrz') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(0, 1, 'tinytable_css_aw8mg97hno6bf2uykxrz') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(0, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(0, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(1, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(1, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(2, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(2, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(3, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(3, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(4, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(4, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(5, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(5, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(6, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(6, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(7, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(7, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(8, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(8, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(9, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(9, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(10, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(10, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(11, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(11, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(12, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(12, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(13, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(13, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(14, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(14, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(15, 0, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
-window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8ljtdsa(15, 1, 'tinytable_css_6gsxgadwx9xcbywa7g3b') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(0, 0, 'tinytable_css_vgpmpz7ez2wprpgm970f') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(0, 1, 'tinytable_css_vgpmpz7ez2wprpgm970f') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(0, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(0, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(1, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(1, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(2, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(2, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(3, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(3, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(4, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(4, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(5, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(5, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(6, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(6, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(7, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(7, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(8, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(8, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(9, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(9, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(10, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(10, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(11, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(11, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(12, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(12, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(13, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(13, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(14, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(14, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(15, 0, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
+window.addEventListener('load', function () { styleCell_tinytable_t9xjd5h17ak6m79g55rv(15, 1, 'tinytable_css_2dr58wix0rt3pa4ziyw4') })
     </script>
 
   
@@ -1094,7 +1232,7 @@ window.addEventListener('load', function () { styleCell_tinytable_h0e5w9xph4y5s8
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

@@ -1,5 +1,5 @@
 ---
-title: "Testiranje hipoteza o proporcijama"
+title: "Testiranje hipoteza o učestalostima"
 date: last-modified
 author: "Dr Nikola Grubor"
 # institute: "Institut za Medicinsku Statistiku i Informatiku"
@@ -15,33 +15,451 @@ library(gtsummary)
 source(file = here("slides", "theme", "ggthemes.R"))
 ```
 
-## 
+## Problem očekivanih proporcija
 
-## Hi-kvardrat simulacija
+:::: columns
+
+::: {.column}
+
+> Da li mogu da proverim da li su me prevarili za [boju]{.yellow} M&M bombona ako očekujem da ih u kesici ima [međusobno jednak broj]{.yellow}?
 
 ```{r}
-# Set seed for reproducibility
-set.seed(123)
+dat_mm <- tribble(
+  ~Boja, ~Broj,
+  "Crvene", 30, 
+  "Plave", 33,
+  "Zelene", 37
+)
 
-# Define the expected proportions (say a 2x3 table)
-expected_counts <- matrix(c(30, 50, 20, 40, 30, 60), nrow = 2)
+dat_mm %>% 
+  tt() %>% 
+  style_tt(i = 0:4, fontsize = 0.75)
+```
 
-# Simulate actual data based on expected counts using rmultinom()
-# Suppose you want to simulate a sample size of 500
-simulated_data <- rmultinom(n = 1, size = 500, prob = as.vector(expected_counts/sum(expected_counts)))
 
-# Convert to a matrix to resemble the original structure
-simulated_data_matrix <- matrix(simulated_data, nrow = 2)
+:::
 
-# Perform chi-square test
-chisq_test <- chisq.test(simulated_data_matrix)
+::: {.column}
 
-# Output the results
-print(simulated_data_matrix)
-print(chisq_test)
+![](slike/mm.png)
+
+:::
+
+::::
+
+## Pirsonov hi-kvardrat test slaganja
+
+```{r}
+dat_mm %>% 
+  mutate(Očekivanje = rep(33.333, 3),
+         `Kv. razlika` = ( Broj - Očekivanje )^2,
+         `Hi-kvadrat promenljiva` = `Kv. razlika` / Očekivanje,
+         across(where(is.numeric), ~ round(. , digits = 3))) %>% 
+  tt()
+```
+
+::: {.fragment}
+
+$$ \chi^2 = \sum\frac{(O_i - E_i)^2}{E_i} = 0.333 + 0.003 + 0.403 = 0.739$$
+
+:::
+
+## Hi-kvadrat raspodela
+
+::: {.r-stack}
+
+```{r}
+#| fig-asp: 0.618
+
+hikv_reps <- tibble( x = replicate(50000, sum(rnorm(2)^2)) )
+
+hikv_dist <- hikv_reps %>% 
+  ggplot(aes(x = x)) +
+  geom_histogram(aes(y = after_stat(density)), binwidth = 0.15, 
+                 col = "black", fill = "#F4BA02") +
+  stat_function(fun = dchisq, args = list(df = 2),
+                xlim = c(0, 15),
+                linewidth = 1, col = "white", linetype = 1) +
+  labs( x = "Suma kvadratnih odstupanja od očekivanja" ,
+        y = "gustina") +
+  ggdist::theme_ggdist(base_size = 15) +
+  theme_blue()
+
+hikv_dist
+```
+
+::: {.fragment}
+
+```{r}
+#| fig-asp: 0.618
+
+
+hikv_dist_2 <- hikv_dist + 
+  geom_vline(xintercept = 0.74, col = "tomato", 
+             linewidth = 2, 
+             linetype = 2) +
+  annotate("text", label = latex2exp::TeX("$\\chi^2 = 0.74$"), x = 4, y = 0.4, size = 8,
+           col = "tomato", parse = TRUE)
+
+hikv_dist_2
+```
+
+:::
+
+::: {.fragment}
+
+```{r}
+#| fig-asp: 0.618
+
+
+hikv_dist_2 +
+   stat_function(fun = dchisq, args = list(df = 2),
+                xlim = c(0.74, 20),
+                geom = "area", alpha = 3/4, fill = "tomato") +
+   annotate("text", label = latex2exp::TeX("$p = 0.6907$"), x = 10, y = 0.1, 
+            size = 8,
+            col = "tomato", parse = TRUE)
+
 
 ```
 
+:::
+
+:::
+
+## Interpretacija hi-kvadratnog testa slaganja
+
+```{r}
+#| echo: true
+
+chisq.test(x = c(30, 33, 37), p = c(33, 33, 33), rescale.p = TRUE)
+```
+$H_0:$ Proporcije opserviranih kategorija se **ne** razlikuju od teoretskih proporcija.
+
+$H_1:$ Proporcije opserviranih kategorija se razlikuju od teoretskih proporcija.
+
+::: {.center-h}
+"Proporcije testiranih kategorija se statistički značajno ne razlikuju od teoretskih proporcija."
+:::
+
+## Vežba: očekivane vrednosti ABO krvne grupe {.variant-one}
+
+- Proveriti da li se opservirane učestalosti ABO krvnih grupa datih u tabeli razlikuju od očvekivanih
+
+```{r}
+tribble(
+  ~"", ~A, ~B, ~AB, ~O,
+  "Učestalost", 59, 19, 7, 55
+) %>% 
+  tt()
+```
+
+Očekivane učestalosti su:
+
+::: {.center-h}
+
+O: 44.5%, A: 38.9%, B: 12.1%, AB: 4.5%
+
+:::
+
+## Asocijacija između dve kategorije?
+
+:::: columns
+
+::: {.column width=40%}
+
+> Problem: Da li je [nodularnost]{.yellow} konture jetre povezana sa konzumiranjem [alkohola]{.yellow}?
+
+:::
+
+::: {.column}
+
+![](slike/nodule.png)
+
+:::
+
+::::
+
+## Tabela kontigencije kao preduslov za test
+
+
+- Standardan način prikazivanja kategorijalnih podataka je preko [tabele kontigencije]{.yellow}. 
+
+- Predstavlja [broj (ili proporciju) opservacija]{.yellow} koje pripadaju [svim mogućim kombinacijama]{.yellow} kategorija.
+
+```{r}
+cont_dat <- tribble(
+  ~Path, ~AlkDa, ~AlkNe,
+  "Ne", 16, 79,
+  "Da", 10, 13
+)
+
+cont_tbl <- cont_dat %>%
+  rowwise() %>% 
+  mutate( AlkDaRel = AlkDa / (AlkDa + AlkNe),
+          AlkNeRel = AlkNe / (AlkDa + AlkNe),
+          across(where(is.numeric), ~ round(. , digits = 2))) %>% 
+  rename("Nodularne promene" = Path, "Alkohol: Da" = AlkDa, "Alkohol: Ne" = AlkNe,
+         "Alkohol: Da (proporcija)" = AlkDaRel, "Alkohol: Ne (proporcija)" = AlkNeRel)
+
+cont_tbl %>% 
+  select(`Nodularne promene`, `Alkohol: Da`, `Alkohol: Ne`) %>% 
+  tt()
+```
+
+## Obično je lakše tumačiti proporcije
+
+```{r}
+cont_tbl %>% 
+  select(`Nodularne promene`, `Alkohol: Da`, `Alkohol: Ne`) %>% 
+  tt()
+
+cont_tbl %>% 
+  select(`Nodularne promene`, `Alkohol: Da (proporcija)`, `Alkohol: Ne (proporcija)`) %>% 
+  tt()
+```
+
+
+## Kako da odredimo očekivane učestalosti
+
+- Pirsonov hi-kvadrat test nam omogućava da testiramo da li se [opservirane učestalosti razlikuju od očekivanih]{.yellow}
+- Treba da odredimo koje učestalosti [očekujemo]{.yellow} ako [kategorije nisu međusobno povezane]{.yellow} (nezavisne su)
+
+Možemo se poslužiti osobinom verovatnoće:
+
+$$ P(X \cap Y) = P(X) \times P(Y) $$
+
+## Ručno računanje očekivanih učestalosti
+
+```{r}
+cont_prob <- tribble(
+  ~`Nodularne promene`, ~`Alkohol: Da`, ~`Alkohol: Ne`, ~Margina,
+  "Ne", "P(Bez nodularnih)*P(Alkohol)", "P(Bez nodularnih)*P(Bez Alkohola)", "P(Bez nodularnih)",
+  "Da", "P(Nodularne)*P(Alkohol)", "P(Nodularne)*P(Bez Alkohola)", "P(Nodularne)",
+  "Margina", "P(Alkohol)", "P(Bez Alkohola)", "Ukupno"
+)
+
+cont_prob %>% tt() %>% 
+  style_tt(i = 0:3, fontsize = 0.75) %>% 
+  style_tt(i = 3, j = c(1, 4), bold = TRUE)
+```
+
+## Interpretacija Pirsonovog hi-kvadrat testa za r $\times$ k tabele (1)
+
+```{r}
+
+
+nodularnost_dat <- matrix(data = c(16, 79,
+                                   10, 13), ncol = 2, byrow = TRUE)
+
+dimnames(nodularnost_dat) <- list(Nodularnost = c("Ne", "Da"),
+                         Alkohol = c("Da", "Ne"))
+
+```
+
+```{r}
+#| echo: true
+rezultati <- chisq.test(nodularnost_dat, correct = FALSE)
+rezultati
+```
+
+::: {.center-h .fragment}
+"Postoji statistički značajna asocijacija između nodularne konture jetre i konzumiranja alkohola."
+:::
+
+## Interpretacija Pirsonovog hi-kvadrat testa za r $\times$ k tabele (2)
+
+Opservacije (originalni podaci):
+
+```{r}
+rezultati$observed
+```
+
+Očekivani podaci (svi moraju biti $>5$):
+
+```{r}
+rezultati$expected
+```
+
+<!-- Reziduali (opcionalno; govori gde je višak?): -->
+
+```{r}
+# rezultati$residuals
+```
+
+
+## Vežba: Pirsonov hi-kvadrat test za r $\times$ k tabele {.variant-one}
+
+- Uneti sledeće opservacije i interpretirati rezultat
+
+```{r}
+cont_practice <- tribble(
+  ~`Pacijent`, ~`Tonzilektomija`, ~`Bez tonzilektomije`,
+  "Hodžkinova bolest", 41, 44,
+  "Kontrola", 33, 52
+)
+
+cont_practice %>% 
+  tt() %>% 
+  style_tt(j = 1, bold = TRUE)
+```
+
+## McNemarov test
+
+:::: columns
+
+::: {.column}
+
+- McNemarov test je metod za testiranje dva vezana (zavisna) uzorka
+- Iste jedinice su opservirane više puta
+- Mečovane jedinice dva uzorka
+
+:::
+
+::: {.column}
+
+```{r}
+mcnemar_ex <- tribble(
+  ~"", ~`Test 2 +`, ~`Test 2 -`,
+  "Test 1 +", "a", "b",
+  "Test 1 -", "c", "d"
+)
+
+mcnemar_ex %>% 
+  tt() %>% 
+  style_tt(j = 1, bold = TRUE)
+```
+
+
+$$ \chi^2 = \frac{(b - c)^2}{b + c} $$
+
+:::
+
+::::
+
+## Interpretacija McNemarovog testa
+
+$H_0:$ Tabela kontigencije je simetrična.
+
+$H_1:$ Tabela kontigencije nije simetrična.
+
+:::: columns
+
+::: {.column}
+
+```{r}
+set.seed(123)
+
+N <- 100
+
+pre_post <- tibble(
+  pre = rbinom(N, 1, prob = 0.5),
+  posle = rbinom(N, 1, prob = 0.65)
+)
+
+tt(head(pre_post, 3))
+```
+
+:::
+
+::: {.column}
+
+Tabela kontigencije za parove:
+
+```{r}
+xtabs(formula = ~ pre + posle, data = pre_post)
+```
+
+Rezultat:
+
+```{r}
+xtabs(formula = ~ pre + posle, data = pre_post) %>% 
+  mcnemar.test(, correct = FALSE)
+```
+
+:::
+
+::::
+
+## Vežba: McNemarov test
+
+- Preuzeti i analizirati bazu podataka [Aritmije.xlsx]{.yellow}
+- Interpretirati rezultat
+
+## Fisherov test tačne verovatnoće
+
+:::: columns
+
+::: {.column}
+
+- Može se koristiti uvek
+- Konzervativan je, te se koristi samo ako se ne može upotrebiti hi-kvadrat test
+- Uslovljen je marginama*
+
+$$ p = \frac{(a+b)!\,(c+d)!\,(a+c)!\,(b+d)!}{n!\,a!\,b!\,c!\,d!} $$
+
+:::
+
+::: {.column}
+
+![](slike/fisher.jpg)
+
+:::
+
+::::
+
+## Žena koja pije čaj
+
+:::: columns
+
+::: {.column}
+
+```{r}
+tribble(
+  ~"", ~"Mleko prvo", ~"Čaj prvo", ~"Ukupno",
+  "Pogađala Mleko", 4, 0, 4,
+  "Pogađala Čaj", 0, 4, 4,
+  "Ukupno", 4, 4, 8
+) %>% tt() %>% 
+  style_tt(j = 1, bold = TRUE) %>% 
+  style_tt(i = 0:4, fontsize = 0.60)
+```
+
+```{r}
+tea_data <- matrix(data=c(4, 0, 0, 4), nrow=2, byrow=TRUE)
+
+fisher.test(tea_data, alternative = "greater")
+```
+
+:::
+
+::: {.column}
+
+![](slike/tea2.png){width=80%}
+![](slike/tea1.png){width=80%}
+
+:::
+
+::::
+
+
+## Vežba: Fisherov test tačne verovatnoće {.variant-one}
+
+1. Preuzeti i analizirati bazu podataka [Alkohol i hipertenzija.xlsx]{.yellow}
+2. Interpretirati rezultat
+
+## Biranje testa (do sad)
+
+```{r}
+tribble(
+  ~"Tip testa", ~"Parametarski", ~"Neparametarski",
+  "Jedan uzorak", "t-test za jedan uzorak", "hi-kvadrat test slaganja",
+  "Dva nezavisna", "t-test", "hi-kvadrat/Fisherov test",
+  "Dva zavisna", "t-test za zavisne", "McNemarov test"
+) %>% 
+  tt() %>% 
+  style_tt(j = 1, bold = TRUE)
+```
 
 ## Struktura kursa
 

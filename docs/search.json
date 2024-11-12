@@ -30,7 +30,7 @@
   {
     "objectID": "slides/10_regresija/prezentacija.html#vrste-povezanosti",
     "href": "slides/10_regresija/prezentacija.html#vrste-povezanosti",
-    "title": "Korelacija i regresija",
+    "title": "Regresija",
     "section": "Vrste povezanosti",
     "text": "Vrste povezanosti"
   },
@@ -142,9 +142,9 @@
   {
     "objectID": "slides/10_regresija/prezentacija.html#struktura-kursa",
     "href": "slides/10_regresija/prezentacija.html#struktura-kursa",
-    "title": "Korelacija i regresija",
+    "title": "Regresija",
     "section": "Struktura kursa",
-    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_2h0e5w9xph4y5s8ljtds\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
+    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_s34u8ireasgobi6ae8ni\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
   },
   {
     "objectID": "slides/06_hipoteze/prezentacija.html#tri-cilja-statistike",
@@ -1271,7 +1271,7 @@
     "href": "index.html",
     "title": "Osnovni kurs medicinske statistike i informatike",
     "section": "",
-    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_u8ozg9qstljyujg4n9q9\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku (eng)\n                \n                \n                  2\n                  Sređivanje podataka\n                \n                \n                  3\n                  Statističko opisivanje podataka\n                \n                \n                  4\n                  Verovatnoća i raspodele verovatnoća (eng)\n                \n                \n                  5\n                  Populacija i uzorak\n                \n                \n                  6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                  7\n                  Korelacija i regresija"
+    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_i9539dfmhdsrv6qta809\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku (eng)\n                \n                \n                  2\n                  Sređivanje podataka\n                \n                \n                  3\n                  Statističko opisivanje podataka\n                \n                \n                  4\n                  Verovatnoća i raspodele verovatnoća (eng)\n                \n                \n                  5\n                  Populacija i uzorak\n                \n                \n                  6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                  7\n                  Testiranje hipoteza o učestalostima\n                \n                \n                  8\n                  Korelacija\n                \n                \n                  9\n                  Regresija"
   },
   {
     "objectID": "about.html",
@@ -2361,14 +2361,14 @@
   {
     "objectID": "slides/07_hi_kvadrat/prezentacija.html#struktura-kursa",
     "href": "slides/07_hi_kvadrat/prezentacija.html#struktura-kursa",
-    "title": "Testiranje hipoteza o proporcijama",
+    "title": "Testiranje hipoteza o učestalostima",
     "section": "Struktura kursa",
-    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_ziop86xci30ttofnaj2s\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
+    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_cycd3osf8llndtu7d0mp\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
   },
   {
     "objectID": "slides/10_regresija/prezentacija.html#metematički-model",
     "href": "slides/10_regresija/prezentacija.html#metematički-model",
-    "title": "Korelacija i regresija",
+    "title": "Regresija",
     "section": "Metematički model",
     "text": "Metematički model\n\n\n\n\n\n\\(y = \\alpha + \\beta x\\)\n\n\n\n\n\n\n\\(y = \\text{komplikovano...}\\)"
   },
@@ -2382,35 +2382,35 @@
   {
     "objectID": "slides/10_regresija/prezentacija.html#anatomija-regresione-jednačine-1",
     "href": "slides/10_regresija/prezentacija.html#anatomija-regresione-jednačine-1",
-    "title": "Korelacija i regresija",
+    "title": "Regresija",
     "section": "Anatomija regresione jednačine (1)",
     "text": "Anatomija regresione jednačine (1)\n\n\n\n\n\n\n\n\n\n\n\n\\[ y = \\alpha + \\beta x \\]\n\nLinearni odnos:\n\n\n\\(y\\), zavisna varijabla\n\\(x\\), nezavisna varijabla\n\\(\\alpha\\), regresiona konstanta kad je \\(x = 0\\)\n\\(\\beta\\), regresioni koeficijent (promena \\(y\\) ako \\(x+1\\))"
   },
   {
     "objectID": "slides/10_regresija/prezentacija.html#anatomija-regresione-jednačine-2",
     "href": "slides/10_regresija/prezentacija.html#anatomija-regresione-jednačine-2",
-    "title": "Korelacija i regresija",
+    "title": "Regresija",
     "section": "Anatomija regresione jednačine (2)",
     "text": "Anatomija regresione jednačine (2)\n\n\n\n\n\n\n\n\n\n\n\n\\[ y = \\alpha + \\beta x \\]\n\n\n\n$ r^2 = cor(x,y)^2 $, koeficijent derterminacije (0-1, udeo objašnjene varijacije)\n$ r^2 = 0.50 $\n$ r^2 = 50 % $"
   },
   {
     "objectID": "slides/10_regresija/prezentacija.html#anatomija-regresione-jednačine-3",
     "href": "slides/10_regresija/prezentacija.html#anatomija-regresione-jednačine-3",
-    "title": "Korelacija i regresija",
+    "title": "Regresija",
     "section": "Anatomija regresione jednačine (3)",
-    "text": "Anatomija regresione jednačine (3)\n\n\n \n\n  \n    \n    \n    tinytable_xkgbtyto2hvgvpcjjsjt\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                term\n                estimate\n                std.error\n                statistic\n                p.value\n              \n        \n        \n        \n                \n                  (Intercept)\n                  -1220\n                  306.74\n                  -3.98\n                  &lt;0.001\n                \n                \n                  c20        \n                     76\n                   15.32\n                   4.96\n                  &lt;0.001\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[ y = \\alpha + \\beta x \\]\n\\[ \\text{insulin} = -1220 + 76 \\times \\text{%C20-22} \\]\n$ R^2 = $ 0.5776"
+    "text": "Anatomija regresione jednačine (3)\n\n\n \n\n  \n    \n    \n    tinytable_8md5q0pgspqk6pj5tusg\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                term\n                estimate\n                std.error\n                statistic\n                p.value\n              \n        \n        \n        \n                \n                  (Intercept)\n                  -1220\n                  306.74\n                  -3.98\n                  &lt;0.001\n                \n                \n                  c20        \n                     76\n                   15.32\n                   4.96\n                  &lt;0.001\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[ y = \\alpha + \\beta x \\]\n\\[ \\text{insulin} = -1220 + 76 \\times \\text{%C20-22} \\]\n$ R^2 = $ 0.5776"
   },
   {
     "objectID": "slides/10_regresija/prezentacija.html#pretpostavke-linearne-regresije",
     "href": "slides/10_regresija/prezentacija.html#pretpostavke-linearne-regresije",
-    "title": "Korelacija i regresija",
+    "title": "Regresija",
     "section": "Pretpostavke linearne regresije",
     "text": "Pretpostavke linearne regresije\n\nNormalnost (reziduala*)\nLinearnost\nNezavisnost (merenja nisu ponovljena)\nJednakost varijansi"
   },
   {
     "objectID": "slides/10_regresija/prezentacija.html#gde-su-pretpostavke-ispunjene",
     "href": "slides/10_regresija/prezentacija.html#gde-su-pretpostavke-ispunjene",
-    "title": "Korelacija i regresija",
+    "title": "Regresija",
     "section": "Gde su pretpostavke ispunjene?",
     "text": "Gde su pretpostavke ispunjene?"
   },
@@ -2431,30 +2431,30 @@
   {
     "objectID": "slides/10_regresija/prezentacija.html#vežba-linearna-regresija",
     "href": "slides/10_regresija/prezentacija.html#vežba-linearna-regresija",
-    "title": "Korelacija i regresija",
+    "title": "Regresija",
     "section": "Vežba: linearna regresija",
     "text": "Vežba: linearna regresija\nKoristeći dopunjenu bazu DZ odgovori na sledeća istraživačka pitanja:\n\n\nDa li postoji povezanost između sistolne tenzije i\n\nukupnog holesterola?\n\nZa ispitanika sa ukupnim holesterolom od 6.2 mmol/l\n\nizračunaj vrednost sistolne tenzije (mmmHg)."
   },
   {
     "objectID": "slides/10_regresija/prezentacija.html#korelacija-vs.-regresija",
     "href": "slides/10_regresija/prezentacija.html#korelacija-vs.-regresija",
-    "title": "Korelacija i regresija",
+    "title": "Regresija",
     "section": "Korelacija vs. regresija",
     "text": "Korelacija vs. regresija\n\nKorelacija opisuje povezanost između varijabli, ne određuje najbolju liniju\nKod korelacije nije potrebno razmišljati o uzrocima\nKod regresije \\(Y\\) \\(\\rightarrow\\) \\(X\\) \\(\\not =\\) \\(Y\\) \\(\\leftarrow\\) \\(X\\)"
   },
   {
     "objectID": "slides/10_regresija/prezentacija.html#šta-je-statistička-kontrola",
     "href": "slides/10_regresija/prezentacija.html#šta-je-statistička-kontrola",
-    "title": "Korelacija i regresija",
+    "title": "Regresija",
     "section": "Šta je statistička kontrola?",
-    "text": "Šta je statistička kontrola?\n\n\nN &lt;- 300\n\nprimer &lt;- tibble(\n  pridruzena_varijabla = sample(0:1, N, replace = TRUE),\n  prediktor = runif(N, 0 , 1) + (0.3 * pridruzena_varijabla),\n  ishod = 2.0 + (0.5 * prediktor) + (0.25 * pridruzena_varijabla)\n)\n\n\n\n \n\n  \n    \n    \n    tinytable_zcecthpzz2oatfavu1lg\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                pridruzena_varijabla\n                prediktor\n                ishod\n              \n        \n        \n        \n                \n                  0\n                  0.1618092\n                  2.080905\n                \n                \n                  0\n                  0.4054165\n                  2.202708\n                \n                \n                  1\n                  0.6418144\n                  2.570907\n                \n                \n                  0\n                  0.4152575\n                  2.207629\n                \n                \n                  1\n                  0.6040525\n                  2.552026\n                \n                \n                  0\n                  0.5602805\n                  2.280140"
+    "text": "Šta je statistička kontrola?\n\n\nN &lt;- 300\n\nprimer &lt;- tibble(\n  pridruzena_varijabla = sample(0:1, N, replace = TRUE),\n  prediktor = runif(N, 0 , 1) + (0.3 * pridruzena_varijabla),\n  ishod = 2.0 + (0.5 * prediktor) + (0.25 * pridruzena_varijabla)\n)\n\n\n\n \n\n  \n    \n    \n    tinytable_f1xdtrkmto5329rb20wz\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                pridruzena_varijabla\n                prediktor\n                ishod\n              \n        \n        \n        \n                \n                  0\n                  0.9336965\n                  2.466848\n                \n                \n                  1\n                  0.8425316\n                  2.671266\n                \n                \n                  0\n                  0.2194225\n                  2.109711\n                \n                \n                  1\n                  0.7894278\n                  2.644714\n                \n                \n                  1\n                  1.1011487\n                  2.800574\n                \n                \n                  1\n                  0.7076307\n                  2.603815"
   },
   {
     "objectID": "slides/10_regresija/prezentacija.html#kontrolisanje-putem-regresije",
     "href": "slides/10_regresija/prezentacija.html#kontrolisanje-putem-regresije",
-    "title": "Korelacija i regresija",
+    "title": "Regresija",
     "section": "Kontrolisanje putem regresije",
-    "text": "Kontrolisanje putem regresije\n\nlm(ishod ~ prediktor, data = primer)\n\n\nCall:\nlm(formula = ishod ~ prediktor, data = primer)\n\nCoefficients:\n(Intercept)    prediktor  \n     2.0054       0.6846  \n\n\n\nlm(ishod ~ prediktor + pridruzena_varijabla, data = primer)\n\n\nCall:\nlm(formula = ishod ~ prediktor + pridruzena_varijabla, data = primer)\n\nCoefficients:\n         (Intercept)             prediktor  pridruzena_varijabla  \n                2.00                  0.50                  0.25"
+    "text": "Kontrolisanje putem regresije\n\nlm(ishod ~ prediktor, data = primer)\n\n\nCall:\nlm(formula = ishod ~ prediktor, data = primer)\n\nCoefficients:\n(Intercept)    prediktor  \n     2.0076       0.6929  \n\n\n\nlm(ishod ~ prediktor + pridruzena_varijabla, data = primer)\n\n\nCall:\nlm(formula = ishod ~ prediktor + pridruzena_varijabla, data = primer)\n\nCoefficients:\n         (Intercept)             prediktor  pridruzena_varijabla  \n                2.00                  0.50                  0.25"
   },
   {
     "objectID": "slides/10_regresija/prezentacija.html#šta-ako-se-ne-slažu-korelacije",
@@ -2462,5 +2462,390 @@
     "title": "Korelacija i regresija",
     "section": "Šta ako se ne slažu korelacije?",
     "text": "Šta ako se ne slažu korelacije?\n\n\n\nx &lt;- 0:20\ny &lt;- exp(x)\n\n\n\n\n\n\n\n\n\n\n\nPearsonova korelacija:\n\n\n     cor \n0.527173 \n\n\nSpearmanova korelacija:\n\n\nrho \n  1 \n\n\nAko je Spearman \\(\\gt\\) Pearson, znači da imamo monotonu (uzlaznu ili silaznu) povezanost, a ne linearnu povezanost."
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#korelacija-i-kauzalnost",
+    "href": "slides/09_korelacija/prezentacija.html#korelacija-i-kauzalnost",
+    "title": "Korelacija i regresija",
+    "section": "Korelacija i kauzalnost",
+    "text": "Korelacija i kauzalnost\n\n\n\n\n\nNetačna pretpostavka da korelacija podrazumeva uzročnu vezu je verovatno jedna od dve ili tri najveće greške u čovekovom zaključivanju.\n\n— Stephen Jay Gould (1941 - 2002)"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#section",
+    "href": "slides/09_korelacija/prezentacija.html#section",
+    "title": "Korelacija i regresija",
+    "section": "",
+    "text": "Ljudi su prirodno dobri\nu kauzalnom zaključivaju.\nKorelacija \\(\\not =\\) Kauzalnost"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#neverovatne-povezanosti",
+    "href": "slides/09_korelacija/prezentacija.html#neverovatne-povezanosti",
+    "title": "Korelacija i regresija",
+    "section": "Neverovatne povezanosti",
+    "text": "Neverovatne povezanosti"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#julski-efekat",
+    "href": "slides/09_korelacija/prezentacija.html#julski-efekat",
+    "title": "Korelacija i regresija",
+    "section": "Julski efekat",
+    "text": "Julski efekat"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#vrste-povezanosti",
+    "href": "slides/09_korelacija/prezentacija.html#vrste-povezanosti",
+    "title": "Korelacija i regresija",
+    "section": "Vrste povezanosti",
+    "text": "Vrste povezanosti"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#varljivi-podaci",
+    "href": "slides/09_korelacija/prezentacija.html#varljivi-podaci",
+    "title": "Korelacija i regresija",
+    "section": "Varljivi podaci",
+    "text": "Varljivi podaci"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#primer-lipidi-i-insulinska-rezistencija-1",
+    "href": "slides/09_korelacija/prezentacija.html#primer-lipidi-i-insulinska-rezistencija-1",
+    "title": "Korelacija i regresija",
+    "section": "Primer: lipidi i insulinska rezistencija (1)",
+    "text": "Primer: lipidi i insulinska rezistencija (1)\n\n\n\\(H:\\) Lipidni sastav membrane skeletnih mišićih ćelija utiče na insulinsku rezistenciju.\nBorkman et al. (1993)"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#primer-lipidi-i-insulinska-rezistencija-2",
+    "href": "slides/09_korelacija/prezentacija.html#primer-lipidi-i-insulinska-rezistencija-2",
+    "title": "Korelacija i regresija",
+    "section": "Primer: lipidi i insulinska rezistencija (2)",
+    "text": "Primer: lipidi i insulinska rezistencija (2)\n\n\n\nScatterplot (dijagram rasturanja)\nKako da opišemo odnos ove dve varijable?\n\n\n\nKorelacija"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#karakteristike-linearne-povezanosti",
+    "href": "slides/09_korelacija/prezentacija.html#karakteristike-linearne-povezanosti",
+    "title": "Korelacija i regresija",
+    "section": "Karakteristike linearne povezanosti",
+    "text": "Karakteristike linearne povezanosti\n\n\n\nSmer (pozitivan \\(+\\), negativan \\(-\\))\nStepen (od \\(-1\\) do \\(+1\\), “jačina” povezanosti)\nOblik (Linearan, nelinearan)\nScatterplot (dijagram rasturanja)"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#vežba-napraviti-dijagram-rasturanja",
+    "href": "slides/09_korelacija/prezentacija.html#vežba-napraviti-dijagram-rasturanja",
+    "title": "Korelacija i regresija",
+    "section": "Vežba: napraviti dijagram rasturanja",
+    "text": "Vežba: napraviti dijagram rasturanja\n\nUčitati bazu DZ.\nPrikazati grafički vezu između starosti i ukupnog holesterola?\nPrikazati grafički vezu između triglicerida i stepena uhranjenosti?"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#korelacioni-koeficijent",
+    "href": "slides/09_korelacija/prezentacija.html#korelacioni-koeficijent",
+    "title": "Korelacija i regresija",
+    "section": "Korelacioni koeficijent",
+    "text": "Korelacioni koeficijent\n\nDefinicija\n\nKoeficijent korelacije je statistika koja kvantifikuje jačinu povezanosti varijabli.\n\n\n\nPearsonov koeficijent korelacije (r)\nSpearmanov koeficijent korelacije ranga (\\(\\rho\\))"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#simetričnost-korelacija",
+    "href": "slides/09_korelacija/prezentacija.html#simetričnost-korelacija",
+    "title": "Korelacija i regresija",
+    "section": "Simetričnost korelacija",
+    "text": "Simetričnost korelacija\n\n\n\n\n\n\nMasne kiseline predviđaju insulinsku senzitivnost.\n\n\n\n\n\n\n\nInsulinska senzitivnost predviđa masne kiseline."
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#pearsonov-koeficijent-korelacije",
+    "href": "slides/09_korelacija/prezentacija.html#pearsonov-koeficijent-korelacije",
+    "title": "Korelacija i regresija",
+    "section": "Pearsonov koeficijent korelacije",
+    "text": "Pearsonov koeficijent korelacije\n\\(H_0:\\) Ispitivane varijable nisu linearno povezane.\nUslovi:\n\nNezavisne opservacije\nNormalna raspodela u populaciji\nSvaka varijabla mora da ima svog para\nPretpostavlja linearan odnos varijabli"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#tumačenje-rezultata-pearsonove-korelacije",
+    "href": "slides/09_korelacija/prezentacija.html#tumačenje-rezultata-pearsonove-korelacije",
+    "title": "Korelacija i regresija",
+    "section": "Tumačenje rezultata Pearsonove korelacije",
+    "text": "Tumačenje rezultata Pearsonove korelacije\n\ncor.test(~ insulin + c20, data = bork, method = \"pearson\")\n\n\n    Pearson's product-moment correlation\n\ndata:  insulin and c20\nt = 4.9612, df = 18, p-value = 0.000101\nalternative hypothesis: true correlation is not equal to 0\n95 percent confidence interval:\n 0.4783589 0.8998777\nsample estimates:\n cor \n0.76"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#svi-ovi-podaci-imaju-iste-numeričke-osobine-ali",
+    "href": "slides/09_korelacija/prezentacija.html#svi-ovi-podaci-imaju-iste-numeričke-osobine-ali",
+    "title": "Korelacija i regresija",
+    "section": "Svi ovi podaci imaju iste numeričke osobine, ali…",
+    "text": "Svi ovi podaci imaju iste numeričke osobine, ali…\n\n\n \n\n  \n    \n    \n    tinytable_8md5q0pgspqk6pj5tusg\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                dataset\n                mean_x\n                sd_x\n                mean_y\n                sd_y\n                cor\n              \n        \n        \n        \n                \n                  away      \n                  54\n                  17\n                  48\n                  27\n                  -0.06\n                \n                \n                  bullseye  \n                  54\n                  17\n                  48\n                  27\n                  -0.07\n                \n                \n                  circle    \n                  54\n                  17\n                  48\n                  27\n                  -0.07\n                \n                \n                  dino      \n                  54\n                  17\n                  48\n                  27\n                  -0.06\n                \n                \n                  dots      \n                  54\n                  17\n                  48\n                  27\n                  -0.06\n                \n                \n                  h_lines   \n                  54\n                  17\n                  48\n                  27\n                  -0.06\n                \n                \n                  high_lines\n                  54\n                  17\n                  48\n                  27\n                  -0.07\n                \n                \n                  slant_down\n                  54\n                  17\n                  48\n                  27\n                  -0.07\n                \n                \n                  slant_up  \n                  54\n                  17\n                  48\n                  27\n                  -0.07\n                \n                \n                  star      \n                  54\n                  17\n                  48\n                  27\n                  -0.06\n                \n                \n                  v_lines   \n                  54\n                  17\n                  48\n                  27\n                  -0.07\n                \n                \n                  wide_lines\n                  54\n                  17\n                  48\n                  27\n                  -0.07\n                \n                \n                  x_shape   \n                  54\n                  17\n                  48\n                  27\n                  -0.07"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#uvek-vizualizovati-podatke",
+    "href": "slides/09_korelacija/prezentacija.html#uvek-vizualizovati-podatke",
+    "title": "Korelacija i regresija",
+    "section": "Uvek vizualizovati podatke!",
+    "text": "Uvek vizualizovati podatke!"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#spearmanov-koeficijent-korelacije",
+    "href": "slides/09_korelacija/prezentacija.html#spearmanov-koeficijent-korelacije",
+    "title": "Korelacija i regresija",
+    "section": "Spearmanov koeficijent korelacije",
+    "text": "Spearmanov koeficijent korelacije\n\\(H_0:\\) Ispitivane varijable nisu monotono povezane.\n\n\n\n\n\n\nSavet\n\n\nDaje verodostojnije rezultate kada podaci neispunjavaju uslove linearnosti ili normalne raspodele.\n\n\n\nUslovi:\n\nVarijabla nema normalnu raspodelu\nPodaci su ordinalni ili rangovi\nSvaka varijabla mora da ima svog para\nNelinearan odnos varijabli (scatterplot)\nMonotoničnost*"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#tumačenje-rezultata-spearmanove-korelacije",
+    "href": "slides/09_korelacija/prezentacija.html#tumačenje-rezultata-spearmanove-korelacije",
+    "title": "Korelacija i regresija",
+    "section": "Tumačenje rezultata Spearmanove korelacije",
+    "text": "Tumačenje rezultata Spearmanove korelacije\n\ncor.test(~ insulin + c20, data = bork, method = \"spearman\")\n\n\n    Spearman's rank correlation rho\n\ndata:  insulin and c20\nS = 372, p-value = 0.0004998\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.7203008"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#interpretacija-koeficijenta-korelacije",
+    "href": "slides/09_korelacija/prezentacija.html#interpretacija-koeficijenta-korelacije",
+    "title": "Korelacija i regresija",
+    "section": "Interpretacija koeficijenta korelacije",
+    "text": "Interpretacija koeficijenta korelacije"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#šta-ako-se-ne-slažu-korelacije",
+    "href": "slides/09_korelacija/prezentacija.html#šta-ako-se-ne-slažu-korelacije",
+    "title": "Korelacija i regresija",
+    "section": "Šta ako se ne slažu korelacije?",
+    "text": "Šta ako se ne slažu korelacije?\n\n\n\nx &lt;- 0:20\ny &lt;- exp(x)\n\n\n\n\n\n\n\n\n\n\n\nPearsonova korelacija:\n\n\n     cor \n0.527173 \n\n\nSpearmanova korelacija:\n\n\nrho \n  1 \n\n\nAko je Spearman \\(\\gt\\) Pearson, znači da imamo monotonu (uzlaznu ili silaznu) povezanost, a ne linearnu povezanost."
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#vežba-izračunavanje-korelacije",
+    "href": "slides/09_korelacija/prezentacija.html#vežba-izračunavanje-korelacije",
+    "title": "Korelacija i regresija",
+    "section": "Vežba: izračunavanje korelacije",
+    "text": "Vežba: izračunavanje korelacije\n\nProveriti normalnost (koeficijent varijacije)\nPearson ili Spearman\n\n\nUčitati bazu DZ.\nDa li postoji povezanost između starosti i ukupnog holesterola?\nDa li postoji povezanost između triglicerida i stepena uhranjenosti?"
+  },
+  {
+    "objectID": "slides/09_korelacija/prezentacija.html#struktura-kursa",
+    "href": "slides/09_korelacija/prezentacija.html#struktura-kursa",
+    "title": "Korelacija i regresija",
+    "section": "Struktura kursa",
+    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_wtx1jdo6yulflswu7ntm\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#problem-očekivanih-proporcija",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#problem-očekivanih-proporcija",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Problem očekivanih proporcija",
+    "text": "Problem očekivanih proporcija\n\n\n\nDa li mogu da proverim da li su me prevarili za boju M&M bombona ako očekujem da ih u kesici ima međusobno jednak broj?\n\n\n\n \n\n  \n    \n    \n    tinytable_kzc6k0z0o1vd7uzjjjn8\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Boja\n                Broj\n              \n        \n        \n        \n                \n                  Crvene\n                  30\n                \n                \n                  Plave \n                  33\n                \n                \n                  Zelene\n                  37"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#pirsonov-hi-kvardrat-test-slaganja",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#pirsonov-hi-kvardrat-test-slaganja",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Pirsonov hi-kvardrat test slaganja",
+    "text": "Pirsonov hi-kvardrat test slaganja\n\n\n \n\n  \n    \n    \n    tinytable_zdna6ctd5r45c5bc92tz\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Boja\n                Broj\n                Očekivanje\n                Kv. razlika\n                Hi-kvadrat promenljiva\n              \n        \n        \n        \n                \n                  Crvene\n                  30\n                  33.333\n                  11.109\n                  0.333\n                \n                \n                  Plave \n                  33\n                  33.333\n                   0.111\n                  0.003\n                \n                \n                  Zelene\n                  37\n                  33.333\n                  13.447\n                  0.403\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\n\\[ \\chi^2 = \\sum\\frac{(O_i - E_i)^2}{E_i} = 0.333 + 0.003 + 0.403 = 0.739\\]"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#tabela-kontigencije-kao-preduslov-za-test",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#tabela-kontigencije-kao-preduslov-za-test",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Tabela kontigencije kao preduslov za test",
+    "text": "Tabela kontigencije kao preduslov za test\n\nStandardan način prikazivanja kategorijalnih podataka je preko tabele kontigencije.\nPredstavlja broj (ili proporciju) opservacija koje pripadaju svim mogućim kombinacijama kategorija.\n\n\n\n \n\n  \n    \n    \n    tinytable_sifw512kijvwxxatwezs\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nodularne promene\n                Alkohol: Da\n                Alkohol: Ne\n              \n        \n        \n        \n                \n                  Ne\n                  16\n                  79\n                \n                \n                  Da\n                  10\n                  13"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#pirsonov-hi-kvradrat-test-za-r-times-k-tabele",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#pirsonov-hi-kvradrat-test-za-r-times-k-tabele",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Pirsonov hi-kvradrat test za r \\(\\times\\) k tabele",
+    "text": "Pirsonov hi-kvradrat test za r \\(\\times\\) k tabele\nPrimer"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#x3-tabela",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#x3-tabela",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "3x3 tabela",
+    "text": "3x3 tabela"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#mcnemarov-test",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#mcnemarov-test",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "McNemarov test",
+    "text": "McNemarov test\n\n\n\nMcNemarov test je metod za testiranje dva vezana (zavisna) uzorka\nIste jedinice su opservirane više puta\nMečovane jedinice dva uzorka\n\n\n\n\n \n\n  \n    \n    \n    tinytable_dffd30624q5q5v45qkml\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                \n                Test 2 +\n                Test 2 -\n              \n        \n        \n        \n                \n                  Test 1 +\n                  a\n                  b\n                \n                \n                  Test 1 -\n                  c\n                  d\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\\[ \\chi^2 = \\frac{(b - c)^2}{b + c} \\]"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#fisherov-test-tačne-verovatnoće",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#fisherov-test-tačne-verovatnoće",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Fisherov test tačne verovatnoće",
+    "text": "Fisherov test tačne verovatnoće\n\n\n\nMože se koristiti uvek\nKonzervativan je, te se koristi samo ako se ne može upotrebiti hi-kvadrat test\nUslovljen je marginama*\n\n\\[ p = \\frac{(a+b)!\\,(c+d)!\\,(a+c)!\\,(b+d)!}{n!\\,a!\\,b!\\,c!\\,d!} \\]"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#alkohol-i-hipertenzija-primer",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#alkohol-i-hipertenzija-primer",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Alkohol i hipertenzija primer",
+    "text": "Alkohol i hipertenzija primer"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#biranje-testa-do-sad",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#biranje-testa-do-sad",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Biranje testa (do sad)",
+    "text": "Biranje testa (do sad)\n\n\n \n\n  \n    \n    \n    tinytable_zqm2e6xuhhy8eg6t708y\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Tip testa\n                Parametarski\n                Neparametarski\n              \n        \n        \n        \n                \n                  Jedan uzorak \n                  t-test za jedan uzorak\n                  hi-kvadrat test slaganja\n                \n                \n                  Dva nezavisna\n                  t-test                \n                  hi-kvadrat/Fisherov test\n                \n                \n                  Dva zavisna  \n                  t-test za zavisne     \n                  McNemarov test"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#neispravno-iskorićen-test",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#neispravno-iskorićen-test",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Neispravno iskorićen test",
+    "text": "Neispravno iskorićen test\nRelation between insufficient response to antihzpertensive treatment and pooor complience with treatment: a prospective case-control study"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#hi-kvadrat-raspodela",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#hi-kvadrat-raspodela",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Hi-kvadrat raspodela",
+    "text": "Hi-kvadrat raspodela"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-hi-kvadratnog-testa-slaganja",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-hi-kvadratnog-testa-slaganja",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Interpretacija hi-kvadratnog testa slaganja",
+    "text": "Interpretacija hi-kvadratnog testa slaganja\n\nchisq.test(x = c(30, 33, 37), p = c(33, 33, 33), rescale.p = TRUE)\n\n\n    Chi-squared test for given probabilities\n\ndata:  c(30, 33, 37)\nX-squared = 0.74, df = 2, p-value = 0.6907\n\n\n\\(H_0:\\) Proporcije opserviranih kategorija se ne razlikuju od teoretskih proporcija.\n\\(H_1:\\) Proporcije opserviranih kategorija se razlikuju od teoretskih proporcija.\n\n“Proporcije testiranih kategorija se statistički značajno ne razlikuju od teoretskih proporcija.”"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#vežba-očekivane-vrednosti-abo-krvne-grupe",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#vežba-očekivane-vrednosti-abo-krvne-grupe",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Vežba: očekivane vrednosti ABO krvne grupe",
+    "text": "Vežba: očekivane vrednosti ABO krvne grupe\n\nProveriti da li se opservirane učestalosti ABO krvnih grupa datih u tabeli razlikuju od očvekivanih\n\n\n\n \n\n  \n    \n    \n    tinytable_aj53uh4tqvrh16b6gtsj\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                \n                A\n                B\n                AB\n                O\n              \n        \n        \n        \n                \n                  Učestalost\n                  59\n                  19\n                  7\n                  55\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\nOčekivane učestalosti su:\n\nO: 44.5%, A: 38.9%, B: 12.1%, AB: 4.5%"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#the-pearson-chi-squared-test",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#the-pearson-chi-squared-test",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "The Pearson chi-squared test",
+    "text": "The Pearson chi-squared test\nThe Pearson chi-squared test allows us to test whether observed frequencies are different from expected frequencies, so we need to determine what frequencies we would expect in each cell if searches and race were unrelated – which we can define as being independent.\n\\[ P(X \\cap Y) = P(X) \\times P(Y) \\]\nKako se racuna ocekivan broj"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#asocijacija-između-sve-kategorije",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#asocijacija-između-sve-kategorije",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Asocijacija između sve kategorije?",
+    "text": "Asocijacija između sve kategorije?\n\n\n\nProblem: Da li je nodularnost konture jetre povezana sa konzumiranjem alkohola?"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#asocijacija-između-dve-kategorije",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#asocijacija-između-dve-kategorije",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Asocijacija između dve kategorije?",
+    "text": "Asocijacija između dve kategorije?\n\n\n\nProblem: Da li je nodularnost konture jetre povezana sa konzumiranjem alkohola?"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#obično-je-lakše-tumačiti-proporcije",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#obično-je-lakše-tumačiti-proporcije",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Obično je lakše tumačiti proporcije",
+    "text": "Obično je lakše tumačiti proporcije\n\n\n \n\n  \n    \n    \n    tinytable_pwyjz5ufz0a8ir5mdc6s\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nodularne promene\n                Alkohol: Da\n                Alkohol: Ne\n              \n        \n        \n        \n                \n                  Ne\n                  16\n                  79\n                \n                \n                  Da\n                  10\n                  13\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n \n\n  \n    \n    \n    tinytable_c007d7d7av5ja6i2lzl8\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nodularne promene\n                Alkohol: Da (proporcija)\n                Alkohol: Ne (proporcija)\n              \n        \n        \n        \n                \n                  Ne\n                  0.17\n                  0.83\n                \n                \n                  Da\n                  0.43\n                  0.57"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#kako-da-odredimo-očekivane-učestalosti",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#kako-da-odredimo-očekivane-učestalosti",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Kako da odredimo očekivane učestalosti",
+    "text": "Kako da odredimo očekivane učestalosti\n\nPirsonov hi-kvadrat test nam omogućava da testiramo da li se opservirane učestalosti razlikuju od očekivanih\nTreba da odredimo koje učestalosti očekujemo ako kategorije nisu međusobno povezane (nezavisne su)\n\nMožemo se poslužiti osobinom verovatnoće:\n\\[ P(X \\cap Y) = P(X) \\times P(Y) \\]"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#ručno-računanje-očekivanih-učestalosti",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#ručno-računanje-očekivanih-učestalosti",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Ručno računanje očekivanih učestalosti",
+    "text": "Ručno računanje očekivanih učestalosti\n\n\n \n\n  \n    \n    \n    tinytable_vsjsa8apgl4aa5pxp9g0\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nodularne promene\n                Alkohol: Da\n                Alkohol: Ne\n                Margina\n              \n        \n        \n        \n                \n                  Ne     \n                  P(Bez nodularnih)*P(Alkohol)\n                  P(Bez nodularnih)*P(Bez Alkohola)\n                  P(Bez nodularnih)\n                \n                \n                  Da     \n                  P(Nodularne)*P(Alkohol)     \n                  P(Nodularne)*P(Bez Alkohola)     \n                  P(Nodularne)     \n                \n                \n                  Margina\n                  P(Alkohol)                  \n                  P(Bez Alkohola)                  \n                  Ukupno"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-pirsonovog-hi-kvadrat-testa-za-r-times-k-tabele",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-pirsonovog-hi-kvadrat-testa-za-r-times-k-tabele",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Interpretacija Pirsonovog hi-kvadrat testa za r \\(\\times\\) k tabele",
+    "text": "Interpretacija Pirsonovog hi-kvadrat testa za r \\(\\times\\) k tabele\n\nrezultati &lt;- chisq.test(nodularnost_dat, correct = FALSE)\nrezultati\n\n\n    Pearson's Chi-squared test\n\ndata:  nodularnost_dat\nX-squared = 7.6474, df = 1, p-value = 0.005685"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#vežba-pirsonov-hi-kvadrat-test-za-r-times-k-tabele",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#vežba-pirsonov-hi-kvadrat-test-za-r-times-k-tabele",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Vežba: Pirsonov hi-kvadrat test za r \\(\\times\\) k tabele",
+    "text": "Vežba: Pirsonov hi-kvadrat test za r \\(\\times\\) k tabele\n\nUneti sledeće opservacije i interpretirati rezultat\n\n\n\n \n\n  \n    \n    \n    tinytable_0t07byi81rf5c723g9ae\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Pacijent\n                Tonzilektomija\n                Bez tonzilektomije\n              \n        \n        \n        \n                \n                  Hodžkinova bolest\n                  41\n                  44\n                \n                \n                  Kontrola         \n                  33\n                  52"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-mcnemarovog-testa",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-mcnemarovog-testa",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Interpretacija McNemarovog testa",
+    "text": "Interpretacija McNemarovog testa\n\\(H_0:\\) Tabela kontigencije je simetrična.\n\\(H_1:\\) Tabela kontigencije nije simetrična.\n\n\n\n\n \n\n  \n    \n    \n    tinytable_7okhu56gr6jhsgw11cn2\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                pre\n                posle\n              \n        \n        \n        \n                \n                  0\n                  1\n                \n                \n                  1\n                  1\n                \n                \n                  0\n                  1\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\nTabela kontigencije za parove:\n\n\n   posle\npre  0  1\n  0 18 35\n  1 13 34\n\n\nRezultat:\n\n\n\n    McNemar's Chi-squared test\n\ndata:  .\nMcNemar's chi-squared = 10.083, df = 1, p-value = 0.001496"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#vežba-mcnemarov-test",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#vežba-mcnemarov-test",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Vežba: McNemarov test",
+    "text": "Vežba: McNemarov test\n\nPreuzeti i analizirati bazu podataka Aritmije.xlsx\nInterpretirati rezultat"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#section",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#section",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "",
+    "text": "Alkohol\nNodularnost Da Ne\n         Ne 16 79\n         Da 10 13\n\n\n           Alkohol\nNodularnost        Da      Ne\n         Ne 20.932203 74.0678\n         Da  5.067797 17.9322\n\n\n           Alkohol\nNodularnost        Da         Ne\n         Ne -1.078037  0.5730945\n         Da  2.190945 -1.1647270"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-pirsonovog-hi-kvadrat-testa-za-r-times-k-tabele-1",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-pirsonovog-hi-kvadrat-testa-za-r-times-k-tabele-1",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Interpretacija Pirsonovog hi-kvadrat testa za r \\(\\times\\) k tabele (1)",
+    "text": "Interpretacija Pirsonovog hi-kvadrat testa za r \\(\\times\\) k tabele (1)\n\nrezultati &lt;- chisq.test(nodularnost_dat, correct = FALSE)\nrezultati\n\n\n    Pearson's Chi-squared test\n\ndata:  nodularnost_dat\nX-squared = 7.6474, df = 1, p-value = 0.005685\n\n\n\n“Postoji statistički značajna asocijacija između nodularne konture jetre i konzumiranja alkohola.”"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-pirsonovog-hi-kvadrat-testa-za-r-times-k-tabele-1-1",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-pirsonovog-hi-kvadrat-testa-za-r-times-k-tabele-1-1",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Interpretacija Pirsonovog hi-kvadrat testa za r \\(\\times\\) k tabele (1)",
+    "text": "Interpretacija Pirsonovog hi-kvadrat testa za r \\(\\times\\) k tabele (1)\nOpservacije (originalni podaci):\n\n\n           Alkohol\nNodularnost Da Ne\n         Ne 16 79\n         Da 10 13\n\n\nOčekivani podaci (svi moraju biti \\(&gt;5\\)):\n\n\n           Alkohol\nNodularnost        Da      Ne\n         Ne 20.932203 74.0678\n         Da  5.067797 17.9322\n\n\nReziduali (opcionalno; govori gde je višak?):\n\n\n           Alkohol\nNodularnost        Da         Ne\n         Ne -1.078037  0.5730945\n         Da  2.190945 -1.1647270"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-pirsonovog-hi-kvadrat-testa-za-r-times-k-tabele-2",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-pirsonovog-hi-kvadrat-testa-za-r-times-k-tabele-2",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Interpretacija Pirsonovog hi-kvadrat testa za r \\(\\times\\) k tabele (2)",
+    "text": "Interpretacija Pirsonovog hi-kvadrat testa za r \\(\\times\\) k tabele (2)\nOpservacije (originalni podaci):\n\n\n           Alkohol\nNodularnost Da Ne\n         Ne 16 79\n         Da 10 13\n\n\nOčekivani podaci (svi moraju biti \\(&gt;5\\)):\n\n\n           Alkohol\nNodularnost        Da      Ne\n         Ne 20.932203 74.0678\n         Da  5.067797 17.9322"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-hi-kvadrat-testa-za-r-times-k-tabele-1",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-hi-kvadrat-testa-za-r-times-k-tabele-1",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Interpretacija hi-kvadrat testa za r \\(\\times\\) k tabele (1)",
+    "text": "Interpretacija hi-kvadrat testa za r \\(\\times\\) k tabele (1)\n\nrezultati &lt;- chisq.test(nodularnost_dat, correct = FALSE)\nrezultati\n\n\n    Pearson's Chi-squared test\n\ndata:  nodularnost_dat\nX-squared = 7.6474, df = 1, p-value = 0.005685"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-hi-kvadrat-testa-za-r-times-k-tabele-2",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#interpretacija-hi-kvadrat-testa-za-r-times-k-tabele-2",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Interpretacija hi-kvadrat testa za r \\(\\times\\) k tabele (2)",
+    "text": "Interpretacija hi-kvadrat testa za r \\(\\times\\) k tabele (2)\nOpservacije (originalni podaci):\n\n\n           Alkohol\nNodularnost Da Ne\n         Ne 16 79\n         Da 10 13\n\n\nOčekivani podaci (svi moraju biti \\(&gt;5\\)):\n\n\n           Alkohol\nNodularnost        Da      Ne\n         Ne 20.932203 74.0678\n         Da  5.067797 17.9322"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#vežba-fisherov-test-tačne-verovatnoće",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#vežba-fisherov-test-tačne-verovatnoće",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Vežba: Fisherov test tačne verovatnoće",
+    "text": "Vežba: Fisherov test tačne verovatnoće\n\nPreuzeti i analizirati bazu podataka Alkohol i hipertenzija.xlsx\nInterpretirati rezultat"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#primer",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#primer",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Primer",
+    "text": "Primer\n\n\n\n    Fisher's Exact Test for Count Data\n\ndata:  tea_data\np-value = 0.02857\nalternative hypothesis: true odds ratio is not equal to 1\n95 percent confidence interval:\n 1.339059      Inf\nsample estimates:\nodds ratio \n       Inf"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#žena-koja-pije-čaj",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#žena-koja-pije-čaj",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Žena koja pije čaj",
+    "text": "Žena koja pije čaj\n\n\n\n\n \n\n  \n    \n    \n    tinytable_lflswu7ntmvgpmpz7ez2\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                \n                Mleko prvo\n                Čaj prvo\n                Ukupno\n              \n        \n        \n        \n                \n                  Pogađala Mleko\n                  4\n                  0\n                  4\n                \n                \n                  Pogađala Čaj  \n                  0\n                  4\n                  4\n                \n                \n                  Ukupno        \n                  4\n                  4\n                  8\n                \n        \n      \n    \n\n    \n\n  \n\n\n\n\n\n\n\n    Fisher's Exact Test for Count Data\n\ndata:  tea_data\np-value = 0.01429\nalternative hypothesis: true odds ratio is greater than 1\n95 percent confidence interval:\n 2.003768      Inf\nsample estimates:\nodds ratio \n       Inf"
+  },
+  {
+    "objectID": "slides/07_hi_kvadrat/prezentacija.html#primer-biranja-testa",
+    "href": "slides/07_hi_kvadrat/prezentacija.html#primer-biranja-testa",
+    "title": "Testiranje hipoteza o učestalostima",
+    "section": "Primer biranja testa",
+    "text": "Primer biranja testa"
   }
 ]

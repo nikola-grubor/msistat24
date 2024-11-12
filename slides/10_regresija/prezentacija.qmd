@@ -1,5 +1,5 @@
 ---
-title: "Korelacija i regresija"
+title: "Regresija"
 date: last-modified
 author: "Dr Nikola Grubor"
 # institute: "Institut za Medicinsku Statistiku i Informatiku"
@@ -14,66 +14,6 @@ library(tinytable)
 library(gtsummary)
 source(file = here("slides", "theme", "ggthemes.R"))
 ```
-
-# Korelacija
-
-## Korelacija i kauzalnost
-
-:::: columns
-
-::: {.column}
-
-![](slike/gould.jpg)
-
-:::
-
-::: {.column}
-
-> Netačna pretpostavka da korelacija podrazumeva uzročnu vezu je verovatno jedna od dve ili tri najveće greške u čovekovom zaključivanju.
-
---- Stephen Jay Gould (1941 - 2002)
-
-:::
-
-::::
-
-## {background-image="slike/palm.jpg"}
-
-:::: columns
-
-::: {.column}
-
-::: {.r-fit-text}
-
-[Ljudi su prirodno dobri]{.black}
-
-[u kauzalnom zaključivaju.]{.black}
-
-[Korelacija $\not =$ Kauzalnost]{.black}
-
-:::
-
-:::
-
-::: {.column}
-
-:::
-
-::::
-
-## Neverovatne povezanosti
-
-::: {.r-stack}
-
-![](slike/spurious1.png){fig-align="center"}
-
-![](slike/spurious2.png){.fragment fig-align="center"}
-
-:::
-
-## Julski efekat
-
-![](slike/july.png){fig-align="center"}
 
 ## Vrste povezanosti
 
@@ -167,299 +107,6 @@ rethinking::drawdag( ex4 , cex = 2, lwd = 2, radius = 6,
 
 ::::
 
-## Varljivi podaci
-
-![](slike/choco.png){fig-align="center"}
-
-## Primer: lipidi i insulinska rezistencija (1)
-
-:::: columns
-
-::: {.column}
-
-$H:$ Lipidni sastav membrane skeletnih mišićih ćelija utiče na insulinsku rezistenciju.
-
-*Borkman et al. (1993)*
-
-:::
-
-::: {.column}
-
-![](slike/resist.gif)
-
-![](slike/igf.gif){width=75%}
-
-:::
-
-::::
-
-## Primer: lipidi i insulinska rezistencija (2)
-
-:::: columns
-
-::: {.column}
-
-- Scatterplot (dijagram rasturanja)
-- Kako da opišemo odnos ove dve varijable?
-
-::: {.fragment}
-- [Korelacija]{.yellow}
-:::
-
-:::
-
-::: {.column}
-
-```{r}
-#| fig-asp: 1
-set.seed(123)
-
-bork <- MASS::mvrnorm(n = 20,
-                      mu = c(300, 20),
-                      Sigma = matrix(c(100^2, 0.76*100*1,
-                                     0.76*100*1, 1^2),
-                                     nrow = 2),
-                      empirical = TRUE) %>% 
-  as.data.frame() %>% 
-  rename(insulin = V1, c20 = V2)
-
-bork %>% 
-  ggplot(aes(x = c20, y = insulin)) +
-  geom_point(col = "white", size = 8) +
-  ggdist::theme_ggdist(base_size = 34) +
-  theme_blue() +
-  labs(x = "%C20-22 masnih kiselina",
-       y = "Senzitivnost insulina (mg/m2/min)")
-```
-
-:::
-
-::::
-
-## {background-image="slike/corr.svg" data-menu-title="Spektar korelacija"}
-
-## Karakteristike linearne povezanosti
-
-:::: columns
-
-::: {.column}
-
-- [Smer]{.yellow} (pozitivan $+$, negativan $-$)
-- [Stepen]{.yellow} (od $-1$ do $+1$, "jačina" povezanosti)
-- [Oblik]{.yellow} (Linearan, nelinearan)
-- Scatterplot (dijagram rasturanja)
-
-:::
-
-::: {.column}
-
-```{r}
-#| fig-asp: 1
-
-bork %>% 
-  ggplot(aes(x = c20, y = insulin)) +
-  geom_point(col = "white", size = 8) +
-  ggdist::theme_ggdist(base_size = 34) +
-  theme_blue() +
-  labs(x = "%C20-22 masnih kiselina",
-       y = "Senzitivnost insulina (mg/m2/min)")
-```
-
-:::
-
-::::
-
-## Vežba: napraviti dijagram rasturanja 
-
-::: {.r-fit-text}
-
-Učitati [bazu DZ]{.yellow}.
-
-Prikazati grafički vezu između [starosti]{.yellow} i [ukupnog holesterola]{.yellow}?
-
-Prikazati grafički vezu između [triglicerida]{.yellow} i [stepena uhranjenosti]{.yellow}?
-
-:::
-
-## Korelacioni koeficijent
-
-Definicija
-  : Koeficijent korelacije je statistika koja kvantifikuje jačinu povezanosti varijabli.
-
-- [Pearsonov]{.yellow} koeficijent korelacije (r)
-- [Spearmanov]{.yellow} koeficijent korelacije ranga ($\rho$)
-
-## Simetričnost korelacija
-
-```{r}
-#| layout-ncol: 2
-#| fig-asp: 1
-#| fig-subcap: 
-#|   - "Masne kiseline predviđaju insulinsku senzitivnost."
-#|   - "Insulinska senzitivnost predviđa masne kiseline."
-
-bork %>% 
-  ggplot(aes(x = c20, y = insulin)) +
-  geom_segment(x = -Inf, xend = 21.24594	, y = 342.3053, yend = 342.3053,
-               color = "#F4BA02", linetype = 2, linewidth = 2) +
-  geom_segment(x = 21.24594	, xend = 21.24594	, y = -Inf, yend = 342.3053, 
-               color = "#F4BA02", linetype = 2, linewidth = 2) +
-  geom_smooth(method = "lm", se = FALSE, col = "tomato", alpha = 1/3) +
-  geom_point(col = "white", size = 8) +
-  ggdist::theme_ggdist(base_size = 34) +
-  theme_blue() +
-  labs(x = "%C20-22 masnih kiselina",
-       y = "Senzitivnost insulina (mg/m2/min)")
-
-bork %>% 
-  ggplot(aes(y = c20, x = insulin)) +
-  geom_segment(x = -Inf, xend = 342.3053	, y = 21.24594, yend = 21.24594,
-               color = "#F4BA02", linetype = 2, linewidth = 2) +
-  geom_segment(x = 342.3053	, xend = 342.3053	, y = -Inf, yend = 21.24594, 
-               color = "#F4BA02", linetype = 2, linewidth = 2) +
-  geom_smooth(method = "lm", se = FALSE, col = "tomato", alpha = 1/3) +
-  geom_point(col = "white", size = 8) +
-  ggdist::theme_ggdist(base_size = 34) +
-  theme_blue() +
-  labs(y = "%C20-22 masnih kiselina",
-       x = "Senzitivnost insulina (mg/m2/min)")
-```
-
-## Pearsonov koeficijent korelacije
-
-$H_0:$ Ispitivane varijable nisu [linearno]{.yellow} povezane.
-
-Uslovi:
-
-- Nezavisne opservacije
-- Normalna raspodela u populaciji
-- Svaka varijabla mora da ima svog para
-- Pretpostavlja linearan odnos varijabli
-
-## Tumačenje rezultata Pearsonove korelacije
-
-```{r}
-#| echo: true
-
-cor.test(~ insulin + c20, data = bork, method = "pearson")
-```
-
-## Svi ovi podaci imaju iste numeričke osobine, ali... {.scrollable}
-
-```{r}
-library(quartets)
-
-datasaurus_dozen |>
-  group_by(dataset) |>
-  summarise(mean_x = mean(x),
-            sd_x = sd(x),
-            mean_y = mean(y),
-            sd_y = sd(y),
-            cor = cor(x, y)) |>
-  tt(digits = 1) %>% 
-  style_tt(i = 0, fontsize = 0.7) %>% 
-  style_tt(fontsize = 0.7)
-```
-
-## Uvek vizualizovati podatke!
-
-```{r}
-
-ggplot(datasaurus_dozen, aes(x = x, y = y)) +
-  geom_point(col = "white") + 
-  geom_smooth(method = "lm", formula = "y ~ x", col = "#F4BA02", se = FALSE) +
-  facet_wrap(~dataset) +
-  theme_blue()
-```
-
-## Spearmanov koeficijent korelacije
-
-$H_0:$ Ispitivane varijable nisu [monotono]{.yellow} povezane.
-
-::: {.callout-tip}
-Daje verodostojnije rezultate kada podaci neispunjavaju uslove linearnosti ili normalne raspodele.
-:::
-
-Uslovi:
-
-1. Varijabla nema normalnu raspodelu
-2. Podaci su [ordinalni]{.yellow} ili rangovi
-3. Svaka varijabla mora da ima svog para
-4. Nelinearan odnos varijabli (scatterplot)
-5. Monotoničnost*
-
-## Tumačenje rezultata Spearmanove korelacije
-
-```{r}
-#| echo: true
-
-cor.test(~ insulin + c20, data = bork, method = "spearman")
-```
-
-## Interpretacija koeficijenta korelacije
-
-![](slike/interpretacija.jpg){fig-align="center"}
-
-## Šta ako se ne slažu korelacije?
-
-:::: columns
-
-::: {.column}
-
-```{r}
-#| echo: true
-x <- 0:20
-y <- exp(x)
-```
-
-```{r}
-#| fig-asp: 1
-plot(x, y)
-```
-
-:::
-
-::: {.column}
-
-Pearsonova korelacija:
-
-```{r}
-cor.test(x, y, method = "pearson")$estimate
-```
-
-Spearmanova korelacija:
-
-```{r}
-cor.test(x, y, method = "spearman")$estimate
-```
-
-Ako je Spearman $\gt$ Pearson, znači da imamo monotonu (uzlaznu ili silaznu) povezanost, a ne linearnu povezanost.
-
-:::
-
-::::
-
-## Vežba: izračunavanje korelacije
-
-1. Proveriti normalnost (koeficijent varijacije)
-2. Pearson ili Spearman
-
-::: {.r-fit-text}
-
-Učitati [bazu DZ]{.yellow}.
-
-Da li postoji povezanost između [starosti]{.yellow} i [ukupnog holesterola]{.yellow}?
-
-Da li postoji povezanost između [triglicerida]{.yellow} i [stepena uhranjenosti]{.yellow}?
-
-:::
-
-## {background-image="slike/corr_xkcd.png" background-size="contain"  data-menu-title="Korelacija i kauzalnost"}
-
-# Regresija
-
-![](slike/reg.png){fig-align="right"}
-
 ## Metematički model
 
 :::: columns
@@ -475,6 +122,20 @@ Da li postoji povezanost između [triglicerida]{.yellow} i [stepena uhranjenosti
 ::::
 
 ## Anatomija regresione jednačine (1)
+
+```{r}
+#| fig-asp: 1
+set.seed(123)
+
+bork <- MASS::mvrnorm(n = 20,
+                      mu = c(300, 20),
+                      Sigma = matrix(c(100^2, 0.76*100*1,
+                                     0.76*100*1, 1^2),
+                                     nrow = 2),
+                      empirical = TRUE) %>% 
+  as.data.frame() %>% 
+  rename(insulin = V1, c20 = V2)
+```
 
 :::: columns
 
@@ -612,6 +273,7 @@ $ R^2 = $ `{r} R2`
 ## Gde su pretpostavke ispunjene?
 
 ```{r}
+library(quartets)
 
 ggplot(anscombe_quartet, aes(x = x, y = y)) +
   geom_point(col = "white", size = 5) + 
