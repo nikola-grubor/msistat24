@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sr-Latn"><head>
+<html lang="en"><head>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -12,7 +12,7 @@
 
   <meta name="author" content="Dr Nikola Grubor">
   <meta name="dcterms.date" content="2024-11-20">
-  <title>Medicinska statistika i informatika - Testiranje hipoteza o rangovima</title>
+  <title>Medicinska statistika i informatika - Hypothesis Testing based on Rank Order</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -327,7 +327,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Testiranje hipoteza o rangovima</h1>
+  <h1 class="title">Hypothesis Testing based on Rank Order</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -339,21 +339,21 @@ Dr Nikola Grubor
 
   <p class="date">2024-11-20</p>
 </section>
-<section id="parametarski-i-neparametarski-testovi" class="slide level2 smaller">
-<h2>Parametarski i neparametarski testovi</h2>
+<section id="parametric-and-non-parametric-tests" class="slide level2 smaller">
+<h2>Parametric and non-parametric tests</h2>
 <div class="columns">
 <div class="column">
 <ul>
-<li>Testovi koji porede artmetičke sredine pretpostavljaju normalnu distribuciju</li>
-<li>Normalna raspodela definisana je <span class="yellow">parametrima</span>: arit. sred. i standard. devijacijom</li>
-<li>Testovi koji se ne oslanjaju na raspodele su <span class="yellow">neparametarski</span></li>
+<li>Tests comparing arithmetic means assume a normal distribution</li>
+<li>The normal distribution is defined by <span class="yellow">parameters</span>: mean and standard deviation</li>
+<li>Tests that do not rely on distributions are called <span class="yellow">non-parametric</span></li>
 </ul>
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="prezentacija_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+<p><img data-src="pres_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -361,299 +361,121 @@ Dr Nikola Grubor
 </div>
 </div>
 </section>
-<section id="recept-za-testiranje-nulte-hipoteze" class="slide level2">
-<h2>Recept za testiranje nulte hipoteze</h2>
+<section id="a-recipe-for-testing-the-null-hypothesis" class="slide level2">
+<h2>A recipe for testing the null hypothesis</h2>
 <ol type="1">
-<li>Formiranje <span class="yellow">hipoteze</span> koja predstavlja naše mišljenje (pre nego što smo videli podatke)</li>
-<li>Određivanje nulte i alternativne hipoteze</li>
-<li>Prikupljanje podataka <em>relevantnih</em> za našu hipotezu</li>
-<li>Napraviti model koji predstavlja podatke i izračunati <span class="yellow">test statistiku</span></li>
-<li>Izračunati verovatnoću da naši podaci daju dobijenu test statistiku ako je nulta hipoteza tačna</li>
-<li>Proceniti “statističku značajnost”</li>
+<li>Form a <span class="yellow">hypothesis</span> before seeing the data</li>
+<li>Determine the null and alternative hypothesis</li>
+<li>Collect <em>relevant</em> data</li>
+<li>Create a model that represents the data and calculate the <span class="yellow">test statistic</span></li>
+<li>Calculate the probability that our data gives the obtained test statistic if the null is true</li>
+<li>Assess “statistical significance”</li>
 </ol>
 </section>
-<section id="zašto-rangovi" class="slide level2">
-<h2>Zašto rangovi?</h2>
+<section id="why-use-ranks" class="slide level2">
+<h2>Why use ranks?</h2>
 <div class="columns">
 <div class="column">
 <ul>
-<li>Manje pretpostavki je bolje</li>
-<li>Podaci uglavnom nisu normalno raspodeljeni</li>
-<li>Gubimo statističku moć ukoliko podaci zapravo ispunjavaju uslove za parametrijski (npr. Studentov) test</li>
+<li>Fewer assumptions are better</li>
+<li>Normality rarely holds</li>
+<li>When assumptions are violated, obtained p-values are wrong</li>
 </ul>
-</div><div class="column">
-<p><img data-src="slike/jenga.png"></p>
-</div>
-</div>
-</section>
-<section id="test-sume-rangova" class="slide level2">
-<h2>Test sume rangova</h2>
-<p>Mann-Whitney U / Wilcoxon rank-sum test</p>
-
-<img data-src="slike/sumrank.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="uslovi-za-test-sume-rangova" class="slide level2">
-<h2>Uslovi za test sume rangova</h2>
-<p>Tip podataka:</p>
-<ul>
-<li>Numerički ne-normalni podaci, ordinalni podaci</li>
-</ul>
-<p>Uslovi:</p>
-<ul>
-<li>Uzorak čine nezavisne jedinice</li>
-<li>Podaci mogu da se rangiraju</li>
-</ul>
-<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Upozorenje</strong></p>
+<p><strong>Important</strong></p>
 </div>
 <div class="callout-content">
-<p>Ima manju statističku moć od parametarskih, ako su uslovi za parametarske testove ispunjeni.</p>
+<p>We lose statistical power if the data actually meet the conditions for a parametric (eg., Student’s) test</p>
+</div>
+</div>
+</div>
+</div><div class="column">
+<p><img data-src="slike/jenga.png"></p>
+</div>
+</div>
+</section>
+<section id="mann-whitney-u-wilcoxon-rank-sum-test" class="slide level2">
+<h2>Mann-Whitney U / Wilcoxon rank-sum test</h2>
+
+<img data-src="slike/sumrank.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="assumptions-of-the-rank-sum-test" class="slide level2">
+<h2>Assumptions of the rank sum test</h2>
+<p>Input:</p>
+<ul>
+<li>Numerical non-normal data, ordinal data</li>
+</ul>
+<p>Assumptions:</p>
+<ul>
+<li>The sample consists of independent observations</li>
+<li>Data can be ranked</li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>It has less statistical power than parametric tests, if the conditions for parametric tests are met.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="provera-normalnosti-numeričkih-podataka" class="slide level2">
-<h2>Provera normalnosti numeričkih podataka</h2>
+<section id="checking-for-normality" class="slide level2">
+<h2>Checking for normality</h2>
 <ul>
-<li><span class="yellow">Koeficijent varijacije</span></li>
-<li>Skew i Kurtosis</li>
+<li><span class="yellow">Coefficient of Variation</span></li>
+<li>Skew and Kurtosis</li>
 <li>QQ Plot</li>
 <li><span class="yellow">Histogram</span></li>
-<li>Statističkim testovima za normalnost</li>
+<li>Statistical tests for normality</li>
 </ul>
 </section>
-<section id="vežba-mww-test" class="slide level2">
-<h2>Vežba: MWW test</h2>
+<section id="exercise-mww-test" class="slide level2">
+<h2>Exercise: MWW test</h2>
 <div class="r-fit-text">
-<p>Ispitati da li se osobe sa različitim</p>
-<p>nadmorskim visinama prebivališta</p>
-<p>razlikuju prema koncentraciji fibrinogena.</p>
+<p>Examine whether people with different</p>
+<p>altitudes of residence</p>
+<p>differ according to the concentration of fibrinogen.</p>
 </div>
 
-<img data-src="slike/mwu.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="test-ekvivalentnih-parova" class="slide level2">
-<h2>Test ekvivalentnih parova</h2>
-<h3 id="wilcoxon-signed-rank-test">Wilcoxon signed rank test</h3>
-<p>Tip podataka:</p>
+<img data-src="slike/mwu_eng.jpeg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="wilcoxon-signed-rank-test" class="slide level2">
+<h2>Wilcoxon signed rank test</h2>
+<p>Input:</p>
 <ul>
-<li>Numerički ne-normalni podaci, ordinalni podaci</li>
+<li>Numerical non-normal data, ordinal data</li>
 </ul>
-<p>Uslovi:</p>
+<p>Assumptions:</p>
 <ul>
-<li>Uzorak čine <span class="yellow">zavisne</span> jedinice</li>
-<li>Podaci mogu da se rangiraju</li>
+<li>The sample consists of <span class="yellow">dependent</span> observations</li>
+<li>Data can be ranked</li>
 </ul>
 </section>
-<section id="vežba-test-ekvivalentnih-parova" class="slide level2">
-<h2>Vežba: Test ekvivalentnih parova</h2>
+<section id="exercise-wilcoxon-signed-rank-test" class="slide level2">
+<h2>Exercise: Wilcoxon signed rank test</h2>
 <div class="r-fit-text">
-<p>U bazi <span class="yellow">Aritmije MW W McN.xlsx</span> date su</p>
-<p>vrednosti Lp(a) pre početka terapije i</p>
-<p>mesec dana posle započete terapije.</p>
-<p>Cilj istraživača bio je da ispita da li dolazi</p>
-<p>do promene vrednosti Lp(a) posle davanja antilipemika.</p>
+<p>The database <span class="yellow">Depresion.xlsx</span></p>
+<p>contains pre- and post treatment</p>
+<p>depressive symptom measurements.</p>
+<p>Did the treatment affect them?</p>
 </div>
 </section>
-<section id="izbor-testa" class="slide level2">
-<h2>Izbor testa</h2>
+<section id="statistical-test-selection" class="slide level2">
+<h2>Statistical test selection</h2>
 <ul>
-<li>Jedan ili dva uzorka</li>
-<li>Ponovljena merenja ili ne</li>
-<li>Tip podataka (numerički, ordinalni, kategorije)</li>
-<li>Na osnovu deskriptivnih mera određujemo da li podaci ispunjavaju uslov normalnosti</li>
+<li>One or two samples</li>
+<li>Repeated measurements or not</li>
+<li>Data type (numeric, ordinal, categorical)</li>
+<li>Use data summaries to determine whether the data meet the normality assumption</li>
 </ul>
-</section>
-<section id="struktura-kursa" class="slide level2">
-<h2>Struktura kursa</h2>
-<div class="cell">
-<div class="cell-output-display">
- 
-
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinytable_l74n2xbyiigz610ozim2</title>
-    <style>
-.table td.tinytable_css_niz40fx4oa26czp7aydk, .table th.tinytable_css_niz40fx4oa26czp7aydk {    border-bottom: solid 0.1em #d3d8dc; }
-.table td.tinytable_css_iihnf4a7z1ccgoh1jwgl, .table th.tinytable_css_iihnf4a7z1ccgoh1jwgl {    font-size: 0.55em; }
-    </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-    </script>
-  
-
-  
-    <div class="container">
-      <table class="table table-borderless" id="tinytable_l74n2xbyiigz610ozim2" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
-        
-              <tr>
-                <th scope="col">Nedelja</th>
-                <th scope="col">Tema</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td> 1</td>
-                  <td>Uvod u medicinsku statistiku                                           </td>
-                </tr>
-                <tr>
-                  <td> 2</td>
-                  <td>Sređivanje podataka                                                    </td>
-                </tr>
-                <tr>
-                  <td> 3</td>
-                  <td>Statističko opisivanje podataka                                        </td>
-                </tr>
-                <tr>
-                  <td> 4</td>
-                  <td>Verovatnoća i raspodele verovatnoća                                    </td>
-                </tr>
-                <tr>
-                  <td> 5</td>
-                  <td>Populacija i uzorak                                                    </td>
-                </tr>
-                <tr>
-                  <td> 6</td>
-                  <td>Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama</td>
-                </tr>
-                <tr>
-                  <td> 7</td>
-                  <td>Testiranje hipoteza o učestalostima                                    </td>
-                </tr>
-                <tr>
-                  <td> 8</td>
-                  <td>Testiranje hipoteza o rangovima                                        </td>
-                </tr>
-                <tr>
-                  <td> 9</td>
-                  <td>Korelacija                                                             </td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>Regresija / Kolokvijum                                                 </td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td>Podaci, informacije i znanje                                           </td>
-                </tr>
-                <tr>
-                  <td>12</td>
-                  <td>Zdravstveni informacioni sistem                                        </td>
-                </tr>
-                <tr>
-                  <td>13</td>
-                  <td>Mere dijagnostičke tačnosti                                            </td>
-                </tr>
-                <tr>
-                  <td>14</td>
-                  <td>Medicinsko odlučivanje                                                 </td>
-                </tr>
-                <tr>
-                  <td>15</td>
-                  <td>Bioinformatika                                                         </td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <script>
-      function styleCell_tinytable_bv8enhvhohsax4j7hvh6(i, j, css_id) {
-        var table = document.getElementById("tinytable_l74n2xbyiigz610ozim2");
-        table.rows[i].cells[j].classList.add(css_id);
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_l74n2xbyiigz610ozim2');
-        var newRow = table.insertRow(i);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_tinytable_bv8enhvhohsax4j7hvh6(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_l74n2xbyiigz610ozim2");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
-        for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
-            }
-          }
-        }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
-      }
-
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(0, 0, 'tinytable_css_niz40fx4oa26czp7aydk') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(0, 1, 'tinytable_css_niz40fx4oa26czp7aydk') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(0, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(0, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(1, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(1, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(2, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(2, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(3, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(3, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(4, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(4, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(5, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(5, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(6, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(6, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(7, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(7, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(8, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(8, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(9, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(9, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(10, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(10, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(11, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(11, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(12, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(12, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(13, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(13, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(14, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(14, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(15, 0, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4j7hvh6(15, 1, 'tinytable_css_iihnf4a7z1ccgoh1jwgl') })
-    </script>
-
-  
-
-
-</div>
-</div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="slike/logo.png" class="slide-logo"></p>
@@ -1000,12 +822,12 @@ window.addEventListener('load', function () { styleCell_tinytable_bv8enhvhohsax4
         // flash "checked"
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Kopirano!");
+        button.setAttribute("title", "Copied!");
         let tooltip;
         if (window.bootstrap) {
           button.setAttribute("data-bs-toggle", "tooltip");
           button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Kopirano!");
+          button.setAttribute("data-bs-title", "Copied!");
           tooltip = new bootstrap.Tooltip(button, 
             { trigger: "manual", 
               customClass: "code-copy-button-tooltip",

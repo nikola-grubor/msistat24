@@ -39,7 +39,7 @@ dat <- data.frame(
     "[Populacija i uzorak](slides/05_uzorak/prezentacija.qmd)",
     "[Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama](slides/06_hipoteze/prezentacija.qmd)",
     "[Testiranje hipoteza o učestalostima](slides/07_hi_kvadrat/prezentacija.qmd)",
-    "[Testiranje hipoteza o rangovima](slides/08_rangovi/prezentacija.qmd)",
+    "[Testiranje hipoteza o rangovima](slides/08_rangovi/prezentacija.qmd) ([eng](slides/08_rangovi/pres.qmd))",
     "[Korelacija](slides/09_korelacija/prezentacija.qmd)",
     "[Regresija](slides/10_regresija/prezentacija.qmd)"
     # "[Podaci, informacije i znanje]()",

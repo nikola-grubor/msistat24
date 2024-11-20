@@ -1,0 +1,158 @@
+---
+title: "Hypothesis Testing based on Rank Order"
+date: last-modified
+author: "Dr Nikola Grubor"
+# institute: "Institut za Medicinsku Statistiku i Informatiku"
+logo: "slike/logo.png"
+---
+```{r}
+library(glue)
+library(here)
+library(tidyverse)
+library(tinytable)
+library(gtsummary)
+source(file = here("slides", "theme", "ggthemes.R"))
+```
+
+## Parametric and non-parametric tests {.smaller}
+
+:::: columns
+
+::: {.column}
+
+- Tests comparing arithmetic means assume a normal distribution
+- The normal distribution is defined by [parameters]{.yellow}: mean and standard deviation
+- Tests that do not rely on distributions are called [non-parametric]{.yellow}
+
+:::
+
+::: {.column}
+
+```{r}
+#| fig-asp: 1
+p1 <- ggplot(data = data.frame(x = c(-5, 5)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1),
+                col = "#F4BA02", linewidth = 1) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 2),
+                col = "#F4BA02", linetype = 2, linewidth = 1) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 3),
+                col = "#F4BA02", linetype = 3, linewidth = 1) +
+  ylab("") +
+  scale_y_continuous(breaks = NULL) +
+  ggdist::theme_ggdist(base_size = 18) +
+  theme_blue()
+p1
+```
+
+
+:::
+
+::::
+
+## A recipe for testing the null hypothesis
+
+1. Form a [hypothesis]{.yellow} before seeing the data
+2. Determine the null and alternative hypothesis
+3. Collect *relevant* data
+4. Create a model that represents the data and calculate the [test statistic]{.yellow}
+5. Calculate the probability that our data gives the obtained test statistic if the null is true
+6. Assess "statistical significance"
+
+## Why use ranks?
+
+:::: columns
+
+::: {.column}
+
+- Fewer assumptions are better
+- Normality rarely holds
+- When assumptions are violated, obtained p-values are wrong
+
+::: {.callout-important}
+
+We lose statistical power if the data actually meet the conditions for a parametric (eg., Student's) test
+
+:::
+
+:::
+
+::: {.column}
+
+![](slike/jenga.png)
+
+:::
+
+::::
+
+## Mann-Whitney U / Wilcoxon rank-sum test
+
+![](slike/sumrank.png){fig-align="center"}
+
+## Assumptions of the rank sum test
+
+Input:
+
+- Numerical non-normal data, ordinal data
+
+Assumptions:
+
+- The sample consists of independent observations
+- Data can be ranked
+
+::: {.callout-important}
+It has less statistical power than parametric tests, if the conditions for parametric tests are met.
+:::
+
+## Checking for normality
+
+- [Coefficient of Variation]{.yellow}
+- Skew and Kurtosis
+- QQ Plot
+- [Histogram]{.yellow}
+- Statistical tests for normality
+
+## Exercise: MWW test
+
+::: {.r-fit-text}
+
+Examine whether people with different
+
+altitudes of residence
+
+differ according to the concentration of fibrinogen.
+
+:::
+
+![](slike/mwu_eng.jpeg){fig-align="center"}
+
+## Wilcoxon signed rank test
+
+Input:
+
+- Numerical non-normal data, ordinal data
+
+Assumptions:
+
+- The sample consists of [dependent]{.yellow} observations
+- Data can be ranked
+
+## Exercise: Wilcoxon signed rank test
+
+::: {.r-fit-text}
+
+The database [Depresion.xlsx]{.yellow}
+
+contains pre- and post treatment
+
+depressive symptom measurements.
+
+Did the treatment affect them?
+
+:::
+
+## Statistical test selection
+
+- One or two samples
+- Repeated measurements or not
+- Data type (numeric, ordinal, categorical)
+- Use data summaries to determine whether the data meet the normality assumption
