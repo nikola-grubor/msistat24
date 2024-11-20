@@ -1271,7 +1271,7 @@
     "href": "index.html",
     "title": "Osnovni kurs medicinske statistike i informatike",
     "section": "",
-    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_i9539dfmhdsrv6qta809\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku (eng)\n                \n                \n                  2\n                  Sređivanje podataka\n                \n                \n                  3\n                  Statističko opisivanje podataka\n                \n                \n                  4\n                  Verovatnoća i raspodele verovatnoća (eng)\n                \n                \n                  5\n                  Populacija i uzorak\n                \n                \n                  6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                  7\n                  Testiranje hipoteza o učestalostima\n                \n                \n                  8\n                  Korelacija\n                \n                \n                  9\n                  Regresija"
+    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_vuyeoonzm8rpdjw6zfn9\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku (eng)\n                \n                \n                  2\n                  Sređivanje podataka\n                \n                \n                  3\n                  Statističko opisivanje podataka\n                \n                \n                  4\n                  Verovatnoća i raspodele verovatnoća (eng)\n                \n                \n                  5\n                  Populacija i uzorak\n                \n                \n                  6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                  7\n                  Testiranje hipoteza o učestalostima\n                \n                \n                  8\n                  Testiranje hipoteza o rangovima\n                \n                \n                  9\n                  Korelacija\n                \n                \n                  10\n                  Regresija"
   },
   {
     "objectID": "about.html",
@@ -2847,5 +2847,110 @@
     "title": "Testiranje hipoteza o učestalostima",
     "section": "Primer biranja testa",
     "text": "Primer biranja testa"
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#parametarski-i-neparametarski-testovi",
+    "href": "slides/08_rangovi/prezentacija.html#parametarski-i-neparametarski-testovi",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Parametarski i neparametarski testovi",
+    "text": "Parametarski i neparametarski testovi\n\n\n\nTestovi koji porede artmetičke sredine pretpostavljaju normalnu distribuciju\nNormalna raspodela definisana je parametrima: arit. sred. i standard. devijacijom\nTestovi koji se ne oslanjaju na raspodele su neparametarski"
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#koraci-u-statističkom-zaključivanju",
+    "href": "slides/08_rangovi/prezentacija.html#koraci-u-statističkom-zaključivanju",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Koraci u statističkom zaključivanju",
+    "text": "Koraci u statističkom zaključivanju"
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#statistički-testovi-do-sad",
+    "href": "slides/08_rangovi/prezentacija.html#statistički-testovi-do-sad",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Statistički testovi do sad",
+    "text": "Statistički testovi do sad"
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#zašto-rangovi",
+    "href": "slides/08_rangovi/prezentacija.html#zašto-rangovi",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Zašto rangovi?",
+    "text": "Zašto rangovi?\n\n\n\nManje pretpostavki je bolje\nPodaci uglavnom nisu normalno raspodeljeni\nGubimo statističku moć ukoliko podaci zapravo ispunjavaju uslove za parametrijski (npr. Studentov) test"
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#test-sume-rangova",
+    "href": "slides/08_rangovi/prezentacija.html#test-sume-rangova",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Test sume rangova",
+    "text": "Test sume rangova\nMann-Whitney U / Wilcoxon rank-sum test"
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#provera-normalnosti-numeričkih-podataka",
+    "href": "slides/08_rangovi/prezentacija.html#provera-normalnosti-numeričkih-podataka",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Provera normalnosti numeričkih podataka",
+    "text": "Provera normalnosti numeričkih podataka\n\nKoeficijent varijacije\nSkew i Kurtosis\nQQ Plot\nHistogram\nStatističkim testovima za normalnost"
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#vežba-mmw-test",
+    "href": "slides/08_rangovi/prezentacija.html#vežba-mmw-test",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Vežba: MMW Test",
+    "text": "Vežba: MMW Test\n\nIspitati da li se osobe sa različitim\nnadmorskim visinama prebivališta\nrazlikuju prema koncentraciji fibrinogena."
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#test-ekvivalentnih-parova",
+    "href": "slides/08_rangovi/prezentacija.html#test-ekvivalentnih-parova",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Test ekvivalentnih parova",
+    "text": "Test ekvivalentnih parova\nWilcoxon signed rank test\nTip podataka:\n\nNumerički ne-normalni podaci, ordinalni podaci\n\nUslovi:\n\nUzorak čine zavisne jedinice\nPodaci mogu da se rangiraju"
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#vežba-test-ekvivalentnih-parova",
+    "href": "slides/08_rangovi/prezentacija.html#vežba-test-ekvivalentnih-parova",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Vežba: Test ekvivalentnih parova",
+    "text": "Vežba: Test ekvivalentnih parova\n\nU bazi Aritmije MW W McN.xlsx date su\nvrednosti Lp(a) pre početka terapije i\nmesec dana posle započete terapije.\nCilj istraživača bio je da ispita da li dolazi\ndo promene vrednosti Lp(a) posle davanja antilipemika."
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#izbor-testa",
+    "href": "slides/08_rangovi/prezentacija.html#izbor-testa",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Izbor testa",
+    "text": "Izbor testa\n\nJedan ili dva uzorka\nPonovljena merenja ili ne\nTip podataka (numerički, ordinalni, kategorije)\nNa osnovu deskriptivnih mera određujemo da li podaci ispunjavaju uslov normalnosti"
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#struktura-kursa",
+    "href": "slides/08_rangovi/prezentacija.html#struktura-kursa",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Struktura kursa",
+    "text": "Struktura kursa\n\n\n \n\n  \n    \n    \n    tinytable_i0bb5u4a7ekszse4uemu\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                   1\n                  Uvod u medicinsku statistiku                                           \n                \n                \n                   2\n                  Sređivanje podataka                                                    \n                \n                \n                   3\n                  Statističko opisivanje podataka                                        \n                \n                \n                   4\n                  Verovatnoća i raspodele verovatnoća                                    \n                \n                \n                   5\n                  Populacija i uzorak                                                    \n                \n                \n                   6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                   7\n                  Testiranje hipoteza o učestalostima                                    \n                \n                \n                   8\n                  Testiranje hipoteza o rangovima                                        \n                \n                \n                   9\n                  Korelacija                                                             \n                \n                \n                  10\n                  Regresija / Kolokvijum                                                 \n                \n                \n                  11\n                  Podaci, informacije i znanje                                           \n                \n                \n                  12\n                  Zdravstveni informacioni sistem                                        \n                \n                \n                  13\n                  Mere dijagnostičke tačnosti                                            \n                \n                \n                  14\n                  Medicinsko odlučivanje                                                 \n                \n                \n                  15\n                  Bioinformatika"
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#recept-za-testiranje-nulte-hipoteze",
+    "href": "slides/08_rangovi/prezentacija.html#recept-za-testiranje-nulte-hipoteze",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Recept za testiranje nulte hipoteze",
+    "text": "Recept za testiranje nulte hipoteze\n\nFormiranje hipoteze koja predstavlja naše mišljenje (pre nego što smo videli podatke)\nOdređivanje nulte i alternativne hipoteze\nPrikupljanje podataka relevantnih za našu hipotezu\nNapraviti model koji predstavlja podatke i izračunati test statistiku\nIzračunati verovatnoću da naši podaci daju dobijenu test statistiku ako je nulta hipoteza tačna\nProceniti “statističku značajnost”"
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#uslovi-za-test-sume-rangova",
+    "href": "slides/08_rangovi/prezentacija.html#uslovi-za-test-sume-rangova",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Uslovi za test sume rangova",
+    "text": "Uslovi za test sume rangova\nTip podataka:\n\nNumerički ne-normalni podaci, ordinalni podaci\n\nUslovi:\n\nUzorak čine nezavisne jedinice\nPodaci mogu da se rangiraju\n\n\n\n\n\n\n\nUpozorenje\n\n\nIma manju statističku moć od parametarskih, ako su uslovi za parametarske testove ispunjeni."
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#vežba-mww-test",
+    "href": "slides/08_rangovi/prezentacija.html#vežba-mww-test",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Vežba: MWW test",
+    "text": "Vežba: MWW test\n\nIspitati da li se osobe sa različitim\nnadmorskim visinama prebivališta\nrazlikuju prema koncentraciji fibrinogena."
+  },
+  {
+    "objectID": "slides/08_rangovi/prezentacija.html#test-ekvivalentnih-parova-wilcoxon-signed-rank-test",
+    "href": "slides/08_rangovi/prezentacija.html#test-ekvivalentnih-parova-wilcoxon-signed-rank-test",
+    "title": "Testiranje hipoteza o rangovima",
+    "section": "Test ekvivalentnih parova Wilcoxon signed rank test)",
+    "text": "Test ekvivalentnih parova Wilcoxon signed rank test)\nTip podataka:\n\nNumerički ne-normalni podaci, ordinalni podaci\n\nUslovi:\n\nUzorak čine zavisne jedinice\nPodaci mogu da se rangiraju\n\n\n\n\n\n\n\nUpozorenje\n\n\nIma manju statističku moć od parametarskih, ako su uslovi za parametarske testove ispunjeni."
   }
 ]

@@ -1,0 +1,175 @@
+---
+title: "Testiranje hipoteza o rangovima"
+date: last-modified
+author: "Dr Nikola Grubor"
+# institute: "Institut za Medicinsku Statistiku i Informatiku"
+logo: "slike/logo.png"
+lang: sr-Latn
+---
+```{r}
+library(glue)
+library(here)
+library(tidyverse)
+library(tinytable)
+library(gtsummary)
+source(file = here("slides", "theme", "ggthemes.R"))
+```
+
+## Parametarski i neparametarski testovi {.smaller}
+
+:::: columns
+
+::: {.column}
+
+- Testovi koji porede artmetičke sredine pretpostavljaju normalnu distribuciju
+- Normalna raspodela definisana je [parametrima]{.yellow}: arit. sred. i standard. devijacijom
+- Testovi koji se ne oslanjaju na raspodele su [neparametarski]{.yellow}
+
+:::
+
+::: {.column}
+
+```{r}
+#| fig-asp: 1
+p1 <- ggplot(data = data.frame(x = c(-5, 5)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1),
+                col = "#F4BA02", linewidth = 1) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 2),
+                col = "#F4BA02", linetype = 2, linewidth = 1) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 3),
+                col = "#F4BA02", linetype = 3, linewidth = 1) +
+  ylab("") +
+  scale_y_continuous(breaks = NULL) +
+  ggdist::theme_ggdist(base_size = 18) +
+  theme_blue()
+p1
+```
+
+
+:::
+
+::::
+
+## Recept za testiranje nulte hipoteze
+
+1. Formiranje [hipoteze]{.yellow} koja predstavlja naše mišljenje (pre nego što smo videli podatke)
+2. Određivanje nulte i alternativne hipoteze
+3. Prikupljanje podataka *relevantnih* za našu hipotezu
+4. Napraviti model koji predstavlja podatke i izračunati [test statistiku]{.yellow}
+5. Izračunati verovatnoću da naši podaci daju dobijenu test statistiku ako je nulta hipoteza tačna
+6. Proceniti "statističku značajnost"
+
+## Zašto rangovi?
+
+:::: columns
+
+::: {.column}
+
+- Manje pretpostavki je bolje
+- Podaci uglavnom nisu normalno raspodeljeni
+- Gubimo statističku moć ukoliko podaci zapravo ispunjavaju uslove za parametrijski (npr. Studentov) test
+
+:::
+
+::: {.column}
+
+![](slike/jenga.png)
+
+:::
+
+::::
+
+## Test sume rangova
+
+Mann-Whitney U / Wilcoxon rank-sum test
+
+![](slike/sumrank.png){fig-align="center"}
+
+## Uslovi za test sume rangova
+
+Tip podataka:
+
+- Numerički ne-normalni podaci, ordinalni podaci
+
+Uslovi:
+
+- Uzorak čine nezavisne jedinice
+- Podaci mogu da se rangiraju
+
+::: {.callout-warning}
+Ima manju statističku moć od parametarskih, ako su uslovi za parametarske testove ispunjeni.
+:::
+
+## Provera normalnosti numeričkih podataka
+
+- [Koeficijent varijacije]{.yellow}
+- Skew i Kurtosis
+- QQ Plot
+- [Histogram]{.yellow}
+- Statističkim testovima za normalnost
+
+## Vežba: MWW test
+
+::: {.r-fit-text}
+
+Ispitati da li se osobe sa različitim
+
+nadmorskim visinama prebivališta
+
+razlikuju prema koncentraciji fibrinogena.
+
+:::
+
+![](slike/mwu.jpg){fig-align="center"}
+
+## Test ekvivalentnih parova 
+
+### Wilcoxon signed rank test
+
+Tip podataka:
+
+- Numerički ne-normalni podaci, ordinalni podaci
+
+Uslovi:
+
+- Uzorak čine [zavisne]{.yellow} jedinice
+- Podaci mogu da se rangiraju
+
+## Vežba: Test ekvivalentnih parova
+
+::: {.r-fit-text}
+
+U bazi [Aritmije MW W McN.xlsx]{.yellow} date su 
+
+vrednosti Lp(a) pre početka terapije i 
+
+mesec dana posle započete terapije. 
+
+Cilj istraživača bio je da ispita da li dolazi 
+
+do promene vrednosti Lp(a) posle davanja antilipemika.
+
+:::
+
+## Izbor testa
+
+- Jedan ili dva uzorka
+- Ponovljena merenja ili ne
+- Tip podataka (numerički, ordinalni, kategorije)
+- Na osnovu deskriptivnih mera određujemo da li podaci ispunjavaju uslov normalnosti
+
+## Struktura kursa
+
+```{r}
+teme <- c(
+  "Uvod u medicinsku statistiku", "Sređivanje podataka",
+  "Statističko opisivanje podataka", "Verovatnoća i raspodele verovatnoća",
+  "Populacija i uzorak", "Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama",
+  "Testiranje hipoteza o učestalostima", "Testiranje hipoteza o rangovima", "Korelacija",
+  "Regresija / Kolokvijum", "Podaci, informacije i znanje", "Zdravstveni informacioni sistem",
+  "Mere dijagnostičke tačnosti", "Medicinsko odlučivanje", "Bioinformatika"
+)
+
+kurs <- tibble(Nedelja = 1:15, Tema = teme)
+tt(kurs) |> style_tt(j = 1:2, fontsize = 0.55)
+```
