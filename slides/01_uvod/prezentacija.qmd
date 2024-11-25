@@ -446,6 +446,26 @@ Trombociti su prebrojivi, ali nekad se mere kontinuiranim merama kao npr. spektr
 Uvek je bolje tretirati vreme kao kontinuirano (mada zavisi od pitanja, individualni efekti vs. trend).
 :::
 
+## Bitna pitanja u istraživanjima
+
+- Putevi uticaja, mehanizmi
+- Najbolji način da se koriste genska i proteinska ekspresija za dijagnozu i lečenje
+- Koji biomarkeri su najprediktivniji i kako da se oni koriste?
+- Koji je najbolji način formiranja dijagnoze i prognoze?
+- Da li je faktor rizika stvaran ili samo posledica pridruženih varijabli?
+- Kako da merimo ishode pacijenata?
+- Da li je lek efikasan za određen ishod?
+- Ko treba da dobije lek?
+
+## Alergija na informacije
+
+- Ignorisanje dostupnih informacija (osnovne demografske)
+- Osnovne kliničke informacije $\gt$ neki biomarkeri
+- Ignorisanje pridruženih varijabli ("konfaunding")
+- Ignorisanje heterogenosti pojedinaca
+- Kategorisanje kontinuiranih varijabli ili odgovora
+- Kategorisanje predviđanja kao "tačno" ili "netačno"
+
 ## Excel se koristi za unos podataka {.center}
 
 ![](slike/excel.png)
@@ -476,6 +496,94 @@ Istraživačka baza podataka praćena je šifarnikom koji sadrži informacije o 
 :::
 
 # Česte greške u pravljenju baza
+
+## Dihotomanija
+
+[Kategorizovanje]{.yellow} kontinuiranih podataka dovodi do [gubitka informacija]{.yellow} i preciznosti
+
+- "Cut-point" ne postoji u prirodi
+- Čak i da postoji, optimalno odlučivanje se bazira na rizicima
+
+![](slike/cutpoints.png){fig-align="center"}
+
+## Prikaz slučaja: Antiaritmici (1)
+
+- Prevremene ventrikularne kontrakcije su primećene kod pacijenata nakon infarkta miokarda
+- Česte VES $\uparrow$ incidencu naprasne smrti
+
+![](slike/pvc.png){fig-align="center"}
+
+## Prikaz slučaja: Antiaritmici (2)
+
+:::: columns
+
+::: {.column}
+> Profilaktički program protiv naprasne smrti mora uključiti i antiaritmike kako bi se suzbili prevremeni ventrikularni kompleksi.
+
+--- Bernard Lown (1978)
+:::
+
+::: {.column}
+![](slike/cardmort.jpg){width=90%}
+:::
+
+::::
+
+## Prikaz slučaja: Antiaritmici (3)
+
+Da li su VES [nezavisan faktor rizika]{.yellow} naprasne smrti?
+
+:::: columns
+
+::: {.column}
+Istraživači su napravili model:
+
+- LVEF $\lt$ 0.4
+- VES $\gt$ 10/h
+- Auskultatorni pukoti
+- NYHA klasa II, III, IV
+:::
+
+::: {.column}
+![](slike/cardriskmodel.jpg){width=90%}
+:::
+
+::::
+
+## Prikaz slučaja: Antiaritmici (4) {.smaller}
+
+:::: columns
+
+::: {.column}
+- LVEF sam po sebi daje isti prognostički spektar
+- Nisu kontrolisali za LVEF; VES $\uparrow$ kad LVEF $\lt$ 0.2
+- Arritmije su prognostičke u izolaciji, izgube svu vrednost nakon kontrole za EF
+- Lokalna disfunkcija kontraktilnosti i globalna funkcija (EF) predviđaju aritmije
+:::
+
+::: {.column}
+![](slike/efmodel.jpg){width=90%}
+:::
+
+::::
+
+## CAST: Cardiac Arrhythmia Suppression Trial {.smaller}
+
+:::: columns
+
+::: {.column}
+- Randomizacija: placebo, moricizin, antiaritmici klase IC (flecainid, encainid)
+- Kardiolozi: "Nije etički da randomizujemo i na placebo"
+- Placebo grupa uključena nakon duge rasprave
+- Studija prekinuta pre vremena usled $\uparrow$ mortaliteta
+- Smrti $\frac{56}{730}$ lek, $\frac{22}{725}$ placebo, $RR = 2.5$
+:::
+
+::: {.column}
+![](slike/deadly.jpg){width=70%}
+:::
+
+::::
 
 ## Granularni podaci (razdvajanje)
 
@@ -581,3 +689,59 @@ tt(treatment) |> style_tt(j = 1:3, fontsize = 1.2)
 - Ostaviti prazno (moguće greške)
 - Upisati NA
 :::
+
+## Tipovi nedostajućih podataka
+
+- Nedostaju kompletno slučajno (MCAR; missing completely at random)
+- Nedostaju slučajno (MAR; missing at random)
+- Nedostaju neslučajno (NMAR; not missing at random)
+
+## Nedostaju kompletno slučajno (MCAR)
+
+- Mehanizam kojim nedostaju podaci nije povezan nikako sa samim podacima (opservacijama). 
+- Jako teško opravdati pretpostavku.
+
+::: {.callout-note}
+Vaga kojoj su se potrošile baterije ne očitava merenja.
+:::
+
+Pogodno za analizu samo [kompletnih opservacija]{.yellow}.
+
+## Nedostaju slučajno (MAR)
+
+- Mehanizam kojim nedostaju podaci povezan je sa grupama koje su prisutne među podacima (opservacijama). 
+- Unutar grupa podaci su MCAR.
+
+::: {.callout-note}
+Vaga koja češće neočitava merenja kad je stavljena na *mekanu* površinu u odnosu na *čvrstu* površinu.
+:::
+
+Pogodno za analizu [regresionom/stohastičnom imputacijom]{.yellow} ako je model tačno specificiran.
+
+## Nedostaju neslučajno (NMAR)
+
+- Nepoznat mehanizam kojim nedostaju podaci sistematično utiče na gubitak opservacija.
+
+::: {.callout-note}
+Vaga čiji mehanizam se troši vremenom sve češće neočitava merenja teških predmeta.
+:::
+
+Rešenje je obično [prikupljanje podataka o mehanizmu]{.yellow} direktno ili [analize senzitivnosti]{.yellow} za različite kontekste.
+
+## Pristrasnost ad-hoc metoda imputacije
+
+```{r}
+tribble(
+  ~"Metod", ~"Aritmetička sredina", ~"Regresija", ~"Korelacija", ~"Std. greška",
+  "Kompletno izbacivanje", "MCAR", "MCAR", "MCAR", "Prevelika",
+  "Analiza parova", "MCAR", "MCAR", "MCAR", "Komplikovana",
+  "Aritmetička sredina", "MCAR", "-", "-", "Premala",
+  "Regresija", "MAR", "MAR*", "-", "Premala",
+  "Stohastična imputacija", "MAR", "MAR", "MAR", "Premala"
+) %>% 
+  tt(notes = "*Samo ako je model tačno specificiran.") %>% 
+  style_tt(i = 0:5, fontsize = 0.7) %>% 
+  group_tt(j = list(
+    "Nepristasno" = 2:4
+  ))
+```
