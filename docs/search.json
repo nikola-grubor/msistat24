@@ -1271,7 +1271,7 @@
     "href": "index.html",
     "title": "Osnovni kurs medicinske statistike i informatike",
     "section": "",
-    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_g6stc2dzop8873o3s10f\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku (eng)\n                \n                \n                  2\n                  Sređivanje podataka\n                \n                \n                  3\n                  Statističko opisivanje podataka\n                \n                \n                  4\n                  Verovatnoća i raspodele verovatnoća (eng)\n                \n                \n                  5\n                  Populacija i uzorak\n                \n                \n                  6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                  7\n                  Testiranje hipoteza o učestalostima\n                \n                \n                  8\n                  Testiranje hipoteza o rangovima (eng)\n                \n                \n                  9\n                  Korelacija\n                \n                \n                  10\n                  Regresija"
+    "text": "Osnovni kurs medicinske statistike i informatike\n\n\n\n\n\n\n\n\n\nDobrodošli na kurs medicinske statistike i informatike! Sve informacije vezane za kurs i termine polaganja možete pronaći na sajtu instituta. Ova web stranica služi kao lični repozitorijum kako bi prezentacije sa vežbi bile uvek dostupne onima koji to žele.\nLista prezentacija\n\n\n \n\n  \n    \n    \n    tinytable_p4upcv8iqw2n3qtvm16v\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        \n              \n                Nedelja\n                Tema\n              \n        \n        \n        \n                \n                  1\n                  Uvod u medicinsku statistiku (eng)\n                \n                \n                  2\n                  Sređivanje podataka (log)\n                \n                \n                  3\n                  Statističko opisivanje podataka\n                \n                \n                  4\n                  Verovatnoća i raspodele verovatnoća (eng)\n                \n                \n                  5\n                  Populacija i uzorak\n                \n                \n                  6\n                  Testiranje hipoteza o populacionim prosečnim vrednostima i proporcijama\n                \n                \n                  7\n                  Testiranje hipoteza o učestalostima\n                \n                \n                  8\n                  Testiranje hipoteza o rangovima (eng)\n                \n                \n                  9\n                  Korelacija\n                \n                \n                  10\n                  Regresija"
   },
   {
     "objectID": "about.html",
@@ -3134,5 +3134,110 @@
     "title": "Uvod u Statistiku",
     "section": "Pristrasnost ad-hoc metoda imputacije",
     "text": "Pristrasnost ad-hoc metoda imputacije\n\n\n \n\n  \n    \n    \n    tinytable_1be8w3km6m9882fcwxed\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n\n \nNepristasno\n \n\n        \n              \n                Metod\n                Aritmetička sredina\n                Regresija\n                Korelacija\n                Std. greška\n              \n        \n        *Samo ako je model tačno specificiran.\n        \n                \n                  Kompletno izbacivanje \n                  MCAR\n                  MCAR\n                  MCAR\n                  Prevelika   \n                \n                \n                  Analiza parova        \n                  MCAR\n                  MCAR\n                  MCAR\n                  Komplikovana\n                \n                \n                  Aritmetička sredina   \n                  MCAR\n                  -   \n                  -   \n                  Premala     \n                \n                \n                  Regresija             \n                  MAR \n                  MAR*\n                  -   \n                  Premala     \n                \n                \n                  Stohastična imputacija\n                  MAR \n                  MAR \n                  MAR \n                  Premala"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#zašto-transformišemo-podatke",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#zašto-transformišemo-podatke",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Zašto transformišemo podatke?",
+    "text": "Zašto transformišemo podatke?\n\nParametarski testovi imaju veću moć od neparametarskih ako su uslovi normalnosti ispunjeni\nUslov normalnosti često nije opravdan, a centralna granična teorema važi za velike baze podataka\nTransformacija može biti lako rešenje\nNeparametarske metode (Wilcoxon, Mann-Whitney U) su dobra alternativa"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#logaritamska-transformacija",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#logaritamska-transformacija",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Logaritamska transformacija",
+    "text": "Logaritamska transformacija\nLogaritamska funkcija:\n\\[ y = log(x) \\]\n\\[ log_{10}(1000) = 3 \\]\nInverzna funkcija je:\n\\[ exp(y) = x \\]\ngde je,\n\\[ exp(y) = 10^y \\]"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#primer-transformacije",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#primer-transformacije",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Primer transformacije",
+    "text": "Primer transformacije"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#upotreba-testa-na-transformisanim-podacima",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#upotreba-testa-na-transformisanim-podacima",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Upotreba testa na transformisanim podacima",
+    "text": "Upotreba testa na transformisanim podacima\n\nt.test(btg ~ status, data=d)\n\n\n    Welch Two Sample t-test\n\ndata:  btg by status\nt = 3.3838, df = 15.343, p-value = 0.003982\nalternative hypothesis: true difference in means between group diabetic and group normal is not equal to 0\n95 percent confidence interval:\n  8.07309 35.41024\nsample estimates:\nmean in group diabetic   mean in group normal \n              35.27500               13.53333 \n\n\n\nt.test(log(btg) ~ status, data=d)\n\n\n    Welch Two Sample t-test\n\ndata:  log(btg) by status\nt = 3.8041, df = 21.9, p-value = 0.0009776\nalternative hypothesis: true difference in means between group diabetic and group normal is not equal to 0\n95 percent confidence interval:\n 0.4352589 1.4792986\nsample estimates:\nmean in group diabetic   mean in group normal \n              3.390628               2.433349"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#neparametarski-testovi-kao-alternativa",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#neparametarski-testovi-kao-alternativa",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Neparametarski testovi kao alternativa",
+    "text": "Neparametarski testovi kao alternativa\n\nwilcox.test(btg ~ status, data=d)\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  btg by status\nW = 125.5, p-value = 0.002209\nalternative hypothesis: true location shift is not equal to 0\n\n\n\nwilcox.test(log(btg) ~ status, data=d)\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  log(btg) by status\nW = 125.5, p-value = 0.002209\nalternative hypothesis: true location shift is not equal to 0\n\n\n\n\n\n\n\n\nBitno\n\n\nNeparametarski testovi se ponašaju isto na log-transformisanim podacima."
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#provera-normalnosti",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#provera-normalnosti",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Provera normalnosti",
+    "text": "Provera normalnosti\n\nTestiraju nultu hipotezu da su podaci poreklom iz normalne distribucije\nShapiro-Wilk teoretski ima veću statistićku snagu of Kolmogorov-Smirnov testa"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#qq-grafikoni-normalnih-distribucija",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#qq-grafikoni-normalnih-distribucija",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "QQ grafikoni normalnih distribucija",
+    "text": "QQ grafikoni normalnih distribucija"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#upotreba-testiranja-normalnosti",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#upotreba-testiranja-normalnosti",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Upotreba testiranja normalnosti",
+    "text": "Upotreba testiranja normalnosti"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#performanse-shapiro-wilkovog-testa-na-velikim-uzorcima",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#performanse-shapiro-wilkovog-testa-na-velikim-uzorcima",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Performanse Shapiro-Wilkovog testa na velikim uzorcima",
+    "text": "Performanse Shapiro-Wilkovog testa na velikim uzorcima\nKod za simulaciju:\n\nx &lt;- replicate(100, { # generise 100 testova na svakoj distribuciji\n                     c(shapiro.test(rnorm(10)+c(1,0,2,0,1))$p.value,   #$\n                       shapiro.test(rnorm(100)+c(1,0,2,0,1))$p.value,  #$\n                       shapiro.test(rnorm(1000)+c(1,0,2,0,1))$p.value, #$\n                       shapiro.test(rnorm(5000)+c(1,0,2,0,1))$p.value) #$\n                    } # rnorm daje uzorak i normalne distribucije\n               )\nrownames(x) &lt;- c(\"n10\",\"n100\",\"n1000\",\"n5000\")\n\nProporcija statistički značajnih testova:\n\n\n  n10  n100 n1000 n5000 \n 0.04  0.07  0.13  0.77"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#shapiro-wilk",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#shapiro-wilk",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Shapiro-Wilk",
+    "text": "Shapiro-Wilk\n\nshapiro.test(rnorm(1000, 5, 3))\n\n\n    Shapiro-Wilk normality test\n\ndata:  rnorm(1000, 5, 3)\nW = 0.99838, p-value = 0.4765"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#kolmogorov-smirnov",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#kolmogorov-smirnov",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Kolmogorov-Smirnov",
+    "text": "Kolmogorov-Smirnov\n\nZahteva specifikaciju iz koje distribucije su dosli podaci\nEZR to radi sam tako što procenjuje aritmetički sredinu i standardnu devijaciju iz samih podataka\n\n\nx &lt;- rnorm(50)\ny &lt;- runif(30)\n# Da li su x i y iz iste distribucije?\nks.test(x, y)\n\n\n    Exact two-sample Kolmogorov-Smirnov test\n\ndata:  x and y\nD = 0.44, p-value = 0.0009116\nalternative hypothesis: two-sided"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#performanse-shapiro-wilkovog-testa",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#performanse-shapiro-wilkovog-testa",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Performanse Shapiro-Wilkovog testa",
+    "text": "Performanse Shapiro-Wilkovog testa\n\nNa malim uzorcima ne odbacuje nultu dovoljno često\nNa velikim uzorcima odbacuje previše\n\n\nx &lt;- replicate(100, { # generise 100 testova na svakoj distribuciji\n                     c(shapiro.test(rnorm(10)+c(1,0,2,0,1))$p.value,   #$\n                       shapiro.test(rnorm(100)+c(1,0,2,0,1))$p.value,  #$\n                       shapiro.test(rnorm(1000)+c(1,0,2,0,1))$p.value, #$\n                       shapiro.test(rnorm(5000)+c(1,0,2,0,1))$p.value) #$\n                    } # rnorm daje uzorak i normalne distribucije\n               )\nrownames(x) &lt;- c(\"n10\",\"n100\",\"n1000\",\"n5000\")\n\nProporcija statistički značajnih testova:\n\n\n  n10  n100 n1000 n5000 \n 0.04  0.07  0.13  0.77"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#selekcija-varijabli",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#selekcija-varijabli",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Selekcija varijabli",
+    "text": "Selekcija varijabli"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#saveti",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#saveti",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Saveti",
+    "text": "Saveti\n\nPodaci se normalno raspodeljuju kada ima mnogo sitnih uticaja koji se sabiraju ili množe\nNeparametarski testovi se uvek mogu upotrebiti (poznato je da efikasnost 95% u odnosu na t-test kada su podaci normalni)\nTesitrai normalnost je OK, ali ne doprinosi mnogo"
+  },
+  {
+    "objectID": "slides/02_biostat_transformacije/prezentacija.html#koje-varijable-prikupljati",
+    "href": "slides/02_biostat_transformacije/prezentacija.html#koje-varijable-prikupljati",
+    "title": "Testiranje normalnosti i transformacije podataka",
+    "section": "Koje varijable prikupljati",
+    "text": "Koje varijable prikupljati"
   }
 ]
